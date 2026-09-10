@@ -1,0 +1,104 @@
+[gd_scene load_steps=0 format=3 uid="uid://vmnrljfdhmou"]
+
+[ext_resource type="Script" uid="uid://cf3rmq2hqybrl" path="res://player.gd" id="1_gojnm"]
+[ext_resource type="PackedScene" uid="uid://c1up215pr21ao" path="res://spline_rail.tscn" id="2_1c2mv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adgpb"]
+albedo_color = Color(0.12225217, 0.12225228, 0.12225217, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1c2mv"]
+albedo_color = Color(0.5808088, 0.56791234, 0.16447741, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_adgpb"]
+height = 1.7441406
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2bok1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
+size = Vector3(1, 0.17285156, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bok1"]
+albedo_color = Color(0, 0.4446841, 0.86283505, 1)
+
+[node name="test level" type="Node3D" unique_id=1501661411]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=9587466]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 3.1349485, -2.8997264)
+light_energy = 4.22
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1004056315]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1683605859 groups=["RailPath"]]
+size = Vector3(35, 0.07324219, 28)
+material = SubResource("StandardMaterial3D_adgpb")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1904128505]
+transform = Transform3D(2.6799827, 0, 0, 0, 3.116312, 0, 0, 0, 2.4816966, 0.029323332, 0.40319586, -13.399239)
+size = Vector3(13.442322, 1, 0.20690918)
+material = SubResource("StandardMaterial3D_1c2mv")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1751369528]
+transform = Transform3D(-0.045249984, 0, -2.608998, 0, 3.116312, 0, 2.5548866, 0, -0.04620836, 16.927555, 0.40319586, -0.82611835)
+size = Vector3(13.442322, 1, 0.20690918)
+material = SubResource("StandardMaterial3D_1c2mv")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=486247296]
+transform = Transform3D(-2.70271, 0, 0.014111456, 0, 3.116312, 0, -0.015518277, 0, -2.4576938, 0.03189066, 0.40319586, 13.601038)
+size = Vector3(13.442322, 1, 0.20690918)
+material = SubResource("StandardMaterial3D_1c2mv")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D" unique_id=835847296]
+transform = Transform3D(0.060475405, 0, 2.5857122, 0, 3.116312, 0, -2.5783274, 0, 0.060648613, -16.788105, 0.40319586, 0.9382791)
+size = Vector3(13.442322, 1, 0.20690918)
+material = SubResource("StandardMaterial3D_1c2mv")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2099991545 groups=["player"]]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0.16960454, 2.4437332)
+script = ExtResource("1_gojnm")
+
+[node name="CollisionPrincipal" type="CollisionShape3D" parent="CharacterBody3D" unique_id=505627284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3911965, 0)
+shape = SubResource("CapsuleShape3D_adgpb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1378905581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2268828, 0)
+mesh = SubResource("CapsuleMesh_2bok1")
+
+[node name="FeetDetector" type="Area3D" parent="CharacterBody3D" unique_id=202770234]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/FeetDetector" unique_id=1741516232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2682525, 0)
+shape = SubResource("BoxShape3D_2bok1")
+debug_color = Color(0, 0.874, 1.013, 0.988)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1185409385]
+transform = Transform3D(2.6315792, 0, 0, 0, 2.4975326, 0.82918006, 0, -0.82918006, 2.4975326, 0, 2.5452971, 1.9769282)
+
+[node name="SplineRail" parent="." unique_id=1038999215 groups=["RailPath"] instance=ExtResource("2_1c2mv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0679331, 0.8833821, -1.0415518)
+
+[node name="PathFollow3D" parent="SplineRail" index="0" unique_id=974286404]
+transform = Transform3D(-0.032492302, 0.025365751, -0.99913955, -9.313152e-10, 0.99966913, 0.025379108, 0.9994639, 0.0008246346, -0.03248176, -11, 0.19667435, -1)
+loop = false
+
+[node name="CSGPolygon3D" parent="SplineRail" index="1" unique_id=851046404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0968308, -2.0413508, 0.361017)
+
+[node name="CollisionShape3D" parent="SplineRail/GrindArea2" parent_id_path=PackedInt32Array(1038999215, 254721968) index="0" unique_id=724100480]
+visible = false
+
+[node name="GrindArea" parent="SplineRail" index="3" unique_id=1697398981 groups=["RailPath"]]
+transform = Transform3D(0.99934334, 0, -0.03623386, 0, 1, 0, 0.03623386, 0, 0.99934334, 0.032855988, 0.9398496, 0.43887675)
+
+[node name="CollisionShape3D" parent="SplineRail/GrindArea" index="0" unique_id=1495545071]
+transform = Transform3D(0.9998678, 0, -0.016234726, 0, 1, 0, 0.016234726, 0, 0.9998678, -2.3264065, -1.2491604, -0.89452726)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1039755252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.540123, 0.96131086, -2.0868883)
+material = SubResource("StandardMaterial3D_2bok1")
+
+[connection signal="area_entered" from="CharacterBody3D/FeetDetector" to="CharacterBody3D" method="_on_feet_detector_area_entered"]
+
+[editable path="SplineRail"]
