@@ -17,12 +17,16 @@ func on_process(delta: float) -> void:
 
 func on_physics_process(delta: float) -> void:
 	handle_gravity(delta)
+	
+	jugador.velocity.x = move_toward(jugador.velocity.x,0.0,jugador.friccion * delta)
+	jugador.velocity.z = move_toward(jugador.velocity.z,0.0,jugador.friccion * delta)
 
 func on_input(event: InputEvent) -> void:
 	pass
 
 func on_unhandled_input(event: InputEvent) -> void:
-	pass
+	if event.is_action_pressed("Adelante"):
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Caminar)
 
 func on_unhandled_key_input(event: InputEvent) -> void:
 	pass

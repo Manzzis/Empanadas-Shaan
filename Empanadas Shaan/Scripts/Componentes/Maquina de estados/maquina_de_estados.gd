@@ -23,7 +23,7 @@ func iniciar_estado_por_defecto() -> void:
 	iniciar_estado()
 
 func iniciar_estado() -> void:
-	#prints("maquina de estados", nodo_controlador.name, "iniciar estado", estado_actual.name)
+	prints("maquina de estados", nodo_controlador.name, "iniciar estado", estado_actual.name)
 	estado_actual.nodo_controlador = nodo_controlador
 	#	el estado actual, como sabemos que hereda de "Base de estados",
 	#	sabemos que tiene una var de "nodo controlador", por lo que le asignaremos

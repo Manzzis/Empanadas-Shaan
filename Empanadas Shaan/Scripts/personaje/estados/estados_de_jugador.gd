@@ -18,4 +18,4 @@ func finalizar():
 
 #acá aplicamos la gravedad, los demás estados simplemente deberán llamar al método
 func handle_gravity(delta):
-	nodo_controlador.velocity.y = gravedad * delta
+	nodo_controlador.velocity.y -= gravedad * delta
