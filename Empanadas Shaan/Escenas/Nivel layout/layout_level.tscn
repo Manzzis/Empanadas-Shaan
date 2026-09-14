@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bikxpud41a438"]
 
 [ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets/libreria de mallas/libreria_placeholder.tres" id="1_st6m5"]
+[ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="2_s84xd"]
 
 [node name="layout level" type="Node3D" unique_id=75948867]
 
@@ -14,3 +15,6 @@ metadata/_editor_floor_ = Vector3(0, 3, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934597172]
 transform = Transform3D(1, 0, 0, 0, 0.11320324, 0.9935719, 0, -0.9935719, 0.11320324, 0, 10.275, 0)
+
+[node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("2_s84xd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.44454, 0)
