@@ -33,6 +33,9 @@ func on_unhandled_input(event: InputEvent) -> void:
 func on_unhandled_key_input(event: InputEvent) -> void:
 	pass
 
+
+#######################################################################################
+
 func calcular_friccion(delta):
 	# 1. Extraemos la velocidad horizontal global actual
 	var vel_global := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
