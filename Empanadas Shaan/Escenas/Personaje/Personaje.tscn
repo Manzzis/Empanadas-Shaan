@@ -16,6 +16,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tiug6"]
+lightmap_size_hint = Vector2i(17, 14)
 
 [node name="Personaje" type="CharacterBody3D" unique_id=1912633892]
 script = ExtResource("1_hmyjb")

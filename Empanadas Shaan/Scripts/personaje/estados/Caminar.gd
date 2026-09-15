@@ -16,7 +16,6 @@ func on_physics_process(delta: float) -> void:
 	
 	# Dirección hacia adelante del jugador
 	var adelante := jugador.transform.basis.z
-	
 	# Dirección objetivo
 	var velocidad_objetivo := adelante * jugador.velocidad * direccion
 	
@@ -39,18 +38,13 @@ func on_input(event: InputEvent) -> void:
 
 
 func on_unhandled_input(event: InputEvent) -> void:
-
 	# Cambiar dirección mientras caminamos
-	
 	if event.is_action_pressed("Adelante"):
 		jugador.direccion_delantera = true
-	
 	if event.is_action_pressed("Atras"):
 		jugador.direccion_delantera = false
 	
-	
 	# Dejar de caminar
-	
 	if jugador.direccion_delantera:
 		if event.is_action_released("Adelante"):
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
