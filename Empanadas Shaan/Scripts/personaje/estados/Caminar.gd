@@ -11,24 +11,30 @@ func on_process(delta: float) -> void:
 		direccion = -1
 
 
+# Reemplaza esta función en tu script de Caminar
 func on_physics_process(delta: float) -> void:
 	# Dirección hacia adelante del jugador
 	var adelante := jugador.transform.basis.z
-	# Dirección objetivo
-	var velocidad_objetivo := adelante * jugador.velocidad * direccion
 	
-	# Aceleración hacia esa dirección
-	jugador.velocity.x = move_toward(
-		jugador.velocity.x,
-		velocidad_objetivo.x,
+	# Dirección objetivo (normalizada para asegurar consistencia)
+	var direccion_objetivo := adelante.normalized() * direccion
+	var velocidad_objetivo := direccion_objetivo * jugador.velocidad
+	
+	# Creamos un vector temporal solo para el movimiento horizontal actual
+	var velocidad_horizontal_actual := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
+	var velocidad_horizontal_objetivo := Vector3(velocidad_objetivo.x, 0, velocidad_objetivo.z)
+	
+	# Aplicamos la aceleración a todo el vector horizontal al mismo tiempo
+	var nueva_velocidad_horizontal = velocidad_horizontal_actual.move_toward(
+		velocidad_horizontal_objetivo,
 		jugador.aceleracion * delta
 	)
 	
-	jugador.velocity.z = move_toward(
-		jugador.velocity.z,
-		velocidad_objetivo.z,
-		jugador.aceleracion * delta
-	)
+	# Asignamos de vuelta los valores al jugador sin alterar la gravedad (Y)
+	jugador.velocity.x = nueva_velocidad_horizontal.x
+	jugador.velocity.z = nueva_velocidad_horizontal.z
+
+
 
 
 func on_input(event: InputEvent) -> void:
