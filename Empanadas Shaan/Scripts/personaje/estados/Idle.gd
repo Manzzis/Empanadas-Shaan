@@ -27,6 +27,11 @@ func on_input(event: InputEvent) -> void:
 func on_unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Adelante"):
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caminar)
+		jugador.direccion_delantera = true
+	
+	if event.is_action_pressed("Atras"):
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Caminar)
+		jugador.direccion_delantera = false
 
 func on_unhandled_key_input(event: InputEvent) -> void:
 	pass
