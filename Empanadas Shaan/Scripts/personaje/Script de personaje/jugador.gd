@@ -5,16 +5,16 @@ class_name Jugador extends CharacterBody3D
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 
 #estadísticas del jugador
-@export var velocidad : float = 100.0
+@export var velocidad : float = 10.0
 @export var aceleracion : float = 30.0
-@export var friccion : float = 5.0
-
-# Velocidad de giro
+@export var friccion : float = 4.0
 @export var velocidad_giro : float = 3.0
 
 
 var direccion_delantera : bool = false
 
+func _process(delta: float) -> void:
+	print(velocidad)
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()

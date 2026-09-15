@@ -32,8 +32,6 @@ func on_physics_process(delta: float) -> void:
 		velocidad_objetivo.z,
 		jugador.aceleracion * delta
 	)
-	
-	jugador.girar(delta)
 
 
 func on_input(event: InputEvent) -> void:
