@@ -5,8 +5,6 @@ class_name Estados_de_jugador extends Base_de_estados
 #esta var se usa en iniciar
 var jugador : Jugador
 
-#Todos los estados usan la gravedad, entonces se los aplicamos directamente acá
-var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func iniciar():
 	jugador = nodo_controlador
@@ -15,7 +13,3 @@ func iniciar():
 
 func finalizar():
 	pass
-
-#acá aplicamos la gravedad, los demás estados simplemente deberán llamar al método
-func handle_gravity(delta):
-	nodo_controlador.velocity.y -= gravedad * delta

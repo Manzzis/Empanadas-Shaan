@@ -12,8 +12,6 @@ func on_process(delta: float) -> void:
 
 
 func on_physics_process(delta: float) -> void:
-	handle_gravity(delta)
-	
 	# Dirección hacia adelante del jugador
 	var adelante := jugador.transform.basis.z
 	# Dirección objetivo

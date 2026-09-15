@@ -16,8 +16,6 @@ func on_process(delta: float) -> void:
 	pass
 
 func on_physics_process(delta: float) -> void:
-	handle_gravity(delta)
-	
 	jugador.velocity.x = move_toward(jugador.velocity.x,0.0,jugador.friccion * delta)
 	jugador.velocity.z = move_toward(jugador.velocity.z,0.0,jugador.friccion * delta)
 
