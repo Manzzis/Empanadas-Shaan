@@ -1,9 +1,62 @@
 extends Estados_de_jugador
-#Lógica del estado de Caminar
+# Lógica del estado de Caminar
 
-func on_physics_process(delta):
-	handle_gravity(delta)
+var direccion : int
 
-func on_input(event):
-	if not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
-		mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+
+func on_process(delta: float) -> void:
+	if jugador.direccion_delantera:
+		direccion = 1
+	else:
+		direccion = -1
+
+
+# Reemplaza esta función en tu script de Caminar
+func on_physics_process(delta: float) -> void:
+	moverse(delta)
+
+func on_input(event: InputEvent) -> void:
+	pass
+
+
+func on_unhandled_input(event: InputEvent) -> void:
+	# Cambiar dirección mientras caminamos
+	if event.is_action_pressed("Adelante"):
+		jugador.direccion_delantera = true
+	if event.is_action_pressed("Atras"):
+		jugador.direccion_delantera = false
+	
+	# Dejar de caminar
+	if jugador.direccion_delantera:
+		if event.is_action_released("Adelante"):
+			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+	else:
+		if event.is_action_released("Atras"):
+			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+
+
+func on_unhandled_key_input(event: InputEvent) -> void:
+	pass
+
+#######################################################################
+func moverse(delta):
+	# Dirección hacia adelante del jugador
+	var adelante := jugador.transform.basis.z
+	
+	# Dirección objetivo (normalizada para asegurar consistencia)
+	var direccion_objetivo := adelante.normalized() * direccion
+	var velocidad_objetivo := direccion_objetivo * jugador.velocidad
+	
+	# Creamos un vector temporal solo para el movimiento horizontal actual
+	var velocidad_horizontal_actual := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
+	var velocidad_horizontal_objetivo := Vector3(velocidad_objetivo.x, 0, velocidad_objetivo.z)
+	
+	# Aplicamos la aceleración a todo el vector horizontal al mismo tiempo
+	var nueva_velocidad_horizontal = velocidad_horizontal_actual.move_toward(
+		velocidad_horizontal_objetivo,
+		jugador.aceleracion * delta
+	)
+	
+	# Asignamos de vuelta los valores al jugador sin alterar la gravedad (Y)
+	jugador.velocity.x = nueva_velocidad_horizontal.x
+	jugador.velocity.z = nueva_velocidad_horizontal.z
