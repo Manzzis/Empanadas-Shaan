@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bthvge2l6k4ew"]
+
+[ext_resource type="Script" uid="uid://bauiukcngpaga" path="res://Escenas/Nivel layout/Riel3D.gd" id="1_tjswf"]
+[ext_resource type="Texture2D" uid="uid://dl1v87nc8ncyh" path="res://Assets/placeholders/Orange/texture_02.png" id="2_5aja8"]
+
+[sub_resource type="Curve3D" id="Curve3D_lgcgk"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.01929617, 1.4657376, 0.012864149, 0, 0, 0, 0, 0, 0, 2.5792632, 1.4657376, 0.012864149, 0, 0, 0, 0, 0, 0, 5.066697, 1.4657376, -0.03500307, 0, 0, 0, 0, 0, 0, 8.113006, 1.4657376, 0.023550076, 0, 0, 0, 0, 0, 0, 11.893306, 1.4657376, -0.07474274),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0en8"]
+albedo_texture = ExtResource("2_5aja8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
+size = Vector3(12.076, 0.325, 0.46)
+
+[node name="Riel3D" type="Path3D" unique_id=68641506]
+curve = SubResource("Curve3D_lgcgk")
+debug_custom_color = Color(0.8392157, 0, 0.7921569, 1)
+script = ExtResource("1_tjswf")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=1633164146]
+transform = Transform3D(-4.371139e-08, 0, -0.99999887, 0, 0.99999887, 0, 1, 0, -4.371134e-08, -0.01929617, 1.4657376, 0.012864149)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=556665570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.31214812, 0, -1.1510558, -0.21491742)
+use_collision = true
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_q0en8")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1600815866]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1887657425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9239993, 1.2953038, -0.0481869)
+shape = SubResource("BoxShape3D_2bok1")

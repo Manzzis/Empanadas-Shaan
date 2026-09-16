@@ -18,7 +18,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tiug6"]
 lightmap_size_hint = Vector2i(17, 14)
 
-[node name="Personaje" type="CharacterBody3D" unique_id=1912633892]
+[node name="Personaje" type="CharacterBody3D" unique_id=1912633892 groups=["Player"]]
 script = ExtResource("1_hmyjb")
 
 [node name="Detector_de_area" type="Area3D" parent="." unique_id=678124192]
