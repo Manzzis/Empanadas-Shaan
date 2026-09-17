@@ -14,6 +14,9 @@ func on_process(delta: float) -> void:
 # Reemplaza esta función en tu script de Caminar
 func on_physics_process(delta: float) -> void:
 	moverse(delta)
+	
+	if jugador.riel_actual != null:
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
 
 func on_input(event: InputEvent) -> void:
 	pass

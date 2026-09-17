@@ -14,7 +14,7 @@ func iniciar() -> void:
 	riel = jugador.riel_actual
 
 	if not riel:
-		mi_maquina_de_estados.cambiar_a("Caer")
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
 		return
 
 	# 1. Encontrar el punto más cercano de la curva

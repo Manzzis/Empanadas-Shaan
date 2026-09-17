@@ -9,3 +9,6 @@ func on_physics_process(delta: float) -> void:
 			jugador.direccion_delantera = true
 		else:
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+	
+	if jugador.riel_actual != null:
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
