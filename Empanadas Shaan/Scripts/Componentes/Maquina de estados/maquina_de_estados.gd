@@ -40,7 +40,7 @@ func cambiar_a(nuevo_estado: String) -> void:
 		estado_actual.finalizar()
 	estado_actual = get_node(nuevo_estado)
 	iniciar_estado()
-	#print("estoy en ", estado_actual)
+	print("estoy en ", estado_actual)
 
 
 #		Para evitar que los estados particulares estén CONSTANTEMENTE atentos

@@ -17,7 +17,7 @@ var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var friccion_giro : float = 6.0
 
 var riel_actual : Riel3D = null
-@export var fuerza_salto : float = 12.0
+@export var fuerza_salto : float = 8.0
 var direccion_delantera : bool = false
 
 func _physics_process(delta: float) -> void:

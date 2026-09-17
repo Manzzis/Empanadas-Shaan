@@ -14,6 +14,9 @@ func on_process(delta: float) -> void:
 # Reemplaza esta función en tu script de Caminar
 func on_physics_process(delta: float) -> void:
 	moverse(delta)
+	
+	if jugador.riel_actual != null:
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
 
 func on_input(event: InputEvent) -> void:
 	pass
@@ -33,6 +36,9 @@ func on_unhandled_input(event: InputEvent) -> void:
 	else:
 		if event.is_action_released("Atras"):
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+	
+	if event.is_action_pressed("Salto"):
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
 
 
 func on_unhandled_key_input(event: InputEvent) -> void:
@@ -40,23 +46,26 @@ func on_unhandled_key_input(event: InputEvent) -> void:
 
 #######################################################################
 func moverse(delta):
-	# Dirección hacia adelante del jugador
-	var adelante := jugador.transform.basis.z
-	
-	# Dirección objetivo (normalizada para asegurar consistencia)
-	var direccion_objetivo := adelante.normalized() * direccion
-	var velocidad_objetivo := direccion_objetivo * jugador.velocidad
-	
-	# Creamos un vector temporal solo para el movimiento horizontal actual
-	var velocidad_horizontal_actual := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
-	var velocidad_horizontal_objetivo := Vector3(velocidad_objetivo.x, 0, velocidad_objetivo.z)
-	
-	# Aplicamos la aceleración a todo el vector horizontal al mismo tiempo
-	var nueva_velocidad_horizontal = velocidad_horizontal_actual.move_toward(
-		velocidad_horizontal_objetivo,
-		jugador.aceleracion * delta
-	)
-	
-	# Asignamos de vuelta los valores al jugador sin alterar la gravedad (Y)
-	jugador.velocity.x = nueva_velocidad_horizontal.x
-	jugador.velocity.z = nueva_velocidad_horizontal.z
+	if Input.is_action_pressed("Adelante") or Input.is_action_pressed("Atras"):
+		# Dirección hacia adelante del jugador
+		var adelante := jugador.transform.basis.z
+		
+		# Dirección objetivo (normalizada para asegurar consistencia)
+		var direccion_objetivo := adelante.normalized() * direccion
+		var velocidad_objetivo := direccion_objetivo * jugador.velocidad
+		
+		# Creamos un vector temporal solo para el movimiento horizontal actual
+		var velocidad_horizontal_actual := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
+		var velocidad_horizontal_objetivo := Vector3(velocidad_objetivo.x, 0, velocidad_objetivo.z)
+		
+		# Aplicamos la aceleración a todo el vector horizontal al mismo tiempo
+		var nueva_velocidad_horizontal = velocidad_horizontal_actual.move_toward(
+			velocidad_horizontal_objetivo,
+			jugador.aceleracion * delta
+		)
+		
+		# Asignamos de vuelta los valores al jugador sin alterar la gravedad (Y)
+		jugador.velocity.x = nueva_velocidad_horizontal.x
+		jugador.velocity.z = nueva_velocidad_horizontal.z
+	else:
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)

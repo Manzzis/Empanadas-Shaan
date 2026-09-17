@@ -17,6 +17,9 @@ func on_process(delta: float) -> void:
 
 func on_physics_process(delta: float) -> void:
 	calcular_friccion(delta)
+	
+	if jugador.riel_actual != null:
+		mi_maquina_de_estados.cambiar_a("Grindear")
 
 func on_input(event: InputEvent) -> void:
 	pass
@@ -29,7 +32,11 @@ func on_unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Atras"):
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caminar)
 		jugador.direccion_delantera = false
-
+	
+	if event.is_action_pressed("Salto"):
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
+		jugador.direccion_delantera = true
+	
 func on_unhandled_key_input(event: InputEvent) -> void:
 	pass
 
