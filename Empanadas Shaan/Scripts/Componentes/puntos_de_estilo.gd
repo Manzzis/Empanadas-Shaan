@@ -1,0 +1,1 @@
+class_name Puntos_de_estilo extends Node

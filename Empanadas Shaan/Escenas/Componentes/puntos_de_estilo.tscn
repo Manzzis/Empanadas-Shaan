@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c204jd4l38kfp"]
+
+[ext_resource type="Script" uid="uid://8lqwkyqhy1y6" path="res://Scripts/Componentes/puntos_de_estilo.gd" id="1_pfu26"]
+
+[node name="Puntos_de_estilo" type="Node" unique_id=1226940698]
+script = ExtResource("1_pfu26")
+metadata/_custom_type_script = "uid://8lqwkyqhy1y6"
