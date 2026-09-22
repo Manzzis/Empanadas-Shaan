@@ -12,7 +12,7 @@ extends Estados_de_jugador
 # el estado se cambia con:
 # mi_maquina_de_estados.cambiar_a(jugador.estados.elegimosEstado)
 
-func on_process(delta: float) -> void:
+func on_process(_delta: float) -> void:
 	pass
 
 func on_physics_process(delta: float) -> void:
@@ -21,7 +21,7 @@ func on_physics_process(delta: float) -> void:
 	if jugador.riel_actual != null:
 		mi_maquina_de_estados.cambiar_a("Grindear")
 
-func on_input(event: InputEvent) -> void:
+func on_input(_event: InputEvent) -> void:
 	pass
 
 func on_unhandled_input(event: InputEvent) -> void:
@@ -37,7 +37,7 @@ func on_unhandled_input(event: InputEvent) -> void:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
 		jugador.direccion_delantera = true
 	
-func on_unhandled_key_input(event: InputEvent) -> void:
+func on_unhandled_key_input(_event: InputEvent) -> void:
 	pass
 
 

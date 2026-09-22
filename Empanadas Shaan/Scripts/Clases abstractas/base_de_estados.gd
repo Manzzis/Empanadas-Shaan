@@ -15,17 +15,17 @@ func iniciar():
 func finalizar():
 	pass
 
-func on_process(delta: float) -> void:
+func on_process(_delta: float) -> void:
 	pass
 
-func on_physics_process(delta: float) -> void:
+func on_physics_process(_delta: float) -> void:
 	pass
 
-func on_input(event: InputEvent) -> void:
+func on_input(_event: InputEvent) -> void:
 	pass
 
-func on_unhandled_input(event: InputEvent) -> void:
+func on_unhandled_input(_event: InputEvent) -> void:
 	pass
 
-func on_unhandled_key_input(event: InputEvent) -> void:
+func on_unhandled_key_input(_event: InputEvent) -> void:
 	pass

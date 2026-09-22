@@ -18,7 +18,13 @@ metadata/_editor_floor_ = Vector3(0, 3, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.664836, 2.617597, 0)
 
 [node name="CSGPolygon3D" parent="Riel3D" index="1" unique_id=556665570]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.31214812, -14.723, -3.77, -0.215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.31214812, -14.723, -4.3100195, -0.215)
+
+[node name="Area3D" parent="Riel3D" index="2" unique_id=1600815866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22771025, 0)
+
+[node name="CollisionShape3D" parent="Riel3D/Area3D" index="0" unique_id=1887657425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.923999, 0.7368474, -0.0481869)
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("3_bws6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.520203, 3.3108215, 4.3750057)

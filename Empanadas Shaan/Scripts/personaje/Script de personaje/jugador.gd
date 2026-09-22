@@ -20,7 +20,10 @@ var riel_actual : Riel3D = null
 @export var fuerza_salto : float = 8.0
 var direccion_delantera : bool = false
 
-func _physics_process(delta: float) -> void:
+var grindeando = false
+
+
+func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
 	move_and_slide()
 	girar(delta)

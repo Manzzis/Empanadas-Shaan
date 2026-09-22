@@ -4,7 +4,7 @@ extends Estados_de_jugador
 var direccion : int
 
 
-func on_process(delta: float) -> void:
+func on_process(_delta: float) -> void:
 	if jugador.direccion_delantera:
 		direccion = 1
 	else:
@@ -18,7 +18,7 @@ func on_physics_process(delta: float) -> void:
 	if jugador.riel_actual != null:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
 
-func on_input(event: InputEvent) -> void:
+func on_input(_event: InputEvent) -> void:
 	pass
 
 
@@ -41,7 +41,7 @@ func on_unhandled_input(event: InputEvent) -> void:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
 
 
-func on_unhandled_key_input(event: InputEvent) -> void:
+func on_unhandled_key_input(_event: InputEvent) -> void:
 	pass
 
 #######################################################################

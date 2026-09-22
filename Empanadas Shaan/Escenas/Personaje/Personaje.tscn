@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bk3ufj6lkmu7y" path="res://Scripts/personaje/Script de personaje/jugador.gd" id="1_hmyjb"]
 [ext_resource type="PackedScene" uid="uid://bspp74fb3sen0" path="res://Scripts/Componentes/Maquina de estados/maquina_de_estados.tscn" id="1_omvbd"]
+[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets/placeholders/Dark/texture_04.png" id="2_f7uka"]
 [ext_resource type="Script" uid="uid://chtgmu6wbsymk" path="res://Scripts/personaje/estados/Idle.gd" id="2_tf8m5"]
 [ext_resource type="Script" uid="uid://jajrp681wwlk" path="res://Scripts/personaje/estados/Caminar.gd" id="3_826hx"]
 [ext_resource type="Script" uid="uid://bnuasv78neeyh" path="res://Scripts/personaje/estados/Correr.gd" id="5_eeicv"]
@@ -18,6 +19,16 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tiug6"]
 lightmap_size_hint = Vector2i(17, 14)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p776b"]
+albedo_texture = ExtResource("2_f7uka")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2bok1"]
+material = SubResource("StandardMaterial3D_p776b")
+size = Vector3(0.85876465, 0.10058594, 0.12109375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
+size = Vector3(1, 0.15478516, 1)
+
 [node name="Personaje" type="CharacterBody3D" unique_id=1912633892 groups=["Player"]]
 script = ExtResource("1_hmyjb")
 
@@ -33,6 +44,10 @@ shape = SubResource("CapsuleShape3D_hjg70")
 
 [node name="Apariencia" type="MeshInstance3D" parent="." unique_id=287398161]
 mesh = SubResource("CapsuleMesh_tiug6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Apariencia" unique_id=98326150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, 0.4479065)
+mesh = SubResource("BoxMesh_2bok1")
 
 [node name="maquina_de_estados" parent="." unique_id=793386976 node_paths=PackedStringArray("nodo_controlador", "estado_por_defecto") instance=ExtResource("1_omvbd")]
 nodo_controlador = NodePath("..")
@@ -64,3 +79,12 @@ script = ExtResource("10_uhqjo")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=823356304]
 transform = Transform3D(-1, 2.990035e-08, -8.2150535e-08, 0, 0.9396926, 0.34202012, 8.742278e-08, 0.34202012, -0.9396926, 0, 2, -3.5)
+
+[node name="GrindArea" type="Area3D" parent="." unique_id=1089078165]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrindArea" unique_id=1579173156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0190178, 0)
+shape = SubResource("BoxShape3D_2bok1")
+
+[connection signal="area_entered" from="GrindArea" to="maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
+[connection signal="area_entered" from="GrindArea" to="maquina_de_estados/Caer" method="_on_grind_area_area_entered"]
