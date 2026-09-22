@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bkjrtty31xkde"]
 
 [ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets/libreria de mallas/libreria_placeholder.tres" id="1_0j2eb"]
-[ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Nivel layout/Riel3D.tscn" id="2_bws6j"]
+[ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="2_bws6j"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="3_bws6j"]
 
 [node name="LvlTestGrind" type="Node3D" unique_id=468170464]

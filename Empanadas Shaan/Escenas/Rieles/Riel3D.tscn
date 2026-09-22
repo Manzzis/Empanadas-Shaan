@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bthvge2l6k4ew"]
 
-[ext_resource type="Script" uid="uid://bauiukcngpaga" path="res://Escenas/Nivel layout/Riel3D.gd" id="1_tjswf"]
+[ext_resource type="Script" uid="uid://bauiukcngpaga" path="res://Scripts/Elementos de juego/Riel/Riel3D.gd" id="1_tjswf"]
 [ext_resource type="Texture2D" uid="uid://dl1v87nc8ncyh" path="res://Assets/placeholders/Orange/texture_02.png" id="2_5aja8"]
 
 [sub_resource type="Curve3D" id="Curve3D_lgcgk"]
