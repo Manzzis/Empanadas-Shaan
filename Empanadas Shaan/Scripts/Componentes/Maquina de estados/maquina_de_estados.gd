@@ -1,13 +1,13 @@
 class_name Maquina_de_estados extends Node
-#		esta maquina es un componente, por lo que cualquier nodo puede controlarla
+#	esta maquina es un componente, por lo que cualquier nodo puede controlarla
 #	Para eso, simplemente le colocaremos la escena dueña de este script como hija
 #	del nodo objetivo. Además, crearemos una clase que sea hija de "Base de estados".
 #	Esa clase creada será la clase padre de todos los estados que vaya a utilizar ese nodo.
 
-#		referencia al nodo que controla, lo recibimos con inyección de dependencia
+#	referencia al nodo que controla, lo recibimos con inyección de dependencia
 @export var nodo_controlador : Node
 
-#		referencia directa al estado base que queremos de nuestro controlador,
+#	referencia directa al estado base que queremos de nuestro controlador,
 #	también lo inyectamos
 @export var estado_por_defecto : Base_de_estados
 
