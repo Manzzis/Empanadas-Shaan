@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bspp74fb3sen0"]
 
-[ext_resource type="Script" uid="uid://hpaxgkes5cnd" path="res://Scripts/Componentes/Maquina de estados/maquina_de_estados.gd" id="1_klqss"]
+[ext_resource type="Script" uid="uid://hpaxgkes5cnd" path="res://Scripts/Componentes/maquina_de_estados.gd" id="1_klqss"]
 
 [node name="maquina_de_estados" type="Node" unique_id=793386976 node_paths=PackedStringArray("nodo_controlador")]
 script = ExtResource("1_klqss")

@@ -5,7 +5,6 @@ class_name Estados_de_jugador extends Base_de_estados
 #esta var se usa en iniciar
 var jugador : Jugador
 
-
 func iniciar():
 	jugador = nodo_controlador
 	#ahora el nodo controlador ya no es tan misterioso para los estados del jugador,

@@ -1,20 +1,22 @@
 [gd_scene format=3 uid="uid://bhchrl4j2v56e"]
 
-[ext_resource type="Script" uid="uid://bk3ufj6lkmu7y" path="res://Scripts/personaje/Script de personaje/jugador.gd" id="1_hmyjb"]
-[ext_resource type="PackedScene" uid="uid://bspp74fb3sen0" path="res://Scripts/Componentes/Maquina de estados/maquina_de_estados.tscn" id="1_omvbd"]
+[ext_resource type="Script" uid="uid://bk3ufj6lkmu7y" path="res://Scripts/Elementos de juego/personaje/Script de personaje/jugador.gd" id="1_hmyjb"]
+[ext_resource type="PackedScene" uid="uid://bspp74fb3sen0" path="res://Escenas/Componentes/maquina_de_estados.tscn" id="1_omvbd"]
 [ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets/placeholders/Dark/texture_04.png" id="2_f7uka"]
-[ext_resource type="Script" uid="uid://chtgmu6wbsymk" path="res://Scripts/personaje/estados/Idle.gd" id="2_tf8m5"]
-[ext_resource type="Script" uid="uid://jajrp681wwlk" path="res://Scripts/personaje/estados/Caminar.gd" id="3_826hx"]
-[ext_resource type="Script" uid="uid://bnuasv78neeyh" path="res://Scripts/personaje/estados/Correr.gd" id="5_eeicv"]
-[ext_resource type="Script" uid="uid://nba0mwfv3vij" path="res://Scripts/personaje/estados/Saltar.gd" id="6_o5v03"]
-[ext_resource type="Script" uid="uid://bov0nengtvhpr" path="res://Scripts/personaje/estados/Grindear.gd" id="7_ub08g"]
-[ext_resource type="Script" uid="uid://p6vclpyadyts" path="res://Scripts/personaje/estados/Caer.gd" id="8_ifi3h"]
-[ext_resource type="Script" uid="uid://dobtau1pijtnf" path="res://Scripts/personaje/estados/Aterrizar.gd" id="9_n2fm8"]
-[ext_resource type="Script" uid="uid://cb0h1h7wp4l4v" path="res://Scripts/personaje/estados/Morir.gd" id="10_uhqjo"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tiug6"]
+[ext_resource type="Script" uid="uid://chtgmu6wbsymk" path="res://Scripts/Elementos de juego/personaje/estados/Idle.gd" id="2_tf8m5"]
+[ext_resource type="Script" uid="uid://jajrp681wwlk" path="res://Scripts/Elementos de juego/personaje/estados/Caminar.gd" id="3_826hx"]
+[ext_resource type="Script" uid="uid://bnuasv78neeyh" path="res://Scripts/Elementos de juego/personaje/estados/Correr.gd" id="5_eeicv"]
+[ext_resource type="Script" uid="uid://nba0mwfv3vij" path="res://Scripts/Elementos de juego/personaje/estados/Saltar.gd" id="6_o5v03"]
+[ext_resource type="Script" uid="uid://bov0nengtvhpr" path="res://Scripts/Elementos de juego/personaje/estados/Grindear.gd" id="7_ub08g"]
+[ext_resource type="Script" uid="uid://p6vclpyadyts" path="res://Scripts/Elementos de juego/personaje/estados/Caer.gd" id="8_ifi3h"]
+[ext_resource type="Script" uid="uid://dobtau1pijtnf" path="res://Scripts/Elementos de juego/personaje/estados/Aterrizar.gd" id="9_n2fm8"]
+[ext_resource type="Script" uid="uid://cb0h1h7wp4l4v" path="res://Scripts/Elementos de juego/personaje/estados/Morir.gd" id="10_uhqjo"]
+[ext_resource type="PackedScene" uid="uid://c204jd4l38kfp" path="res://Escenas/Componentes/puntos_de_estilo.tscn" id="12_p776b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
+size = Vector3(1, 0.15478516, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tiug6"]
 lightmap_size_hint = Vector2i(17, 14)
@@ -26,21 +28,18 @@ albedo_texture = ExtResource("2_f7uka")
 material = SubResource("StandardMaterial3D_p776b")
 size = Vector3(0.85876465, 0.10058594, 0.12109375)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
-size = Vector3(1, 0.15478516, 1)
-
 [node name="Personaje" type="CharacterBody3D" unique_id=1912633892 groups=["Player"]]
 script = ExtResource("1_hmyjb")
-
-[node name="Detector_de_area" type="Area3D" parent="." unique_id=678124192]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Detector_de_area" unique_id=2127772477]
-shape = SubResource("CapsuleShape3D_tiug6")
-debug_color = Color(1, 1, 1, 0.41960785)
 
 [node name="Colisionador_fisico" type="CollisionShape3D" parent="." unique_id=1978240468]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_hjg70")
+
+[node name="GrindArea" type="Area3D" parent="." unique_id=1089078165]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrindArea" unique_id=1579173156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0190178, 0)
+shape = SubResource("BoxShape3D_2bok1")
 
 [node name="Apariencia" type="MeshInstance3D" parent="." unique_id=287398161]
 mesh = SubResource("CapsuleMesh_tiug6")
@@ -49,42 +48,41 @@ mesh = SubResource("CapsuleMesh_tiug6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, 0.4479065)
 mesh = SubResource("BoxMesh_2bok1")
 
-[node name="maquina_de_estados" parent="." unique_id=793386976 node_paths=PackedStringArray("nodo_controlador", "estado_por_defecto") instance=ExtResource("1_omvbd")]
-nodo_controlador = NodePath("..")
+[node name="Componentes" type="Node" parent="." unique_id=1350525740]
+
+[node name="maquina_de_estados" parent="Componentes" unique_id=793386976 node_paths=PackedStringArray("nodo_controlador", "estado_por_defecto") instance=ExtResource("1_omvbd")]
+nodo_controlador = NodePath("../..")
 estado_por_defecto = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="maquina_de_estados" unique_id=1120065867]
+[node name="Idle" type="Node" parent="Componentes/maquina_de_estados" unique_id=1120065867]
 script = ExtResource("2_tf8m5")
 
-[node name="Caminar" type="Node" parent="maquina_de_estados" unique_id=725361117]
+[node name="Caminar" type="Node" parent="Componentes/maquina_de_estados" unique_id=725361117]
 script = ExtResource("3_826hx")
 
-[node name="Correr" type="Node" parent="maquina_de_estados" unique_id=1750759453]
+[node name="Correr" type="Node" parent="Componentes/maquina_de_estados" unique_id=1750759453]
 script = ExtResource("5_eeicv")
 
-[node name="Saltar" type="Node" parent="maquina_de_estados" unique_id=1027377821]
+[node name="Saltar" type="Node" parent="Componentes/maquina_de_estados" unique_id=1027377821]
 script = ExtResource("6_o5v03")
 
-[node name="Grindear" type="Node" parent="maquina_de_estados" unique_id=304778413]
+[node name="Grindear" type="Node" parent="Componentes/maquina_de_estados" unique_id=304778413]
 script = ExtResource("7_ub08g")
 
-[node name="Caer" type="Node" parent="maquina_de_estados" unique_id=2030737829]
+[node name="Caer" type="Node" parent="Componentes/maquina_de_estados" unique_id=2030737829]
 script = ExtResource("8_ifi3h")
 
-[node name="Aterrizar" type="Node" parent="maquina_de_estados" unique_id=1806392535]
+[node name="Aterrizar" type="Node" parent="Componentes/maquina_de_estados" unique_id=1806392535]
 script = ExtResource("9_n2fm8")
 
-[node name="Morir" type="Node" parent="maquina_de_estados" unique_id=357241378]
+[node name="Morir" type="Node" parent="Componentes/maquina_de_estados" unique_id=357241378]
 script = ExtResource("10_uhqjo")
 
+[node name="Puntos_de_estilo" parent="Componentes" unique_id=1226940698 node_paths=PackedStringArray("jugador") instance=ExtResource("12_p776b")]
+jugador = NodePath("../..")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=823356304]
-transform = Transform3D(-1, 2.990035e-08, -8.2150535e-08, 0, 0.9396926, 0.34202012, 8.742278e-08, 0.34202012, -0.9396926, 0, 2, -3.5)
+transform = Transform3D(-1, 2.9900352e-08, -8.215054e-08, 0, 0.9396927, 0.34202015, 8.742278e-08, 0.34202015, -0.9396927, 0, 2, -3.5)
 
-[node name="GrindArea" type="Area3D" parent="." unique_id=1089078165]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrindArea" unique_id=1579173156]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0190178, 0)
-shape = SubResource("BoxShape3D_2bok1")
-
-[connection signal="area_entered" from="GrindArea" to="maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
-[connection signal="area_entered" from="GrindArea" to="maquina_de_estados/Caer" method="_on_grind_area_area_entered"]
+[connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
+[connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Caer" method="_on_grind_area_area_entered"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bivugwdeo8gv0"]
+
+[ext_resource type="Script" uid="uid://bcwyfs7f377mh" path="res://Scripts/UI/barra_de_estilo.gd" id="1_xt6c1"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1796567116]
+
+[node name="BarraDeEstilo" type="Control" parent="." unique_id=1582873130]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_xt6c1")
+
+[node name="ProgressBar" type="ProgressBar" parent="BarraDeEstilo" unique_id=1048797227]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="BarraDeEstilo" unique_id=1470636643]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
