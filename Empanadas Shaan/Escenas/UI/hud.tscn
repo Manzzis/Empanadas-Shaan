@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bivugwdeo8gv0"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1796567116]
+
+[node name="BarraDeEstilo" type="Control" parent="." unique_id=1582873130]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="BarraDeEstilo" unique_id=1048797227]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="BarraDeEstilo" unique_id=1470636643]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
