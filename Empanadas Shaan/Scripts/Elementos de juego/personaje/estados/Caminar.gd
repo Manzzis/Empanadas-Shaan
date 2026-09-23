@@ -78,6 +78,8 @@ func comprobar_riel():
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
 
 func comprobar_velocidad():
+	if jugador.riel_actual != null:
+		return
 	var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
 	if velocidad_horizontal < 5.0:
 		menos_puntos_de_estilo.emit()
