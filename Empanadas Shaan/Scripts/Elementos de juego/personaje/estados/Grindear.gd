@@ -59,7 +59,7 @@ func iniciar() -> void:
 	else:
 		direccion_grind = -1.0
 	jugador.velocity = Vector3.ZERO
-	mas_puntos_de_estilo.emit()
+	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
 
 
 # NUEVO: Función que se ejecuta al salir del estado.

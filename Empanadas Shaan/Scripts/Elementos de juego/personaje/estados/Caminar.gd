@@ -6,7 +6,7 @@ var direccion : int
 func iniciar():
 	jugador = nodo_controlador
 	#enviamos señal al event bus del jugador
-	mas_puntos_de_estilo.emit()
+	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
 
 func on_process(_delta: float) -> void:
 	if jugador.direccion_delantera:
@@ -82,4 +82,4 @@ func comprobar_velocidad():
 		return
 	var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
 	if velocidad_horizontal < 5.0:
-		menos_puntos_de_estilo.emit()
+		EVENT_BUS_JUGADOR.reducir_pde_del_jugador.emit()

@@ -2,10 +2,11 @@ extends Node
 #Autoload que gestiona las señales referentes al jugador
 
 
-signal aumentar_pde_del_jugador
-func aumentar_pde():
-	aumentar_pde_del_jugador.emit()
 
+################################################
+#Señales desde los estados de Caminar, Saltar, Caer, Grindear y Idle
+#para actualizar los PDE del jugador
+################################################
+signal aumentar_pde_del_jugador
 signal reducir_pde_del_jugador
-func reducir_pde():
-	reducir_pde_del_jugador.emit()
+signal pde_actualizado(valor_pde : int)

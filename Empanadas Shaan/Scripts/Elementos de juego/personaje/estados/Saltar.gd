@@ -6,7 +6,7 @@ func iniciar() -> void:
 	# Aplicamos el impulso vertical
 	jugador.velocity.y = jugador.fuerza_salto
 	#enviamos señal al event bus del jugador
-	mas_puntos_de_estilo.emit()
+	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
 
 func on_physics_process(_delta: float) -> void:
 	if jugador.velocity.y < 0:

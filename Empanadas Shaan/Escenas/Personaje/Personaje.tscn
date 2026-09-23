@@ -68,8 +68,6 @@ script = ExtResource("6_o5v03")
 
 [node name="Grindear" type="Node" parent="Componentes/maquina_de_estados" unique_id=304778413]
 script = ExtResource("7_ub08g")
-velocidad_minima_grind = null
-impulso_salto_salida = null
 
 [node name="Caer" type="Node" parent="Componentes/maquina_de_estados" unique_id=2030737829]
 script = ExtResource("8_ifi3h")

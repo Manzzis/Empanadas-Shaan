@@ -68,4 +68,4 @@ func calcular_friccion(delta):
 func comprobar_velocidad():
 	var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
 	if velocidad_horizontal < 5.0:
-		menos_puntos_de_estilo.emit()
+		EVENT_BUS_JUGADOR.reducir_pde_del_jugador.emit()
