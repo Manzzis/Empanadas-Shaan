@@ -3,6 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets/libreria de mallas/libreria_placeholder.tres" id="1_0j2eb"]
 [ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="2_bws6j"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="3_bws6j"]
+[ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="4_jh4cl"]
 
 [node name="LvlTestGrind" type="Node3D" unique_id=468170464]
 
@@ -34,6 +35,8 @@ transform = Transform3D(-1, -3.0901752e-08, 8.177911e-08, 0, 0.93544406, 0.35347
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=434315690]
 transform = Transform3D(1, 0, 0, 0, 0.27487424, 0.9614802, 0, -0.9614802, 0.27487424, 0, 9.091118, 0)
+
+[node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("4_jh4cl")]
 
 [editable path="Riel3D"]
 [editable path="Personaje"]

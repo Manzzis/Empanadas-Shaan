@@ -11,10 +11,8 @@ func aumentar_pde():
 	if jugador.PDE < 10:
 		jugador.PDE = jugador.PDE + 1
 		EVENT_BUS_JUGADOR.pde_actualizado.emit(jugador.PDE)
-		print(jugador.PDE)
 
 func reducir_pde():
 	if jugador.PDE > 0:
 		jugador.PDE = 0
 		EVENT_BUS_JUGADOR.pde_actualizado.emit(jugador.PDE)
-		print(jugador.PDE)
