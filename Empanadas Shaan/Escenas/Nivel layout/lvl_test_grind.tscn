@@ -34,7 +34,7 @@ velocidad_minima_grind = 8.0
 impulso_salto_salida = 10.0
 
 [node name="Camera3D" parent="Personaje" index="4" unique_id=823356304]
-transform = Transform3D(-1, 2.990035e-08, -8.2150535e-08, 4.1891332e-10, 0.9413208, 0.3375134, 8.742177e-08, 0.3375134, -0.9413208, 0.61496544, 1.8756742, -2.4879856)
+transform = Transform3D(-1, -3.0901752e-08, 8.177911e-08, 0, 0.93544406, 0.35347486, -8.742278e-08, 0.35347486, -0.93544406, 0, 2, -3.5)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=434315690]
 transform = Transform3D(1, 0, 0, 0, 0.27487424, 0.9614802, 0, -0.9614802, 0.27487424, 0, 9.091118, 0)
