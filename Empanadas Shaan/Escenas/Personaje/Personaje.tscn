@@ -68,6 +68,8 @@ script = ExtResource("6_o5v03")
 
 [node name="Grindear" type="Node" parent="Componentes/maquina_de_estados" unique_id=304778413]
 script = ExtResource("7_ub08g")
+velocidad_minima_grind = null
+impulso_salto_salida = null
 
 [node name="Caer" type="Node" parent="Componentes/maquina_de_estados" unique_id=2030737829]
 script = ExtResource("8_ifi3h")
@@ -78,7 +80,8 @@ script = ExtResource("9_n2fm8")
 [node name="Morir" type="Node" parent="Componentes/maquina_de_estados" unique_id=357241378]
 script = ExtResource("10_uhqjo")
 
-[node name="Puntos_de_estilo" parent="Componentes" unique_id=1226940698 instance=ExtResource("12_p776b")]
+[node name="Puntos_de_estilo" parent="Componentes" unique_id=1226940698 node_paths=PackedStringArray("jugador") instance=ExtResource("12_p776b")]
+jugador = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=823356304]
 transform = Transform3D(-1, 2.9900352e-08, -8.215054e-08, 0, 0.9396927, 0.34202015, 8.742278e-08, 0.34202015, -0.9396927, 0, 2, -3.5)

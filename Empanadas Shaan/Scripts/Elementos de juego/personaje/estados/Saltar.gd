@@ -3,13 +3,14 @@ extends Estados_de_jugador
 
 func iniciar() -> void:
 	jugador = nodo_controlador
-	
 	# Aplicamos el impulso vertical
 	jugador.velocity.y = jugador.fuerza_salto
+	#enviamos señal al event bus del jugador
+	mas_puntos_de_estilo.emit()
 
 func on_physics_process(_delta: float) -> void:
 	if jugador.velocity.y < 0:
-		mi_maquina_de_estados.cambiar_a("Caer")
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
 	
 
 
@@ -19,7 +20,7 @@ func _on_grind_area_area_entered(area: Area3D) -> void:
 		return
 	
 	# 2. Consultamos si Grindear tiene el cooldown activo
-	var estado_grind = mi_maquina_de_estados.get_node_or_null("Grindear")
+	var estado_grind = mi_maquina_de_estados.get_node_or_null(jugador.estados.Grindear)
 	if estado_grind and not estado_grind.puede_grindear:
 		return
 		
@@ -28,4 +29,4 @@ func _on_grind_area_area_entered(area: Area3D) -> void:
 		var parent_path = area.get_parent()
 		if parent_path is Path3D:
 			jugador.riel_actual = parent_path
-			mi_maquina_de_estados.cambiar_a("Grindear")
+			mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)

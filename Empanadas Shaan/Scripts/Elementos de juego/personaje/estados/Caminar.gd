@@ -3,6 +3,10 @@ extends Estados_de_jugador
 
 var direccion : int
 
+func iniciar():
+	jugador = nodo_controlador
+	#enviamos señal al event bus del jugador
+	mas_puntos_de_estilo.emit()
 
 func on_process(_delta: float) -> void:
 	if jugador.direccion_delantera:
@@ -14,9 +18,8 @@ func on_process(_delta: float) -> void:
 # Reemplaza esta función en tu script de Caminar
 func on_physics_process(delta: float) -> void:
 	moverse(delta)
-	
-	if jugador.riel_actual != null:
-		mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
+	comprobar_riel()
+	comprobar_velocidad()
 
 func on_input(_event: InputEvent) -> void:
 	pass
@@ -69,3 +72,12 @@ func moverse(delta):
 		jugador.velocity.z = nueva_velocidad_horizontal.z
 	else:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+
+func comprobar_riel():
+	if jugador.riel_actual != null:
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
+
+func comprobar_velocidad():
+	var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
+	if velocidad_horizontal < 5.0:
+		menos_puntos_de_estilo.emit()

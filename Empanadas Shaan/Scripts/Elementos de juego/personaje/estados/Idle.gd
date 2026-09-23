@@ -17,9 +17,7 @@ func on_process(_delta: float) -> void:
 
 func on_physics_process(delta: float) -> void:
 	calcular_friccion(delta)
-	
-	if jugador.riel_actual != null:
-		mi_maquina_de_estados.cambiar_a("Grindear")
+	comprobar_velocidad()
 
 func on_input(_event: InputEvent) -> void:
 	pass
@@ -66,3 +64,8 @@ func calcular_friccion(delta):
 	# 5. Asignamos de vuelta al jugador conservando su gravedad intacta
 	jugador.velocity.x = nueva_vel_global.x
 	jugador.velocity.z = nueva_vel_global.z
+
+func comprobar_velocidad():
+	var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
+	if velocidad_horizontal < 5.0:
+		menos_puntos_de_estilo.emit()

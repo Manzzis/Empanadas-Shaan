@@ -8,6 +8,7 @@ func on_physics_process(_delta: float) -> void:
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Caminar)
 			jugador.direccion_delantera = true
 		else:
+			mas_puntos_de_estilo.emit()
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
 	
 

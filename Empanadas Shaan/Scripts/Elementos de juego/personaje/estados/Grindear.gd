@@ -26,12 +26,12 @@ func iniciar() -> void:
 
 	riel = jugador.riel_actual as Path3D
 	if not riel:
-		mi_maquina_de_estados.cambiar_a("Saltar")
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
 		return
 
 	path_follow = riel.get_node_or_null("PathFollow3D")
 	if not path_follow:
-		mi_maquina_de_estados.cambiar_a("Caer")
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
 		return
 
 	path_follow.loop = false
@@ -59,6 +59,7 @@ func iniciar() -> void:
 	else:
 		direccion_grind = -1.0
 	jugador.velocity = Vector3.ZERO
+	mas_puntos_de_estilo.emit()
 
 
 # NUEVO: Función que se ejecuta al salir del estado.
@@ -101,11 +102,11 @@ func _salir_del_riel() -> void:
 	var dir_salida = _obtener_direccion_avance()
 	jugador.velocity = dir_salida * velocidad_grind
 	jugador.velocity.y = 2.0 
-	mi_maquina_de_estados.cambiar_a("Caer")
+	mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
 
 func _salir_del_riel_con_salto() -> void:
 	activar_cooldown()
 	var dir_salida = _obtener_direccion_avance()
 	jugador.velocity = dir_salida * velocidad_grind
 	jugador.velocity.y = impulso_salto_salida
-	mi_maquina_de_estados.cambiar_a("Saltar")
+	mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)

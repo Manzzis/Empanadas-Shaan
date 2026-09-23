@@ -30,8 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.923999, 0.7368474, -0.04818
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.520203, 3.3108215, 4.3750057)
 
 [node name="Grindear" parent="Personaje/Componentes/maquina_de_estados" parent_id_path=PackedInt32Array(1912633892, 793386976) index="4" unique_id=304778413]
-velocidad_minima_grind = 8.0
-impulso_salto_salida = 10.0
+velocidad_minima_grind = null
+impulso_salto_salida = null
 
 [node name="Camera3D" parent="Personaje" index="4" unique_id=823356304]
 transform = Transform3D(-1, 2.990035e-08, -8.2150535e-08, 4.1891332e-10, 0.9413208, 0.3375134, 8.742177e-08, 0.3375134, -0.9413208, 0.61496544, 1.8756742, -2.4879856)

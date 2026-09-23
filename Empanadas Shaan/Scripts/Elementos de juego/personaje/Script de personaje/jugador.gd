@@ -22,6 +22,8 @@ var direccion_delantera : bool = false
 
 var grindeando = false
 
+@export var PDE : int #(Abreviación de Puntos de Estilo)
+
 
 func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
