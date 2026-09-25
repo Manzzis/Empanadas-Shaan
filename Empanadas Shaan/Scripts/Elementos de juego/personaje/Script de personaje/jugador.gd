@@ -5,7 +5,7 @@ class_name Jugador extends CharacterBody3D
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 
 var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+var ultimo_checkpoint: Vector3
 #estadísticas del jugador
 @export var velocidad : float = 10.0
 @export var aceleracion : float = 12.0
@@ -24,6 +24,8 @@ var grindeando = false
 
 @export var PDE : int #(Abreviación de Puntos de Estilo)
 
+func _ready() -> void:
+	ultimo_checkpoint = global_position
 
 func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
