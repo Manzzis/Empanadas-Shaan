@@ -23,6 +23,7 @@ var direccion_delantera : bool = false
 var grindeando = false
 
 @export var PDE : int #(Abreviación de Puntos de Estilo)
+@export var fuerza_dash : float = 20.0
 
 func _ready() -> void:
 	ultimo_checkpoint = global_position
@@ -73,3 +74,6 @@ func girar(delta: float) -> void:
 
 func handle_gravity(delta):
 	velocity.y -= gravedad * delta
+
+func get_adelante():
+	return global_transform.basis.z

@@ -12,7 +12,9 @@ func on_physics_process(_delta: float) -> void:
 	if jugador.velocity.y < 0:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
 	
-
+func on_unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Dash"):
+		EVENT_BUS_JUGADOR.usar_dash.emit()
 
 
 func _on_grind_area_area_entered(area: Area3D) -> void:

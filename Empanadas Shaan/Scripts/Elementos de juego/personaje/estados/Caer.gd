@@ -10,9 +10,10 @@ func on_physics_process(_delta: float) -> void:
 		else:
 			EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
-	
 
-
+func on_unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Dash"):
+		EVENT_BUS_JUGADOR.usar_dash.emit()
 
 
 func _on_grind_area_area_entered(area: Area3D) -> void:

@@ -35,6 +35,10 @@ func on_unhandled_input(event: InputEvent) -> void:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
 		jugador.direccion_delantera = true
 	
+	if event.is_action_pressed("Dash"):
+		EVENT_BUS_JUGADOR.usar_dash.emit()
+		jugador.direccion_delantera = true
+	
 func on_unhandled_key_input(_event: InputEvent) -> void:
 	pass
 

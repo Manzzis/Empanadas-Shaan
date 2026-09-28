@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://p6vclpyadyts" path="res://Scripts/Elementos de juego/personaje/estados/Caer.gd" id="8_ifi3h"]
 [ext_resource type="Script" uid="uid://dobtau1pijtnf" path="res://Scripts/Elementos de juego/personaje/estados/Aterrizar.gd" id="9_n2fm8"]
 [ext_resource type="Script" uid="uid://cb0h1h7wp4l4v" path="res://Scripts/Elementos de juego/personaje/estados/Morir.gd" id="10_uhqjo"]
+[ext_resource type="Script" uid="uid://b88iws73erm0g" path="res://Scripts/Elementos de juego/personaje/estados/Dashear.gd" id="12_hnnt1"]
 [ext_resource type="PackedScene" uid="uid://c204jd4l38kfp" path="res://Escenas/Componentes/puntos_de_estilo.tscn" id="12_p776b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
@@ -77,6 +78,9 @@ script = ExtResource("9_n2fm8")
 
 [node name="Morir" type="Node" parent="Componentes/maquina_de_estados" unique_id=357241378]
 script = ExtResource("10_uhqjo")
+
+[node name="Dashear" type="Node" parent="Componentes/maquina_de_estados" unique_id=1736931118]
+script = ExtResource("12_hnnt1")
 
 [node name="Puntos_de_estilo" parent="Componentes" unique_id=1226940698 node_paths=PackedStringArray("jugador") instance=ExtResource("12_p776b")]
 jugador = NodePath("../..")
