@@ -17,7 +17,7 @@ var ultimo_checkpoint: Vector3
 @export var friccion_giro : float = 6.0
 
 var riel_actual : Riel3D = null
-@export var fuerza_salto : float = 8.0
+@export var fuerza_salto : float = 6.0
 var direccion_delantera : bool = false
 
 var rampa_actual : Rampa = null
