@@ -3,6 +3,7 @@ class_name Estado_Grindear
 
 @export var velocidad_minima_grind := 8.0
 @export var impulso_salto_salida := 10.0
+@export var pies_jugador = 1.0 #cuando cambiemos el modelos lo ajustamos
 
 var riel : Path3D
 var path_follow : PathFollow3D
@@ -77,7 +78,7 @@ func on_physics_process(delta: float) -> void:
 
 	progreso_actual += velocidad_grind * direccion_grind * delta
 	path_follow.progress = progreso_actual
-	jugador.global_position = path_follow.global_position
+	jugador.global_position = path_follow.global_position + Vector3(0.0,pies_jugador,0.0)
 
 	if direccion_grind > 0:
 		jugador.global_rotation.y = path_follow.global_rotation.y + PI
