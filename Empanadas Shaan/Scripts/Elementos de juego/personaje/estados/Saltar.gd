@@ -3,8 +3,18 @@ extends Estados_de_jugador
 
 func iniciar() -> void:
 	jugador = nodo_controlador
-	# Aplicamos el impulso vertical
 	jugador.velocity.y = jugador.fuerza_salto
+	
+	if jugador.rampa_actual != null:
+		var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
+		if velocidad_horizontal > 5.0:
+			var normal = jugador.get_floor_normal()
+			var empuje_horizontal = Vector3(-normal.x, 0, -normal.z)
+			jugador.velocity += empuje_horizontal * jugador.fuerza_salto
+		else:
+			jugador.velocity.y = jugador.fuerza_salto
+	else:
+		jugador.velocity.y = jugador.fuerza_salto
 	#enviamos señal al event bus del jugador
 	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
 

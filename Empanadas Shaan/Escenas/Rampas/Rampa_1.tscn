@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://beytwbect050c"]
+
+[ext_resource type="Script" uid="uid://mjrq21eawlu3" path="res://Scripts/Elementos de juego/Rampa/rampa.gd" id="1_a5p1g"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_hjg70"]
+left_to_right = 0.9
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tiug6"]
+
+[node name="Area3D" type="Area3D" unique_id=353421338]
+script = ExtResource("1_a5p1g")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=174811226]
+transform = Transform3D(2.9267743, 0, 0, 0, 1.5330023, 0, 0, 0, 2.8641813, 0, 0, 0)
+use_collision = true
+mesh = SubResource("PrismMesh_hjg70")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=389985302]
+transform = Transform3D(3.1894276, 0, 0, 0, 1.8205769, 0, 0, 0, 2.9771621, 0, 0.08576238, 0)
+shape = SubResource("BoxShape3D_tiug6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

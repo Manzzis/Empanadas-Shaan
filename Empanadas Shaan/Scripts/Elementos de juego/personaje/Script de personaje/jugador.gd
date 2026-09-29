@@ -17,19 +17,23 @@ var ultimo_checkpoint: Vector3
 @export var friccion_giro : float = 6.0
 
 var riel_actual : Riel3D = null
-@export var fuerza_salto : float = 8.0
+@export var fuerza_salto : float = 6.0
 var direccion_delantera : bool = false
+
+var rampa_actual : Rampa = null
+@export var fuerza_deslizamiento : float = 15.0
 
 var grindeando = false
 
 @export var PDE : int #(Abreviación de Puntos de Estilo)
-@export var fuerza_dash : float = 20.0
+@export var fuerza_dash : float = 25.0
 
 func _ready() -> void:
 	ultimo_checkpoint = global_position
 
 func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
+	handle_deslizamiento(delta)
 	move_and_slide()
 	girar(delta)
 
@@ -77,3 +81,16 @@ func handle_gravity(delta):
 
 func get_adelante():
 	return global_transform.basis.z
+
+func handle_deslizamiento(delta):
+	if rampa_actual == null or not is_on_floor():
+		return
+	
+	var normal = get_floor_normal()
+	var direccion_deslizamiento = (Vector3.DOWN - normal * Vector3.DOWN.dot(normal))
+	
+	# ¿Está subiendo? Si la velocidad va contra la dirección de deslizamiento, no lo tocamos
+	if velocity.dot(-direccion_deslizamiento) > 0.1:
+		return
+	
+	velocity += direccion_deslizamiento * fuerza_deslizamiento * delta
