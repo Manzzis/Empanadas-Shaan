@@ -82,8 +82,9 @@ script = ExtResource("10_uhqjo")
 [node name="Dashear" type="Node" parent="Componentes/maquina_de_estados" unique_id=1736931118]
 script = ExtResource("12_hnnt1")
 
-[node name="Puntos_de_estilo" parent="Componentes" unique_id=1226940698 node_paths=PackedStringArray("jugador") instance=ExtResource("12_p776b")]
+[node name="Puntos_de_estilo" parent="Componentes" unique_id=1226940698 node_paths=PackedStringArray("jugador", "maquina_de_estados_del_jugador") instance=ExtResource("12_p776b")]
 jugador = NodePath("../..")
+maquina_de_estados_del_jugador = NodePath("../maquina_de_estados")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=823356304]
 transform = Transform3D(-1, 2.9900352e-08, -8.215054e-08, 0, 0.9396927, 0.34202015, 8.742278e-08, 0.34202015, -0.9396927, 0, 2, -3.5)
