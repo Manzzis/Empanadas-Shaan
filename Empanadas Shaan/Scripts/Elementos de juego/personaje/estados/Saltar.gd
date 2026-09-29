@@ -6,9 +6,13 @@ func iniciar() -> void:
 	jugador.velocity.y = jugador.fuerza_salto
 	
 	if jugador.rampa_actual != null:
-		var normal = jugador.get_floor_normal()
-		var empuje_horizontal = Vector3(-normal.x, 0, -normal.z)
-		jugador.velocity += empuje_horizontal * jugador.fuerza_salto
+		var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
+		if velocidad_horizontal > 5.0:
+			var normal = jugador.get_floor_normal()
+			var empuje_horizontal = Vector3(-normal.x, 0, -normal.z)
+			jugador.velocity += empuje_horizontal * jugador.fuerza_salto
+		else:
+			jugador.velocity.y = jugador.fuerza_salto
 	else:
 		jugador.velocity.y = jugador.fuerza_salto
 	#enviamos señal al event bus del jugador
