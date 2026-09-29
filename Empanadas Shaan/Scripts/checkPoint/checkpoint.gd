@@ -35,7 +35,7 @@ func _ready():
 	colision.position = Vector3(0, 1, 0)
 	add_child(colision)
 	
-	body_entered.connect(_on_body_entered)
+	
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and not activado:
