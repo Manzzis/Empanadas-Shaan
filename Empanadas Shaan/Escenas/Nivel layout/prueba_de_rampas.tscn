@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="3_2w2d7"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="4_sy7rq"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="5_gi2ri"]
+[ext_resource type="PackedScene" uid="uid://beytwbect050c" path="res://Escenas/Rampas/Rampa_1.tscn" id="6_2w2d7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gi2ri"]
 albedo_texture = ExtResource("1_iwnqm")
@@ -44,3 +45,6 @@ transform = Transform3D(-0.18562889, 0, 0.98261994, 0, 1, 0, -0.98261994, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 0.077731155, 0.99697435, 0, -0.99697435, 0.077731155, 0, 38.384735, 0)
 
 [node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("5_gi2ri")]
+
+[node name="Area3D" parent="." unique_id=353421338 instance=ExtResource("6_2w2d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.92471, 0.63804245, 0)

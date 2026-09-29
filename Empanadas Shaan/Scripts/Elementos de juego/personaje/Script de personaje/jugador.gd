@@ -20,6 +20,8 @@ var riel_actual : Riel3D = null
 @export var fuerza_salto : float = 8.0
 var direccion_delantera : bool = false
 
+var rampa_actual : Rampa = null
+
 var grindeando = false
 
 @export var PDE : int #(Abreviación de Puntos de Estilo)

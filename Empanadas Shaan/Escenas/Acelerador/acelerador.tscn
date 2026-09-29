@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bphunwswutu0h"]
 
 [ext_resource type="Script" uid="uid://bxajb106jgb3d" path="res://Escenas/Acelerador/acelerador.gd" id="1_81311"]
-[ext_resource type="Texture2D" uid="uid://dljir24hlhwa8" path="res://Assets/arrows.png" id="1_lsam4"]
+[ext_resource type="Texture2D" uid="uid://dljir24hlhwa8" path="res://Assets/acelerador/arrows.png" id="1_lsam4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk0j2"]
 transparency = 2
