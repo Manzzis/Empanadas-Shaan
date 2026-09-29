@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="4_jh4cl"]
 [ext_resource type="PackedScene" uid="uid://c76xu1581mj5h" path="res://Escenas/fallZone/fallzone.tscn" id="5_ti2yd"]
 [ext_resource type="PackedScene" uid="uid://b3t0et2bos2wj" path="res://Escenas/checkpoint/checkpoint.tscn" id="6_1eosy"]
+[ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="7_1eosy"]
 
 [node name="LvlTestGrind" type="Node3D" unique_id=468170464]
 
@@ -50,6 +51,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.077789, 2.5225763, -7.113
 
 [node name="Checkpoint2" parent="." unique_id=850080422 instance=ExtResource("6_1eosy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4864798, 2.99295, -7.9516883)
+
+[node name="Acelerador" parent="." unique_id=1317497417 instance=ExtResource("7_1eosy")]
+transform = Transform3D(0.0011605776, 0, 0.99999934, 0, 1, 0, -0.99999934, 0, 0.0011605776, 3, 3, -9)
+
+[node name="Acelerador2" parent="." unique_id=1811692492 instance=ExtResource("7_1eosy")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 0.84698963, 2.3176007, 14.616163)
 
 [editable path="Riel3D"]
 [editable path="Personaje"]

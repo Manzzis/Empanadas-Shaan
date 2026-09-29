@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://w5ct3vmhcce1"]
+
+[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets/placeholders/Dark/texture_04.png" id="1_iwnqm"]
+[ext_resource type="Texture2D" uid="uid://s44k4pndy3fs" path="res://Assets/placeholders/Purple/texture_02.png" id="2_gi2ri"]
+[ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="3_2w2d7"]
+[ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="4_sy7rq"]
+[ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="5_gi2ri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gi2ri"]
+albedo_texture = ExtResource("1_iwnqm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk0j2"]
+albedo_texture = ExtResource("2_gi2ri")
+
+[sub_resource type="PrismMesh" id="PrismMesh_2bok1"]
+material = SubResource("StandardMaterial3D_pk0j2")
+left_to_right = 0.9
+size = Vector3(5.87, 2.07, 3.075)
+
+[node name="Prueba de rampas" type="Node3D" unique_id=1686572532]
+
+[node name="piso" type="CSGBox3D" parent="." unique_id=1516493246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41845703, 0)
+use_collision = true
+size = Vector3(200, 1, 200)
+material = SubResource("StandardMaterial3D_gi2ri")
+
+[node name="Rampa" type="CSGMesh3D" parent="." unique_id=416596603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99533176, 0)
+use_collision = true
+mesh = SubResource("PrismMesh_2bok1")
+
+[node name="Acelerador" parent="." unique_id=1317497417 instance=ExtResource("3_2w2d7")]
+transform = Transform3D(0.13652618, 0, -0.99063647, 0, 1, 0, 0.99063647, 0, 0.13652618, -4.6747727, 1, 0.3139851)
+
+[node name="Acelerador2" parent="." unique_id=1773940282 instance=ExtResource("3_2w2d7")]
+transform = Transform3D(0.13652618, 0, -0.99063647, 0, 1, 0, 0.99063647, 0, 0.13652618, -4.6747727, 1, 5.289709)
+duracion_impulso = 1.0
+
+[node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("4_sy7rq")]
+transform = Transform3D(-0.18562889, 0, 0.98261994, 0, 1, 0, -0.98261994, 0, -0.18562889, -12.745211, 0.95438194, -0.4107461)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=800474995]
+transform = Transform3D(1, 0, 0, 0, 0.077731155, 0.99697435, 0, -0.99697435, 0.077731155, 0, 38.384735, 0)
+
+[node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("5_gi2ri")]

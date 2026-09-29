@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bphunwswutu0h"]
+
+[ext_resource type="Script" uid="uid://bxajb106jgb3d" path="res://Escenas/Acelerador/acelerador.gd" id="1_81311"]
+[ext_resource type="Texture2D" uid="uid://dljir24hlhwa8" path="res://Assets/arrows.png" id="1_lsam4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk0j2"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_lsam4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2bok1"]
+material = SubResource("StandardMaterial3D_pk0j2")
+size = Vector2(2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_adgpb"]
+size = Vector3(0.87527466, 0.068556786, 1.9928551)
+
+[sub_resource type="Animation" id="Animation_81311"]
+resource_name = "Animation_arrow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ovupq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fudn6"]
+_data = {
+&"Animation_arrow": SubResource("Animation_81311"),
+&"RESET": SubResource("Animation_ovupq")
+}
+
+[node name="Acelerador" type="Area3D" unique_id=1317497417]
+script = ExtResource("1_81311")
+duracion_impulso = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1923524781]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_2bok1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1043954823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028839111, -0.006474972, -0.002084732)
+shape = SubResource("BoxShape3D_adgpb")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1070288405]
+libraries/ = SubResource("AnimationLibrary_fudn6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
