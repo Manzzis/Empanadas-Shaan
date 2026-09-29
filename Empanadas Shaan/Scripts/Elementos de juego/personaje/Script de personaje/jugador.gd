@@ -21,6 +21,7 @@ var riel_actual : Riel3D = null
 var direccion_delantera : bool = false
 
 var rampa_actual : Rampa = null
+@export var fuerza_deslizamiento : float = 15.0
 
 var grindeando = false
 
@@ -32,6 +33,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
+	handle_deslizamiento(delta)
 	move_and_slide()
 	girar(delta)
 
@@ -79,3 +81,16 @@ func handle_gravity(delta):
 
 func get_adelante():
 	return global_transform.basis.z
+
+func handle_deslizamiento(delta):
+	if rampa_actual == null or not is_on_floor():
+		return
+	
+	var normal = get_floor_normal()
+	var direccion_deslizamiento = (Vector3.DOWN - normal * Vector3.DOWN.dot(normal))
+	
+	# ¿Está subiendo? Si la velocidad va contra la dirección de deslizamiento, no lo tocamos
+	if velocity.dot(-direccion_deslizamiento) > 0.1:
+		return
+	
+	velocity += direccion_deslizamiento * fuerza_deslizamiento * delta
