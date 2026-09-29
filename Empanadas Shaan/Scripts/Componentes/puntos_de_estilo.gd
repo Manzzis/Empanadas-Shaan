@@ -24,3 +24,4 @@ func calcular_pde():
 	if jugador.PDE >= 4:
 		jugador.PDE = jugador.PDE - costo_dash
 		maquina_de_estados_del_jugador.cambiar_a(jugador.estados.Dashear)
+		EVENT_BUS_JUGADOR.pde_actualizado.emit(jugador.PDE)

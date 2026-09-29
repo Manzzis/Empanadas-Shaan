@@ -1,7 +1,7 @@
 extends Estados_de_jugador
 # Lógica del estado DASHEAR del jugador
 
-@export var duracion_dash: float = 0.25  # Duración en segundos del dash
+@export var duracion_dash: float = 0.20  # Duración en segundos del dash
 var vector_dash: Vector3 = Vector3.ZERO
 
 func iniciar() -> void:
@@ -39,6 +39,12 @@ func _on_dash_terminado() -> void:
 	jugador.velocity.x = jugador.velocity.x / 4
 	jugador.velocity.z = jugador.velocity.z / 4
 	if jugador.is_on_floor():
-		mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+		var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
+		if velocidad_horizontal > 0.5:
+			mi_maquina_de_estados.cambiar_a(jugador.estados.Caminar)
+			jugador.direccion_delantera = true
+		else:
+			EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
+			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
 	else:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)

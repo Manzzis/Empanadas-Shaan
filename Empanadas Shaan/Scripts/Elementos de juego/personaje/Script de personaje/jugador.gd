@@ -25,7 +25,7 @@ var rampa_actual : Rampa = null
 var grindeando = false
 
 @export var PDE : int #(Abreviación de Puntos de Estilo)
-@export var fuerza_dash : float = 20.0
+@export var fuerza_dash : float = 25.0
 
 func _ready() -> void:
 	ultimo_checkpoint = global_position
