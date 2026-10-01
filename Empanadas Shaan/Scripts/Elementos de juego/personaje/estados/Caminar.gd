@@ -84,5 +84,5 @@ func comprobar_velocidad():
 	if jugador.riel_actual != null:
 		return
 	var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
-	if velocidad_horizontal < 5.0:
+	if velocidad_horizontal < 3.0:
 		EVENT_BUS_JUGADOR.reducir_pde_del_jugador.emit()

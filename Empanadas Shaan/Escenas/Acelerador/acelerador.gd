@@ -42,8 +42,8 @@ func _on_body_entered(body: Node3D) -> void:
 
 func _physics_process(delta: float) -> void:
 	tiempo_restante -= delta
-	actor.move_and_collide(Vector_impulso * delta)
-	actor.velocity = Vector_impulso
+	actor.velocity.x = Vector_impulso.x
+	actor.velocity.z = Vector_impulso.z
 	if tiempo_restante <= 0:
 		actor = null
 		set_physics_process(false)

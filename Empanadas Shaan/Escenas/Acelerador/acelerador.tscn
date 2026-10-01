@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://bphunwswutu0h"]
 
 [ext_resource type="Script" uid="uid://bxajb106jgb3d" path="res://Escenas/Acelerador/acelerador.gd" id="1_81311"]
-[ext_resource type="Texture2D" uid="uid://dljir24hlhwa8" path="res://Assets/acelerador/arrows.png" id="1_lsam4"]
+[ext_resource type="Texture2D" uid="uid://c21alfys2mq8e" path="res://Assets 3D y 2D/Modelos 2D/Acelerador.png" id="2_81311"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk0j2"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("1_lsam4")
+albedo_texture = ExtResource("2_81311")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2bok1"]
 material = SubResource("StandardMaterial3D_pk0j2")
-size = Vector2(2, 1)
+size = Vector2(0.87, 1.395)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_adgpb"]
 size = Vector3(0.87527466, 0.068556786, 1.9928551)
@@ -29,7 +29,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ovupq"]
@@ -58,7 +58,6 @@ script = ExtResource("1_81311")
 duracion_impulso = 2.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1923524781]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("PlaneMesh_2bok1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1043954823]

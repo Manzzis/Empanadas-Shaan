@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="4_sy7rq"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="5_gi2ri"]
 [ext_resource type="PackedScene" uid="uid://beytwbect050c" path="res://Escenas/Rampas/Rampa_1.tscn" id="6_2w2d7"]
+[ext_resource type="Texture2D" uid="uid://bamjf6d7pjrm5" path="res://Assets/placeholders/Orange/texture_05.png" id="7_sy7rq"]
+[ext_resource type="PackedScene" uid="uid://b684j60y13hgq" path="res://Assets 3D y 2D/Modelo 3D personaje/Rampa.blend" id="8_52qex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gi2ri"]
 albedo_texture = ExtResource("1_iwnqm")
@@ -18,10 +20,26 @@ material = SubResource("StandardMaterial3D_pk0j2")
 left_to_right = 0.9
 size = Vector3(5.87, 2.07, 3.075)
 
+[sub_resource type="PrismMesh" id="PrismMesh_52qex"]
+left_to_right = 0.9
+size = Vector3(40, 15, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxnkb"]
+albedo_texture = ExtResource("7_sy7rq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vr7dq"]
+size = Vector3(40, 15, 15)
+
 [node name="Prueba de rampas" type="Node3D" unique_id=1686572532]
 
 [node name="piso" type="CSGBox3D" parent="." unique_id=1516493246]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41845703, 0)
+use_collision = true
+size = Vector3(200, 1, 200)
+material = SubResource("StandardMaterial3D_gi2ri")
+
+[node name="piso2" type="CSGBox3D" parent="." unique_id=1680869084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.98657, 13.55529, 0)
 use_collision = true
 size = Vector3(200, 1, 200)
 material = SubResource("StandardMaterial3D_gi2ri")
@@ -33,6 +51,12 @@ mesh = SubResource("PrismMesh_2bok1")
 
 [node name="Acelerador" parent="." unique_id=1317497417 instance=ExtResource("3_2w2d7")]
 transform = Transform3D(0.13652618, 0, -0.99063647, 0, 1, 0, 0.99063647, 0, 0.13652618, -4.6747727, 1, 0.3139851)
+
+[node name="Acelerador3" parent="." unique_id=1297878401 instance=ExtResource("3_2w2d7")]
+transform = Transform3D(0.13652618, 0, -0.99063647, 0, 1, 0, 0.99063647, 0, 0.13652618, 33.678288, 1, 0.3139851)
+
+[node name="Acelerador4" parent="." unique_id=1911962557 instance=ExtResource("3_2w2d7")]
+transform = Transform3D(0.12322776, -0.43049216, -0.89414287, 0.05877345, 0.9025943, -0.42646125, 0.99063647, 0, 0.13652618, 56.666656, 8.485238, 0.3139851)
 
 [node name="Acelerador2" parent="." unique_id=1773940282 instance=ExtResource("3_2w2d7")]
 transform = Transform3D(0.13652618, 0, -0.99063647, 0, 1, 0, 0.99063647, 0, 0.13652618, -4.6747727, 1, 5.289709)
@@ -47,4 +71,20 @@ transform = Transform3D(1, 0, 0, 0, 0.077731155, 0.99697435, 0, -0.99697435, 0.0
 [node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("5_gi2ri")]
 
 [node name="Area3D" parent="." unique_id=353421338 instance=ExtResource("6_2w2d7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.92471, 0.63804245, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.92471, 2.6380424, -10.842173)
+
+[node name="Area3D2" parent="." unique_id=1840987761 instance=ExtResource("6_2w2d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.320522, 7.5305624, 0)
+
+[node name="CSGMesh3D" parent="Area3D2" index="0" unique_id=174811226]
+mesh = SubResource("PrismMesh_52qex")
+material = SubResource("StandardMaterial3D_mxnkb")
+
+[node name="CollisionShape3D" parent="Area3D2" index="1" unique_id=389985302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08576238, 0)
+shape = SubResource("BoxShape3D_vr7dq")
+
+[node name="Rampa2" parent="." unique_id=1252455260 instance=ExtResource("8_52qex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1694708, 13.060458)
+
+[editable path="Area3D2"]
