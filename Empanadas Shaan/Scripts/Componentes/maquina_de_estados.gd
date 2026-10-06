@@ -41,6 +41,7 @@ func cambiar_a(nuevo_estado: String) -> void:
 	estado_actual = get_node(nuevo_estado)
 	iniciar_estado()
 	print("estoy en ", estado_actual)
+	EVENT_BUS_JUGADOR.sonido_estado.emit(nuevo_estado)
 
 
 #		Para evitar que los estados particulares estén CONSTANTEMENTE atentos

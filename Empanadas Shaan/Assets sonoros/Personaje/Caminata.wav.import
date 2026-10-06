@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://yrr3kpebw0kx"
+path="res://.godot/imported/Caminata.wav-9e091d969db2634b3aecd48b725e43ee.sample"
+
+[deps]
+
+source_file="res://Assets sonoros/Personaje/Caminata.wav"
+dest_files=["res://.godot/imported/Caminata.wav-9e091d969db2634b3aecd48b725e43ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

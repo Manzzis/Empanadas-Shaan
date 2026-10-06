@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://cb0h1h7wp4l4v" path="res://Scripts/Elementos de juego/personaje/estados/Morir.gd" id="10_uhqjo"]
 [ext_resource type="Script" uid="uid://b88iws73erm0g" path="res://Scripts/Elementos de juego/personaje/estados/Dashear.gd" id="12_hnnt1"]
 [ext_resource type="PackedScene" uid="uid://c204jd4l38kfp" path="res://Escenas/Componentes/puntos_de_estilo.tscn" id="12_p776b"]
+[ext_resource type="AudioStream" uid="uid://yrr3kpebw0kx" path="res://Assets sonoros/Personaje/Caminata.wav" id="14_cqkky"]
+[ext_resource type="Script" uid="uid://cqjeupmilwj1j" path="res://Scripts/Elementos de juego/personaje/sonidos/Sonidos_jugador.gd" id="14_vivqc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 
@@ -85,6 +87,11 @@ script = ExtResource("12_hnnt1")
 [node name="Puntos_de_estilo" parent="Componentes" unique_id=1226940698 node_paths=PackedStringArray("jugador", "maquina_de_estados_del_jugador") instance=ExtResource("12_p776b")]
 jugador = NodePath("../..")
 maquina_de_estados_del_jugador = NodePath("../maquina_de_estados")
+
+[node name="Sonidos del jugador" type="AudioStreamPlayer3D" parent="Componentes" unique_id=176315020 node_paths=PackedStringArray("jugador")]
+stream = ExtResource("14_cqkky")
+script = ExtResource("14_vivqc")
+jugador = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=823356304]
 transform = Transform3D(-1, 2.9900352e-08, -8.215054e-08, 0, 0.9396927, 0.34202015, 8.742278e-08, 0.34202015, -0.9396927, 0, 2, -3.5)
