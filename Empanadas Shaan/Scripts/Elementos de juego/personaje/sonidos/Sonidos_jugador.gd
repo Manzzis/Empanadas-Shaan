@@ -1,6 +1,7 @@
 extends AudioStreamPlayer3D
 
 @export var jugador : Jugador
+
 @export var s_caminata : AudioStream
 @export var s_salto : AudioStream
 
