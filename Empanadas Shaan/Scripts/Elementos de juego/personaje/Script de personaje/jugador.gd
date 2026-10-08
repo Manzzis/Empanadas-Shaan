@@ -3,6 +3,7 @@ class_name Jugador extends CharacterBody3D
 
 #estados del jugador
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
+@onready var camera_component := $CameraComponent
 
 var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var ultimo_checkpoint: Vector3
@@ -30,6 +31,7 @@ var grindeando = false
 
 func _ready() -> void:
 	ultimo_checkpoint = global_position
+	camera_component.set_target(self)
 
 func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
@@ -43,44 +45,41 @@ func girar(delta: float) -> void:
 	if direccion_giro == 0:
 		return
 	
-	# 1. Calculamos cuánta velocidad horizontal tiene actualmente
 	var vel_horizontal := Vector3(velocity.x, 0, velocity.z)
 	var rapidez := vel_horizontal.length()
 	
-	# 2. CASO A: El jugador está quieto (o casi quieto) -> Gira sobre su eje
+	# CASO A: Giro sobre su eje si está casi detenido
 	if rapidez < 0.2:
 		rotation.y += direccion_giro * velocidad_giro * delta
 		
-	# 3. CASO B: El jugador se está desplazando -> Modifica la trayectoria
+	# CASO B: Ajuste de trayectoria en movimiento
 	else:
-		# Guardamos la dirección anterior en la que se movía
 		var direccion_movimiento_anterior := vel_horizontal.normalized()
 		
-		# Rotamos al personaje sobre su eje primero
 		rotation.y += direccion_giro * velocidad_giro * delta
 		
-		# Calculamos hacia dónde apunta ahora su frente local (su nueva intención)
-		var nuevo_frente := transform.basis.z.normalized()
+		var frente := get_adelante()
+		var va_hacia_adelante := velocity.dot(frente) >= 0.0
+		var dir_factor := 1.0 if va_hacia_adelante else -1.0
 		
-		# Aquí está el truco: interpolamos (mezclamos) suavemente la dirección 
-		# de movimiento vieja con la nueva orientación del cuerpo.
-		# Aceleracion_giro controlará qué tan cerrado o abierto da las curvas.
 		var nueva_direccion_movimiento = direccion_movimiento_anterior.move_toward(
-			nuevo_frente * (1.0 if velocity.dot(transform.basis.z) > 0 else -1.0), 
+			frente * dir_factor, 
 			aceleracion_giro * delta
 		)
 		
-		# Volvemos a aplicar la rapidez original al nuevo vector de dirección
 		var nueva_velocidad = nueva_direccion_movimiento.normalized() * rapidez
 		
 		velocity.x = nueva_velocidad.x
 		velocity.z = nueva_velocidad.z
 
+
 func handle_gravity(delta):
 	velocity.y -= gravedad * delta
 
-func get_adelante():
-	return global_transform.basis.z
+
+func get_adelante() -> Vector3:
+	return -global_transform.basis.z
+
 
 func handle_deslizamiento(delta):
 	if rampa_actual == null or not is_on_floor():

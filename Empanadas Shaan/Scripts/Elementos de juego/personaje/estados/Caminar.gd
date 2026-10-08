@@ -53,28 +53,25 @@ func on_unhandled_key_input(_event: InputEvent) -> void:
 #######################################################################
 func moverse(delta):
 	if Input.is_action_pressed("Adelante") or Input.is_action_pressed("Atras"):
-		# Dirección hacia adelante del jugador
-		var adelante := jugador.transform.basis.z
+		# Usamos la función helper del jugador que devuelve -global_transform.basis.z
+		var adelante := jugador.get_adelante()
 		
-		# Dirección objetivo (normalizada para asegurar consistencia)
 		var direccion_objetivo := adelante.normalized() * direccion
 		var velocidad_objetivo := direccion_objetivo * jugador.velocidad
 		
-		# Creamos un vector temporal solo para el movimiento horizontal actual
 		var velocidad_horizontal_actual := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
 		var velocidad_horizontal_objetivo := Vector3(velocidad_objetivo.x, 0, velocidad_objetivo.z)
 		
-		# Aplicamos la aceleración a todo el vector horizontal al mismo tiempo
 		var nueva_velocidad_horizontal = velocidad_horizontal_actual.move_toward(
 			velocidad_horizontal_objetivo,
 			jugador.aceleracion * delta
 		)
 		
-		# Asignamos de vuelta los valores al jugador sin alterar la gravedad (Y)
 		jugador.velocity.x = nueva_velocidad_horizontal.x
 		jugador.velocity.z = nueva_velocidad_horizontal.z
 	else:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+
 
 func comprobar_riel():
 	if jugador.riel_actual != null:

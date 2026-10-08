@@ -46,28 +46,27 @@ func on_unhandled_key_input(_event: InputEvent) -> void:
 #######################################################################################
 
 func calcular_friccion(delta):
-	# 1. Extraemos la velocidad horizontal global actual
 	var vel_global := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
 	
-	# 2. Traducimos la velocidad global a espacio LOCAL del jugador
-	# x_local será el movimiento lateral y z_local el movimiento adelante/atrás
-	var x_local := vel_global.dot(jugador.transform.basis.x)
-	var z_local := vel_global.dot(jugador.transform.basis.z)
+	# Usar GLOBAL_transform.basis para coincidir con la velocity global
+	var basis_x := jugador.global_transform.basis.x
+	var basis_z := jugador.global_transform.basis.z
 	
-	# 3. Aplicamos fricciones locales independientes
-	# En unos rollers, la fricción lateral suele ser más alta que la del rodamiento
-	var friccion_lateral := jugador.friccion_lateral  # Frena rápido el desplazamiento de lado
-	var friccion_rodamiento := jugador.friccion      # Frena más lento el avance
+	var x_local := vel_global.dot(basis_x)
+	var z_local := vel_global.dot(basis_z)
+	
+	var friccion_lateral := jugador.friccion_lateral  
+	var friccion_rodamiento := jugador.friccion      
 	
 	x_local = move_toward(x_local, 0.0, friccion_lateral * delta)
 	z_local = move_toward(z_local, 0.0, friccion_rodamiento * delta)
 	
-	# 4. Reconstruimos el vector reconstruyendo los ejes locales en el espacio del mundo
-	var nueva_vel_global := (jugador.transform.basis.x * x_local) + (jugador.transform.basis.z * z_local)
+	# Reconstruimos usando los mismos basis globales
+	var nueva_vel_global := (basis_x * x_local) + (basis_z * z_local)
 	
-	# 5. Asignamos de vuelta al jugador conservando su gravedad intacta
 	jugador.velocity.x = nueva_vel_global.x
 	jugador.velocity.z = nueva_vel_global.z
+
 
 func comprobar_velocidad():
 	var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
