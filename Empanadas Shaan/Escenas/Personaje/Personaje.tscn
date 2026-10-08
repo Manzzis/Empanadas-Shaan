@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cb0h1h7wp4l4v" path="res://Scripts/Elementos de juego/personaje/estados/Morir.gd" id="10_uhqjo"]
 [ext_resource type="Script" uid="uid://b88iws73erm0g" path="res://Scripts/Elementos de juego/personaje/estados/Dashear.gd" id="12_hnnt1"]
 [ext_resource type="PackedScene" uid="uid://c204jd4l38kfp" path="res://Escenas/Componentes/puntos_de_estilo.tscn" id="12_p776b"]
+[ext_resource type="PackedScene" uid="uid://bbslnn08p3eqt" path="res://Scripts/Componentes/camera_component.tscn" id="14_vivqc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 
@@ -46,7 +47,7 @@ shape = SubResource("BoxShape3D_2bok1")
 mesh = SubResource("CapsuleMesh_tiug6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Apariencia" unique_id=98326150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, 0.4479065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, -0.4784088)
 mesh = SubResource("BoxMesh_2bok1")
 
 [node name="Componentes" type="Node" parent="." unique_id=1350525740]
@@ -86,8 +87,25 @@ script = ExtResource("12_hnnt1")
 jugador = NodePath("../..")
 maquina_de_estados_del_jugador = NodePath("../maquina_de_estados")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=823356304]
-transform = Transform3D(-1, 2.9900352e-08, -8.215054e-08, 0, 0.9396927, 0.34202015, 8.742278e-08, 0.34202015, -0.9396927, 0, 2, -3.5)
+[node name="CameraComponent" parent="." unique_id=217961962 node_paths=PackedStringArray("nodo_visual_jugador") instance=ExtResource("14_vivqc")]
+nodo_visual_jugador = NodePath("../Apariencia")
+
+[node name="Camera3D" parent="CameraComponent" index="0" unique_id=1786293904]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 2.5)
+v_offset = 0.305
+
+[node name="PhantomCamera3D" parent="CameraComponent" index="1" unique_id=895822900 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 2.5)
+follow_target = NodePath("../..")
+follow_offset = Vector3(0, 0.29, 0)
+follow_distance = 2.5
+spring_length = 2.5
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
 
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Caer" method="_on_grind_area_area_entered"]
+
+[editable path="CameraComponent"]
