@@ -16,8 +16,6 @@
 [ext_resource type="Script" uid="uid://cknacadl0bh8t" path="res://Scripts/Elementos de juego/personaje/sonidos/Sonidos_jugador.gd" id="14_cqkky"]
 [ext_resource type="PackedScene" uid="uid://bbslnn08p3eqt" path="res://Scripts/Componentes/camera_component.tscn" id="14_vivqc"]
 [ext_resource type="AudioStream" uid="uid://yrr3kpebw0kx" path="res://Assets sonoros/Personaje/Caminata.wav" id="15_fv4g0"]
-[ext_resource type="AudioStream" uid="uid://2d486tb1xss" path="res://Assets sonoros/Personaje/Salto.wav" id="16_68xog"]
-[ext_resource type="AudioStream" uid="uid://dxekh47vdhmvo" path="res://Assets sonoros/Personaje/ChoqueConBarra.wav" id="17_720kk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 
@@ -91,12 +89,13 @@ script = ExtResource("12_hnnt1")
 jugador = NodePath("../..")
 maquina_de_estados_del_jugador = NodePath("../maquina_de_estados")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Componentes" unique_id=1601170465 node_paths=PackedStringArray("jugador")]
+[node name="Sonidos_jugador" type="Node" parent="Componentes" unique_id=320752970 node_paths=PackedStringArray("jugador", "s_caminar")]
 script = ExtResource("14_cqkky")
 jugador = NodePath("../..")
-s_caminar = ExtResource("15_fv4g0")
-s_saltar = ExtResource("16_68xog")
-s_grindear = ExtResource("17_720kk")
+s_caminar = NodePath("s_caminar")
+
+[node name="s_caminar" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1685255236]
+stream = ExtResource("15_fv4g0")
 
 [node name="CameraComponent" parent="." unique_id=217961962 node_paths=PackedStringArray("nodo_visual_jugador") instance=ExtResource("14_vivqc")]
 nodo_visual_jugador = NodePath("../Apariencia")
