@@ -2,8 +2,6 @@
 
 [ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets/libreria de mallas/libreria_placeholder.tres" id="1_7iiso"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="2_s5uh2"]
-[ext_resource type="AudioStream" uid="uid://yrr3kpebw0kx" path="res://Assets sonoros/Personaje/Caminata.wav" id="3_5u6k8"]
-[ext_resource type="AudioStream" uid="uid://2d486tb1xss" path="res://Assets sonoros/Personaje/Salto.wav" id="3_bddo6"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="3_vd8uk"]
 [ext_resource type="PackedScene" uid="uid://c76xu1581mj5h" path="res://Escenas/fallZone/fallzone.tscn" id="4_yw2ke"]
 [ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="5_yw2ke"]
@@ -63,14 +61,11 @@ metadata/_editor_floor_ = Vector3(30, 11, 0)
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("2_s5uh2")]
 transform = Transform3D(-0.050794832, 0, 0.9987091, 0, 1, 0, -0.9987091, 0, -0.050794832, -17.719769, 3.5769043, 4.3750057)
 
-
-
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
 transform = Transform3D(-0.05079496, 0, 0.9987092, 0, 1, 0, -0.9987092, 0, -0.05079496, -15.222997, 3.8669043, 4.2480187)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
 transform = Transform3D(1.0000002, 0, 1.1920929e-07, 0, 1, 0, -1.1920929e-07, 0, 1.0000002, -2.3841858e-07, 0.28999996, 2.499998)
-
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=974194551]
 transform = Transform3D(1, 0, 0, 0, 0.27487424, 0.9614802, 0, -0.9614802, 0.27487424, 0, 9.091118, 0)

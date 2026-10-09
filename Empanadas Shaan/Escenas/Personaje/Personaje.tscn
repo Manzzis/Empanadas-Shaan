@@ -13,10 +13,8 @@
 [ext_resource type="Script" uid="uid://cb0h1h7wp4l4v" path="res://Scripts/Elementos de juego/personaje/estados/Morir.gd" id="10_uhqjo"]
 [ext_resource type="Script" uid="uid://b88iws73erm0g" path="res://Scripts/Elementos de juego/personaje/estados/Dashear.gd" id="12_hnnt1"]
 [ext_resource type="PackedScene" uid="uid://c204jd4l38kfp" path="res://Escenas/Componentes/puntos_de_estilo.tscn" id="12_p776b"]
-
-
+[ext_resource type="Script" uid="uid://cknacadl0bh8t" path="res://Scripts/Componentes/Sonidos_jugador.gd" id="14_cqkky"]
 [ext_resource type="PackedScene" uid="uid://bbslnn08p3eqt" path="res://Scripts/Componentes/camera_component.tscn" id="14_vivqc"]
-
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 
@@ -50,7 +48,7 @@ shape = SubResource("BoxShape3D_2bok1")
 mesh = SubResource("CapsuleMesh_tiug6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Apariencia" unique_id=98326150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, -0.4784088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, 0.4746595)
 mesh = SubResource("BoxMesh_2bok1")
 
 [node name="Componentes" type="Node" parent="." unique_id=1350525740]
@@ -90,6 +88,8 @@ script = ExtResource("12_hnnt1")
 jugador = NodePath("../..")
 maquina_de_estados_del_jugador = NodePath("../maquina_de_estados")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Componentes" unique_id=1266731335]
+script = ExtResource("14_cqkky")
 
 [node name="CameraComponent" parent="." unique_id=217961962 node_paths=PackedStringArray("nodo_visual_jugador") instance=ExtResource("14_vivqc")]
 nodo_visual_jugador = NodePath("../Apariencia")
@@ -108,7 +108,6 @@ spring_length = 2.5
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 align_rotation_with_view = Callable()
-
 
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Caer" method="_on_grind_area_area_entered"]
