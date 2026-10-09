@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Empanadas Shaan"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+config/icon="res://Assets visuales/icon.svg"
 
 [autoload]
 

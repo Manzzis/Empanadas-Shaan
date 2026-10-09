@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://ddt3g3igf5qfy"]
 
-[ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets/libreria de mallas/libreria_placeholder.tres" id="1_7iiso"]
+[ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets visuales/libreria de mallas/libreria_placeholder.tres" id="1_7iiso"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="2_s5uh2"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="3_vd8uk"]
 [ext_resource type="PackedScene" uid="uid://c76xu1581mj5h" path="res://Escenas/fallZone/fallzone.tscn" id="4_yw2ke"]
 [ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="5_yw2ke"]
 [ext_resource type="PackedScene" uid="uid://beytwbect050c" path="res://Escenas/Rampas/Rampa_1.tscn" id="6_kwk5t"]
-[ext_resource type="Texture2D" uid="uid://bamjf6d7pjrm5" path="res://Assets/placeholders/Orange/texture_05.png" id="7_rvofi"]
+[ext_resource type="Texture2D" uid="uid://bamjf6d7pjrm5" path="res://Assets visuales/placeholders/Orange/texture_05.png" id="7_rvofi"]
 [ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="7_tfwc5"]
-[ext_resource type="Texture2D" uid="uid://j1m4y0rpkr8q" path="res://Assets/placeholders/Purple/texture_01.png" id="9_rvofi"]
+[ext_resource type="Texture2D" uid="uid://j1m4y0rpkr8q" path="res://Assets visuales/placeholders/Purple/texture_01.png" id="9_rvofi"]
 [ext_resource type="PackedScene" uid="uid://b3t0et2bos2wj" path="res://Escenas/checkpoint/checkpoint.tscn" id="10_gjc6x"]
 [ext_resource type="Script" uid="uid://bauiukcngpaga" path="res://Scripts/Elementos de juego/Riel/Riel3D.gd" id="11_vmr3n"]
-[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets/placeholders/Dark/texture_04.png" id="12_bddo6"]
+[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets visuales/placeholders/Dark/texture_04.png" id="12_bddo6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03eai"]
 albedo_texture = ExtResource("7_rvofi")
