@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://w5ct3vmhcce1"]
 
-[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets/placeholders/Dark/texture_04.png" id="1_iwnqm"]
-[ext_resource type="Texture2D" uid="uid://s44k4pndy3fs" path="res://Assets/placeholders/Purple/texture_02.png" id="2_gi2ri"]
+[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets visuales/placeholders/Dark/texture_04.png" id="1_iwnqm"]
+[ext_resource type="Texture2D" uid="uid://s44k4pndy3fs" path="res://Assets visuales/placeholders/Purple/texture_02.png" id="2_gi2ri"]
 [ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="3_2w2d7"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="4_sy7rq"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="5_gi2ri"]
 [ext_resource type="PackedScene" uid="uid://beytwbect050c" path="res://Escenas/Rampas/Rampa_1.tscn" id="6_2w2d7"]
-[ext_resource type="Texture2D" uid="uid://bamjf6d7pjrm5" path="res://Assets/placeholders/Orange/texture_05.png" id="7_sy7rq"]
-[ext_resource type="PackedScene" uid="uid://b684j60y13hgq" path="res://Assets 3D y 2D/Modelo 3D personaje/Rampa.blend" id="8_52qex"]
+[ext_resource type="Texture2D" uid="uid://bamjf6d7pjrm5" path="res://Assets visuales/placeholders/Orange/texture_05.png" id="7_sy7rq"]
+[ext_resource type="PackedScene" uid="uid://b684j60y13hgq" path="res://Assets visuales/Assets 3D y 2D/Modelo 3D personaje/Rampa.blend" id="8_52qex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gi2ri"]
 albedo_texture = ExtResource("1_iwnqm")

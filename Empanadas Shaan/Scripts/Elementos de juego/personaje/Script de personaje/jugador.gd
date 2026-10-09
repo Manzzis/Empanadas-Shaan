@@ -78,7 +78,7 @@ func handle_gravity(delta):
 
 
 func get_adelante() -> Vector3:
-	return -global_transform.basis.z
+	return global_transform.basis.z
 
 
 func handle_deslizamiento(delta):

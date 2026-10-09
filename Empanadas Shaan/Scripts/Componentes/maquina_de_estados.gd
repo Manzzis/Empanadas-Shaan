@@ -40,10 +40,15 @@ func cambiar_a(nuevo_estado: String) -> void:
 		estado_actual.finalizar()
 	estado_actual = get_node(nuevo_estado)
 	iniciar_estado()
+	print("Estado actual: ", estado_actual)
+
 	
-	if nodo_controlador and nodo_controlador.is_in_group("Jugador"):
-		EVENT_BUS_JUGADOR.estado_jugador_cambiado.emit (estado_actual)
-	print("estoy en ", estado_actual)
+	##################################################################
+	#esto no es genérico, pero sirve x ahora en Empanadas Shaan
+	if nodo_controlador and nodo_controlador.is_in_group("Player"):
+		EVENT_BUS_JUGADOR.estado_jugador_cambiado.emit (nuevo_estado)
+		EVENT_BUS_JUGADOR.sonido_estado.emit(nuevo_estado)
+	##################################################################
 
 
 #		Para evitar que los estados particulares estén CONSTANTEMENTE atentos

@@ -17,9 +17,8 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D:
+	if body is Jugador:
 		actor = body
-		
 		tiempo_restante = duracion_impulso
 		#igual que en dash, obtenemos el "adelante" del acelerador
 		# (deberia ser el adelante de las flechas)

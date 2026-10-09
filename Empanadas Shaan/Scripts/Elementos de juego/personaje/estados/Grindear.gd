@@ -52,10 +52,10 @@ func iniciar() -> void:
 		direccion_entrada = vel_horizontal.normalized()
 	else:
 		# Si cae totalmente quieto en vertical, usamos hacia dónde está mirando el modelo
-		direccion_entrada = -jugador.global_transform.basis.z
+		direccion_entrada = jugador.global_transform.basis.z
 	
-	var frente_riel = -path_follow.global_transform.basis.z
-	if direccion_entrada.dot(frente_riel) >= 0.0:
+	var frente_riel = path_follow.global_transform.basis.z
+	if direccion_entrada.dot(frente_riel) <= 0.0:
 		direccion_grind = 1.0
 	else:
 		direccion_grind = -1.0
@@ -81,9 +81,9 @@ func on_physics_process(delta: float) -> void:
 	jugador.global_position = path_follow.global_position + Vector3(0.0,pies_jugador,0.0)
 
 	if direccion_grind > 0:
-		jugador.global_rotation.y = path_follow.global_rotation.y 
+		jugador.global_rotation.y = path_follow.global_rotation.y  + PI
 	else:
-		jugador.global_rotation.y = path_follow.global_rotation.y + PI
+		jugador.global_rotation.y = path_follow.global_rotation.y
 
 	# Asegúrate de usar la acción de salto correcta aquí ("ui_accept" o la tuya)
 	if Input.is_action_just_pressed("ui_accept"): 

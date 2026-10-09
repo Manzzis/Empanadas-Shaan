@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lucftrrv7bvt"
+path="res://.godot/imported/BarraGrinding.wav-004caf0b5343dedc290aebd3b586a220.sample"
+
+[deps]
+
+source_file="res://Assets sonoros/Personaje/BarraGrinding.wav"
+dest_files=["res://.godot/imported/BarraGrinding.wav-004caf0b5343dedc290aebd3b586a220.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

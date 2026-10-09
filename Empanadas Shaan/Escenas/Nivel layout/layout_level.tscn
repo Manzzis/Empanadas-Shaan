@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bikxpud41a438"]
 
-[ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets/libreria de mallas/libreria_placeholder.tres" id="1_st6m5"]
+[ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets visuales/libreria de mallas/libreria_placeholder.tres" id="1_st6m5"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="2_s84xd"]
 
 [node name="layout level" type="Node3D" unique_id=75948867]

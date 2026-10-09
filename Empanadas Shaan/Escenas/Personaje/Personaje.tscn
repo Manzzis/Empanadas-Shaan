@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bk3ufj6lkmu7y" path="res://Scripts/Elementos de juego/personaje/Script de personaje/jugador.gd" id="1_hmyjb"]
 [ext_resource type="PackedScene" uid="uid://bspp74fb3sen0" path="res://Escenas/Componentes/maquina_de_estados.tscn" id="1_omvbd"]
-[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets/placeholders/Dark/texture_04.png" id="2_f7uka"]
+[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets visuales/placeholders/Dark/texture_04.png" id="2_f7uka"]
 [ext_resource type="Script" uid="uid://chtgmu6wbsymk" path="res://Scripts/Elementos de juego/personaje/estados/Idle.gd" id="2_tf8m5"]
 [ext_resource type="Script" uid="uid://jajrp681wwlk" path="res://Scripts/Elementos de juego/personaje/estados/Caminar.gd" id="3_826hx"]
 [ext_resource type="Script" uid="uid://bnuasv78neeyh" path="res://Scripts/Elementos de juego/personaje/estados/Correr.gd" id="5_eeicv"]
@@ -13,7 +13,12 @@
 [ext_resource type="Script" uid="uid://cb0h1h7wp4l4v" path="res://Scripts/Elementos de juego/personaje/estados/Morir.gd" id="10_uhqjo"]
 [ext_resource type="Script" uid="uid://b88iws73erm0g" path="res://Scripts/Elementos de juego/personaje/estados/Dashear.gd" id="12_hnnt1"]
 [ext_resource type="PackedScene" uid="uid://c204jd4l38kfp" path="res://Escenas/Componentes/puntos_de_estilo.tscn" id="12_p776b"]
+[ext_resource type="Script" uid="uid://cknacadl0bh8t" path="res://Scripts/Elementos de juego/personaje/sonidos/Sonidos_jugador.gd" id="14_cqkky"]
 [ext_resource type="PackedScene" uid="uid://bbslnn08p3eqt" path="res://Scripts/Componentes/camera_component.tscn" id="14_vivqc"]
+[ext_resource type="AudioStream" uid="uid://yrr3kpebw0kx" path="res://Assets sonoros/Personaje/Caminata.wav" id="15_fv4g0"]
+[ext_resource type="AudioStream" uid="uid://2d486tb1xss" path="res://Assets sonoros/Personaje/Salto.wav" id="16_68xog"]
+[ext_resource type="AudioStream" uid="uid://dxekh47vdhmvo" path="res://Assets sonoros/Personaje/ChoqueConBarra.wav" id="17_720kk"]
+[ext_resource type="AudioStream" uid="uid://benrnqyfp21qt" path="res://Assets sonoros/Personaje/Frenada.wav" id="18_68xog"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 
@@ -47,7 +52,7 @@ shape = SubResource("BoxShape3D_2bok1")
 mesh = SubResource("CapsuleMesh_tiug6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Apariencia" unique_id=98326150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, -0.4784088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, 0.4746595)
 mesh = SubResource("BoxMesh_2bok1")
 
 [node name="Componentes" type="Node" parent="." unique_id=1350525740]
@@ -87,6 +92,27 @@ script = ExtResource("12_hnnt1")
 jugador = NodePath("../..")
 maquina_de_estados_del_jugador = NodePath("../maquina_de_estados")
 
+[node name="Sonidos_jugador" type="Node" parent="Componentes" unique_id=320752970 node_paths=PackedStringArray("jugador", "s_caminar", "s_saltar", "s_grindear", "s_dashear")]
+script = ExtResource("14_cqkky")
+jugador = NodePath("../..")
+s_caminar = NodePath("s_caminar")
+s_saltar = NodePath("s_saltar")
+s_grindear = NodePath("s_grindear")
+s_dashear = NodePath("s_dashear")
+
+[node name="s_caminar" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1685255236]
+stream = ExtResource("15_fv4g0")
+
+[node name="s_saltar" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1388882285]
+stream = ExtResource("16_68xog")
+
+[node name="s_grindear" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=2030655605]
+stream = ExtResource("17_720kk")
+pitch_scale = 2.6
+
+[node name="s_dashear" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=69817254]
+stream = ExtResource("18_68xog")
+
 [node name="CameraComponent" parent="." unique_id=217961962 node_paths=PackedStringArray("nodo_visual_jugador") instance=ExtResource("14_vivqc")]
 nodo_visual_jugador = NodePath("../Apariencia")
 
@@ -107,5 +133,6 @@ align_rotation_with_view = Callable()
 
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Caer" method="_on_grind_area_area_entered"]
+[connection signal="finished" from="Componentes/Sonidos_jugador/s_grindear" to="Componentes/Sonidos_jugador" method="_on_s_grindear_finished"]
 
 [editable path="CameraComponent"]
