@@ -16,6 +16,7 @@ signal pde_actualizado(valor_pde : int)
 #para gastar los PDE del jugador en utilizar el DASH
 ################################################
 signal usar_dash
+
 ################################################
 
 
@@ -24,3 +25,10 @@ signal usar_dash
 ################################################
 signal sonido_estado(estado : String)
 ################################################
+
+################################################
+#Señales desde los estados de Caminar, Saltar, Caer y Idle
+#para que la camara limite sus comportamientos
+################################################
+
+signal estado_jugador_cambiado(nuevo_estado : String)
