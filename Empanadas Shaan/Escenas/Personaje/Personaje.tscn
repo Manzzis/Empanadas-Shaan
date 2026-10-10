@@ -102,16 +102,20 @@ s_dashear = NodePath("s_dashear")
 
 [node name="s_caminar" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1685255236]
 stream = ExtResource("15_fv4g0")
+bus = &"SFX"
 
 [node name="s_saltar" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1388882285]
 stream = ExtResource("16_68xog")
+bus = &"SFX"
 
 [node name="s_grindear" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=2030655605]
 stream = ExtResource("17_720kk")
 pitch_scale = 2.6
+bus = &"SFX"
 
 [node name="s_dashear" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=69817254]
 stream = ExtResource("18_68xog")
+bus = &"SFX"
 
 [node name="CameraComponent" parent="." unique_id=217961962 node_paths=PackedStringArray("nodo_visual_jugador") instance=ExtResource("14_vivqc")]
 nodo_visual_jugador = NodePath("../Apariencia")

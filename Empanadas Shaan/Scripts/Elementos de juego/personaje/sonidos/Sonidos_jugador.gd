@@ -26,6 +26,8 @@ func gestionar_sonido(estado : String):
 		jugador.estados.Dashear:
 			s_dashear.play()
 			grindeando = false
+		jugador.estados.Caer:
+			grindeando = false
 
 
 func _on_s_grindear_finished() -> void:
