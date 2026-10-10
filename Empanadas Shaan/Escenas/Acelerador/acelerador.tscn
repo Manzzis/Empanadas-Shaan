@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bphunwswutu0h"]
 
-[ext_resource type="Script" uid="uid://bxajb106jgb3d" path="res://Escenas/Acelerador/acelerador.gd" id="1_81311"]
+[ext_resource type="Script" uid="uid://bxajb106jgb3d" path="res://Scripts/Elementos de juego/Acelerador/acelerador.gd" id="1_81311"]
 [ext_resource type="Texture2D" uid="uid://c21alfys2mq8e" path="res://Assets visuales/Assets 3D y 2D/Modelos 2D/Acelerador.png" id="2_81311"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk0j2"]
