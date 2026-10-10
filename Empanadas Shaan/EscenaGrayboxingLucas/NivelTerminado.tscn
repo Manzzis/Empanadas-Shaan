@@ -2,6 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets visuales/libreria de mallas/libreria_placeholder.tres" id="1_1ie1v"]
 [ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="2_32dir"]
+[ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="3_ni5vk"]
 
 [node name="NivelLucas" type="Node3D" unique_id=1301037403]
 
@@ -16,3 +17,6 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 [node name="Riel3D" parent="." unique_id=68641506 instance=ExtResource("2_32dir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.385912, 12.202612, 2.5915637)
 visible = false
+
+[node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("3_ni5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8004274, 0)
