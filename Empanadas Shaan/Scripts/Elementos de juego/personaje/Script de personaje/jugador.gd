@@ -29,6 +29,9 @@ var grindeando = false
 @export var PDE : int #(Abreviación de Puntos de Estilo)
 @export var fuerza_dash : float = 25.0
 
+var monedas = 0
+@onready var texto_monedas = $CanvasLayer/Label
+
 func _ready() -> void:
 	ultimo_checkpoint = global_position
 	camera_component.set_target(self)
@@ -93,3 +96,7 @@ func handle_deslizamiento(delta):
 		return
 	
 	velocity += direccion_deslizamiento * fuerza_deslizamiento * delta
+	
+func sumar_moneda():
+	monedas += 1
+	texto_monedas.text = "Monedas: " + str(monedas)
