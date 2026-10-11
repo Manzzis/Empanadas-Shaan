@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c76xu1581mj5h" path="res://Escenas/fallZone/fallzone.tscn" id="5_ti2yd"]
 [ext_resource type="PackedScene" uid="uid://b3t0et2bos2wj" path="res://Escenas/checkpoint/checkpoint.tscn" id="6_1eosy"]
 [ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="7_1eosy"]
+[ext_resource type="PackedScene" uid="uid://cspom318tkpra" path="res://Escenas/recolectables/moneda.tscn" id="8_dxjry"]
 
 [node name="LvlTestGrind" type="Node3D" unique_id=468170464]
 
@@ -23,9 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.385912, 1.7072508, 2.59156
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("3_bws6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.520203, 3.5769043, 4.3750057)
+collision_layer = 3
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28999996, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.520203, 3.8669043, 6.8750057)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28999996, 2.5)
@@ -48,6 +50,13 @@ transform = Transform3D(0.0011605776, 0, 0.99999934, 0, 1, 0, -0.99999934, 0, 0.
 
 [node name="Acelerador2" parent="." unique_id=1811692492 instance=ExtResource("7_1eosy")]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 0.84698963, 2.3176007, 14.616163)
+
+[node name="Moneda" parent="." unique_id=2054624397 instance=ExtResource("8_dxjry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.035809, 3.4589782, -3.8088183)
+collision_mask = 2
+
+[node name="Moneda2" parent="." unique_id=1504363073 instance=ExtResource("8_dxjry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.023073, 2.8424459, -2.966236)
 
 [editable path="Personaje"]
 [editable path="Personaje/CameraComponent"]
