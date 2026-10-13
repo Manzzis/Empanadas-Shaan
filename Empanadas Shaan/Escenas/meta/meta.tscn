@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c5yes0la1is6y"]
+
+[ext_resource type="Script" uid="uid://ck1oyw417gase" path="res://Scripts/meta/meta.gd" id="1_newab"]
+[ext_resource type="PackedScene" uid="uid://c1d2iccce2bib" path="res://Escenas/UI/menu_victoria.tscn" id="2_qfmlv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
+size = Vector3(3.612793, 3, 4.0603027)
+
+[node name="Meta" type="Area3D" unique_id=2025806239]
+process_mode = 3
+script = ExtResource("1_newab")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=604649343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_2bok1")
+debug_color = Color(0.8156863, 0.14117648, 0.67058825, 1)
+
+[node name="Menu_Victoria" parent="." unique_id=1409841631 instance=ExtResource("2_qfmlv")]
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

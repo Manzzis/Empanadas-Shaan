@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dao7ec258t73q"]
+
+[ext_resource type="Script" uid="uid://8wnv75gmr23c" path="res://Scripts/UI/main_menu.gd" id="1_24ck4"]
+
+[node name="Main_Menu" type="Control" unique_id=140484158]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_24ck4")
+
+[node name="Panel" type="Panel" parent="." unique_id=748201869]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1502767433]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.5
+offset_top = -85.5
+offset_right = 126.50037
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 48
+
+[node name="Comenzar" type="Button" parent="VBoxContainer" unique_id=1856578995]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Comenzar"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=1091401215]
+layout_mode = 2
+theme_override_font_sizes/font_size = 59
+text = "Salir
+"
+
+[connection signal="pressed" from="VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
