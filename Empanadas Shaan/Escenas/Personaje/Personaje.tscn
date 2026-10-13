@@ -118,6 +118,16 @@ bus = &"SFX"
 stream = ExtResource("18_68xog")
 bus = &"SFX"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=353256433]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=259169995]
+offset_left = 79.0
+offset_top = 26.0
+offset_right = 300.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 40
+text = "Monedas: 0"
+
 [node name="CameraComponent" parent="." unique_id=217961962 node_paths=PackedStringArray("nodo_visual_jugador") instance=ExtResource("14_vivqc")]
 nodo_visual_jugador = NodePath("../Apariencia")
 
@@ -132,19 +142,13 @@ follow_target = NodePath("../..")
 follow_offset = Vector3(0, 0.29, 0)
 follow_distance = 2.5
 spring_length = 2.5
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=353256433]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=259169995]
-offset_left = 79.0
-offset_top = 26.0
-offset_right = 300.0
-offset_bottom = 81.0
-theme_override_font_sizes/font_size = 40
-text = "Monedas: 0"
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
 
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Caer" method="_on_grind_area_area_entered"]
+[connection signal="finished" from="Componentes/Sonidos_jugador/s_caminar" to="Componentes/Sonidos_jugador" method="_on_s_caminar_finished"]
 [connection signal="finished" from="Componentes/Sonidos_jugador/s_grindear" to="Componentes/Sonidos_jugador" method="_on_s_grindear_finished"]
 
 [editable path="CameraComponent"]

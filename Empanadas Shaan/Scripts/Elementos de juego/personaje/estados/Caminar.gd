@@ -41,7 +41,10 @@ func on_unhandled_input(event: InputEvent) -> void:
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
 	
 	if event.is_action_pressed("Salto"):
-		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
+		if jugador.is_on_floor():
+			mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
+		else:
+			return
 	
 	if event.is_action_pressed("Dash"):
 		EVENT_BUS_JUGADOR.usar_dash.emit()
