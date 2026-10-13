@@ -76,6 +76,7 @@ layout_mode = 2
 text = "Sonido global"
 
 [node name="sonido_global_control_deslizante" type="HSlider" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=2018252876]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
@@ -87,17 +88,19 @@ layout_mode = 2
 text = "Música"
 
 [node name="music_control_deslizante" type="HSlider" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=807122523]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
-value = 0.75
+value = 0.2
 
 [node name="SFX_label" type="Label" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=599946919]
 layout_mode = 2
 text = "SFX"
 
 [node name="SFX_control_deslizante" type="HSlider" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=1147757312]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0

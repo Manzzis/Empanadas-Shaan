@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bo0lhkhwuv72j"
-path="res://.godot/imported/Rampa.wav-213c14cd1e41fa38e83be12b6d68c64a.sample"
+path="res://.godot/imported/Rampa.wav-6b927f5392b77c4cd0d36a98a120736d.sample"
 
 [deps]
 
-source_file="res://Assets sonoros/Rampa.wav"
-dest_files=["res://.godot/imported/Rampa.wav-213c14cd1e41fa38e83be12b6d68c64a.sample"]
+source_file="res://Assets sonoros/Elementos de juego/Rampa/Rampa.wav"
+dest_files=["res://.godot/imported/Rampa.wav-6b927f5392b77c4cd0d36a98a120736d.sample"]
 
 [params]
 

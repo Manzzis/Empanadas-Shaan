@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://2d486tb1xss"
-path="res://.godot/imported/Salto.wav-19a5fb65d9efc2c26149ce464c5e4e67.sample"
+path="res://.godot/imported/Salto.wav-979f2ca5218f9aff8aabf6270daf7f7b.sample"
 
 [deps]
 
-source_file="res://Assets sonoros/Personaje/Salto.wav"
-dest_files=["res://.godot/imported/Salto.wav-19a5fb65d9efc2c26149ce464c5e4e67.sample"]
+source_file="res://Assets sonoros/Elementos de juego/Personaje/Salto.wav"
+dest_files=["res://.godot/imported/Salto.wav-979f2ca5218f9aff8aabf6270daf7f7b.sample"]
 
 [params]
 
