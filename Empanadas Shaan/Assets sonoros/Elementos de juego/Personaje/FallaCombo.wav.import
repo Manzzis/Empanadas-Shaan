@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://clpb427xu6xnx"
-path="res://.godot/imported/FallaCombo.wav-aa2747ad7a91d2030fbc3a26a93b5d62.sample"
+path="res://.godot/imported/FallaCombo.wav-f7f85b2ac842398ecf3dbeba6488da49.sample"
 
 [deps]
 
-source_file="res://Assets sonoros/Personaje/FallaCombo.wav"
-dest_files=["res://.godot/imported/FallaCombo.wav-aa2747ad7a91d2030fbc3a26a93b5d62.sample"]
+source_file="res://Assets sonoros/Elementos de juego/Personaje/FallaCombo.wav"
+dest_files=["res://.godot/imported/FallaCombo.wav-f7f85b2ac842398ecf3dbeba6488da49.sample"]
 
 [params]
 

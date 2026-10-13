@@ -1,6 +1,6 @@
 extends Node
 #Autoload que gestiona las señales referentes al jugador
-
+@warning_ignore_start("unused_signal")
 
 ################################################
 #Señales desde los estados de Caminar, Saltar, Caer, Grindear y Idle
@@ -32,3 +32,8 @@ signal sonido_estado(estado : String)
 ################################################
 
 signal estado_jugador_cambiado(nuevo_estado : String)
+
+
+
+
+@warning_ignore_restore("unused_signal")

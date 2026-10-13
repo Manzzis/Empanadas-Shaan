@@ -26,7 +26,7 @@ func _on_body_entered(body: Node3D) -> void:
 		#igual que en dash, obtenemos el "adelante" del acelerador
 		# (deberia ser el adelante de las flechas)
 		
-		var direccion_impulso = actor.global_transform.basis.z
+		direccion_impulso = actor.global_transform.basis.z
 		direccion_impulso.y = 0
 		direccion_impulso = direccion_impulso.normalized()
 		

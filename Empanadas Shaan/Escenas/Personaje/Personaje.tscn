@@ -15,10 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://c204jd4l38kfp" path="res://Escenas/Componentes/puntos_de_estilo.tscn" id="12_p776b"]
 [ext_resource type="Script" uid="uid://cknacadl0bh8t" path="res://Scripts/Elementos de juego/personaje/sonidos/Sonidos_jugador.gd" id="14_cqkky"]
 [ext_resource type="PackedScene" uid="uid://bbslnn08p3eqt" path="res://Scripts/Componentes/camera_component.tscn" id="14_vivqc"]
-[ext_resource type="AudioStream" uid="uid://yrr3kpebw0kx" path="res://Assets sonoros/Personaje/Caminata.wav" id="15_fv4g0"]
-[ext_resource type="AudioStream" uid="uid://2d486tb1xss" path="res://Assets sonoros/Personaje/Salto.wav" id="16_68xog"]
-[ext_resource type="AudioStream" uid="uid://dxekh47vdhmvo" path="res://Assets sonoros/Personaje/ChoqueConBarra.wav" id="17_720kk"]
-[ext_resource type="AudioStream" uid="uid://benrnqyfp21qt" path="res://Assets sonoros/Personaje/Frenada.wav" id="18_68xog"]
+[ext_resource type="AudioStream" uid="uid://yrr3kpebw0kx" path="res://Assets sonoros/Elementos de juego/Personaje/Caminata.wav" id="15_fv4g0"]
+[ext_resource type="AudioStream" uid="uid://2d486tb1xss" path="res://Assets sonoros/Elementos de juego/Personaje/Salto.wav" id="16_68xog"]
+[ext_resource type="AudioStream" uid="uid://dxekh47vdhmvo" path="res://Assets sonoros/Elementos de juego/Personaje/ChoqueConBarra.wav" id="17_720kk"]
+[ext_resource type="AudioStream" uid="uid://benrnqyfp21qt" path="res://Assets sonoros/Elementos de juego/Personaje/Frenada.wav" id="18_68xog"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 
@@ -132,9 +132,6 @@ follow_target = NodePath("../..")
 follow_offset = Vector3(0, 0.29, 0)
 follow_distance = 2.5
 spring_length = 2.5
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=353256433]
 

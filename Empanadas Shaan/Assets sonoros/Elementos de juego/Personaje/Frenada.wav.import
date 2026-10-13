@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://benrnqyfp21qt"
-path="res://.godot/imported/Frenada.wav-60e544f4e1cf1bbeb37251ed73b07f2f.sample"
+path="res://.godot/imported/Frenada.wav-89c7ef152a686a710e5435764c223bd4.sample"
 
 [deps]
 
-source_file="res://Assets sonoros/Personaje/Frenada.wav"
-dest_files=["res://.godot/imported/Frenada.wav-60e544f4e1cf1bbeb37251ed73b07f2f.sample"]
+source_file="res://Assets sonoros/Elementos de juego/Personaje/Frenada.wav"
+dest_files=["res://.godot/imported/Frenada.wav-89c7ef152a686a710e5435764c223bd4.sample"]
 
 [params]
 

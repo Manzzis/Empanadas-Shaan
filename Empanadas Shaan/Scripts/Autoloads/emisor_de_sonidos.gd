@@ -1,6 +1,7 @@
 extends Node
 #Esta escena autoload crea la señal de los sonidos del entorno
 #Luego, al ser emitida esta señal, la escucha y ejecuta el sonido que debe reproducir
+#Además, reproduce la musiquita del juego
 
 @onready var moneda: AudioStreamPlayer = $Moneda
 @onready var acelerador: AudioStreamPlayer = $Acelerador
