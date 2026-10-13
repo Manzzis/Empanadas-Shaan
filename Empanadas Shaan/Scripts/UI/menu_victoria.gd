@@ -1,6 +1,4 @@
-extends CanvasLayer
-
-
+extends Control
 
 
 func _on_volver_menu_pressed() -> void:

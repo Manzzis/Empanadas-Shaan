@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dkfwb4u86vtqm" path="res://Scripts/UI/menu_victoria.gd" id="1_o4a4p"]
 
-[node name="Menu_Victoria" type="CanvasLayer" unique_id=1409841631]
-script = ExtResource("1_o4a4p")
-
-[node name="Control" type="Control" parent="." unique_id=619146668]
+[node name="Menu_Victoria" type="Control" unique_id=619146668]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o4a4p")
 
-[node name="Panel" type="Panel" parent="Control" unique_id=1502705362]
+[node name="Panel" type="Panel" parent="." unique_id=1502705362]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control" unique_id=1912475027]
+[node name="Label" type="Label" parent="." unique_id=1912475027]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,7 +38,8 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "¡Victoria!"
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Control" unique_id=1316673942]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=1316673942]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,15 +54,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 22
 
-[node name="volver_menu" type="Button" parent="Control/HBoxContainer" unique_id=1142619038]
+[node name="volver_menu" type="Button" parent="HBoxContainer" unique_id=1142619038]
+process_mode = 3
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Volver al menu"
 
-[node name="salir" type="Button" parent="Control/HBoxContainer" unique_id=772322454]
+[node name="salir" type="Button" parent="HBoxContainer" unique_id=772322454]
+process_mode = 3
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Salir"
 
-[connection signal="pressed" from="Control/HBoxContainer/volver_menu" to="." method="_on_volver_menu_pressed"]
-[connection signal="pressed" from="Control/HBoxContainer/salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="HBoxContainer/volver_menu" to="." method="_on_volver_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/salir" to="." method="_on_salir_pressed"]
