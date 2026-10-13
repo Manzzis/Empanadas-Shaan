@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ftlh3"]
 
-[node name="Checkpoint" type="Area3D" unique_id=1552532096]
+[node name="Checkpoint" type="Area3D" unique_id=1552532096 groups=["Checkpoint"]]
 script = ExtResource("1_mejvp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1734687957]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bhuaccqd82ajq"
-path="res://.godot/imported/ComboCompuesto.wav-40888c147c2b24b3027993673b6b3906.sample"
+path="res://.godot/imported/ComboCompuesto.wav-c37c86f838cb18adc3e43c84a834b2a8.sample"
 
 [deps]
 
-source_file="res://Assets sonoros/Personaje/ComboCompuesto.wav"
-dest_files=["res://.godot/imported/ComboCompuesto.wav-40888c147c2b24b3027993673b6b3906.sample"]
+source_file="res://Assets sonoros/Acelerador/ComboCompuesto.wav"
+dest_files=["res://.godot/imported/ComboCompuesto.wav-c37c86f838cb18adc3e43c84a834b2a8.sample"]
 
 [params]
 

@@ -5,7 +5,7 @@ var jugador : Jugador
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Jugador:
-		EmisorDeSonidos.emitir_sonido.emit()
+		EmisorDeSonidos.emitir_sonido.emit("Rampa")
 		jugador = body
 		jugador.rampa_actual = self
 

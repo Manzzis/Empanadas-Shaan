@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://xwf0nenyuj6a"]
 
 [ext_resource type="Script" uid="uid://2qsomlxc1d6c" path="res://Scripts/Autoloads/emisor_de_sonidos.gd" id="1_xmul3"]
-[ext_resource type="AudioStream" uid="uid://bo0lhkhwuv72j" path="res://Assets sonoros/Rampa.wav" id="2_jssst"]
+[ext_resource type="AudioStream" uid="uid://bo0lhkhwuv72j" path="res://Assets sonoros/Rampa/Rampa.wav" id="2_jssst"]
 
 [node name="Emisor_de_sonidos" type="Node" unique_id=610034216]
 script = ExtResource("1_xmul3")
 
 [node name="Moneda" type="AudioStreamPlayer" parent="." unique_id=663402568]
-stream = ExtResource("2_jssst")
+max_polyphony = 3
+bus = &"SFX"
 
 [node name="Acelerador" type="AudioStreamPlayer" parent="." unique_id=2044975054]
+bus = &"SFX"
 
 [node name="Checkpoint" type="AudioStreamPlayer" parent="." unique_id=2000189333]
+bus = &"SFX"
 
 [node name="Rampa" type="AudioStreamPlayer" parent="." unique_id=1532339899]
+stream = ExtResource("2_jssst")
+bus = &"SFX"

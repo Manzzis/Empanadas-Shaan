@@ -19,7 +19,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is Jugador:
 		
-		EmisorDeSonidos.emitir_sonido.emit()
+		EmisorDeSonidos.emitir_sonido.emit("Acelerador")
 		
 		actor = body
 		tiempo_restante = duracion_impulso
