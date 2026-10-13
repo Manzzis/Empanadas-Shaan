@@ -47,6 +47,7 @@ func _ready():
 func _on_body_entered(body):
 	# Si es el jugador y esta bandera NO es la que ya está activa actualmente
 	if body.is_in_group("Player") and not activado:
+		EmisorDeSonidos.emitir_sonido.emit()
 		# 1. Mandamos la orden a TODAS las banderas del nivel de ponerse en rojo
 		get_tree().call_group("checkpoints", "desactivar_bandera")
 		

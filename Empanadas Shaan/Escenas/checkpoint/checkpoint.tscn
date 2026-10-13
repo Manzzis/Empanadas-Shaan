@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3t0et2bos2wj"]
 
-[ext_resource type="Script" uid="uid://ch5xlq3qfkqoh" path="res://Scripts/checkPoint/checkpoint.gd" id="1_mejvp"]
+[ext_resource type="Script" uid="uid://ch5xlq3qfkqoh" path="res://Scripts/Elementos de juego/checkPoint/checkpoint.gd" id="1_mejvp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ftlh3"]
 
