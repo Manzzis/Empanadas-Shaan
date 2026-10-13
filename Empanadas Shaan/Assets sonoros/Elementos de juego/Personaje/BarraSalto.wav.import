@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c41bdh8xi5d1w"
-path="res://.godot/imported/BarraSalto.wav-4b9b494d7f295bb1169256294ca4ab5f.sample"
+path="res://.godot/imported/BarraSalto.wav-cace600796627a238c0a4aa39acd65ac.sample"
 
 [deps]
 
-source_file="res://Assets sonoros/Personaje/BarraSalto.wav"
-dest_files=["res://.godot/imported/BarraSalto.wav-4b9b494d7f295bb1169256294ca4ab5f.sample"]
+source_file="res://Assets sonoros/Elementos de juego/Personaje/BarraSalto.wav"
+dest_files=["res://.godot/imported/BarraSalto.wav-cace600796627a238c0a4aa39acd65ac.sample"]
 
 [params]
 

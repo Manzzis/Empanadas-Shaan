@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dxekh47vdhmvo"
-path="res://.godot/imported/ChoqueConBarra.wav-c0935edb14d67e67a02f066d07214de1.sample"
+path="res://.godot/imported/ChoqueConBarra.wav-c7ce506dfa4bd8bb1308273667acc95e.sample"
 
 [deps]
 
-source_file="res://Assets sonoros/Personaje/ChoqueConBarra.wav"
-dest_files=["res://.godot/imported/ChoqueConBarra.wav-c0935edb14d67e67a02f066d07214de1.sample"]
+source_file="res://Assets sonoros/Elementos de juego/Personaje/ChoqueConBarra.wav"
+dest_files=["res://.godot/imported/ChoqueConBarra.wav-c7ce506dfa4bd8bb1308273667acc95e.sample"]
 
 [params]
 

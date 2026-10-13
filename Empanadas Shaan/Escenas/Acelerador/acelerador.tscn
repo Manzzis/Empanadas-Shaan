@@ -53,7 +53,7 @@ _data = {
 &"RESET": SubResource("Animation_ovupq")
 }
 
-[node name="Acelerador" type="Area3D" unique_id=1317497417]
+[node name="Acelerador" type="Area3D" unique_id=1317497417 groups=["Acelerador"]]
 script = ExtResource("1_81311")
 duracion_impulso = 2.0
 

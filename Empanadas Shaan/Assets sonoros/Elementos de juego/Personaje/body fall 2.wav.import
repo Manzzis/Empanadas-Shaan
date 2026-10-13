@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dhxg80l4kwir5"
-path="res://.godot/imported/body fall 2.wav-6ea613df794bdabc63f01989723a97a3.sample"
+path="res://.godot/imported/body fall 2.wav-938d1657a2d8a7c7ad552457d08df8a2.sample"
 
 [deps]
 
-source_file="res://Assets sonoros/Personaje/body fall 2.wav"
-dest_files=["res://.godot/imported/body fall 2.wav-6ea613df794bdabc63f01989723a97a3.sample"]
+source_file="res://Assets sonoros/Elementos de juego/Personaje/body fall 2.wav"
+dest_files=["res://.godot/imported/body fall 2.wav-938d1657a2d8a7c7ad552457d08df8a2.sample"]
 
 [params]
 

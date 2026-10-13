@@ -18,12 +18,15 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Jugador:
+		
+		EmisorDeSonidos.emitir_sonido.emit("Acelerador")
+		
 		actor = body
 		tiempo_restante = duracion_impulso
 		#igual que en dash, obtenemos el "adelante" del acelerador
 		# (deberia ser el adelante de las flechas)
 		
-		var direccion_impulso = actor.global_transform.basis.z
+		direccion_impulso = actor.global_transform.basis.z
 		direccion_impulso.y = 0
 		direccion_impulso = direccion_impulso.normalized()
 		

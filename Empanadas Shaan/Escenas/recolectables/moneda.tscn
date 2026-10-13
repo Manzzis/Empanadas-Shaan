@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cspom318tkpra"]
 
-[ext_resource type="Script" uid="uid://bxvp6s2nfguvx" path="res://Scripts/Recolectables/moneda.gd" id="1_qd8b6"]
+[ext_resource type="Script" uid="uid://bxvp6s2nfguvx" path="res://Scripts/Elementos de juego/Recolectables/Moneda/moneda.gd" id="1_qd8b6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qd8b6"]
 albedo_color = Color(0.9199331, 0.9199332, 1.540184e-06, 1)
@@ -13,7 +13,7 @@ height = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ftlh3"]
 
-[node name="Moneda" type="Area3D" unique_id=2054624397]
+[node name="Moneda" type="Area3D" unique_id=2054624397 groups=["Monedas"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_qd8b6")
