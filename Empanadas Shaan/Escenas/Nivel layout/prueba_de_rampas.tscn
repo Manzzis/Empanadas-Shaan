@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="5_gi2ri"]
 [ext_resource type="PackedScene" uid="uid://beytwbect050c" path="res://Escenas/Rampas/Rampa_1.tscn" id="6_2w2d7"]
 [ext_resource type="Texture2D" uid="uid://bamjf6d7pjrm5" path="res://Assets visuales/placeholders/Orange/texture_05.png" id="7_sy7rq"]
-[ext_resource type="PackedScene" uid="uid://b684j60y13hgq" path="res://Assets visuales/Assets 3D y 2D/Modelo 3D personaje/Rampa.blend" id="8_52qex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gi2ri"]
 albedo_texture = ExtResource("1_iwnqm")
@@ -83,8 +82,5 @@ material = SubResource("StandardMaterial3D_mxnkb")
 [node name="CollisionShape3D" parent="Area3D2" index="1" unique_id=389985302]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08576238, 0)
 shape = SubResource("BoxShape3D_vr7dq")
-
-[node name="Rampa2" parent="." unique_id=1252455260 instance=ExtResource("8_52qex")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1694708, 13.060458)
 
 [editable path="Area3D2"]

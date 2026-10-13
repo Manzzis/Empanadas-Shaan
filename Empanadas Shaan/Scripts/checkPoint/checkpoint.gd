@@ -40,9 +40,7 @@ func _ready():
 	colision.shape = shape
 	colision.position = Vector3(0, 1, 0)
 	add_child(colision)
-	
-	# 4. Conectar la señal de colisión
-	body_entered.connect(_on_body_entered)
+
 
 func _on_body_entered(body):
 	# Si es el jugador y esta bandera NO es la que ya está activa actualmente
@@ -57,6 +55,7 @@ func _on_body_entered(body):
 		# 3. Guardamos esta nueva posición en el jugador
 		body.ultimo_checkpoint = global_position
 		print("Nuevo checkpoint activo en: ", global_position)
+
 
 # Esta función será llamada en todas las banderas al mismo tiempo gracias a call_group
 func desactivar_bandera():
