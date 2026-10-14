@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://87nh8fs0i1un"]
+
+[ext_resource type="Shader" uid="uid://0h80sp8durja" path="res://UltimateToonSource/shader/stylized.gdshader" id="1_si7ri"]
+[ext_resource type="Texture2D" uid="uid://bmalhcb3x8swq" path="res://UltimateToonSource/shader/patron circulo 256x256.png" id="2_r7tn7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_si7ri")
+shader_parameter/albedo_color = Color(0.38170326, 0.38170323, 0.38170317, 1)
+shader_parameter/albedo_affect = 0.0
+shader_parameter/use_stepped = true
+shader_parameter/steps = 3.0
+shader_parameter/step_smoothness = 0.0
+shader_parameter/shadow_tint = Color(0.50534403, 0.5053441, 0.50534403, 1)
+shader_parameter/shadow_tint_amount = 0.20000000298024
+shader_parameter/specular = 0.0
+shader_parameter/normal_strength = 0.0
+shader_parameter/use_rim = true
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/rim_amount = 2.0
+shader_parameter/rim_smoothness = 0.2
+shader_parameter/rim_mask_shadow = 1.0
+shader_parameter/rim_blend = 1.0
+shader_parameter/use_pattern = true
+shader_parameter/pattern_texture = ExtResource("2_r7tn7")
+shader_parameter/pattern_uv_mode = 2
+shader_parameter/pattern_tiling = 64.0
+shader_parameter/pattern_amount = 0.5
+shader_parameter/pattern_smoothness = 0.5
+shader_parameter/pattern_blend = 0.2
