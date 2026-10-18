@@ -53,7 +53,7 @@ shape = SubResource("BoxShape3D_2bok1")
 mesh = SubResource("CapsuleMesh_tiug6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Apariencia" unique_id=98326150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, 0.4746595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, 0.44970703, 0.5071073)
 mesh = SubResource("BoxMesh_2bok1")
 
 [node name="Componentes" type="Node" parent="." unique_id=1350525740]
@@ -133,15 +133,16 @@ nodo_visual_jugador = NodePath("../Apariencia")
 
 [node name="Camera3D" parent="CameraComponent" index="0" unique_id=1786293904]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 2.5)
+transform = Transform3D(1, 0, 0, 0, 0.9862856, 0.16504762, 0, -0.16504762, 0.9862856, 0, 0.8842204, 3.3231025)
 v_offset = 0.305
 
 [node name="PhantomCamera3D" parent="CameraComponent" index="1" unique_id=895822900 node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 2.5)
+transform = Transform3D(1, 0, 0, 0, 0.9862856, 0.16504762, 0, -0.16504762, 0.9862856, 0, 0.8842204, 3.3231025)
 follow_target = NodePath("../..")
-follow_offset = Vector3(0, 0.29, 0)
-follow_distance = 2.5
-spring_length = 2.5
+follow_offset = Vector3(0, 0.38, 0.31)
+follow_distance = 3.055
+vertical_rotation_offset = 0.16580627893946132
+spring_length = 3.055
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 align_rotation_with_view = Callable()
