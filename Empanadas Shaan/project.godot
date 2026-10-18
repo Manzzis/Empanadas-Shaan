@@ -83,10 +83,21 @@ menu={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_1="Player"
+3d_render/layer_2="Mundo"
+3d_render/layer_3="Modelos"
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Mundo(base)"
+3d_physics/layer_3="Modelos"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+occlusion_culling/bvh_build_quality=1
 rendering_device/driver.windows="d3d12"
+occlusion_culling/use_occlusion_culling=true

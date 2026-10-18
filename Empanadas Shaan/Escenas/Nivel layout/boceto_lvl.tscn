@@ -1,18 +1,26 @@
 [gd_scene format=3 uid="uid://cfagyjmrn8t2"]
 
 [ext_resource type="Texture2D" uid="uid://dbe6dm0s6pqxk" path="res://Assets visuales/placeholders/Green/texture_11.png" id="1_717us"]
+[ext_resource type="ArrayOccluder3D" uid="uid://d1ckp0ik22try" path="res://Recursos/boceto_lvl.occ" id="1_ff47k"]
+[ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="1_fjafl"]
 [ext_resource type="PackedScene" uid="uid://o87vklte3l7w" path="res://Escenas/Nivel layout/lvl.tscn" id="1_ko8vg"]
 [ext_resource type="Texture2D" uid="uid://bm8b10ejqu7ts" path="res://Assets visuales/placeholders/Green/texture_08.png" id="2_n4wfg"]
 [ext_resource type="Texture2D" uid="uid://bamjf6d7pjrm5" path="res://Assets visuales/placeholders/Orange/texture_05.png" id="3_momxe"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_3gidy"]
 [ext_resource type="Texture2D" uid="uid://fkfnl67y82xj" path="res://Assets visuales/placeholders/Purple/texture_05.png" id="4_c865q"]
 [ext_resource type="Material" uid="uid://d3xbjrfuqbkp5" path="res://Assets visuales/placeholders/Green/verde_oscuro.tres" id="5_4ys08"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="5_swxgr"]
+[ext_resource type="PackedScene" uid="uid://b41fyqokh6qtc" path="res://EscenaGrayboxingLucas/NivelTerminado.tscn" id="6_2hlhe"]
 [ext_resource type="Material" uid="uid://87nh8fs0i1un" path="res://UltimateToonSource/shader/toon_black_shader.tres" id="7_xrh2d"]
 [ext_resource type="Texture2D" uid="uid://bmeoptow5oq1m" path="res://Assets visuales/placeholders/Red/texture_05.png" id="8_ympxa"]
 [ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets visuales/placeholders/Dark/texture_04.png" id="9_oygil"]
 [ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="10_ympxa"]
 [ext_resource type="Texture2D" uid="uid://bj7h2fc5jx4ax" path="res://addons/phantom_camera/examples/textures/3D/checker_pattern_dark.png" id="11_oygil"]
 [ext_resource type="Script" uid="uid://bauiukcngpaga" path="res://Scripts/Elementos de juego/Riel/Riel3D.gd" id="11_xrh2d"]
+
+[sub_resource type="Resource" id="Resource_nfbop"]
+script = ExtResource("4_3gidy")
+transition = 1
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_717us"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -85,14 +93,26 @@ size = Vector3(0.3079834, 0.1463623, 10.395782)
 
 [node name="Node3D" type="Node3D" unique_id=1861950061]
 
-[node name="Node3D" parent="." unique_id=1500117706 instance=ExtResource("1_ko8vg")]
-transform = Transform3D(1.9028529, 0, 1.3704659, 0, 2.345, 0, -1.3704659, 0, 1.9028529, -61.307816, 70.52508, -111.90152)
-
-[node name="PathFollow3D" parent="Node3D/Path3D" parent_id_path=PackedInt32Array(1500117706, 2082786440) index="0" unique_id=1880022267]
-transform = Transform3D(-0.999723, -0.0005720547, -0.021356696, 0, 0.9996207, -0.026774166, 0.021364318, -0.026768755, -0.9993662, 0.21134186, -0.290442, -3.304761)
+[node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("1_fjafl")]
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("5_swxgr")]
-transform = Transform3D(-0.3006097, 0, -0.9537472, 0, 1, 0, 0.9537472, 0, -0.3006097, 80.925545, 46.101746, 69.11044)
+transform = Transform3D(-0.3006097, 0, -0.9537472, 0, 1, 0, 0.9537472, 0, -0.3006097, -141.90172, 126.208405, -73.708176)
+fuerza_salto = 8.0
+
+[node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
+transform = Transform3D(-0.30061042, 0.24684866, -0.92124856, 1.4901161e-08, 0.96592563, 0.25881985, 0.9537469, 0.07780396, -0.29036736, -144.84972, 127.361626, -74.63735)
+
+[node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
+transform = Transform3D(1, 2.1606684e-07, -8.046627e-07, 1.4901161e-08, 0.96592563, 0.25881985, 7.748604e-07, -0.25881988, 0.9659256, -3.8146973e-06, 1.1532211, 3.0909576)
+tween_resource = SubResource("Resource_nfbop")
+follow_offset = Vector3(0, 0.325, 0)
+follow_distance = 3.2
+vertical_rotation_offset = 0.2617993877991494
+spring_length = 3.2
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1975832146]
+layers = 6
+occluder = ExtResource("1_ff47k")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=105476536]
 environment = SubResource("Environment_momxe")
@@ -101,8 +121,22 @@ environment = SubResource("Environment_momxe")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
+[node name="Mapa2" parent="." unique_id=1500117706 instance=ExtResource("1_ko8vg")]
+transform = Transform3D(1.9028529, 0, 1.3704659, 0, 2.345, 0, -1.3704659, 0, 1.9028529, -61.307816, 70.52508, -111.90152)
+
+[node name="PathFollow3D" parent="Mapa2/Path3D" parent_id_path=PackedInt32Array(1500117706, 2082786440) index="0" unique_id=1880022267]
+transform = Transform3D(-0.9997211, -0.0005720536, -0.021356655, 0, 0.99961877, -0.026774116, 0.02136428, -0.026768705, -0.9993643, 0.21134186, -0.290442, -3.304761)
+
+[node name="NivelLucas" parent="Mapa2" unique_id=1301037403 instance=ExtResource("6_2hlhe")]
+transform = Transform3D(0.34603453, 0, -0.24921975, 0, 0.42643923, 0, 0.24921975, 0, 0.34603453, -31.333391, 48.96058, 38.925964)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mapa2/NivelLucas" unique_id=1614645362]
+transform = Transform3D(2.3450005, 0, 0, 0, 2.3450003, 0, 0, 0, 2.3450005, 54.176872, 20.67302, 0.4208126)
+size = Vector3(7, 0.5319824, 5.527359)
+
 [node name="csg_Base" type="CSGCombiner3D" parent="." unique_id=1990751504]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -11.920534, 0, 33.606743)
+layers = 2
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="csg_Base" unique_id=363417385]
@@ -112,8 +146,8 @@ size = Vector3(1164, 0.2, 1170.2104)
 material = SubResource("StandardMaterial3D_oygil")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="csg_Base" unique_id=2050663109]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0218048, 238.21928, -8.538002)
-size = Vector3(100, 477.5187, 100)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.021803, 230.2057, -31.673767)
+size = Vector3(100, 461.49155, 146.27148)
 material = ExtResource("5_4ys08")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="csg_Base" unique_id=921534419]
@@ -138,8 +172,8 @@ size = Vector3(204.31908, 410.94913, 136.77989)
 material = ExtResource("5_4ys08")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="csg_Base" unique_id=17784732]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.54277, 92.12636, -138.18228)
-size = Vector3(380.40628, 190.0206, 170.0789)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.74594, 92.12636, -150.14285)
+size = Vector3(384, 190.0206, 194)
 material = ExtResource("5_4ys08")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="csg_Base" unique_id=667565121]
@@ -251,6 +285,7 @@ material = SubResource("StandardMaterial3D_jpybt")
 
 [node name="csg_decoracion" type="CSGCombiner3D" parent="." unique_id=1794925326]
 transform = Transform3D(0.6117651, 0, 0, 0, 1, 0, 0, 0, 0.4996873, -11.920534, 0, 33.606743)
+layers = 2
 use_collision = true
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="csg_decoracion" unique_id=1172427728]
@@ -562,5 +597,7 @@ material = SubResource("StandardMaterial3D_ymiyg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
 shape = SubResource("BoxShape3D_2bok1")
 
-[editable path="Node3D"]
+[editable path="Personaje"]
+[editable path="Personaje/CameraComponent"]
+[editable path="Mapa2"]
 [editable path="Riel3D"]
