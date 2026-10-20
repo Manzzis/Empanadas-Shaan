@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://ddt3g3igf5qfy"]
 
+[ext_resource type="Script" uid="uid://3vb460y5v1wv" path="res://Scripts/Niveles/nivel_grey_box.gd" id="1_3h613"]
 [ext_resource type="MeshLibrary" uid="uid://c7fk13tyhx1ll" path="res://Assets visuales/libreria de mallas/libreria_placeholder.tres" id="1_7iiso"]
 [ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="2_s5uh2"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="3_vd8uk"]
@@ -56,6 +57,7 @@ albedo_texture = ExtResource("12_bddo6")
 size = Vector3(1.3515625, 0.515625, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1608106415]
+script = ExtResource("1_3h613")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=553794697]
 mesh_library = ExtResource("1_7iiso")
@@ -72,10 +74,10 @@ transform = Transform3D(-0.050794832, 0, 0.9987091, 0, 1, 0, -0.9987091, 0, -0.0
 stream = SubResource("AudioStreamWAV_vmr3n")
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
-transform = Transform3D(-0.05079496, 0, 0.9987092, 0, 1, 0, -0.9987092, 0, -0.05079496, -15.222997, 3.8669043, 4.2480187)
+transform = Transform3D(-0.05079472, -0.1648346, 0.9850124, 0, 0.98628557, 0.16504766, -0.9987091, 0.008383557, -0.05009818, -14.710556, 4.461125, 4.5319557)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
-transform = Transform3D(1.0000002, 0, 1.1920929e-07, 0, 1, 0, -1.1920929e-07, 0, 1.0000002, -2.3841858e-07, 0.28999996, 2.499998)
+transform = Transform3D(1.0000001, 1.1175871e-08, -3.3527613e-08, 0, 0.98628557, 0.16504766, 1.1175871e-07, -0.16504768, 0.9862857, -0.30959988, 0.8842206, 2.9973555)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=974194551]
 transform = Transform3D(1, 0, 0, 0, 0.27487424, 0.9614802, 0, -0.9614802, 0.27487424, 0, 9.091118, 0)

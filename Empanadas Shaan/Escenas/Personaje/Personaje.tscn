@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://2d486tb1xss" path="res://Assets sonoros/Elementos de juego/Personaje/Salto.wav" id="16_68xog"]
 [ext_resource type="AudioStream" uid="uid://dxekh47vdhmvo" path="res://Assets sonoros/Elementos de juego/Personaje/ChoqueConBarra.wav" id="17_720kk"]
 [ext_resource type="AudioStream" uid="uid://benrnqyfp21qt" path="res://Assets sonoros/Elementos de juego/Personaje/Frenada.wav" id="18_68xog"]
+[ext_resource type="Script" uid="uid://dmkum15flpyvn" path="res://Scripts/Elementos de juego/personaje/Tracker de datos/metrics_tracker.gd" id="20_720kk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 
@@ -146,6 +147,10 @@ spring_length = 3.055
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 align_rotation_with_view = Callable()
+
+[node name="MetricsTracker" type="Node" parent="." unique_id=1658063692]
+script = ExtResource("20_720kk")
+accion_salto = &"Salto"
 
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Caer" method="_on_grind_area_area_entered"]
