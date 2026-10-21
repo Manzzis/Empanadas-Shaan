@@ -14,9 +14,11 @@
 [ext_resource type="Material" uid="uid://87nh8fs0i1un" path="res://UltimateToonSource/shader/toon_black_shader.tres" id="7_xrh2d"]
 [ext_resource type="Texture2D" uid="uid://bmeoptow5oq1m" path="res://Assets visuales/placeholders/Red/texture_05.png" id="8_ympxa"]
 [ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets visuales/placeholders/Dark/texture_04.png" id="9_oygil"]
-[ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="10_ympxa"]
 [ext_resource type="Texture2D" uid="uid://bj7h2fc5jx4ax" path="res://addons/phantom_camera/examples/textures/3D/checker_pattern_dark.png" id="11_oygil"]
 [ext_resource type="Script" uid="uid://bauiukcngpaga" path="res://Scripts/Elementos de juego/Riel/Riel3D.gd" id="11_xrh2d"]
+[ext_resource type="Texture2D" uid="uid://dl1v87nc8ncyh" path="res://Assets visuales/placeholders/Orange/texture_02.png" id="13_2hlhe"]
+[ext_resource type="PackedScene" uid="uid://b3t0et2bos2wj" path="res://Escenas/checkpoint/checkpoint.tscn" id="19_jqe7a"]
+[ext_resource type="PackedScene" uid="uid://c76xu1581mj5h" path="res://Escenas/fallZone/fallzone.tscn" id="19_oxq4d"]
 
 [sub_resource type="Resource" id="Resource_nfbop"]
 script = ExtResource("4_3gidy")
@@ -69,6 +71,17 @@ albedo_texture = ExtResource("3_momxe")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpybt"]
 albedo_texture = ExtResource("4_c865q")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crut0"]
+albedo_texture = ExtResource("13_2hlhe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wh3m0"]
+albedo_texture = ExtResource("13_2hlhe")
+
+[sub_resource type="PrismMesh" id="PrismMesh_adgpb"]
+material = SubResource("StandardMaterial3D_wh3m0")
+left_to_right = 1.0
+size = Vector3(28.965, 15.54, 44.58)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5a5m8"]
 albedo_texture = ExtResource("8_ympxa")
 
@@ -78,6 +91,43 @@ albedo_texture = ExtResource("9_oygil")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kog3"]
 albedo_texture = ExtResource("8_ympxa")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpucs"]
+albedo_texture = ExtResource("3_momxe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqe7a"]
+albedo_texture = ExtResource("3_momxe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxq4d"]
+albedo_texture = ExtResource("3_momxe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjafl"]
+albedo_texture = ExtResource("3_momxe")
+
+[sub_resource type="Curve3D" id="Curve3D_gpucs"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -0.40994835, 0.2778473, 0, 0, 0, 0, 0, 0, 22.488605, 11.835295, -1.2181244, 0, 0, 0, 0, 0, 0, 22.885834, 17.098118, -22.189743, 0, 0, 0, 0, 0, 0, 28.98782, 28.23533, -35.221947, 0, 0, 0, 0, 0, 0, 29.717709, 28.963915, -55.66825),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymiyg"]
+albedo_texture = ExtResource("11_oygil")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_crut0"]
+size = Vector3(1.0873194, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wh3m0"]
+size = Vector3(26.399027, 0.30795288, 0.5784645)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjafl"]
+size = Vector3(21.395834, 0.30795288, 1.2150135)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hlhe"]
+size = Vector3(19.562786, 0.30795288, 1.2150135)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqe7a"]
+size = Vector3(19.896313, 0.30795288, 1.2150135)
+
 [sub_resource type="Curve3D" id="Curve3D_xrh2d"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0.17, 0, 0, 0, 0, 0, 0, 0, 0, -1.6770782, 0, 0, 0, 0, 0, 0, 0.00541687, 0, -7.882332, 0, 0, 0, 0, 0, 0, 0, 0, -10.060753),
@@ -85,25 +135,152 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymiyg"]
-albedo_texture = ExtResource("11_oygil")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
-size = Vector3(0.3079834, 0.1463623, 10.395782)
+size = Vector3(0.96147156, 0.1463623, 8.073059)
+
+[sub_resource type="Curve3D" id="Curve3D_fjafl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5161209, 2.642109, 0, 0, 0, 0, 0, 0, 0, 0, -1.6770782, 0, 0, 0, 0, 0, 0, 0.00541687, 0, -7.882332, 0, 0, 0, 0, 0, 0, 0, 0, -10.060753),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_2hlhe"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.1441956, 2.0409698, -3.0748596, 0, 0, 0, 0, 0, 0, -1.9073486e-06, -1.2189941, -10.060776),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_6j00u"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 2.496109, -1.6770859, 0, 0, 0, 0, 0, 0, 0.02974701, 1.0082092, -5.676056, 0, 0, 0, 0, 0, 0, 7.6293945e-06, -0.71661377, -10.0607605),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fy08o"]
+size = Vector3(0.96147156, 0.1463623, 8.435549)
+
+[sub_resource type="Curve3D" id="Curve3D_oxq4d"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.40385437, -2.3671875, 0.40709686, 0, 0, 0, 0, 0, 0, -40.602325, -5.5648575, 17.910942),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxq4d"]
+size = Vector3(0.94742215, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpucs"]
+size = Vector3(43.967075, 0.1463623, 1.8879323)
+
+[sub_resource type="Curve3D" id="Curve3D_crut0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.27874756, -1.0733719, 0.365448, 0, 0, 0, 0, 0, 0, -0.73028564, -1.1131363, 15.511982),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6j00u"]
+size = Vector3(0.94742215, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gyxrc"]
+size = Vector3(0.94742215, 0.1463623, 14.859648)
+
+[sub_resource type="Curve3D" id="Curve3D_vn5s7"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.27874756, -1.0733719, 0.365448, 0, 0, 0, 0, 0, 0, -6.0113525, 6.8743362, 29.80851, 0, 0, 0, 0, 0, 0, -11.2487335, 20.277687, 53.704994),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ptdye"]
+size = Vector3(0.94742215, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edpib"]
+size = Vector3(0.94742215, 0.1463623, 31.020908)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vn5s7"]
+size = Vector3(0.94742215, 0.1463623, 27.8344)
+
+[sub_resource type="Curve3D" id="Curve3D_ptdye"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.20549011, -0.15530396, 0.24208069, 0, 0, 0, 0, 0, 0, 7.8061523, -0.069885254, 9.050236),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xe0a"]
+size = Vector3(0.94742215, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ch7yh"]
+size = Vector3(0.94742215, 0.1463623, 11.579948)
+
+[sub_resource type="Curve3D" id="Curve3D_fy08o"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.43467712, 0.113082886, 0.23261642, 0, 0, 0, 0, 0, 0, 19.509521, 5.082901, 20.8125, 0, 0, 0, 0, 0, 0, 39.56659, 10.289749, 41.50882),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0mvs"]
+size = Vector3(0.94742215, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dir6s"]
+size = Vector3(0.94742215, 0.1463623, 59.421623)
+
+[sub_resource type="Curve3D" id="Curve3D_n0mvs"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.43467712, 0.113082886, 0.23261642, 0, 0, 0, 0, 0, 0, 15.273453, -0.002243042, 0.51737213, 0, 0, 0, 0, 0, 0, 30.170822, 0.12080383, 0.7874222),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3bsj3"]
+size = Vector3(0.94742215, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rvd22"]
+size = Vector3(30.354725, 0.1463623, 0.9100995)
+
+[sub_resource type="Curve3D" id="Curve3D_gm8uc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.43467712, 0.113082886, 0.23261642, 0, 0, 0, 0, 0, 0, 10.0596695, 8.050415, -14.755814, 0, 0, 0, 0, 0, 0, 19.15786, 15.199844, -27.750214),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcumk"]
+size = Vector3(0.94742215, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssqmi"]
+size = Vector3(36.198982, 0.1463623, 0.9100995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gm8uc"]
+size = Vector3(124.15712, 0.44677734, 118.481064)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_elaax"]
+size = Vector3(73.71799, 0.44677734, 123.039536)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_csvx0"]
+size = Vector3(48.62755, 0.44677734, 58.366936)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hyhd"]
+size = Vector3(118.80745, 0.44677734, 133.20688)
 
 [node name="Node3D" type="Node3D" unique_id=1861950061]
 
 [node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("1_fjafl")]
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("5_swxgr")]
-transform = Transform3D(-0.3006097, 0, -0.9537472, 0, 1, 0, 0.9537472, 0, -0.3006097, -141.90172, 126.208405, -73.708176)
+transform = Transform3D(0.0016283989, 0, 0.9999988, 0, 1, 0, -0.9999988, 0, 0.0016283989, -54.10321, 1.0044227, 134.79869)
 fuerza_salto = 8.0
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
-transform = Transform3D(-0.30061042, 0.24684866, -0.92124856, 1.4901161e-08, 0.96592563, 0.25881985, 0.9537469, 0.07780396, -0.29036736, -144.84972, 127.361626, -74.63735)
+transform = Transform3D(0.0016289949, -0.25881884, 0.96592444, 0, 0.9659258, 0.25881916, -0.9999986, -0.00042162836, 0.001573503, -51.012253, 2.1576438, 134.80373)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
-transform = Transform3D(1, 2.1606684e-07, -8.046627e-07, 1.4901161e-08, 0.96592563, 0.25881985, 7.748604e-07, -0.25881988, 0.9659256, -3.8146973e-06, 1.1532211, 3.0909576)
+transform = Transform3D(0.9999999, 1.6752165e-07, -5.9080776e-07, 0, 0.9659258, 0.25881916, 5.962793e-07, -0.25881916, 0.96592563, 0, 1.1532211, 3.0909615)
 tween_resource = SubResource("Resource_nfbop")
 follow_offset = Vector3(0, 0.325, 0)
 follow_distance = 3.2
@@ -125,7 +302,7 @@ shadow_enabled = true
 transform = Transform3D(1.9028529, 0, 1.3704659, 0, 2.345, 0, -1.3704659, 0, 1.9028529, -61.307816, 70.52508, -111.90152)
 
 [node name="PathFollow3D" parent="Mapa2/Path3D" parent_id_path=PackedInt32Array(1500117706, 2082786440) index="0" unique_id=1880022267]
-transform = Transform3D(-0.9997211, -0.0005720536, -0.021356655, 0, 0.99961877, -0.026774116, 0.02136428, -0.026768705, -0.9993643, 0.21134186, -0.290442, -3.304761)
+transform = Transform3D(-0.9997209, -0.0005720534, -0.02135665, 0, 0.99961853, -0.026774108, 0.021364274, -0.026768697, -0.9993641, 0.21134186, -0.290442, -3.304761)
 
 [node name="NivelLucas" parent="Mapa2" unique_id=1301037403 instance=ExtResource("6_2hlhe")]
 transform = Transform3D(0.34603453, 0, -0.24921975, 0, 0.42643923, 0, 0.24921975, 0, 0.34603453, -31.333391, 48.96058, 38.925964)
@@ -162,13 +339,13 @@ size = Vector3(138.9696, 606.41724, 204.01022)
 material = ExtResource("5_4ys08")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="csg_Base" unique_id=1680042023]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -102.12335, 183.4777, 114.57132)
-size = Vector3(138.9696, 368.0354, 95.027214)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -102.12335, 214.81743, 114.57132)
+size = Vector3(138.9696, 430.71484, 95.027214)
 material = ExtResource("5_4ys08")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="csg_Base" unique_id=1756810734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.75513, 204.93457, 7.1236553)
-size = Vector3(204.31908, 410.94913, 136.77989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.75513, 204.93457, -10.128891)
+size = Vector3(204.31908, 410.94913, 171.28497)
 material = ExtResource("5_4ys08")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="csg_Base" unique_id=17784732]
@@ -194,17 +371,17 @@ mesh = SubResource("BoxMesh_5a5m8")
 material = SubResource("StandardMaterial3D_toajt")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="csg_Base" unique_id=736547390]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -579.5166, 184.87599, 29.6949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -579.5166, 184.876, 85.460205)
 size = Vector3(50, 61.444, 50)
 material = SubResource("StandardMaterial3D_jpybt")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="csg_Base" unique_id=440944860]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.3825, 321.998, 185.53694)
-size = Vector3(91.58844, 103.13411, 111.52588)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.3825, 321.998, 140.39253)
+size = Vector3(91.58844, 103.13411, 21.23706)
 material = SubResource("StandardMaterial3D_jpybt")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="csg_Base" unique_id=1991438171]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -579.5166, 77.83306, -145.32721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -474.70334, 277.66232, -145.32721)
 size = Vector3(50, 29.369461, 50)
 material = SubResource("StandardMaterial3D_jpybt")
 
@@ -237,6 +414,51 @@ material = SubResource("StandardMaterial3D_jpybt")
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -316.26556, 295.63312, -255.61462)
 size = Vector3(99.674805, 16.124695, 105.41992)
 material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="csg_Base" unique_id=527355605]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -191.77081, 436.22382, -70.16401)
+size = Vector3(44.668335, 62.97917, 46.27539)
+material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="csg_Base" unique_id=861691210]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -191.77081, 434.8491, -42.780632)
+size = Vector3(44.668335, 51.990074, 10.122559)
+material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="csg_Base" unique_id=2121341788]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -191.77081, 432.0825, -34.365414)
+size = Vector3(44.668335, 46.45683, 10.122559)
+material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="csg_Base" unique_id=1589104845]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -191.77081, 428.54355, -24.33236)
+size = Vector3(44.668335, 39.37893, 10.122559)
+material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="csg_Base" unique_id=1742768827]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -191.77081, 424.8961, -15.196754)
+size = Vector3(44.668335, 32.083996, 10.122559)
+material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="csg_Base" unique_id=2020595498]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -191.77081, 422.2972, -5.7063217)
+size = Vector3(44.668335, 26.886236, 10.122559)
+material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="csg_Base" unique_id=2009388224]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -191.77081, 420.1016, 4.409424)
+size = Vector3(44.668335, 22.494936, 10.122559)
+material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="csg_Base" unique_id=1632534925]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -191.77081, 417.32727, 13.24601)
+size = Vector3(44.668335, 16.946365, 10.122559)
+material = SubResource("StandardMaterial3D_jpybt")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="csg_Base" unique_id=290719219]
+transform = Transform3D(-4.3711378e-08, 0, 0.99999976, 0, 0.9999997, 0, -0.99999976, 0, -4.3711385e-08, -191.77081, 418.0312, 32.805023)
+material_override = SubResource("StandardMaterial3D_crut0")
+mesh = SubResource("PrismMesh_adgpb")
 
 [node name="CSGBox3D25" type="CSGBox3D" parent="csg_Base" unique_id=505999209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -473.087, 302.03455, 18.656555)
@@ -288,68 +510,68 @@ transform = Transform3D(0.6117651, 0, 0, 0, 1, 0, 0, 0, 0.4996873, -11.920534, 0
 layers = 2
 use_collision = true
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="csg_decoracion" unique_id=1172427728]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -33.875084, 1.0830383, 146.22937)
-size = Vector3(5, 3, 5)
+[node name="auto1" type="CSGBox3D" parent="csg_decoracion" unique_id=1172427728]
+transform = Transform3D(0.9999994, 0, 0, 0, 1, 0, 0, 0, 0.9999988, -65.96622, 1.1708264, 139.9855)
+size = Vector3(5, 3.0234375, 5)
 material = SubResource("StandardMaterial3D_5a5m8")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="csg_decoracion/CSGBox3D9" unique_id=1154986022]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.5268326, -0.74660015, -0.018066406)
-radius = 0.7
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="csg_decoracion/auto1" unique_id=1154986022]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.3711545e-08, -1.5268326, -0.77968013, -0.018005371)
 height = 5.5367126
+sides = 10
 material = SubResource("StandardMaterial3D_yvuu3")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="csg_decoracion/CSGBox3D9" unique_id=1501581857]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.9534607, -0.74660015, -0.00024414063)
-radius = 0.7
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="csg_decoracion/auto1" unique_id=1501581857]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.3711392e-08, 1.9534607, -0.77968013, -0.00024414063)
 height = 5.4288025
+sides = 10
 material = SubResource("StandardMaterial3D_yvuu3")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="csg_decoracion/CSGBox3D9" unique_id=1721358601]
+[node name="CSGBox3D" type="CSGBox3D" parent="csg_decoracion/auto1" unique_id=1721358601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1689453, -0.41503906, -0.0059509277)
 size = Vector3(1.3378906, 1.8300781, 4.9089966)
 material = SubResource("StandardMaterial3D_1kog3")
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="csg_decoracion" unique_id=1727436284]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -41.326332, 1.0830383, 146.83542)
-size = Vector3(5, 3, 5)
+[node name="auto2" type="CSGBox3D" parent="csg_decoracion" unique_id=1186926166]
+transform = Transform3D(0.9999994, 0, 0, 0, 1, 0, 0, 0, 0.99999875, -65.96622, 1.1708264, 148.05597)
+size = Vector3(5, 3.0234375, 5)
 material = SubResource("StandardMaterial3D_5a5m8")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="csg_decoracion/CSGBox3D10" unique_id=1073578421]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.5268326, -0.74660015, -0.018066406)
-radius = 0.7
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="csg_decoracion/auto2" unique_id=2102285725]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.3711545e-08, -1.5268326, -0.77968013, -0.018005371)
 height = 5.5367126
+sides = 10
 material = SubResource("StandardMaterial3D_yvuu3")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="csg_decoracion/CSGBox3D10" unique_id=778171965]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.9534607, -0.74660015, -0.00024414063)
-radius = 0.7
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="csg_decoracion/auto2" unique_id=1448934538]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.3711392e-08, 1.9534607, -0.77968013, -0.00024414063)
 height = 5.4288025
+sides = 10
 material = SubResource("StandardMaterial3D_yvuu3")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="csg_decoracion/CSGBox3D10" unique_id=277365717]
+[node name="CSGBox3D" type="CSGBox3D" parent="csg_decoracion/auto2" unique_id=2094960918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1689453, -0.41503906, -0.0059509277)
 size = Vector3(1.3378906, 1.8300781, 4.9089966)
 material = SubResource("StandardMaterial3D_1kog3")
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="csg_decoracion" unique_id=1619397115]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -26.015907, 1.0830383, 146.0487)
-size = Vector3(5, 3, 5)
+[node name="auto3" type="CSGBox3D" parent="csg_decoracion" unique_id=597037715]
+transform = Transform3D(0.9999994, 0, 0, 0, 1, 0, 0, 0, 0.9999987, -65.96622, 1.1708264, 156.02567)
+size = Vector3(5, 3.0234375, 5)
 material = SubResource("StandardMaterial3D_5a5m8")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="csg_decoracion/CSGBox3D12" unique_id=1125442380]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.5268326, -0.74660015, -0.018066406)
-radius = 0.7
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="csg_decoracion/auto3" unique_id=1856331635]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.3711545e-08, -1.5268326, -0.77968013, -0.018005371)
 height = 5.5367126
+sides = 10
 material = SubResource("StandardMaterial3D_yvuu3")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="csg_decoracion/CSGBox3D12" unique_id=1852453571]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.9534607, -0.74660015, -0.00024414063)
-radius = 0.7
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="csg_decoracion/auto3" unique_id=1194091846]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.3711392e-08, 1.9534607, -0.77968013, -0.00024414063)
 height = 5.4288025
+sides = 10
 material = SubResource("StandardMaterial3D_yvuu3")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="csg_decoracion/CSGBox3D12" unique_id=661541722]
+[node name="CSGBox3D" type="CSGBox3D" parent="csg_decoracion/auto3" unique_id=429822058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1689453, -0.41503906, -0.0059509277)
 size = Vector3(1.3378906, 1.8300781, 4.9089966)
 material = SubResource("StandardMaterial3D_1kog3")
@@ -464,24 +686,176 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1689453, -0.41503906, -0.00
 size = Vector3(1.3378906, 1.8300781, 4.9089966)
 material = SubResource("StandardMaterial3D_1kog3")
 
-[node name="Riel3D" parent="." unique_id=68641506 instance=ExtResource("10_ympxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.58519, 38.366505, 308.08298)
+[node name="Poste_d_Luz" type="CSGBox3D" parent="csg_decoracion" unique_id=948643140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999803, 159.33643, 44.33334, 108.06667)
+size = Vector3(1, 4.2661133, 1)
+material = SubResource("StandardMaterial3D_gpucs")
 
-[node name="CSGPolygon3D" parent="Riel3D" index="1" unique_id=556665570]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.36, 4.253586, 0.5456314, 1.5578613)
+[node name="Poste_d_Luz2" type="CSGBox3D" parent="csg_decoracion" unique_id=1979586871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999908, 109.94958, 8.255001, 219.87708)
+size = Vector3(0.5, 16.970154, 0.5)
+material = SubResource("StandardMaterial3D_jqe7a")
 
-[node name="CollisionShape3D" parent="Riel3D/Area3D" parent_id_path=PackedInt32Array(68641506, 1600815866) index="0" unique_id=1887657425]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.962311, 1.494, -0.027999878)
+[node name="Poste_d_Luz3" type="CSGBox3D" parent="csg_decoracion" unique_id=1382866242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999763, 147.356, 14.454564, 216.30957)
+size = Vector3(0.5, 29.368965, 0.5)
+material = SubResource("StandardMaterial3D_oxq4d")
 
-[node name="Path3D" type="Path3D" parent="." unique_id=251345323]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.847046, 0.8613281, 114.62334)
+[node name="Poste_d_Luz5" type="CSGBox3D" parent="csg_decoracion" unique_id=1971054170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999763, 147.356, 14.454564, 216.30957)
+size = Vector3(0.5, 29.368965, 0.5)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz4" type="CSGBox3D" parent="csg_decoracion" unique_id=476145274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999813, 148.38544, 17.0158, 175.43246)
+size = Vector3(0.5, 34.49144, 0.5)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz7" type="CSGBox3D" parent="csg_decoracion" unique_id=557627316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99997765, 158.41396, 22.627714, 147.8941)
+size = Vector3(0.5, 45.715267, 0.5)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz8" type="CSGBox3D" parent="csg_decoracion" unique_id=1564463342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999743, -299.08, 120.20981, -100.01414)
+size = Vector3(0.5, 6.478239, 0.5)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz9" type="CSGBox3D" parent="csg_decoracion" unique_id=2094364254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999742, -298.32645, 120.20981, -130.79489)
+size = Vector3(0.5, 6.478239, 0.5)
+material = SubResource("StandardMaterial3D_fjafl")
+
+[node name="Poste_d_Luz15" type="CSGBox3D" parent="csg_decoracion" unique_id=753057716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99997246, -232.39459, 124.081, -165.75446)
+size = Vector3(0.5, 5.298812, 0.5)
+material = SubResource("StandardMaterial3D_fjafl")
+
+[node name="Poste_d_Luz10" type="CSGBox3D" parent="csg_decoracion" unique_id=1701525855]
+transform = Transform3D(0.7756218, 0, 0.6311816, 0, 1, 0, -0.6311977, 0, 0.77560127, -303.73523, 141.62402, 24.21016)
+size = Vector3(0.5, 6.478239, 0.5)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz11" type="CSGBox3D" parent="csg_decoracion" unique_id=2136004418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999723, -316.74704, 141.62402, 6.7192917)
+size = Vector3(0.62939453, 6.478239, 0.93933105)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz12" type="CSGBox3D" parent="csg_decoracion" unique_id=223948874]
+transform = Transform3D(0.8865985, 0, -0.46252707, 0, 1, 0, 0.46253937, 0, 0.88657355, -155.53304, 167.2422, 52.070114)
+size = Vector3(0.5, 6.478239, 0.66882324)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz14" type="CSGBox3D" parent="csg_decoracion" unique_id=1949681878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999725, -187.68465, 152.22801, 108.266106)
+size = Vector3(0.5, 6.478239, 0.819458)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz13" type="CSGBox3D" parent="csg_decoracion" unique_id=662078796]
+transform = Transform3D(0.66333055, 0, 0.7483069, 0, 1, 0, -0.7483266, 0, 0.6633131, -238.24576, 152.22801, 107.11698)
+size = Vector3(0.6425781, 6.478239, 0.5)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Poste_d_Luz6" type="CSGBox3D" parent="csg_decoracion" unique_id=1760544366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999785, 148.514, 17.012144, 175.3349)
+size = Vector3(0.5, 34.484127, 0.5)
+material = SubResource("StandardMaterial3D_oxq4d")
+
+[node name="Cables_collect" type="Node3D" parent="." unique_id=179040645]
+
+[node name="Cables1" type="Path3D" parent="Cables_collect" unique_id=1398065600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.51, 17.287, 143.15)
+curve = SubResource("Curve3D_gpucs")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Cables1" unique_id=1369331729]
+transform = Transform3D(0.06637375, -0.47634256, -0.87674165, 1.4900959e-08, 0.87868273, -0.47739357, 0.9977813, 0.031686936, 0.058322046, 0, -0.40994835, 0.2778473)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Cables1" unique_id=254114982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31575012, -0.9956722, -0.11000061)
+use_collision = true
+polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables_collect/Cables1" unique_id=1982122285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36775208, -0.9956722, -0.02999878)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables_collect/Cables1" unique_id=1441219259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36775208, -0.9966717, -0.17300415)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Cables1" unique_id=1284626681]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Cables1/Area3D" unique_id=1447703407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29434204, -0.44205284, 0.38316345)
+shape = SubResource("BoxShape3D_crut0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables_collect/Cables1/Area3D" unique_id=1904900811]
+transform = Transform3D(0.8822529, -0.46499252, 0.07356548, 0.46622476, 0.8846663, 0.00047654507, -0.065302484, 0.033877615, 0.9972902, 11.452824, 5.747967, -0.51589966)
+shape = SubResource("BoxShape3D_wh3m0")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables_collect/Cables1/Area3D" unique_id=1171919314]
+transform = Transform3D(0.023298051, -0.023978712, 0.9994409, 0.24608217, 0.9690911, 0.017514063, -0.968969, 0.24553652, 0.028478622, 22.989582, 14.50754, -11.474915)
+shape = SubResource("BoxShape3D_fjafl")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Cables_collect/Cables1/Area3D" unique_id=1744350534]
+transform = Transform3D(0.33007905, -0.046176016, 0.942823, 0.5950051, 0.78557354, -0.16983463, -0.732814, 0.6170435, 0.28677613, 26.326344, 22.733465, -28.651009)
+shape = SubResource("BoxShape3D_2hlhe")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Cables_collect/Cables1/Area3D" unique_id=1421091215]
+transform = Transform3D(0.028606597, -0.05187457, 0.9982437, 0.04315328, 0.9977858, 0.05061405, -0.9986586, 0.041629225, 0.030781688, -2.9496956, 28.783552, -45.44536)
+shape = SubResource("BoxShape3D_jqe7a")
+
+[node name="Path3D" type="Path3D" parent="Cables_collect" unique_id=251345323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.847046, 0.53351974, 114.62334)
 curve = SubResource("Curve3D_xrh2d")
 script = ExtResource("11_xrh2d")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=427233186]
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Path3D" unique_id=427233186]
 transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D" unique_id=484078380]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Path3D" unique_id=484078380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
 use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
@@ -498,21 +872,21 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_ymiyg")
 
-[node name="Area3D" type="Area3D" parent="Path3D" unique_id=867210457]
+[node name="Area3D" type="Area3D" parent="Cables_collect/Path3D" unique_id=867210457]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/Area3D" unique_id=1935191639]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Path3D/Area3D" unique_id=1935191639]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
 shape = SubResource("BoxShape3D_2bok1")
 
-[node name="Path3D2" type="Path3D" parent="." unique_id=265596775]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.354515, 43.664757, 61.269924)
+[node name="Path3D2" type="Path3D" parent="Cables_collect" unique_id=265596775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.354515, 43.33695, 61.269924)
 curve = SubResource("Curve3D_xrh2d")
 script = ExtResource("11_xrh2d")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1340208845]
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Path3D2" unique_id=1340208845]
 transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D2" unique_id=1792351797]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Path3D2" unique_id=1792351797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
 use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
@@ -529,21 +903,21 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_ymiyg")
 
-[node name="Area3D" type="Area3D" parent="Path3D2" unique_id=1042805160]
+[node name="Area3D" type="Area3D" parent="Cables_collect/Path3D2" unique_id=1042805160]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D2/Area3D" unique_id=1706137073]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Path3D2/Area3D" unique_id=1706137073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
 shape = SubResource("BoxShape3D_2bok1")
 
-[node name="Path3D3" type="Path3D" parent="." unique_id=948225085]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.354515, 43.664757, 46.35638)
+[node name="Path3D3" type="Path3D" parent="Cables_collect" unique_id=948225085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.354515, 43.33695, 46.35638)
 curve = SubResource("Curve3D_xrh2d")
 script = ExtResource("11_xrh2d")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3" unique_id=1145331582]
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Path3D3" unique_id=1145331582]
 transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D3" unique_id=47074837]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Path3D3" unique_id=47074837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
 use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
@@ -560,21 +934,21 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_ymiyg")
 
-[node name="Area3D" type="Area3D" parent="Path3D3" unique_id=1737666506]
+[node name="Area3D" type="Area3D" parent="Cables_collect/Path3D3" unique_id=1737666506]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D3/Area3D" unique_id=74479835]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Path3D3/Area3D" unique_id=74479835]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
 shape = SubResource("BoxShape3D_2bok1")
 
-[node name="Path3D4" type="Path3D" parent="." unique_id=1009959316]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.354515, 43.664757, 33.846325)
+[node name="Path3D4" type="Path3D" parent="Cables_collect" unique_id=1009959316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.354515, 43.33695, 33.846325)
 curve = SubResource("Curve3D_xrh2d")
 script = ExtResource("11_xrh2d")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D4" unique_id=1078395923]
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Path3D4" unique_id=1078395923]
 transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D4" unique_id=1045929160]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Path3D4" unique_id=1045929160]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
 use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
@@ -591,13 +965,687 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_ymiyg")
 
-[node name="Area3D" type="Area3D" parent="Path3D4" unique_id=355639627]
+[node name="Area3D" type="Area3D" parent="Cables_collect/Path3D4" unique_id=355639627]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D4/Area3D" unique_id=365793823]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Path3D4/Area3D" unique_id=365793823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
 shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D5" type="Path3D" parent="Cables_collect" unique_id=92209112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.18517, 123.70181, -55.0447)
+curve = SubResource("Curve3D_fjafl")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Path3D5" unique_id=382574009]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.99293476, 0.11865058, 0, -0.11865067, 0.992934, 0, 0.5161209, 2.642109)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Path3D5" unique_id=384060996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Path3D5" unique_id=577588712]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Path3D5/Area3D" unique_id=1062491993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D6" type="Path3D" parent="Cables_collect" unique_id=472151316]
+transform = Transform3D(0.08447802, 0, 0.99642533, 0, 1, 0, -0.99642533, 0, 0.08447802, -197.80241, 121.1478, -16.784285)
+curve = SubResource("Curve3D_2hlhe")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Path3D6" unique_id=233318817]
+transform = Transform3D(0.986848, -0.067609064, 0.14681272, 1.1175836e-08, 0.9083111, 0.4182881, -0.1616322, -0.41278815, 0.8963675, 1.1441956, 2.0409698, -3.0748596)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Path3D6" unique_id=1099388062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Path3D6" unique_id=1404518732]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Path3D6/Area3D" unique_id=1521730722]
+transform = Transform3D(0.999848, -0.018219398, -0.0019812435, 0.018219221, 0.9764667, 0.21489723, -0.0019811317, -0.21489984, 0.976646, 0.08196068, -0.04550171, -6.06691)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D8" type="Path3D" parent="Cables_collect" unique_id=1118577948]
+transform = Transform3D(0.77381545, 0, 0.6334112, 0, 1, 0, -0.6334112, 0, 0.77381545, -197.80241, 141.08017, 50.605145)
+curve = SubResource("Curve3D_2hlhe")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Path3D8" unique_id=546894090]
+transform = Transform3D(0.986848, -0.067609064, 0.14681272, 1.1175836e-08, 0.9083111, 0.4182881, -0.1616322, -0.41278815, 0.8963675, 1.1441956, 2.0409698, -3.0748596)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Path3D8" unique_id=904180911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Path3D8" unique_id=910002595]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Path3D8/Area3D" unique_id=1615543955]
+transform = Transform3D(0.9908122, -0.02892895, 0.13223544, -0.026832148, 0.9155398, 0.40133306, -0.13267756, -0.4011876, 0.9063486, 0.4940338, 0.38955688, -7.115097)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D7" type="Path3D" parent="Cables_collect" unique_id=458765860]
+transform = Transform3D(-0.25085378, 0, 0.9680251, 0, 1, 0, -0.9680251, 0, -0.25085378, -127.92041, 151.32718, 90.080765)
+curve = SubResource("Curve3D_6j00u")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Path3D7" unique_id=814564763]
+transform = Transform3D(0.99996984, 0.0025938374, -0.0069715483, 0, 0.9372295, 0.34870625, 0.0074384436, -0.34869647, 0.9372038, 0, 2.496109, -1.6770859)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Path3D7" unique_id=998032283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Path3D7" unique_id=608353770]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables_collect/Path3D7/Area3D" unique_id=293514711]
+transform = Transform3D(0.99964243, -0.026997566, -0.0044142827, 0.026997909, 0.94755775, 0.3184471, -0.0044145137, -0.31844404, 0.9479432, 0.081352234, 1.1339722, -5.9354553)
+shape = SubResource("BoxShape3D_fy08o")
+
+[node name="Cables2" type="Path3D" parent="Cables_collect" unique_id=243822671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.90857, 128.8063, -49.604733)
+curve = SubResource("Curve3D_oxq4d")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Cables2" unique_id=572485294]
+transform = Transform3D(-0.39922428, -0.06669092, 0.9144129, 0, 0.99734455, 0.072738834, -0.9168388, 0.029039606, -0.39816797, -0.40385437, -2.3671875, 0.40709686)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Cables2" unique_id=172665170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31575012, -0.99567413, 0.032909393)
+use_collision = true
+polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables_collect/Cables2" unique_id=2109784136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36775208, -0.99567413, 0.0832634)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables_collect/Cables2" unique_id=847779058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36775208, -0.9966736, -0.059741974)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Cables2" unique_id=1657075952]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables_collect/Cables2/Area3D" unique_id=364774900]
+transform = Transform3D(0.9140806, 0, 0.40553266, 0, 1, 0, -0.40553266, 0, 0.9140806, -0.17269897, -2.2012024, 0.31621552)
+shape = SubResource("BoxShape3D_oxq4d")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables_collect/Cables2/Area3D" unique_id=829046373]
+transform = Transform3D(0.91451603, -0.07613033, 0.39732194, 0.06982505, 0.99709785, 0.030336287, -0.3984784, -3.7020447e-09, 0.9171779, -20.148605, -3.941101, 8.982601)
+shape = SubResource("BoxShape3D_gpucs")
+
+[node name="Cables3" type="Path3D" parent="Cables_collect" unique_id=714589462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -194.14215, 124.30283, -32.01008)
+curve = SubResource("Curve3D_crut0")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Cables3" unique_id=1805338284]
+transform = Transform3D(-0.9995415, -7.819368e-05, 0.029797617, 7.2758535e-12, 0.99998915, 0.002624109, -0.029797632, 0.0026229545, -0.999541, -0.27874756, -1.0733719, 0.365448)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Cables3" unique_id=1530676560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
+use_collision = true
+polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables_collect/Cables3" unique_id=2122177760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18299866, -0.99567413, 0.0832634)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables_collect/Cables3" unique_id=173779892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08734131, -0.9966736, -0.059741974)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Cables3" unique_id=431319910]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables_collect/Cables3/Area3D" unique_id=73400158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17269897, -0.85272217, 0.31621552)
+shape = SubResource("BoxShape3D_6j00u")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables_collect/Cables3/Area3D" unique_id=216002833]
+transform = Transform3D(0.99912906, 0, -0.041726574, 0, 1, 0, 0.041726574, 0, 0.99912906, -0.4635315, -0.94480133, 8.183414)
+shape = SubResource("BoxShape3D_gyxrc")
+
+[node name="Cables4" type="Path3D" parent="Cables_collect" unique_id=232034791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -194.55049, 124.30283, -16.772701)
+curve = SubResource("Curve3D_vn5s7")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Cables4" unique_id=1537887312]
+transform = Transform3D(-0.98155147, 0.048947636, 0.18473509, 0, 0.9666351, -0.25611737, -0.19110955, -0.25139835, -0.94881177, -0.27874756, -1.0733719, 0.365448)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Cables4" unique_id=1128272440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.437294)
+use_collision = true
+polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables_collect/Cables4" unique_id=638135961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18299866, -0.99567413, 0.437294)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables_collect/Cables4" unique_id=1779271371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08734131, -0.9966736, 0.437294)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Cables4" unique_id=1937489157]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables_collect/Cables4/Area3D" unique_id=405228696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17269897, -0.85272217, 0.31621552)
+shape = SubResource("BoxShape3D_ptdye")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables_collect/Cables4/Area3D" unique_id=904029018]
+transform = Transform3D(0.9822154, -0.0049443897, -0.18769236, 0.054033644, 0.9648068, 0.25734827, 0.1798144, -0.26291314, 0.9479153, -3.04068, 2.9071808, 15.2089405)
+shape = SubResource("BoxShape3D_edpib")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Cables_collect/Cables4/Area3D" unique_id=1840307490]
+transform = Transform3D(0.9822154, -0.0049443934, -0.18769234, 0.09593384, 0.8725307, 0.47904772, 0.16139871, -0.48853406, 0.8574875, -8.669937, 13.528587, 41.669823)
+shape = SubResource("BoxShape3D_vn5s7")
+
+[node name="Cables5" type="Path3D" parent="Cables_collect" unique_id=878966446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205.42775, 144.76822, 36.688114)
+curve = SubResource("Curve3D_ptdye")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Cables5" unique_id=924733764]
+transform = Transform3D(-0.7397507, -0.00482696, -0.67283773, -2.3282666e-10, 0.99996215, -0.0071736765, 0.6728557, -0.005306854, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Cables5" unique_id=1533875553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
+use_collision = true
+polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables_collect/Cables5" unique_id=804528465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.268)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables_collect/Cables5" unique_id=897878072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.997, -0.008)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Cables5" unique_id=920033398]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables_collect/Cables5/Area3D" unique_id=589092102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173, 0, 0.316)
+shape = SubResource("BoxShape3D_2xe0a")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables_collect/Cables5/Area3D" unique_id=963155028]
+transform = Transform3D(0.7494159, 0, 0.66209954, 0, 1, 0, -0.66209954, 0, 0.7494159, 3.6417847, 0, 4.5116463)
+shape = SubResource("BoxShape3D_ch7yh")
+
+[node name="Cables6" type="Path3D" parent="Cables_collect" unique_id=30105463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -197.42755, 144.72418, 45.276962)
+curve = SubResource("Curve3D_fy08o")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Cables6" unique_id=1757242714]
+transform = Transform3D(-0.7180976, -0.11890876, -0.685682, -3.7252241e-09, 0.9852805, -0.17086244, 0.6959169, -0.12269871, -0.7075366, -0.43467712, 0.113082886, 0.23261642)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Cables6" unique_id=491803342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9960022, 0.11354828)
+use_collision = true
+polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables_collect/Cables6" unique_id=947832670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9960022, 0.23703003)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables_collect/Cables6" unique_id=2062412333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996994, 0.009098053)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Cables6" unique_id=207998084]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables_collect/Cables6/Area3D" unique_id=394367704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173, 0, 0.316)
+shape = SubResource("BoxShape3D_n0mvs")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables_collect/Cables6/Area3D" unique_id=120913653]
+transform = Transform3D(0.6810685, -0.2590088, 0.6848797, 0.19413407, 0.9657471, 0.17217404, -0.70601547, 0.015696198, 0.7080226, 19.31784, 4.960266, 20.592545)
+shape = SubResource("BoxShape3D_dir6s")
+
+[node name="Cables7" type="Path3D" parent="Cables_collect" unique_id=1290957615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.2252, 155.08186, 86.94566)
+curve = SubResource("Curve3D_n0mvs")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Cables7" unique_id=1780697075]
+transform = Transform3D(-0.018124502, 0.0073390864, -0.99978924, 0, 0.9999591, 0.007340251, 0.99981797, 0.0001330415, -0.018123982, -0.43467712, 0.113082886, 0.23261642)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Cables7" unique_id=223509074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9960022, -0.052742004)
+use_collision = true
+polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables_collect/Cables7" unique_id=839544311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9960022, 0.070739746)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables_collect/Cables7" unique_id=164981756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996994, -0.15719604)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Cables7" unique_id=125762089]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables_collect/Cables7/Area3D" unique_id=79016946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173, 0, 0.316)
+shape = SubResource("BoxShape3D_3bsj3")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables_collect/Cables7/Area3D" unique_id=1924879333]
+transform = Transform3D(0.99971586, 0, -0.023837626, 0, 1, 0, 0.023837626, 0, 0.99971586, 15.4561615, 0, 0.47188568)
+shape = SubResource("BoxShape3D_rvd22")
+
+[node name="Cables8" type="Path3D" parent="Cables_collect" unique_id=1884864064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.32696, 155.1021, 87.458275)
+curve = SubResource("Curve3D_gm8uc")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables_collect/Cables8" unique_id=448366825]
+transform = Transform3D(0.8191543, -0.22825295, -0.5261653, 0, 0.917385, -0.39796168, 0.5735417, 0.32599962, 0.75148946, -0.43467712, 0.113082886, 0.23261642)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables_collect/Cables8" unique_id=735464206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1055603, -0.9960022, -0.052742004)
+use_collision = true
+polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables_collect/Cables8" unique_id=1326631233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1055603, -0.9960022, 0.070739746)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables_collect/Cables8" unique_id=1990682615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1055603, -0.996994, -0.15719604)
+use_collision = true
+polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 0
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables_collect/Cables8" unique_id=1933976253]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables_collect/Cables8/Area3D" unique_id=970915591]
+transform = Transform3D(0.5286243, -0.2190723, 0.8200998, 0.38284594, 0.9238122, 0, -0.7576182, 0.31397188, 0.5722205, -0.1627121, 0.3802948, -0.11306763)
+shape = SubResource("BoxShape3D_jcumk")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables_collect/Cables8/Area3D" unique_id=1021679231]
+transform = Transform3D(0.5286244, -0.21907234, 0.8201, 0.40794048, 0.9128086, -0.019114938, -0.74440664, 0.34465647, 0.57190126, 9.5696335, 7.93927, -14.056168)
+shape = SubResource("BoxShape3D_ssqmi")
+
+[node name="Checkpoint" parent="." unique_id=1552532096 instance=ExtResource("19_jqe7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.375076, 15.43631, 143.60521)
+
+[node name="Checkpoint2" parent="." unique_id=426189511 instance=ExtResource("19_jqe7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.52382, 45.35301, 21.049229)
+
+[node name="Checkpoint3" parent="." unique_id=723531258 instance=ExtResource("19_jqe7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.54051, 77.24273, -100.572754)
+
+[node name="Checkpoint4" parent="." unique_id=1312405493 instance=ExtResource("19_jqe7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.02283, 122.15361, -81.67301)
+
+[node name="Checkpoint5" parent="." unique_id=1140304823 instance=ExtResource("19_jqe7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -201.1065, 139.15408, 39.287086)
+
+[node name="Checkpoint6" parent="." unique_id=313801047 instance=ExtResource("19_jqe7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.355644, 165.09511, 57.2085)
+
+[node name="Fallzone" parent="." unique_id=491432035 instance=ExtResource("19_oxq4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 172, 71)
+
+[node name="CollisionShape3D" parent="Fallzone" index="0" unique_id=17021765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.761566, -36.1342, 24.74253)
+shape = SubResource("BoxShape3D_gm8uc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Fallzone" unique_id=451546955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.02788, -72.99548, -89.09665)
+shape = SubResource("BoxShape3D_elaax")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Fallzone" unique_id=1193744685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.296844, -57.20273, -121.43295)
+shape = SubResource("BoxShape3D_csvx0")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Fallzone" unique_id=488767639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.39598, -138.91312, -101.41348)
+shape = SubResource("BoxShape3D_2hyhd")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Fallzone" unique_id=1189797614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.53864, -161.3864, 47.261063)
+shape = SubResource("BoxShape3D_2hyhd")
 
 [editable path="Personaje"]
 [editable path="Personaje/CameraComponent"]
 [editable path="Mapa2"]
-[editable path="Riel3D"]
+[editable path="Checkpoint6"]
+[editable path="Fallzone"]
