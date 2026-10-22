@@ -27,13 +27,16 @@ func _input(event: InputEvent) -> void:
 func _on_sonido_global_control_deslizante_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(GLOBAL_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(GLOBAL_BUS_ID, value < 0.05)
+	Metrics.al_cambiar_volumen("sonido GLOBAL", value)
 
 
 func _on_music_control_deslizante_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < 0.05)
+	Metrics.al_cambiar_volumen("MUSIC", value)
 
 
 func _on_sfx_control_deslizante_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
+	Metrics.al_cambiar_volumen("SFX", value)
