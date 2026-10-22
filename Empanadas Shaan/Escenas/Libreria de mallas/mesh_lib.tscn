@@ -2,7 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://bf7iifpq5i4fb" path="res://Assets visuales/placeholders/Green/texture_10.png" id="1_xg552"]
 [ext_resource type="Texture2D" uid="uid://cn6mt6ugayi6j" path="res://Assets visuales/placeholders/Red/texture_10.png" id="2_4cgkm"]
+[ext_resource type="Texture2D" uid="uid://6mxea6gnad6c" path="res://Assets visuales/placeholders/Orange/texture_04.png" id="2_r4y6t"]
+[ext_resource type="Texture2D" uid="uid://c7j23kukx5h8x" path="res://Assets visuales/placeholders/Dark/texture_04.png" id="3_qy5kr"]
 [ext_resource type="Texture2D" uid="uid://cjhrq4lcmkl1g" path="res://Assets visuales/placeholders/Purple/texture_09.png" id="3_ry5y8"]
+[ext_resource type="Texture2D" uid="uid://fkfnl67y82xj" path="res://Assets visuales/placeholders/Purple/texture_05.png" id="4_knrxh"]
+[ext_resource type="Texture2D" uid="uid://3jb6qwacqbmu" path="res://Assets visuales/placeholders/Light/texture_06.png" id="5_cy10q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u02ff"]
 albedo_texture = ExtResource("1_xg552")
@@ -12,6 +16,31 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_u02ff")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tiug6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sf82i"]
+albedo_texture = ExtResource("2_r4y6t")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5cm3h"]
+material = SubResource("StandardMaterial3D_sf82i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw5oc"]
+albedo_texture = ExtResource("3_qy5kr")
+
+[sub_resource type="BoxMesh" id="BoxMesh_tqrlv"]
+material = SubResource("StandardMaterial3D_sw5oc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7sdih"]
+albedo_texture = ExtResource("4_knrxh")
+
+[sub_resource type="BoxMesh" id="BoxMesh_tsfo1"]
+material = SubResource("StandardMaterial3D_7sdih")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkclb"]
+albedo_texture = ExtResource("5_cy10q")
+
+[sub_resource type="BoxMesh" id="BoxMesh_654yg"]
+material = SubResource("StandardMaterial3D_lkclb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0o33"]
 albedo_texture = ExtResource("2_4cgkm")
@@ -39,6 +68,42 @@ mesh = SubResource("BoxMesh_cwxwe")
 [node name="StaticBody3D" type="StaticBody3D" parent="piso" unique_id=699674865]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="piso/StaticBody3D" unique_id=477666991]
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="piso2" type="MeshInstance3D" parent="." unique_id=1240960383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.258301)
+mesh = SubResource("BoxMesh_5cm3h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="piso2" unique_id=336054403]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="piso2/StaticBody3D" unique_id=1062613494]
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="piso3" type="MeshInstance3D" parent="." unique_id=882734337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.758667)
+mesh = SubResource("BoxMesh_tqrlv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="piso3" unique_id=1754171262]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="piso3/StaticBody3D" unique_id=1453472998]
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="piso4" type="MeshInstance3D" parent="." unique_id=1329050713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.516357)
+mesh = SubResource("BoxMesh_tsfo1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="piso4" unique_id=1989987688]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="piso4/StaticBody3D" unique_id=557619475]
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="piso5" type="MeshInstance3D" parent="." unique_id=1330888566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.697998)
+mesh = SubResource("BoxMesh_654yg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="piso5" unique_id=896564929]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="piso5/StaticBody3D" unique_id=1228395058]
 shape = SubResource("BoxShape3D_tiug6")
 
 [node name="pared" type="MeshInstance3D" parent="." unique_id=1211457693]
