@@ -9,5 +9,5 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		menu_victoria.show()
-		Metrics.nivel_fin() #mensaje a las metricas que el nivel terminó
+		Metrics.al_terminar_nivel()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

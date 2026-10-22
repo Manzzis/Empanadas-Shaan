@@ -4,14 +4,9 @@ class_name Jugador extends CharacterBody3D
 #estados del jugador
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 @onready var camera_component := $CameraComponent
-@onready var metricas: MetricsTracker = $MetricsTracker
 
 var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
-var ultimo_checkpoint: Vector3:
-	set(v):
-		if v != ultimo_checkpoint:
-			ultimo_checkpoint = v
-			Metrics.checkpoint()
+var ultimo_checkpoint: Vector3
 
 #estadísticas del jugador
 @export var velocidad : float = 10.0
