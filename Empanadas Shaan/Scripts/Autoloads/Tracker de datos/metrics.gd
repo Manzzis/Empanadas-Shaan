@@ -246,10 +246,15 @@ func _volumenes() -> Dictionary:
 ## Escribe un evento en el archivo. Se guarda al instante, no hay que "cerrar".
 func registrar(tipo: String, datos: Dictionary) -> void:
 	if archivo == null:
-		DirAccess.make_dir_recursive_absolute("user://metricas")
-		var ruta := "user://metricas/sesion_%d.jsonl" % int(Time.get_unix_time_from_system())
+		var carpeta: String = obtener_carpeta_metricas()
+		
+		if not DirAccess.dir_exists_absolute(carpeta):
+			DirAccess.make_dir_recursive_absolute(carpeta)
+			
+		var ruta: String = carpeta + "/sesion_%d.jsonl" % int(Time.get_unix_time_from_system())
 		archivo = FileAccess.open(ruta, FileAccess.WRITE)
-		print("Métricas en: ", ProjectSettings.globalize_path(ruta))
+		print("Métricas en: ", ruta)
+		
 	archivo.store_line(JSON.stringify({
 		"tipo": tipo,
 		"nivel": nivel,
@@ -257,6 +262,17 @@ func registrar(tipo: String, datos: Dictionary) -> void:
 		"datos": datos,
 	}))
 	archivo.flush()
+
+
+func obtener_carpeta_metricas() -> String:
+	if OS.has_feature("editor"):
+		# Si estamos jugando desde el editor de Godot, se guarda en la carpeta del proyecto
+		return ProjectSettings.globalize_path("res://metricas")
+	else:
+		# Si es el juego ya exportado (.exe), se guarda en su misma carpeta
+		return OS.get_executable_path().get_base_dir() + "/metricas"
+
+
 
 
 ## Busca al jugador por su grupo. Si cambia de escena, lo vuelve a buscar.

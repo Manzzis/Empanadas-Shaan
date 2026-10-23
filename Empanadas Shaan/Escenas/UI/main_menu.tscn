@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dao7ec258t73q"]
 
 [ext_resource type="Script" uid="uid://8wnv75gmr23c" path="res://Scripts/UI/main_menu.gd" id="1_24ck4"]
+[ext_resource type="Texture2D" uid="uid://o54x7gcj5y21" path="res://Assets visuales/Assets 3D y 2D/Boceto - Mapa.png" id="2_f02rb"]
 
 [node name="Main_Menu" type="Control" unique_id=140484158]
 layout_mode = 3
@@ -12,12 +13,30 @@ grow_vertical = 2
 script = ExtResource("1_24ck4")
 
 [node name="Panel" type="Panel" parent="." unique_id=748201869]
+modulate = Color(0.30588877, 0.8253773, 0.97807306, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=56872353]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 97.0
+offset_right = 1128.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 50
+text = "Empanadas Shaan"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1857429406]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.865974, 16.865974)
+texture = ExtResource("2_f02rb")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1502767433]
 layout_mode = 1
@@ -26,13 +45,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -126.5
-offset_top = -85.5
-offset_right = 126.50037
-offset_bottom = 85.5
+offset_left = 223.0
+offset_top = -47.0
+offset_right = 476.00037
+offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 48
+theme_override_constants/separation = 21
 
 [node name="Comenzar" type="Button" parent="VBoxContainer" unique_id=1856578995]
 layout_mode = 2
@@ -41,7 +60,7 @@ text = "Comenzar"
 
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=1091401215]
 layout_mode = 2
-theme_override_font_sizes/font_size = 59
+theme_override_font_sizes/font_size = 50
 text = "Salir
 "
 

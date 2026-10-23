@@ -25,7 +25,9 @@ const COLOR_MUERTE_SIN_SALTO := Color.YELLOW
 ## Qué tipos de evento dibujar. Podés agregar: "quieto", "pared", "acomodo", "duda".
 @export var mostrar: Array[String] = ["muestra", "salto", "aterrizaje", "muerte", "recuperacion"]
 @export var radio := 0.3
+@warning_ignore("unused_private_class_variable")
 @export_tool_button("Cargar datos") var _boton_cargar := cargar
+@warning_ignore("unused_private_class_variable")
 @export_tool_button("Limpiar") var _boton_limpiar := limpiar
 
 
@@ -63,20 +65,35 @@ func cargar() -> void:
 
 	_dibujar_puntos(puntos)
 	_dibujar_lineas(lineas)
+	@warning_ignore("integer_division")
 	print("Visor: %d colores, %d líneas (nivel '%s')" % [puntos.size(), lineas.size() / 2, nivel_buscado])
 
 
 ## Lee todos los archivos .jsonl de la carpeta y devuelve la lista de eventos.
 func _leer_eventos() -> Array[Dictionary]:
 	var eventos: Array[Dictionary] = []
-	for nombre in DirAccess.get_files_at("user://metricas"):
+	var ruta := "res://metricas"
+	
+	if not DirAccess.dir_exists_absolute(ruta):
+		print("Visor: La carpeta 'res://metricas' no existe.")
+		return eventos
+
+	for nombre in DirAccess.get_files_at(ruta):
 		if not nombre.ends_with(".jsonl"):
 			continue
-		var archivo := FileAccess.open("user://metricas/" + nombre, FileAccess.READ)
-		while not archivo.eof_reached():
-			var evento = JSON.parse_string(archivo.get_line())
-			if evento is Dictionary:
-				eventos.append(evento)
+			
+		var archivo := FileAccess.open(ruta + "/" + nombre, FileAccess.READ)
+		if archivo:
+			while not archivo.eof_reached():
+				var linea = archivo.get_line().strip_edges()
+				if linea == "":
+					continue
+					
+				var evento = JSON.parse_string(linea)
+				if evento is Dictionary:
+					eventos.append(evento)
+			archivo.close()
+			
 	return eventos
 
 
