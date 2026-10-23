@@ -12,17 +12,39 @@ extends CanvasLayer
 @onready var menu: Control = $menu
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	menu.hide()
 	_aplicar_volumen(GLOBAL_BUS_ID, sonido_global_control.value)
 	_aplicar_volumen(MUSIC_BUS_ID, music_control.value)
 	_aplicar_volumen(SFX_BUS_ID, sfx_control.value)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("menu"):
+		alternar_pausa()
+
+
+func alternar_pausa():
+	var esta_pausado = get_tree().paused
+	if esta_pausado:
+		menu.hide()
+		get_tree().paused = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		
+		menu.show()
+		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _aplicar_volumen(bus_id: int, valor: float) -> void:
 	AudioServer.set_bus_volume_db(bus_id, linear_to_db(valor))
 	AudioServer.set_bus_mute(bus_id, valor < 0.05)
 
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
 		menu.visible = !menu.visible
+
 
 func _on_sonido_global_control_deslizante_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(GLOBAL_BUS_ID, linear_to_db(value))
@@ -40,3 +62,14 @@ func _on_sfx_control_deslizante_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
 	Metrics.al_cambiar_volumen("SFX", value)
+
+
+func _on_Reanudar_pressed() -> void:
+	menu.hide()
+	get_tree().paused = false
+
+
+
+
+func _on_volver_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/UI/main_menu.tscn")

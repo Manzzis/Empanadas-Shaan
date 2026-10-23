@@ -17,7 +17,6 @@ var estado_actual_nombre: String = ""
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	# Nos conectamos al Autoload de Eventos
 	EVENT_BUS_JUGADOR.estado_jugador_cambiado.connect(_on_estado_jugador_cambiado)
 
 func set_target(target: CharacterBody3D) -> void:
@@ -26,8 +25,6 @@ func set_target(target: CharacterBody3D) -> void:
 	# La PhantomCamera sigue la posición del nodo raíz (el CharacterBody3D)
 	pcam.follow_target = jugador
 	
-	# Fallback de seguridad: si olvidaste asignar la malla en el inspector, 
-	# intentará buscar un nodo llamado "Malla" dentro del jugador.
 	if not nodo_visual_jugador:
 		nodo_visual_jugador = jugador.get_node_or_null("Malla")
 
@@ -37,12 +34,6 @@ func _on_estado_jugador_cambiado(nombre_estado: String) -> void:
 	auto_alinear_espalda = (nombre_estado == "Caminar")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		var rot: Vector3 = pcam.get_third_person_rotation()
 		
@@ -59,11 +50,10 @@ func _process(delta: float) -> void:
 	# Verificamos tener tanto el jugador como su malla visual antes de calcular
 	if not jugador or not nodo_visual_jugador:
 		return
-
+	
 	if auto_alinear_espalda:
 		var rot: Vector3 = pcam.get_third_person_rotation()
 		
-		# Ahora tomamos la rotación Y del NODO VISUAL, no del jugador raíz
 		var angulo_espalda: float = nodo_visual_jugador.global_rotation.y + PI
 		
 		# Suavizamos la rotación de la cámara hacia la espalda de la malla

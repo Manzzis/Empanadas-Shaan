@@ -34,7 +34,6 @@ offset_bottom = 23.0
 grow_horizontal = 2
 
 [node name="menu" type="Control" parent="." unique_id=1567488557]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,6 +72,7 @@ columns = 2
 
 [node name="sonido_global_label" type="Label" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=887370632]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Sonido global"
 
 [node name="sonido_global_control_deslizante" type="HSlider" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=2018252876]
@@ -85,6 +85,7 @@ value = 1.0
 
 [node name="music_label" type="Label" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=917174857]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Música"
 
 [node name="music_control_deslizante" type="HSlider" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=807122523]
@@ -97,6 +98,7 @@ value = 0.2
 
 [node name="SFX_label" type="Label" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=599946919]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "SFX"
 
 [node name="SFX_control_deslizante" type="HSlider" parent="menu/MarginContainer/VBoxContainer/GridContainer" unique_id=1147757312]
@@ -107,6 +109,54 @@ max_value = 1.0
 step = 0.05
 value = 0.75
 
+[node name="Reanudar" type="Button" parent="menu" unique_id=1651521142]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -121.5
+offset_top = -240.0
+offset_right = 121.5
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Reanudar"
+
+[node name="volver_menu" type="Button" parent="menu" unique_id=1115587899]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -137.0
+offset_right = 185.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Volver al menu
+"
+
+[node name="texto" type="Label" parent="menu" unique_id=1361540858]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -221.5
+offset_top = 160.0
+offset_right = 221.5
+offset_bottom = 229.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Empanadas Shaan"
+
 [connection signal="value_changed" from="menu/MarginContainer/VBoxContainer/GridContainer/sonido_global_control_deslizante" to="." method="_on_sonido_global_control_deslizante_value_changed"]
 [connection signal="value_changed" from="menu/MarginContainer/VBoxContainer/GridContainer/music_control_deslizante" to="." method="_on_music_control_deslizante_value_changed"]
 [connection signal="value_changed" from="menu/MarginContainer/VBoxContainer/GridContainer/SFX_control_deslizante" to="." method="_on_sfx_control_deslizante_value_changed"]
+[connection signal="pressed" from="menu/Reanudar" to="." method="_on_Reanudar_pressed"]
+[connection signal="pressed" from="menu/volver_menu" to="." method="_on_volver_menu_pressed"]

@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cmu77ya2lvsos" path="res://Escenas/Nivel layout/plataforma_nube.tscn" id="20_oxq4d"]
 [ext_resource type="Texture2D" uid="uid://oh2eel6a4q44" path="res://Assets visuales/Assets 3D y 2D/Pack_free_jp_village/GLTF/textures/ColorAtlas.png" id="21_gpucs"]
 [ext_resource type="PackedScene" uid="uid://cspom318tkpra" path="res://Escenas/recolectables/moneda.tscn" id="23_wh3m0"]
+[ext_resource type="Script" uid="uid://wqu7x8crnesp" path="res://Scripts/Niveles/visor_metricas/node_3d.gd" id="24_6j00u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ddtk2"]
 size = Vector3(57.696747, 3, 4.0603027)
@@ -151,6 +152,19 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8x7qy"]
+size = Vector3(0.96147156, 0.1463623, 12.6837845)
+
+[sub_resource type="Curve3D" id="Curve3D_ljwk8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.13879585, 2.0409698, -2.989624, 0, 0, 0, 0, 0, 0, -1.9073486e-06, -1.2189941, -10.060776),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_brd0x"]
+size = Vector3(0.96147156, 0.1463623, 7.7326126)
 
 [sub_resource type="Curve3D" id="Curve3D_2hlhe"]
 _data = {
@@ -628,13 +642,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -201.1065, 139.15408, 39.2870
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.355644, 165.09511, 57.2085)
 
 [node name="Checkpoint7" parent="CheckPoints" unique_id=1329375923 instance=ExtResource("19_jqe7a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.347336, 188.82849, 5.0859346)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.347336, 188.00745, 5.0859346)
+
+[node name="Checkpoint8" parent="CheckPoints" unique_id=1539300171 instance=ExtResource("19_jqe7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.741182, 207.4455, 0.45556843)
 
 [node name="Mapa2" parent="." unique_id=1500117706 instance=ExtResource("1_ko8vg")]
 transform = Transform3D(1.9028529, 0, 1.3704659, 0, 2.345, 0, -1.3704659, 0, 1.9028529, -61.307816, 70.52508, -111.90152)
 
 [node name="PathFollow3D" parent="Mapa2/Path3D" parent_id_path=PackedInt32Array(1500117706, 2082786440) index="0" unique_id=1880022267]
-transform = Transform3D(-0.9997185, -0.0005720521, -0.021356614, 0, 0.99961615, -0.026774064, 0.021364221, -0.026768634, -0.99936247, 0.21134186, -0.290442, -3.304761)
+transform = Transform3D(-0.99971765, -0.0005720516, -0.021356614, 0, 0.9996153, -0.026774064, 0.021364205, -0.026768612, -0.99936247, 0.21134186, -0.290442, -3.304761)
 
 [node name="NivelLucas" parent="Mapa2" unique_id=1301037403 instance=ExtResource("6_2hlhe")]
 transform = Transform3D(0.34603453, 0, -0.24921975, 0, 0.42643923, 0, 0.24921975, 0, 0.34603453, -31.333391, 48.96058, 38.925964)
@@ -1182,7 +1199,7 @@ transform = Transform3D(0.33007905, -0.046176016, 0.942823, 0.5950051, 0.7855735
 shape = SubResource("BoxShape3D_2hlhe")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Cables/Cables1/Area3D" unique_id=1421091215]
-transform = Transform3D(0.028606597, -0.05187457, 0.9982437, 0.04315328, 0.9977858, 0.05061405, -0.9986586, 0.041629225, 0.030781688, -2.9496956, 28.783552, -45.44536)
+transform = Transform3D(0.028606597, -0.05187457, 0.9982437, 0.04315328, 0.9977858, 0.05061405, -0.9986586, 0.041629225, 0.030781688, 29.708256, 28.783552, -45.44536)
 shape = SubResource("BoxShape3D_jqe7a")
 
 [node name="Path3D" type="Path3D" parent="Cables" unique_id=251345323]
@@ -1337,16 +1354,16 @@ material = SubResource("StandardMaterial3D_ymiyg")
 [node name="Area3D" type="Area3D" parent="Cables/Path3D5" unique_id=577588712]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D5/Area3D" unique_id=1062491993]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
-shape = SubResource("BoxShape3D_2bok1")
+transform = Transform3D(1, 0.00024265896, -4.755617e-05, -0.00023488731, 0.99228203, 0.124001436, 7.728467e-05, -0.12400142, 0.99228203, 0.0024414063, 0.15682983, -3.789959)
+shape = SubResource("BoxShape3D_8x7qy")
 
 [node name="Path3D6" type="Path3D" parent="Cables" unique_id=472151316]
-transform = Transform3D(0.08447802, 0, 0.99642533, 0, 1, 0, -0.99642533, 0, 0.08447802, -197.80241, 121.1478, -16.784285)
-curve = SubResource("Curve3D_2hlhe")
+transform = Transform3D(0.08447802, 0, 0.99642533, 0, 1, 0, -0.99642533, 0, 0.08447802, -197.14194, 119.73952, -16.784285)
+curve = SubResource("Curve3D_ljwk8")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D6" unique_id=233318817]
-transform = Transform3D(0.986848, -0.067609064, 0.14681272, 1.1175836e-08, 0.9083111, 0.4182881, -0.1616322, -0.41278815, 0.8963675, 1.1441956, 2.0409698, -3.0748596)
+transform = Transform3D(0.9998037, -0.008215089, 0.017822688, -4.6565962e-10, 0.9081652, 0.41860405, -0.019624881, -0.41852373, 0.9079897, 0.13879585, 2.0409698, -2.989624)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D6" unique_id=1099388062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
@@ -1368,8 +1385,8 @@ material = SubResource("StandardMaterial3D_ymiyg")
 [node name="Area3D" type="Area3D" parent="Cables/Path3D6" unique_id=1404518732]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D6/Area3D" unique_id=1521730722]
-transform = Transform3D(0.999848, -0.018219398, -0.0019812435, 0.018219221, 0.9764667, 0.21489723, -0.0019811317, -0.21489984, 0.976646, 0.08196068, -0.04550171, -6.06691)
-shape = SubResource("BoxShape3D_2bok1")
+transform = Transform3D(0.99943596, -0.032950073, -0.0066671222, 0.03294993, 0.9207949, 0.3886532, -0.0066671222, -0.38865504, 0.92136335, 0.09395027, 0.39866638, -7.207657)
+shape = SubResource("BoxShape3D_brd0x")
 
 [node name="Path3D8" type="Path3D" parent="Cables" unique_id=1118577948]
 transform = Transform3D(0.77381545, 0, 0.6334112, 0, 1, 0, -0.6334112, 0, 0.77381545, -197.80241, 141.08017, 50.605145)
@@ -1377,7 +1394,7 @@ curve = SubResource("Curve3D_2hlhe")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D8" unique_id=546894090]
-transform = Transform3D(0.986848, -0.067609064, 0.14681272, 1.1175836e-08, 0.9083111, 0.4182881, -0.1616322, -0.41278815, 0.8963675, 1.1441956, 2.0409698, -3.0748596)
+transform = Transform3D(0.9868478, -0.067609064, 0.14681266, 1.11758345e-08, 0.9083111, 0.41828793, -0.16163217, -0.41278815, 0.8963671, 1.1441956, 2.0409698, -3.0748596)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D8" unique_id=904180911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12445068, -1.0477905, 0)
@@ -1511,7 +1528,7 @@ curve = SubResource("Curve3D_crut0")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1805338284]
-transform = Transform3D(-0.9995415, -7.81935e-05, 0.029797617, 7.2758535e-12, 0.9999869, 0.002624109, -0.029797632, 0.0026229485, -0.999541, -0.27874756, -1.0733719, 0.365448)
+transform = Transform3D(-0.9995415, -7.8193436e-05, 0.029797617, 7.2758535e-12, 0.99998605, 0.002624109, -0.029797632, 0.0026229464, -0.999541, -0.27874756, -1.0733719, 0.365448)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=1530676560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
@@ -1659,7 +1676,7 @@ curve = SubResource("Curve3D_ptdye")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=924733764]
-transform = Transform3D(-0.7397507, -0.004826949, -0.67283773, -2.3282666e-10, 0.9999599, -0.0071736765, 0.6728557, -0.005306842, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+transform = Transform3D(-0.7397507, -0.004826945, -0.67283773, -2.3282666e-10, 0.99995905, -0.0071736765, 0.6728557, -0.0053068376, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=1533875553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
@@ -2230,11 +2247,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.0799, 170.98132, 59.5928
 [node name="Moneda63" parent="Monedas" unique_id=2127349213 instance=ExtResource("23_wh3m0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.09889, 187.58539, 14.132313)
 
+[node name="visor_metricas" type="Node3D" parent="." unique_id=2030827138]
+script = ExtResource("24_6j00u")
+
 [editable path="Meta"]
 [editable path="Personaje"]
 [editable path="Personaje/CameraComponent"]
 [editable path="CheckPoints/Checkpoint6"]
 [editable path="CheckPoints/Checkpoint7"]
+[editable path="CheckPoints/Checkpoint8"]
 [editable path="Mapa2"]
 [editable path="Fallzone"]
 [editable path="PlataformaNube"]
