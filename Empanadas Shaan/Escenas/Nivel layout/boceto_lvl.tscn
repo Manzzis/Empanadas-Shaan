@@ -651,7 +651,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.741182, 207.4455, 0.45556
 transform = Transform3D(1.9028529, 0, 1.3704659, 0, 2.345, 0, -1.3704659, 0, 1.9028529, -61.307816, 70.52508, -111.90152)
 
 [node name="PathFollow3D" parent="Mapa2/Path3D" parent_id_path=PackedInt32Array(1500117706, 2082786440) index="0" unique_id=1880022267]
-transform = Transform3D(-0.9997154, -0.0005720508, -0.021356614, 0, 0.99961394, -0.026774064, 0.021364156, -0.026768574, -0.99936247, 0.21134186, -0.290442, -3.304761)
+transform = Transform3D(-0.99971443, -0.0005720508, -0.021356614, 0, 0.99961394, -0.026774064, 0.021364136, -0.026768574, -0.99936247, 0.21134186, -0.290442, -3.304761)
 
 [node name="NivelLucas" parent="Mapa2" unique_id=1301037403 instance=ExtResource("6_2hlhe")]
 transform = Transform3D(0.34603453, 0, -0.24921975, 0, 0.42643923, 0, 0.24921975, 0, 0.34603453, -31.333391, 48.96058, 38.925964)
@@ -1533,7 +1533,7 @@ curve = SubResource("Curve3D_crut0")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1805338284]
-transform = Transform3D(-0.9995415, -7.819326e-05, 0.029797617, 7.2758535e-12, 0.9999838, 0.002624109, -0.029797632, 0.0026229403, -0.999541, -0.27874756, -1.0733719, 0.365448)
+transform = Transform3D(-0.9995415, -7.819319e-05, 0.029797617, 7.2758535e-12, 0.99998283, 0.002624109, -0.029797632, 0.002622938, -0.999541, -0.27874756, -1.0733719, 0.365448)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=1530676560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
@@ -1681,7 +1681,7 @@ curve = SubResource("Curve3D_ptdye")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=924733764]
-transform = Transform3D(-0.7397507, -0.004826934, -0.67283773, -2.3282666e-10, 0.9999568, -0.0071736765, 0.6728557, -0.0053068255, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+transform = Transform3D(-0.7397507, -0.0048269294, -0.67283773, -2.3282666e-10, 0.99995583, -0.0071736765, 0.6728557, -0.0053068204, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=1533875553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)

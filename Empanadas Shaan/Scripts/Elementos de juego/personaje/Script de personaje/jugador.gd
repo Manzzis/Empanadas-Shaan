@@ -98,6 +98,7 @@ func handle_gravity(delta):
 	# Sin gravedad, el jugador "flota" a la altura de la plataforma.
 	if not is_on_floor() and coyote_timer > 0.0:
 		velocity.y = 0.0
+		print("LLEGO EL COYOTEEEEEEEEEEEEE")
 		return
 	
 	velocity.y -= gravedad * delta
