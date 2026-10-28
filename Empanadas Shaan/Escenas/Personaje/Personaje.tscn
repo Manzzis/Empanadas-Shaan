@@ -38,6 +38,8 @@ size = Vector3(0.85876465, 0.10058594, 0.12109375)
 [node name="Personaje" type="CharacterBody3D" unique_id=1912633892 groups=["Player"]]
 collision_mask = 3
 script = ExtResource("1_hmyjb")
+aceleracion = 30.0
+friccion = 8.0
 
 [node name="Colisionador_fisico" type="CollisionShape3D" parent="." unique_id=1978240468]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)

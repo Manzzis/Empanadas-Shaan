@@ -596,14 +596,14 @@ shape = SubResource("BoxShape3D_ddtk2")
 [node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("1_fjafl")]
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("5_swxgr")]
-transform = Transform3D(0.0016283989, 0, 0.9999988, 0, 1, 0, -0.9999988, 0, 0.0016283989, -68.77139, 1.7663431, 141.21846)
+transform = Transform3D(0.0016283989, 0, 0.9999988, 0, 1, 0, -0.9999988, 0, 0.0016283989, -108.76393, 1.7663431, 132.34601)
 fuerza_salto = 8.0
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
-transform = Transform3D(0.0016289949, -0.25881884, 0.96592444, 0, 0.9659258, 0.25881916, -0.9999986, -0.00042162836, 0.001573503, -65.680435, 2.9195642, 141.2235)
+transform = Transform3D(0.0016291142, -0.25881824, 0.9659247, 0, 0.96592593, 0.25881857, -0.9999986, -0.00042164326, 0.0015735626, -105.672966, 2.9195642, 132.35104)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
-transform = Transform3D(0.9999999, 1.6752165e-07, -5.9080776e-07, 0, 0.9659258, 0.25881916, 5.962793e-07, -0.25881916, 0.96592563, 0, 1.1532211, 3.0909576)
+transform = Transform3D(0.9999999, 1.8341234e-07, -6.5006316e-07, 0, 0.96592593, 0.25881857, 7.1548857e-07, -0.25881857, 0.9659259, 0, 1.1532211, 3.090973)
 tween_resource = SubResource("Resource_nfbop")
 follow_offset = Vector3(0, 0.325, 0)
 follow_distance = 3.2
@@ -651,7 +651,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.741182, 207.4455, 0.45556
 transform = Transform3D(1.9028529, 0, 1.3704659, 0, 2.345, 0, -1.3704659, 0, 1.9028529, -61.307816, 70.52508, -111.90152)
 
 [node name="PathFollow3D" parent="Mapa2/Path3D" parent_id_path=PackedInt32Array(1500117706, 2082786440) index="0" unique_id=1880022267]
-transform = Transform3D(-0.99971765, -0.0005720516, -0.021356614, 0, 0.9996153, -0.026774064, 0.021364205, -0.026768612, -0.99936247, 0.21134186, -0.290442, -3.304761)
+transform = Transform3D(-0.999716, -0.0005720508, -0.021356614, 0, 0.99961394, -0.026774064, 0.02136417, -0.026768574, -0.99936247, 0.21134186, -0.290442, -3.304761)
 
 [node name="NivelLucas" parent="Mapa2" unique_id=1301037403 instance=ExtResource("6_2hlhe")]
 transform = Transform3D(0.34603453, 0, -0.24921975, 0, 0.42643923, 0, 0.24921975, 0, 0.34603453, -31.333391, 48.96058, 38.925964)
@@ -1116,6 +1116,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999785, 148.514, 17.012144, 1
 size = Vector3(0.5, 34.484127, 0.5)
 material = SubResource("StandardMaterial3D_oxq4d")
 
+[node name="auto4" type="CSGBox3D" parent="csg_decoracion" unique_id=1755449525]
+transform = Transform3D(4.41388, 0, 0, 0, 2.2983854, 0, 0, 0, 3.698436, -110.14589, 3.2074738, 163.17838)
+size = Vector3(5, 3.0234375, 5)
+material = SubResource("StandardMaterial3D_5a5m8")
+
 [node name="Cables" type="Node3D" parent="." unique_id=179040645]
 
 [node name="Cables1" type="Path3D" parent="Cables" unique_id=1398065600]
@@ -1528,7 +1533,7 @@ curve = SubResource("Curve3D_crut0")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1805338284]
-transform = Transform3D(-0.9995415, -7.8193436e-05, 0.029797617, 7.2758535e-12, 0.99998605, 0.002624109, -0.029797632, 0.0026229464, -0.999541, -0.27874756, -1.0733719, 0.365448)
+transform = Transform3D(-0.9995415, -7.8193305e-05, 0.029797617, 7.2758535e-12, 0.9999844, 0.002624109, -0.029797632, 0.002622942, -0.999541, -0.27874756, -1.0733719, 0.365448)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=1530676560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
@@ -1676,7 +1681,7 @@ curve = SubResource("Curve3D_ptdye")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=924733764]
-transform = Transform3D(-0.7397507, -0.004826945, -0.67283773, -2.3282666e-10, 0.99995905, -0.0071736765, 0.6728557, -0.0053068376, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+transform = Transform3D(-0.7397507, -0.004826937, -0.67283773, -2.3282666e-10, 0.9999574, -0.0071736765, 0.6728557, -0.0053068288, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=1533875553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
@@ -1957,6 +1962,223 @@ shape = SubResource("BoxShape3D_jcumk")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables/Cables8/Area3D" unique_id=1021679231]
 transform = Transform3D(0.5286244, -0.21907234, 0.8201, 0.40794048, 0.9128086, -0.019114938, -0.74440664, 0.34465647, 0.57190126, 9.5696335, 7.93927, -14.056168)
 shape = SubResource("BoxShape3D_ssqmi")
+
+[node name="Path3D9" type="Path3D" parent="Cables" unique_id=2072462608]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -47.512768, 0.80945015, 128.22607)
+curve = SubResource("Curve3D_xrh2d")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D9" unique_id=994468149]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D9" unique_id=985613592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables/Path3D9" unique_id=1959149690]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D9/Area3D" unique_id=1759013538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D10" type="Path3D" parent="Cables" unique_id=1306661647]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -47.512768, 0.80945015, 137.9358)
+curve = SubResource("Curve3D_xrh2d")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D10" unique_id=1869070590]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D10" unique_id=1889284971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables/Path3D10" unique_id=402101436]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D10/Area3D" unique_id=1474762663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D11" type="Path3D" parent="Cables" unique_id=514165674]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -59.229115, 0.80945015, 137.9358)
+curve = SubResource("Curve3D_xrh2d")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D11" unique_id=937465989]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D11" unique_id=860542903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables/Path3D11" unique_id=1605189756]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D11/Area3D" unique_id=496211648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D12" type="Path3D" parent="Cables" unique_id=1051942245]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -70.18254, 0.80945015, 137.9358)
+curve = SubResource("Curve3D_xrh2d")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D12" unique_id=340540112]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D12" unique_id=1191277047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables/Path3D12" unique_id=2123077898]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D12/Area3D" unique_id=553169598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D13" type="Path3D" parent="Cables" unique_id=1398359521]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -82.449265, 0.80945015, 137.9358)
+curve = SubResource("Curve3D_xrh2d")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D13" unique_id=406061688]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D13" unique_id=2047308953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables/Path3D13" unique_id=1391120043]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D13/Area3D" unique_id=1733238851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D14" type="Path3D" parent="Cables" unique_id=71997153]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -59.208157, 0.80945015, 128.22607)
+curve = SubResource("Curve3D_xrh2d")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D14" unique_id=1234076941]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D14" unique_id=336777770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables/Path3D14" unique_id=1280235388]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D14/Area3D" unique_id=620313274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")
+
+[node name="Path3D15" type="Path3D" parent="Cables" unique_id=1736037081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.31348, 0.80945015, 128.22607)
+curve = SubResource("Curve3D_xrh2d")
+script = ExtResource("11_xrh2d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Path3D15" unique_id=545875959]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Path3D15" unique_id=2080986261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 0.3, 1, 0.3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_ymiyg")
+
+[node name="Area3D" type="Area3D" parent="Cables/Path3D15" unique_id=1841633100]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D15/Area3D" unique_id=1810659762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")
 
 [node name="Fallzone" parent="." unique_id=491432035 instance=ExtResource("19_oxq4d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 172, 71)

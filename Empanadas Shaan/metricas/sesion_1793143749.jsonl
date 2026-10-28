@@ -1,0 +1,9 @@
+{"datos":{"buses":{"MUSIC":20.0,"Master":100.0,"SFX":75.0}},"nivel":"Node3D","t":0.0,"tipo":"volumen_inicial"}
+{"datos":{"pos":[-108.76,0.79,132.35],"segundos":1.07},"nivel":"Node3D","t":1.52,"tipo":"quieto"}
+{"datos":{"pos":[-95.18,0.79,132.37],"vel":[10.0,0.0,0.02]},"nivel":"Node3D","t":3.02,"tipo":"muestra"}
+{"datos":{"pos":[-79.27,0.79,132.39],"segundos":0.48},"nivel":"Node3D","t":5.37,"tipo":"quieto"}
+{"datos":{"pos":[-74.35,0.79,132.4],"vel":[10.0,0.0,0.02]},"nivel":"Node3D","t":6.03,"tipo":"muestra"}
+{"datos":{"pos":[-71.19,0.79,132.41],"vel":[-8.13,0.0,-0.01]},"nivel":"Node3D","t":9.05,"tipo":"muestra"}
+{"datos":{"pos":[-61.99,0.79,132.72],"vel":[-9.92,0.0,1.23]},"nivel":"Node3D","t":12.07,"tipo":"muestra"}
+{"datos":{"pos":[-64.6,0.79,133.04],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":15.08,"tipo":"muestra"}
+{"datos":{"pos":[-64.61,0.79,133.04],"segundos":1.25},"nivel":"Node3D","t":16.28,"tipo":"quieto"}
