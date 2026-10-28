@@ -21,9 +21,10 @@ func activar_cooldown() -> void:
 func iniciar() -> void:
 	super.iniciar()
 	
-	# LA MAGIA: Apagamos el _physics_process del Jugador. 
+	# Apagamos el _physics_process del Jugador. 
 	# Esto desactiva su gravedad y move_and_slide temporalmente.
 	jugador.set_physics_process(false) 
+	jugador.coyote_timer = 0.0  # el grind no debe dejar coyote time
 
 	riel = jugador.riel_actual as Path3D
 	if not riel:
@@ -63,11 +64,12 @@ func iniciar() -> void:
 	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
 
 
-# NUEVO: Función que se ejecuta al salir del estado.
+# Se ejecuta al salir del estado (ambas salidas: normal y con salto).
 # (Si en tu máquina de estados se llama de otra forma, como exit(), cámbiale el nombre).
 func finalizar() -> void:
-	# Al salir del grindeo, volvemos a encender las físicas del jugador.
 	if jugador:
+		jugador.coyote_timer = 0.0  # tras el grind no hay coyote time
+		# Al salir del grindeo, volvemos a encender las físicas del jugador.
 		jugador.set_physics_process(true)
 
 
