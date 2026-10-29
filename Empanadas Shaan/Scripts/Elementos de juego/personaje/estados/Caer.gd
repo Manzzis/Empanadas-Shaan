@@ -6,6 +6,12 @@ extends Estados_de_jugador
 
 func on_physics_process(delta: float) -> void:
 	moverse(delta)
+	#print("CAER | coyote: ", snapped(jugador.coyote_timer, 0.01))
+	
+	# Coyote time: saltar poco después de dejar el suelo
+	if Input.is_action_just_pressed("Salto") and jugador.puede_saltar_coyote():
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
+		return
 	
 	if jugador.is_on_floor():
 		var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()

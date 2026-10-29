@@ -22,6 +22,10 @@ var riel_actual : Riel3D = null
 @export var fuerza_salto : float = 6.0
 var direccion_delantera : bool = false
 
+# Coyote time: segundos de gracia para saltar tras dejar el suelo
+@export var coyote_time : float = 0.15
+var coyote_timer : float = 0.0
+
 var rampa_actual : Rampa = null
 @export var fuerza_deslizamiento : float = 15.0
 
@@ -42,6 +46,18 @@ func _physics_process(delta: float) -> void:
 	handle_deslizamiento(delta)
 	move_and_slide()
 	girar(delta)
+	actualizar_coyote_time(delta)
+
+
+func actualizar_coyote_time(delta: float) -> void:
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer = max(coyote_timer - delta, 0.0)
+
+
+func puede_saltar_coyote() -> bool:
+	return coyote_timer > 0.0
 
 
 func girar(delta: float) -> void:
@@ -78,6 +94,13 @@ func girar(delta: float) -> void:
 
 
 func handle_gravity(delta):
+	# Momento coyote: salimos del suelo pero aún estamos en la ventana de gracia.
+	# Sin gravedad, el jugador "flota" a la altura de la plataforma.
+	if not is_on_floor() and coyote_timer > 0.0:
+		velocity.y = 0.0
+		print("LLEGO EL COYOTEEEEEEEEEEEEE")
+		return
+	
 	velocity.y -= gravedad * delta
 
 

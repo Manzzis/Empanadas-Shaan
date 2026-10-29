@@ -20,6 +20,9 @@ func on_physics_process(delta: float) -> void:
 	moverse(delta)
 	comprobar_riel()
 	comprobar_velocidad()
+	if not jugador.is_on_floor():
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
+		return
 
 func on_input(_event: InputEvent) -> void:
 	pass

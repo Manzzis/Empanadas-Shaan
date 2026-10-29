@@ -6,6 +6,8 @@ extends Estados_de_jugador
 
 func iniciar() -> void:
 	jugador = nodo_controlador
+	#print("SALTO | coyote al saltar: ", snapped(jugador.coyote_timer, 0.001))
+	jugador.coyote_timer = 0.0  # consumimos el coyote time (evita doble salto)
 	jugador.velocity.y = jugador.fuerza_salto
 	
 	if jugador.rampa_actual != null:
@@ -14,10 +16,7 @@ func iniciar() -> void:
 			var normal = jugador.get_floor_normal()
 			var empuje_horizontal = Vector3(-normal.x, 0, -normal.z)
 			jugador.velocity += empuje_horizontal * jugador.fuerza_salto
-		else:
-			jugador.velocity.y = jugador.fuerza_salto
-	else:
-		jugador.velocity.y = jugador.fuerza_salto
+	
 	#enviamos señal al event bus del jugador
 	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
 
