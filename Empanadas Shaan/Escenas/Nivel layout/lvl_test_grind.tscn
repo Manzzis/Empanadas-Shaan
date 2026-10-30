@@ -77,8 +77,6 @@ curve = SubResource("Curve3D_dxjry")
 debug_custom_color = Color(0.9882353, 0, 0, 1)
 
 [node name="CSGPolygon3D" parent="Node3D/Riel3D" index="1" unique_id=556665570]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-polygon = PackedVector2Array(0, 0, 0, 0.2, 0.2, 0.2, 0.2, 0.2)
 path_rotation = 1
 path_rotation_accurate = true
 
@@ -87,6 +85,9 @@ wind_source_path = NodePath("..")
 
 [node name="CollisionShape3D" parent="Node3D/Riel3D/Area3D" index="0" unique_id=1887657425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.0632033, 5.924, 1.494, -0.028)
+
+[node name="Riel3D" parent="." unique_id=961112629 instance=ExtResource("2_bws6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1563835, 2.3773026, 7.242403)
 
 [editable path="Personaje"]
 [editable path="Personaje/CameraComponent"]
