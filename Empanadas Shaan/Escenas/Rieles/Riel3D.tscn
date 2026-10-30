@@ -1,29 +1,33 @@
 [gd_scene format=3 uid="uid://bthvge2l6k4ew"]
 
 [ext_resource type="Script" uid="uid://bauiukcngpaga" path="res://Scripts/Elementos de juego/Riel/Riel3D.gd" id="1_tjswf"]
-[ext_resource type="Texture2D" uid="uid://dl1v87nc8ncyh" path="res://Assets visuales/placeholders/Orange/texture_02.png" id="2_5aja8"]
+[ext_resource type="Texture2D" uid="uid://bj7h2fc5jx4ax" path="res://addons/phantom_camera/examples/textures/3D/checker_pattern_dark.png" id="2_02ekf"]
 
-[sub_resource type="Curve3D" id="Curve3D_lgcgk"]
+[sub_resource type="Curve3D" id="Curve3D_bkm1u"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.01929617, 1.4657376, 0.012864149, 0, 0, 0, 0, 0, 0, 2.5792632, 1.4657376, 0.012864149, 0, 0, 0, 0, 0, 0, 5.066697, 1.4657376, -0.03500307, 0, 0, 0, 0, 0, 0, 8.113006, 1.4657376, 0.023550076, 0, 0, 0, 0, 0, 0, 11.893306, 1.4657376, -0.07474274),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0.17, 0, 0, 0, 0, 0, 0, 0, 0, -1.6770782, 0, 0, 0, 0, 0, 0, 0.00541687, 0, -7.882332, 0, 0, 0, 0, 0, 0, 0, 0, -10.060753),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 5
+point_count = 4
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0en8"]
-albedo_texture = ExtResource("2_5aja8")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymiyg"]
+albedo_texture = ExtResource("2_02ekf")
 
-[node name="Riel3D" type="Path3D" unique_id=68641506]
-curve = SubResource("Curve3D_lgcgk")
-debug_custom_color = Color(1.3957917e-06, 0.39915404, 0.5537117, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
+size = Vector3(0.96147156, 0.1463623, 10.297012)
+
+[node name="Path3D13" type="Path3D" unique_id=1033356637]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+curve = SubResource("Curve3D_bkm1u")
 script = ExtResource("1_tjswf")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=1633164146]
-transform = Transform3D(-4.3711374e-08, 0, -0.9999986, 0, 0.99999887, 0, 0.9999997, 0, -4.3711328e-08, -0.01929617, 1.4657376, 0.012864149)
-loop = false
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=652583177]
+transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0, 0.17)
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=556665570]
-polygon = PackedVector2Array(0, 0, 0, 0.2, 0.2, 0.2, 0.2, 0.2)
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1914338670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
+use_collision = true
+polygon = PackedVector2Array(0.095, 1, 0.185, 1, 0.185, 0.9, 0.095, 0.9)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -35,6 +39,10 @@ path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
-material = SubResource("StandardMaterial3D_q0en8")
+material = SubResource("StandardMaterial3D_ymiyg")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=798081138]
+[node name="Area3D" type="Area3D" parent="." unique_id=207179536]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=543708243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.068048954, -4.9741364)
+shape = SubResource("BoxShape3D_2bok1")

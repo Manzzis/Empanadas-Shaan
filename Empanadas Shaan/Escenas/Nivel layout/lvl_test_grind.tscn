@@ -11,10 +11,10 @@
 
 [sub_resource type="Curve3D" id="Curve3D_dxjry"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.01929617, 1.4657376, 0.012864149, 0, 0, 0, 0, 0, 0, 2.5792632, 1.4657376, 0.012864149, 0, 0, 0, 0, 0, 0, 5.066697, 1.4657376, -0.03500307, 0, 0, 0, 0, 0, 0, 8.113006, 1.4657376, 0.023550076, 0, 0, 0, 0, 0, 0, 11.893306, 1.4657376, -0.07474274),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0.17, 0, 0, 0, 0, 0, 0, 0, 0, -1.6770782, 0, 0, 0, 0, 0, 0, 0.00541687, 0, -7.882332, 0, 0, 0, 0, 0, 0, 0, 0, -10.060753, 0, 0, 0, 0, 0, 0, -3.6250644, 0.7907758, -10.326883, 0, 0, 0, 0, 0, 0, -6.172557, 5.2709084, -4.5652084, 0, 0, 0, 0, 0, 0, -3.5223525, -0.1517291, 5.3773937, 0, 0, 0, 0, 0, 0, -7.2211885, -0.13523674, 5.1347504, 0, 0, 0, 0, 0, 0, -6.408374, -0.36084938, -0.92435455),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 5
+point_count = 9
 
 [node name="LvlTestGrind" type="Node3D" unique_id=468170464]
 
@@ -58,6 +58,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.650923, 2.2456694, 0)
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("3_bws6j")]
 transform = Transform3D(-0.9713799, 0, 0.2375316, 0, 1, 0, -0.2375316, 0, -0.9713799, 14.469421, 3.719098, 7.1841526)
 
-[node name="Riel3D" parent="." unique_id=68641506 instance=ExtResource("2_bws6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.597702, 1.9547281, 0)
+[node name="Path3D13" parent="." unique_id=1033356637 instance=ExtResource("2_bws6j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26.19004, 3.5937004, 0)
 curve = SubResource("Curve3D_dxjry")
+
+[editable path="Path3D13"]
