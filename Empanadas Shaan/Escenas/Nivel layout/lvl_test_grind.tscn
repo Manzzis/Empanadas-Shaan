@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="7_1eosy"]
 [ext_resource type="PackedScene" uid="uid://cspom318tkpra" path="res://Escenas/recolectables/moneda.tscn" id="8_dxjry"]
 
+[sub_resource type="Curve3D" id="Curve3D_dxjry"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.01929617, 1.4657376, 0.012864149, 0, 0, 0, 0, 0, 0, 2.5792632, 1.4657376, 0.012864149, 0, 0, 0, 0, 0, 0, 5.066697, 1.4657376, -0.03500307, 0, 0, 0, 0, 0, 0, 8.113006, 1.4657376, 0.023550076, 0, 0, 0, 0, 0, 0, 11.893305, 1.4657376, -0.07474274, 0, 0, 0, 0, 0, 0, 14.715544, 3.3102927, -1.1316733),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
 [node name="LvlTestGrind" type="Node3D" unique_id=468170464]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1083853650]
@@ -19,18 +26,21 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
-[node name="Riel3D" parent="." unique_id=68641506 instance=ExtResource("2_bws6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.385912, 1.7072508, 2.5915637)
-
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("3_bws6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.520203, 3.5769043, 4.3750057)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.520203, 3.5769043, -6.9107018)
 collision_layer = 3
 
+[node name="GrindArea" parent="Personaje" index="1" unique_id=1089078165]
+transform = Transform3D(2.5626411, 0, 0, 0, 1, 0, 0, 0, 2.2053912, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="Personaje/GrindArea" index="0" unique_id=1579173156]
+debug_color = Color(0.9973963, 0.046994634, 0, 0.41960785)
+
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.520203, 3.8669043, 6.8750057)
+transform = Transform3D(1, 0, 0, 0, 0.9862856, 0.16504763, 0, -0.16504763, 0.9862856, 11.520203, 4.461125, -3.5875993)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28999996, 2.5)
+transform = Transform3D(1, 0, 0, 0, 0.9862856, 0.16504763, 0, -0.16504763, 0.9862856, 0, 0.8842206, 3.3231025)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=434315690]
 transform = Transform3D(1, 0, 0, 0, 0.27487424, 0.9614802, 0, -0.9614802, 0.27487424, 0, 9.091118, 0)
@@ -58,5 +68,26 @@ collision_mask = 2
 [node name="Moneda2" parent="." unique_id=1504363073 instance=ExtResource("8_dxjry")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.023073, 2.8424459, -2.966236)
 
+[node name="Node3D" type="Node3D" parent="." unique_id=804085238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.650923, 2.2456694, 0)
+
+[node name="Riel3D" parent="Node3D" unique_id=68641506 instance=ExtResource("2_bws6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6508656, 0)
+curve = SubResource("Curve3D_dxjry")
+debug_custom_color = Color(0.9882353, 0, 0, 1)
+
+[node name="CSGPolygon3D" parent="Node3D/Riel3D" index="1" unique_id=556665570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+polygon = PackedVector2Array(0, 0, 0, 0.2, 0.2, 0.2, 0.2, 0.2)
+path_rotation = 1
+path_rotation_accurate = true
+
+[node name="Area3D" parent="Node3D/Riel3D" index="2" unique_id=1600815866]
+wind_source_path = NodePath("..")
+
+[node name="CollisionShape3D" parent="Node3D/Riel3D/Area3D" index="0" unique_id=1887657425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.0632033, 5.924, 1.494, -0.028)
+
 [editable path="Personaje"]
 [editable path="Personaje/CameraComponent"]
+[editable path="Node3D/Riel3D"]
