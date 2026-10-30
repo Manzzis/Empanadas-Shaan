@@ -13,9 +13,6 @@ point_count = 5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0en8"]
 albedo_texture = ExtResource("2_5aja8")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
-size = Vector3(12.076, 0.151, 0.335)
-
 [node name="Riel3D" type="Path3D" unique_id=68641506]
 curve = SubResource("Curve3D_lgcgk")
 debug_custom_color = Color(1.3957917e-06, 0.39915404, 0.5537117, 1)
@@ -26,7 +23,6 @@ transform = Transform3D(-4.3711374e-08, 0, -0.9999986, 0, 0.99999887, 0, 0.99999
 loop = false
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=556665570]
-use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 0.2, 0.2, 0.2, 0.2, 0.2)
 mode = 2
 path_node = NodePath("..")
@@ -41,8 +37,4 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_q0en8")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1600815866]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1887657425]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.924, 1.494, -0.028)
-shape = SubResource("BoxShape3D_2bok1")
+[node name="Area3D" type="Area3D" parent="." unique_id=798081138]

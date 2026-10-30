@@ -1,7 +1,7 @@
 extends Path3D
 class_name Riel3D
 
-@export var margen: float = 0.1
+@export var margen: float = 1.0
 @export var detalle_curva: float = 0.5
 
 @onready var path_follow: PathFollow3D = $PathFollow3D
