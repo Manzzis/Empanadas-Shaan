@@ -27,7 +27,7 @@ transform = Transform3D(0.9999987, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999986, 0, 0,
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1914338670]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -1.085, 0)
 use_collision = true
-polygon = PackedVector2Array(0.095, 1, 0.185, 1, 0.185, 0.9, 0.095, 0.9)
+polygon = PackedVector2Array(0.095, 1, 0.19, 1, 0.21, 0.9, 0.095, 0.9)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
