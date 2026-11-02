@@ -20,6 +20,7 @@ var ultimo_checkpoint: Vector3
 
 var riel_actual : Riel3D = null
 @export var fuerza_salto : float = 6.0
+@export var tiempo_max_salto : float 
 var direccion_delantera : bool = false
 
 # Coyote time: segundos de gracia para saltar tras dejar el suelo
@@ -98,7 +99,7 @@ func handle_gravity(delta):
 	# Sin gravedad, el jugador "flota" a la altura de la plataforma.
 	if not is_on_floor() and coyote_timer > 0.0:
 		velocity.y = 0.0
-		print("LLEGO EL COYOTEEEEEEEEEEEEE")
+		#print("LLEGO EL COYOTEEEEEEEEEEEEE")
 		return
 	
 	velocity.y -= gravedad * delta
