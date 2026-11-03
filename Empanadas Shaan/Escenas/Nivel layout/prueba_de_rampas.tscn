@@ -62,7 +62,7 @@ transform = Transform3D(0.13652618, 0, -0.99063647, 0, 1, 0, 0.99063647, 0, 0.13
 duracion_impulso = 1.0
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("4_sy7rq")]
-transform = Transform3D(-0.18562889, 0, 0.98261994, 0, 1, 0, -0.98261994, 0, -0.18562889, -12.745211, 0.95438194, -0.4107461)
+transform = Transform3D(-0.18562889, 0, 0.98261994, 0, 1, 0, -0.98261994, 0, -0.18562889, -12.745211, 2.164918, -0.4107461)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=800474995]
 transform = Transform3D(1, 0, 0, 0, 0.077731155, 0.99697435, 0, -0.99697435, 0.077731155, 0, 38.384735, 0)

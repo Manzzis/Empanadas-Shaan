@@ -88,22 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 0.27487424, 0.9614802, 0, -0.9614802, 0.2748
 [node name="Fallzone" parent="." unique_id=491432035 instance=ExtResource("4_yw2ke")]
 
 [node name="Riel3D" parent="." unique_id=68641506 instance=ExtResource("5_yw2ke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.190205, 2.040485, -8.341085)
-
-[node name="Riel3D2" parent="." unique_id=1156381968 instance=ExtResource("5_yw2ke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9445553, 2.040485, -8.341085)
-
-[node name="Riel3D3" parent="." unique_id=743541575 instance=ExtResource("5_yw2ke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.188004, 2.040485, -8.341085)
-
-[node name="Riel3D4" parent="." unique_id=684824194 instance=ExtResource("5_yw2ke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.190205, 2.040485, 9.127123)
-
-[node name="Riel3D5" parent="." unique_id=939266036 instance=ExtResource("5_yw2ke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9445553, 2.040485, 9.127123)
-
-[node name="Riel3D6" parent="." unique_id=911748606 instance=ExtResource("5_yw2ke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.188004, 2.040485, 9.127123)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.190205, 11.7316475, -8.341085)
 
 [node name="Rampa" parent="." unique_id=353421338 instance=ExtResource("6_kwk5t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.92471, 2.8383775, -0.19313002)
@@ -195,11 +180,6 @@ script = ExtResource("16_5xadd")
 [editable path="Personaje"]
 [editable path="Personaje/CameraComponent"]
 [editable path="Riel3D"]
-[editable path="Riel3D2"]
-[editable path="Riel3D3"]
-[editable path="Riel3D4"]
-[editable path="Riel3D5"]
-[editable path="Riel3D6"]
 [editable path="Rampa"]
 [editable path="Rampa2"]
 [editable path="Rampa3"]

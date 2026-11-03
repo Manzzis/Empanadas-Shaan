@@ -20,6 +20,7 @@ func _ready() -> void:
 	_aplicar_volumen(SFX_BUS_ID, sfx_control.value)
 	Tienda_menu.hide()
 
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
 		alternar_pausa()
@@ -69,8 +70,6 @@ func _on_sfx_control_deslizante_value_changed(value: float) -> void:
 func _on_Reanudar_pressed() -> void:
 	menu.hide()
 	get_tree().paused = false
-
-
 
 
 func _on_volver_menu_pressed() -> void:
