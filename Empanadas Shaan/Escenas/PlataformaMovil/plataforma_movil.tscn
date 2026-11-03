@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dlsrcsgsdjqht"]
+
+[ext_resource type="Script" uid="uid://ds3t4lyesamyu" path="res://Scripts/PlataformaMovil/plataforma_movil.gd" id="1_mac8u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ftlh3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ftlh3"]
+
+[node name="PlataformaMovil" type="AnimatableBody3D" unique_id=1247498830]
+script = ExtResource("1_mac8u")
+
+[node name="Malla" type="MeshInstance3D" parent="." unique_id=1954202135]
+mesh = SubResource("BoxMesh_ftlh3")
+
+[node name="Colision" type="CollisionShape3D" parent="." unique_id=1327964817]
+shape = SubResource("BoxShape3D_ftlh3")

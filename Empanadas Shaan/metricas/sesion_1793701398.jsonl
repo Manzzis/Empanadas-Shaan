@@ -1,0 +1,5 @@
+{"datos":{"buses":{"MUSIC":20.0,"Master":100.0,"SFX":75.0}},"nivel":"LvlTestGrind","t":0.0,"tipo":"volumen_inicial"}
+{"datos":{"pos":[13.77,2.9,-4.15],"vel":[0.0,0.0,0.0]},"nivel":"LvlTestGrind","t":3.02,"tipo":"muestra"}
+{"datos":{"pos":[13.77,2.9,-4.15],"vel":[0.0,0.0,0.0]},"nivel":"LvlTestGrind","t":6.03,"tipo":"muestra"}
+{"datos":{"pos":[13.77,2.9,-4.15],"vel":[0.0,0.0,0.0]},"nivel":"LvlTestGrind","t":9.05,"tipo":"muestra"}
+{"datos":{"pos":[13.77,2.9,-4.15],"vel":[0.0,0.0,0.0]},"nivel":"LvlTestGrind","t":12.07,"tipo":"muestra"}
