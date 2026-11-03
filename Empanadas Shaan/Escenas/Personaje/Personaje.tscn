@@ -36,6 +36,30 @@ albedo_texture = ExtResource("2_f7uka")
 material = SubResource("StandardMaterial3D_p776b")
 size = Vector3(0.85876465, 0.10058594, 0.12109375)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_720kk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlnpb"]
+albedo_color = Color(0.7601872, 0.886181, 0.92664075, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_720kk"]
+material = SubResource("StandardMaterial3D_tlnpb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tlnpb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdn0p"]
+albedo_color = Color(0.29028472, 0.24883324, 0.46763736, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tlnpb"]
+material = SubResource("StandardMaterial3D_xdn0p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7w372"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_720kk"]
+albedo_color = Color(1, 0.8235294, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_720kk"]
+material = SubResource("StandardMaterial3D_720kk")
+
 [node name="Personaje" type="CharacterBody3D" unique_id=1912633892 groups=["Player"]]
 collision_mask = 3
 script = ExtResource("1_hmyjb")
@@ -155,6 +179,27 @@ align_rotation_with_view = Callable()
 
 [node name="Trail" type="Node3D" parent="." unique_id=112568443]
 script = ExtResource("20_720kk")
+
+[node name="ParticulasSalto" type="GPUParticles3D" parent="." unique_id=1727809070]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_720kk")
+draw_pass_1 = SubResource("SphereMesh_720kk")
+
+[node name="ParticulasAterrizaje" type="GPUParticles3D" parent="." unique_id=1352747066]
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_tlnpb")
+draw_pass_1 = SubResource("SphereMesh_tlnpb")
+
+[node name="ParticulasGrind" type="GPUParticles3D" parent="." unique_id=473171429]
+emitting = false
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_7w372")
+draw_pass_1 = SubResource("QuadMesh_720kk")
 
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Caer" method="_on_grind_area_area_entered"]

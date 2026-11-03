@@ -4,6 +4,9 @@ class_name Jugador extends CharacterBody3D
 #estados del jugador
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 @onready var camera_component := $CameraComponent
+@onready var particulas_salto: GPUParticles3D = $ParticulasSalto
+@onready var particulas_aterrizaje: GPUParticles3D = $ParticulasAterrizaje
+@onready var particulas_grind: GPUParticles3D = $ParticulasGrind
 
 var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var ultimo_checkpoint: Vector3
@@ -50,14 +53,31 @@ func _ready() -> void:
 		texto_monedas.text = "Monedas: " + str(GlobalVar.monedas)
 
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
+	var estaba_en_suelo = is_on_floor()
+
 	handle_gravity(delta)
 	handle_deslizamiento(delta)
+
+	# Sistema de particulas
+
+	# El salto
+	if Input.is_action_just_pressed("Saltar") and (is_on_floor() or puede_saltar_coyote()):
+		velocity.y = fuerza_salto
+		emitir_particulas(particulas_salto)
+
 	move_and_slide()
 	girar(delta)
 	actualizar_coyote_time(delta)
 
+	# El aterrizaje
+	if not estaba_en_suelo and is_on_floor():
+		emitir_particulas(particulas_aterrizaje)
 
+	# El grinding
+	grindeando = riel_actual != null
+	particulas_grind.emitting = grindeando
+	
 func actualizar_coyote_time(delta: float) -> void:
 	if is_on_floor():
 		coyote_timer = coyote_time
@@ -135,3 +155,7 @@ func sumar_moneda():
 	GlobalVar.monedas += 1
 	if texto_monedas:
 		texto_monedas.text = "Monedas: " + str(GlobalVar.monedas)
+		
+func emitir_particulas(particulas: GPUParticles3D) -> void:
+	particulas.restart()
+	particulas.emitting = true
