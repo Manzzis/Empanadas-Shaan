@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3t0et2bos2wj" path="res://Escenas/checkpoint/checkpoint.tscn" id="6_1eosy"]
 [ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="7_1eosy"]
 [ext_resource type="PackedScene" uid="uid://cspom318tkpra" path="res://Escenas/recolectables/moneda.tscn" id="8_dxjry"]
+[ext_resource type="PackedScene" uid="uid://dlsrcsgsdjqht" path="res://Escenas/PlataformaMovil/plataforma_movil.tscn" id="9_gv6la"]
 
 [sub_resource type="Curve3D" id="Curve3D_dxjry"]
 _data = {
@@ -70,7 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.023073, 2.8424459, -2.9662
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.650923, 2.2456694, 0)
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("3_bws6j")]
-transform = Transform3D(-0.9713799, 0, 0.2375316, 0, 1, 0, -0.2375316, 0, -0.9713799, 14.469421, 3.719098, 7.1841526)
+transform = Transform3D(-0.9713799, 0, 0.2375316, 0, 1, 0, -0.2375316, 0, -0.9713799, 13.772968, 5.536479, -4.150386)
 
 [node name="Path3D13" parent="." unique_id=1033356637 instance=ExtResource("2_bws6j")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26.19004, 3.5937004, 0)
@@ -84,5 +85,8 @@ curve = SubResource("Curve3D_gv6la")
 [node name="Path3D15" parent="." unique_id=626480954 instance=ExtResource("2_bws6j")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.399836, 4.4389315, 0)
 curve = SubResource("Curve3D_7bqua")
+
+[node name="PlataformaMovil" parent="." unique_id=1247498830 instance=ExtResource("9_gv6la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.073534, 7.020995, 20.66602)
 
 [editable path="Path3D13"]
