@@ -55,18 +55,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var estaba_en_suelo = is_on_floor()
-
-	if Input.is_key_pressed(KEY_P):
-		particulas_salto.restart()
-		particulas_salto.emitting = true
-	
 	handle_gravity(delta)
 	handle_deslizamiento(delta)
 
 	# Sistema de particulas
 
 	# El salto
-	if Input.is_action_just_pressed("Saltar") and (is_on_floor() or puede_saltar_coyote()):
+	if Input.is_action_just_pressed("Salto") and (is_on_floor() or puede_saltar_coyote()):
 		velocity.y = fuerza_salto
 		particulas_salto.restart()
 		particulas_salto.emitting = true
