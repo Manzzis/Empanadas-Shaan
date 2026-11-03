@@ -38,14 +38,15 @@ var grindeando = false
 var PDE : int = 0 #(Abreviación de Puntos de Estilo), empieza en 0 cada nivel
 @export var fuerza_dash : float = 25.0
 
-@onready var texto_monedas = $CanvasLayer/Label
+@onready var texto_monedas = $CanvasLayer/MonedasLabel
+@onready var texto_velocidad = $CanvasLayer/VelocidadLable
 
 func _ready() -> void:
 	ultimo_checkpoint = global_position
 	camera_component.set_target(self)
 	
 	if GlobalVar.velocidad_mejorada:
-		velocidad = GlobalVar.velocidad_rapida # También aprovechamos para usar la variable del Autoload
+		velocidad = GlobalVar.velocidad_rapida 
 	else:
 		velocidad = GlobalVar.velocidad_normal
 		
@@ -53,8 +54,12 @@ func _ready() -> void:
 		texto_monedas.text = "Monedas: " + str(GlobalVar.monedas)
 
 
-func _physics_process(delta: float) -> void:
-	var estaba_en_suelo = is_on_floor()
+func _process(delta: float) -> void:
+	if texto_velocidad:
+		texto_velocidad.text = "Vel. Actual: " + str(snapped(Vector2(velocity.x, velocity.z).length(), 0.1))
+
+
+func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
 	handle_deslizamiento(delta)
 

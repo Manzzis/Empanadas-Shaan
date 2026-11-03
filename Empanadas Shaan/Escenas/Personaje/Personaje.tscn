@@ -177,14 +177,26 @@ stream = ExtResource("18_68xog")
 bus = &"SFX"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=353256433]
+visible = false
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=259169995]
+[node name="MonedasLabel" type="Label" parent="CanvasLayer" unique_id=259169995]
 offset_left = 79.0
 offset_top = 26.0
 offset_right = 300.0
 offset_bottom = 81.0
 theme_override_font_sizes/font_size = 40
 text = "Monedas: 0"
+
+[node name="VelocidadLable" type="Label" parent="CanvasLayer" unique_id=2060218848]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = -102.0
+offset_right = 143.0
+offset_bottom = -79.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
 
 [node name="CameraComponent" parent="." unique_id=217961962 node_paths=PackedStringArray("nodo_visual_jugador") instance=ExtResource("14_vivqc")]
 nodo_visual_jugador = NodePath("../Apariencia")
