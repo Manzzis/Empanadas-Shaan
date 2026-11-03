@@ -9,7 +9,8 @@ extends CanvasLayer
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 @onready var sfx_control: HSlider = %SFX_control_deslizante
 
-@onready var menu: Control = $menu
+@onready var menu: Control = $menu_pausa
+@onready var Tienda_menu = $Tienda
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -17,6 +18,7 @@ func _ready() -> void:
 	_aplicar_volumen(GLOBAL_BUS_ID, sonido_global_control.value)
 	_aplicar_volumen(MUSIC_BUS_ID, music_control.value)
 	_aplicar_volumen(SFX_BUS_ID, sfx_control.value)
+	Tienda_menu.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
@@ -72,4 +74,20 @@ func _on_Reanudar_pressed() -> void:
 
 
 func _on_volver_menu_pressed() -> void:
+	get_tree().paused = false
+	
 	get_tree().change_scene_to_file("res://Escenas/UI/main_menu.tscn")
+
+
+func _on_boton_tienda_pressed() -> void:
+	Tienda_menu.show()
+	menu.hide()
+
+
+func _on_boton_tuto_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_boton_cerrar_pressed() -> void:
+	Tienda_menu.hide()
+	menu.show()
