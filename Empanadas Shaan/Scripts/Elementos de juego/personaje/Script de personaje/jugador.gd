@@ -9,7 +9,7 @@ var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var ultimo_checkpoint: Vector3
 
 #estadísticas del jugador
-@export var velocidad : float = 10.0
+var velocidad : float # SIN @export para que lo controle la tienda
 @export var aceleracion : float = 12.0
 @export var friccion : float = 4.0
 @export var friccion_lateral : float = friccion * 2
@@ -32,15 +32,23 @@ var rampa_actual : Rampa = null
 
 var grindeando = false
 
-@export var PDE : int #(Abreviación de Puntos de Estilo)
+var PDE : int = 0 #(Abreviación de Puntos de Estilo), empieza en 0 cada nivel
 @export var fuerza_dash : float = 25.0
 
-var monedas = 0
 @onready var texto_monedas = $CanvasLayer/Label
 
 func _ready() -> void:
 	ultimo_checkpoint = global_position
 	camera_component.set_target(self)
+	
+	if GlobalVar.velocidad_mejorada:
+		velocidad = GlobalVar.velocidad_rapida # También aprovechamos para usar la variable del Autoload
+	else:
+		velocidad = GlobalVar.velocidad_normal
+		
+	if texto_monedas:
+		texto_monedas.text = "Monedas: " + str(GlobalVar.monedas)
+
 
 func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
@@ -121,7 +129,9 @@ func handle_deslizamiento(delta):
 		return
 	
 	velocity += direccion_deslizamiento * fuerza_deslizamiento * delta
-	
+
+
 func sumar_moneda():
-	monedas += 1
-	texto_monedas.text = "Monedas: " + str(monedas)
+	GlobalVar.monedas += 1
+	if texto_monedas:
+		texto_monedas.text = "Monedas: " + str(GlobalVar.monedas)

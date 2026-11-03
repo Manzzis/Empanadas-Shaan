@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d1heibr2vgoun"]
+
+[ext_resource type="Script" uid="uid://dthumjj6qijy7" path="res://Scripts/UI/tienda.gd" id="1_p3ru6"]
+
+[node name="Tienda" type="Control" unique_id=1838099775]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3ru6")
+
+[node name="Panel" type="Panel" parent="." unique_id=1965906527]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -257.0
+offset_right = 416.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1497983447]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03846154
+anchor_top = 0.11867704
+anchor_right = 0.5444712
+anchor_bottom = 0.6439689
+offset_right = -3.0517578e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="TextoMonedas" type="Label" parent="Panel/VBoxContainer" unique_id=1388465610]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Monedas: "
+
+[node name="BotonVelocidad" type="Button" parent="Panel/VBoxContainer" unique_id=1823120880]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Mejorar Velocidad"
+
+[node name="BotonPDE" type="Button" parent="Panel/VBoxContainer" unique_id=1984040446]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Aumentar Limite PDE"
+
+[node name="BotonCerrar" type="Button" parent="Panel/VBoxContainer" unique_id=1262915616]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Cerrar"

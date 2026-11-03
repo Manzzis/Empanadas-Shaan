@@ -1,6 +1,7 @@
 class_name Puntos_de_estilo extends Node
 
 @export var jugador : Jugador
+
 var costo_dash : int = 4
 @export var maquina_de_estados_del_jugador : Maquina_de_estados
 
@@ -18,6 +19,7 @@ func aumentar_pde():
 func reducir_pde():
 	if jugador.PDE > 0:
 		jugador.PDE = 0
+		
 		EVENT_BUS_JUGADOR.pde_actualizado.emit(jugador.PDE)
 
 func calcular_pde():

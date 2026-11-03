@@ -63,17 +63,27 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	_buscar_jugador()
-	if jugador == null:
+	if not is_inside_tree():
 		return
+		
+	# PRIMERO intentamos buscar al jugador (vital cuando cambiamos de nivel)
+	_buscar_jugador()
+	
+	# LUEGO verificamos si la búsqueda tuvo éxito y el jugador está en la escena
+	if not is_instance_valid(jugador) or not jugador.is_inside_tree():
+		return # Si no hay jugador (ej: estamos en el menú principal), no hacemos nada
+		
+	# A partir de aquí es 100% seguro usar al jugador
+	var posicion_actual = jugador.global_position
 
 	# Velocidad real: cuánto se movió desde el frame anterior.
 	if hubo_teletransporte:
 		velocidad = Vector3.ZERO
 		hubo_teletransporte = false
 	else:
-		velocidad = (jugador.global_position - posicion_anterior) / delta
-	posicion_anterior = jugador.global_position
+		velocidad = (posicion_actual - posicion_anterior) / delta
+		
+	posicion_anterior = posicion_actual
 	segundos_nivel += delta
 
 	medir_muestras(delta)
@@ -82,7 +92,6 @@ func _physics_process(delta: float) -> void:
 	medir_acomodo(delta)
 	medir_pared(delta)
 	medir_recuperacion(delta)
-
 
 # =====================================================================
 #  MÉTRICAS
