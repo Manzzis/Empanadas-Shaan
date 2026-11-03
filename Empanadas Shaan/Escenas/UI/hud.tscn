@@ -41,6 +41,7 @@ process_mode = 3
 visible = false
 
 [node name="menu_pausa" type="Control" parent="." unique_id=1567488557]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,7 +190,6 @@ layout_mode = 2
 texture_normal = ExtResource("5_6tgni")
 stretch_mode = 0
 
-[connection signal="pressed" from="Tienda/Panel/VBoxContainer/BotonCerrar" to="." method="_on_boton_cerrar_pressed"]
 [connection signal="value_changed" from="menu_pausa/MarginContainer/VBoxContainer/GridContainer/sonido_global_control_deslizante" to="." method="_on_sonido_global_control_deslizante_value_changed"]
 [connection signal="value_changed" from="menu_pausa/MarginContainer/VBoxContainer/GridContainer/music_control_deslizante" to="." method="_on_music_control_deslizante_value_changed"]
 [connection signal="value_changed" from="menu_pausa/MarginContainer/VBoxContainer/GridContainer/SFX_control_deslizante" to="." method="_on_sfx_control_deslizante_value_changed"]

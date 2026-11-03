@@ -6,8 +6,8 @@ extends Area3D
 func _process(delta):
 	rotate_y(velocidad_rotacion * delta)
 
-func _on_body_entered(body):
-	if body.has_method("sumar_moneda"):
-		body.sumar_moneda()
+func _on_body_entered(body: Node3D) -> void:
+	if body is Jugador:
+		body.sumar_moneda() 
 		EmisorDeSonidos.emitir_sonido.emit("Monedas")
 		queue_free()
