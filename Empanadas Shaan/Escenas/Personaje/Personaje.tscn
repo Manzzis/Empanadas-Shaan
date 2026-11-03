@@ -36,6 +36,58 @@ albedo_texture = ExtResource("2_f7uka")
 material = SubResource("StandardMaterial3D_p776b")
 size = Vector3(0.85876465, 0.10058594, 0.12109375)
 
+[sub_resource type="Gradient" id="Gradient_720kk"]
+offsets = PackedFloat32Array(0, 0.9508197, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.93442625, 0.93442625, 0.93442625, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_720kk"]
+gradient = SubResource("Gradient_720kk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_edpib"]
+lifetime_randomness = 0.08
+inherit_velocity_ratio = 0.3
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0.05, 0)
+scale_min = 0.59999996
+color_ramp = SubResource("GradientTexture1D_720kk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j00u"]
+albedo_color = Color(0.8299097, 0.94208676, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_720kk"]
+material = SubResource("StandardMaterial3D_6j00u")
+radius = 0.35
+height = 0.5
+radial_segments = 58
+rings = 10
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tlnpb"]
+spread = 180.0
+initial_velocity_min = 4.0
+initial_velocity_max = 4.0
+scale_min = 0.19999999
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdn0p"]
+albedo_color = Color(0.711248, 0.7336962, 0.965108, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tlnpb"]
+material = SubResource("StandardMaterial3D_xdn0p")
+radius = 0.1
+height = 0.5
+radial_segments = 4
+rings = 10
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xdn0p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlnpb"]
+albedo_color = Color(0.92156863, 0.9764706, 0.9882353, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_720kk"]
+material = SubResource("StandardMaterial3D_tlnpb")
+
 [node name="Personaje" type="CharacterBody3D" unique_id=1912633892 groups=["Player"]]
 collision_mask = 3
 script = ExtResource("1_hmyjb")
@@ -167,6 +219,32 @@ align_rotation_with_view = Callable()
 
 [node name="Trail" type="Node3D" parent="." unique_id=112568443]
 script = ExtResource("20_720kk")
+
+[node name="ParticulasSalto" type="GPUParticles3D" parent="." unique_id=1727809070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.63147974, 0)
+emitting = false
+amount = 10
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.15
+explosiveness = 1.0
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_edpib")
+draw_pass_1 = SubResource("SphereMesh_720kk")
+
+[node name="ParticulasAterrizaje" type="GPUParticles3D" parent="." unique_id=1352747066]
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_tlnpb")
+draw_pass_1 = SubResource("SphereMesh_tlnpb")
+
+[node name="ParticulasGrind" type="GPUParticles3D" parent="." unique_id=473171429]
+emitting = false
+amount_ratio = 0.785
+process_material = SubResource("ParticleProcessMaterial_xdn0p")
+draw_pass_1 = SubResource("QuadMesh_720kk")
 
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Caer" method="_on_grind_area_area_entered"]

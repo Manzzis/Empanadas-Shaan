@@ -1688,6 +1688,7 @@ curve = SubResource("Curve3D_ptdye")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=924733764]
+transform = Transform3D(-0.7397507, -0.0048269043, -0.67283773, -2.3282666e-10, 0.9999506, -0.0071736765, 0.6728557, -0.0053067924, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 transform = Transform3D(-0.7397507, -0.0048269155, -0.67283773, -2.3282666e-10, 0.9999529, -0.0071736765, 0.6728557, -0.005306805, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=1533875553]
