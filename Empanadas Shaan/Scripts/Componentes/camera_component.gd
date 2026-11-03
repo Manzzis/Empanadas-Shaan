@@ -26,8 +26,6 @@ func set_target(target: CharacterBody3D) -> void:
 		nodo_visual_jugador = jugador.get_node_or_null("Malla")
 
 func _on_estado_jugador_cambiado(nombre_estado: String) -> void:
-	# Guardamos el estado por si a futuro quieres cambiar el FOV (ej. al correr),
-	# pero ya no forzamos ninguna alineación de espalda.
 	estado_actual_nombre = nombre_estado
 
 func _unhandled_input(event: InputEvent) -> void:
