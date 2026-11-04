@@ -16,7 +16,7 @@ albedo_texture = ExtResource("2_02ekf")
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bok1"]
 size = Vector3(0.96147156, 0.1463623, 10.297012)
 
-[node name="Path3D13" type="Path3D" unique_id=1033356637]
+[node name="Path3D13" type="Path3D" unique_id=1033356637 groups=["RailPath"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 curve = SubResource("Curve3D_bkm1u")
 script = ExtResource("1_tjswf")

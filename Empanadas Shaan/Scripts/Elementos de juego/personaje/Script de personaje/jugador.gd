@@ -7,7 +7,7 @@ var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 @onready var particulas_salto: GPUParticles3D = $ParticulasSalto
 @onready var particulas_aterrizaje: GPUParticles3D = $ParticulasAterrizaje
 @onready var particulas_grind: GPUParticles3D = $ParticulasGrind
-
+var estaba_en_suelo : bool = false
 var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var ultimo_checkpoint: Vector3
 
