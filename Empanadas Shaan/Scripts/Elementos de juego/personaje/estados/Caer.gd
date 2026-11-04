@@ -63,8 +63,8 @@ func _on_grind_area_area_entered(area: Area3D) -> void:
 		return
 
 	# 3. Lógica original para entrar al riel
-	if area.is_in_group("RailPath") and jugador.velocity.y <= 0:
-		var parent_path = area.get_parent()
+	var parent_path = area.get_parent()
+	if parent_path.is_in_group("RailPath"):
 		if parent_path is Path3D:
 			jugador.riel_actual = parent_path
-			mi_maquina_de_estados.cambiar_a("Grindear")
+			mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)

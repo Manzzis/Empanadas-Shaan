@@ -10,6 +10,7 @@ class_name Riel3D
 @onready var csg: CSGPolygon3D = $CSGPolygon3D
 
 func _ready() -> void:
+	add_to_group("RailPath")
 	_generar_colisiones()
 	
 	if area_deteccion:
