@@ -1752,6 +1752,9 @@ script = ExtResource("11_xrh2d")
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=924733764]
 <<<<<<< Updated upstream
 transform = Transform3D(-0.7397507, -0.0048269117, -0.67283773, -2.3282666e-10, 0.99995214, -0.0071736765, 0.6728557, -0.005306801, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+=======
+transform = Transform3D(-0.7397507, -0.0048269113, -0.67283773, -2.3282666e-10, 0.999952, -0.0071736765, 0.6728557, -0.0053068004, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+>>>>>>> Stashed changes
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=1533875553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
