@@ -51,7 +51,7 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "50 monedas"
+text = "25 monedas"
 
 [node name="BotonPDE" type="Button" parent="Panel/VBoxContainer" unique_id=1984040446]
 layout_mode = 2

@@ -1,8 +1,8 @@
 extends Control
 
 # Costos de las mejoras (puedes cambiarlos)
-var costo_velocidad : int = 50
-var costo_pde : int = 3
+var costo_velocidad : int = 25
+var costo_pde : int = 30
 
 @onready var texto_monedas = $Panel/VBoxContainer/TextoMonedas
 @onready var boton_vel = $Panel/VBoxContainer/BotonVelocidad
@@ -20,17 +20,17 @@ func _ready() -> void:
 
 # Esta función revisa el dinero y apaga los botones si no te alcanza o si ya lo compraste
 func actualizar_ui() -> void:
-	texto_monedas.text = "Tus Monedas: " + str(GlobalVar.monedas) # <-- CORREGIDO
+	texto_monedas.text = "Tus Monedas: " + str(GlobalVar.monedas)
 	# Lógica Botón Velocidad
-	if GlobalVar.velocidad_mejorada: # <-- CORREGIDO
+	if GlobalVar.velocidad_mejorada:
 		boton_vel.text = "Velocidad: AL MÁXIMO"
 		boton_vel.disabled = true
 	elif GlobalVar.monedas < costo_velocidad:
 		boton_vel.disabled = true
 	else:
 		boton_vel.disabled = false
-	# Lógica Botón PDE
-	if GlobalVar.pde_mejorados: # <-- CORREGIDO
+	
+	if GlobalVar.pde_mejorados:
 		boton_pde.text = "Límite PDE: AL MÁXIMO"
 		boton_pde.disabled = true
 	elif GlobalVar.monedas < costo_pde:
@@ -40,10 +40,10 @@ func actualizar_ui() -> void:
 
 
 func _on_comprar_velocidad() -> void:
-	# Usamos la función de GlobalVar que hace toda la matemática por nosotros
+	# Usamos la función de GlobalVar
 	var compra_exitosa = GlobalVar.comprar_mejora_velocidad(costo_velocidad)
 	if compra_exitosa:
-		# Buscar al jugador en la escena para darle la velocidad INMEDIATAMENTE
+		
 		var jugador = get_tree().get_first_node_in_group("Player")
 		if jugador:
 			jugador.velocidad = GlobalVar.velocidad_rapida 
@@ -52,7 +52,7 @@ func _on_comprar_velocidad() -> void:
 
 
 func _on_comprar_pde() -> void:
-	# Usamos la función de GlobalVar que descuenta el dinero y sube el límite
+	# Usamote
 	var compra_exitosa = GlobalVar.comprar_mejora_pde(costo_pde)
 	
 	if compra_exitosa:
@@ -66,7 +66,6 @@ func _on_comprar_pde() -> void:
 func _on_cerrar_tienda() -> void:
 	hide()
 	get_tree().paused = false 
-	# Volvemos a atrapar el mouse para seguir jugando
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 

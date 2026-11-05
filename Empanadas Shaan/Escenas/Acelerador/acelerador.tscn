@@ -14,7 +14,7 @@ material = SubResource("StandardMaterial3D_pk0j2")
 size = Vector2(0.87, 1.395)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_adgpb"]
-size = Vector3(0.87527466, 0.068556786, 1.9928551)
+size = Vector3(0.87527466, 0.29863334, 1.9928551)
 
 [sub_resource type="Animation" id="Animation_81311"]
 resource_name = "Animation_arrow"
@@ -61,7 +61,7 @@ duracion_impulso = 2.0
 mesh = SubResource("PlaneMesh_2bok1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1043954823]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028839111, -0.006474972, -0.002084732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028839111, -0.05100596, -0.002084732)
 shape = SubResource("BoxShape3D_adgpb")
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=1070288405]
