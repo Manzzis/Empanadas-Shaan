@@ -24,8 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://oh2eel6a4q44" path="res://Assets visuales/Assets 3D y 2D/Pack_free_jp_village/GLTF/textures/ColorAtlas.png" id="21_gpucs"]
 [ext_resource type="PackedScene" uid="uid://cspom318tkpra" path="res://Escenas/recolectables/moneda.tscn" id="23_wh3m0"]
 [ext_resource type="Script" uid="uid://wqu7x8crnesp" path="res://Scripts/Niveles/visor_metricas/node_3d.gd" id="24_6j00u"]
-[ext_resource type="PackedScene" uid="uid://vh4ryp2vide0" path="res://Escenas/narrativas/inicio_de_juego.tscn" id="25_gyxrc"]
-[ext_resource type="PackedScene" uid="uid://cm2k5dr8s2hqb" path="res://Escenas/narrativas/fin_de_juego.tscn" id="26_vn5s7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ddtk2"]
 size = Vector3(57.696747, 3, 4.0603027)
@@ -2495,12 +2493,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.09889, 187.58539, 14.1323
 
 [node name="visor_metricas" type="Node3D" parent="." unique_id=2030827138]
 script = ExtResource("24_6j00u")
-
-[node name="Inicio_de_juego" parent="." unique_id=57331650 instance=ExtResource("25_gyxrc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.64236, 0, 121.23834)
-
-[node name="Fin_de_juego" parent="." unique_id=2099563065 instance=ExtResource("26_vn5s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.71714, 0.33537102, 113.80232)
 
 [editable path="Meta"]
 [editable path="Personaje"]
