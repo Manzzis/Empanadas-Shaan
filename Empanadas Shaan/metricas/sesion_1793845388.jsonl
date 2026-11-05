@@ -1,0 +1,14 @@
+{"datos":{"buses":{"MUSIC":20.0,"Master":100.0,"SFX":75.0}},"nivel":"Node3D","t":0.0,"tipo":"volumen_inicial"}
+{"datos":{"pos":[-108.76,0.79,132.35],"segundos":0.48},"nivel":"Node3D","t":0.93,"tipo":"quieto"}
+{"datos":{"id":1,"pos":[-103.01,0.92,132.36]},"nivel":"Node3D","t":1.65,"tipo":"salto"}
+{"datos":{"pos":[-89.87,5.43,128.89],"vel":[8.36,-3.11,-5.49]},"nivel":"Node3D","t":3.02,"tipo":"muestra"}
+{"datos":{"desde":[-103.01,0.92,132.36],"id":1,"pos":[-83.88,0.79,124.95]},"nivel":"Node3D","t":3.73,"tipo":"aterrizaje"}
+{"datos":{"desde_aterrizaje":0.52,"pos":[-80.68,0.79,122.85],"vel":[3.43,0.0,-2.25]},"nivel":"Node3D","t":4.23,"tipo":"recuperacion"}
+{"datos":{"desde_aterrizaje":1.03,"pos":[-79.83,0.79,122.29],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":4.75,"tipo":"recuperacion"}
+{"datos":{"desde_aterrizaje":1.55,"pos":[-79.83,0.79,122.29],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":5.27,"tipo":"recuperacion"}
+{"datos":{"desde_aterrizaje":2.07,"pos":[-79.83,0.79,122.29],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":5.78,"tipo":"recuperacion"}
+{"datos":{"pos":[-79.83,0.79,122.29],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":6.03,"tipo":"muestra"}
+{"datos":{"desde_aterrizaje":2.58,"pos":[-79.83,0.79,122.29],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":6.3,"tipo":"recuperacion"}
+{"datos":{"pos":[-79.83,0.79,122.29],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":9.05,"tipo":"muestra"}
+{"datos":{"pos":[-79.83,0.79,122.29],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":12.07,"tipo":"muestra"}
+{"datos":{"pos":[-79.83,0.79,122.29],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":15.08,"tipo":"muestra"}
