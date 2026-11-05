@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://b2njd6dw5cbb4"
+path="res://.godot/imported/inicio_de_juego.dialogue-2abe119bdbe98d42d71e2ea0584e0c5d.tres"
+
+[deps]
+
+source_file="res://Escenas/narrativas/inicio_de_juego.dialogue"
+dest_files=["res://.godot/imported/inicio_de_juego.dialogue-2abe119bdbe98d42d71e2ea0584e0c5d.tres"]
+
+[params]
+
+defaults=true
