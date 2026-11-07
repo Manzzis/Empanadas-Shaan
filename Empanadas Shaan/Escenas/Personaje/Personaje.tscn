@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://benrnqyfp21qt" path="res://Assets sonoros/Elementos de juego/Personaje/Frenada.wav" id="18_68xog"]
 [ext_resource type="Script" uid="uid://bc7fopmat3ncb" path="res://Scripts/Componentes/animacion_component.gd" id="19_tlnpb"]
 [ext_resource type="Script" uid="uid://yao1ls5trg78" path="res://Escenas/Personaje/trail.gd" id="20_720kk"]
+[ext_resource type="Script" uid="uid://8x0wferljygp" path="res://Scripts/Elementos de juego/personaje/caminar_paredes.gd" id="20_xdn0p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjg70"]
 radius = 0.41503906
@@ -928,13 +929,14 @@ albedo_color = Color(0.92156863, 0.9764706, 0.9882353, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_720kk"]
 material = SubResource("StandardMaterial3D_tlnpb")
 
-[node name="Personaje" type="CharacterBody3D" unique_id=1912633892 groups=["Player"]]
+[node name="Personaje" type="CharacterBody3D" unique_id=1912633892 node_paths=PackedStringArray("caminar_paredes") groups=["Player"]]
 collision_mask = 3
 script = ExtResource("1_hmyjb")
 aceleracion = 30.0
 friccion = 8.0
 tiempo_max_salto = 0.25
 coyote_time = 0.2
+caminar_paredes = NodePath("Componentes/Wall_walk")
 
 [node name="Colisionador_fisico" type="CollisionShape3D" parent="." unique_id=1978240468]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0.07260132)
@@ -1189,7 +1191,7 @@ script = ExtResource("2_tf8m5")
 [node name="Caminar" type="Node" parent="Componentes/maquina_de_estados" unique_id=725361117]
 script = ExtResource("3_826hx")
 
-[node name="Correr" type="Node" parent="Componentes/maquina_de_estados" unique_id=1750759453]
+[node name="Pared" type="Node" parent="Componentes/maquina_de_estados" unique_id=1750759453]
 script = ExtResource("5_eeicv")
 
 [node name="Saltar" type="Node" parent="Componentes/maquina_de_estados" unique_id=1027377821]
@@ -1242,6 +1244,10 @@ bus = &"SFX"
 [node name="Animacion_component" type="Node" parent="Componentes" unique_id=335243937 node_paths=PackedStringArray("animation_tree", "jugador")]
 script = ExtResource("19_tlnpb")
 animation_tree = NodePath("../../ModeloPersonaje/AnimationTree")
+jugador = NodePath("../..")
+
+[node name="Wall_walk" type="Node" parent="Componentes" unique_id=1371176700 node_paths=PackedStringArray("jugador")]
+script = ExtResource("20_xdn0p")
 jugador = NodePath("../..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=353256433]

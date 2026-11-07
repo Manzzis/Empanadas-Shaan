@@ -35,6 +35,8 @@ func on_physics_process(delta: float) -> void:
 		return
 
 	moverse(delta)
+	if comprobar_pared():
+		return
 
 func moverse(delta: float) -> void:
 	var direccion := Input.get_axis("Atras", "Adelante")
@@ -82,3 +84,9 @@ func _on_grind_area_area_entered(area: Area3D) -> void:
 		if parent_path is Path3D:
 			jugador.riel_actual = parent_path
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
+
+func comprobar_pared() -> bool:
+	if not jugador.caminar_paredes.detectar_entrada().is_empty():
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Pared)
+		return true
+	return false

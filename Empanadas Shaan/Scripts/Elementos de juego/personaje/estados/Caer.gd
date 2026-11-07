@@ -13,6 +13,9 @@ func on_physics_process(delta: float) -> void:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
 		return
 	
+	if comprobar_pared():
+		return
+	
 	if jugador.is_on_floor():
 		var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
 		if velocidad_horizontal > 0.5:
@@ -68,3 +71,9 @@ func _on_grind_area_area_entered(area: Area3D) -> void:
 		if parent_path is Path3D:
 			jugador.riel_actual = parent_path
 			mi_maquina_de_estados.cambiar_a(jugador.estados.Grindear)
+
+func comprobar_pared() -> bool:
+	if not jugador.caminar_paredes.detectar_entrada().is_empty():
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Pared)
+		return true
+	return false

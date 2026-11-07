@@ -7,7 +7,7 @@ class_name Estados_jugador_resource extends Resource
 
 const Idle : String = "Idle"
 const Caminar : String = "Caminar"
-const Correr : String = "Correr"
+const Pared : String = "Pared"
 const Saltar : String = "Saltar"
 const Grindear : String = "Grindear"
 const Caer : String = "Caer"

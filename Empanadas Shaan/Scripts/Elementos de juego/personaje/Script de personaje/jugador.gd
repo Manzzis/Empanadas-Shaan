@@ -41,6 +41,9 @@ var PDE : int = 0 #(Abreviación de Puntos de Estilo), empieza en 0 cada nivel
 @onready var texto_monedas = $CanvasLayer/MonedasLabel
 @onready var texto_velocidad = $CanvasLayer/VelocidadLable
 
+@export var caminar_paredes : CaminarParedesComponent
+var en_pared : bool = false
+
 func _ready() -> void:
 	ultimo_checkpoint = global_position
 	camera_component.set_target(self)
@@ -98,6 +101,8 @@ func girar(delta: float) -> void:
 	var direccion_giro : float = Input.get_axis("Girar_der", "Girar_izq")
 	if direccion_giro == 0:
 		return
+	if en_pared:
+		return
 	
 	var vel_horizontal := Vector3(velocity.x, 0, velocity.z)
 	var rapidez := vel_horizontal.length()
@@ -128,6 +133,8 @@ func girar(delta: float) -> void:
 
 
 func handle_gravity(delta):
+	if en_pared:
+		return
 	# Momento coyote: salimos del suelo pero aún estamos en la ventana de gracia.
 	# Sin gravedad, el jugador "flota" a la altura de la plataforma.
 	if not is_on_floor() and coyote_timer > 0.0:
