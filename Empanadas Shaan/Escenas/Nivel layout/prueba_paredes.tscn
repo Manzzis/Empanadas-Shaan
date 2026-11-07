@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c0b41t2pt8n5c"]
+
+[ext_resource type="PackedScene" uid="uid://bhchrl4j2v56e" path="res://Escenas/Personaje/Personaje.tscn" id="1_qqolf"]
+[ext_resource type="PackedScene" uid="uid://c76xu1581mj5h" path="res://Escenas/fallZone/fallzone.tscn" id="2_kwtth"]
+[ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="3_g03y6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g03y6"]
+albedo_color = Color(0.2966023, 0.2966023, 0.2966023, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqolf"]
+albedo_color = Color(0.9841679, 5.8719515e-06, 1.1551381e-06, 1)
+
+[node name="prueba_paredes" type="Node3D" unique_id=878000361]
+
+[node name="piso" type="CSGBox3D" parent="." unique_id=417328233]
+transform = Transform3D(21.770073, 0, 0, 0, 1, 0, 0, 0, 87.44322, 3.9955826, 0, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_g03y6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1227003741 groups=["caminable"]]
+transform = Transform3D(0.97507536, -3.4686375, 0, 0.22187395, 15.243713, 0, 0, 0, 126.690056, -1.5233078, 5.4205103, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_qqolf")
+
+[node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("1_qqolf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1933261131]
+transform = Transform3D(0.6696282, -0.6292841, 0.3944613, 0.05777034, 0.5736441, 0.8170648, -0.74044657, -0.5243416, 0.42048228, 0, 28.280502, 0)
+
+[node name="Fallzone" parent="." unique_id=491432035 instance=ExtResource("2_kwtth")]
+transform = Transform3D(-0.015274213, 0, -0.99988335, 0, 1, 0, 0.99988335, 0, -0.015274213, 30.822289, -8.566299, 95.72751)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1508027750 groups=["caminable"]]
+transform = Transform3D(-0.975149, 3.4635496, -1.1650757e-05, 0.22154841, 15.24487, 0, 8.5250235e-08, -3.027931e-07, -133.26913, 10.325626, 5.4205103, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_qqolf")
+
+[node name="Path3D13" parent="." unique_id=1033356637 instance=ExtResource("3_g03y6")]
+transform = Transform3D(0.9994661, 0, -0.03267279, 0, 1, 0, 0.03267279, 0, 0.9994661, 4.6401997, 5.7296476, 29.144203)
+
+[node name="Path3D14" parent="." unique_id=1202671568 instance=ExtResource("3_g03y6")]
+transform = Transform3D(0.9994661, 0, -0.03267279, 0, 1, 0, 0.03267279, 0, 0.9994661, 4.6401997, 5.7296476, -13.203579)

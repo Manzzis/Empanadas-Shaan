@@ -52,6 +52,7 @@ Rampas=""
 Monedas=""
 Acelerador=""
 Checkpoint=""
+caminable=""
 
 [input]
 
