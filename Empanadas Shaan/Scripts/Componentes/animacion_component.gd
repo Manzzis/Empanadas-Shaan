@@ -27,15 +27,21 @@ func _on_estado_cambiado(nombre_estado: String) -> void:
 	if not playback:
 		return
 		
-	# playback.travel("NombreNodo") viaja suavemente entre los nodos del AnimationTree
 	match nombre_estado:
 		"Idle", "Caminar":
-			# Todos estos estados usan la misma máquina de mezcla por velocidad
 			playback.travel("Movimiento")
 			
 		"Saltar", "Caer":
-			# Reemplaza "Saltar" por el nombre que le pusiste al nodo de salto en el panel
 			playback.travel("Saltar")
 			
 		"Grindear", "Dashear":
 			playback.travel("Grindeo")
+			
+		"Pared":
+			# Leemos el cálculo exacto de la pared (+1 izq, -1 der)
+			var lado = jugador.get_meta("ultimo_lado_muro", 1.0)
+			
+			if lado > 0:
+				playback.travel("Pared_Izq")
+			else:
+				playback.travel("Pared_Der")
