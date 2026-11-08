@@ -18,12 +18,17 @@ func iniciar() -> void:
 		# basis.x es la izquierda del personaje (su frente es +z).
 		# Se calcula una sola vez, antes de que el cuerpo empiece a girar.
 		lado_muro = signf((-n).dot(jugador.global_basis.x))
+		
+		# Guardamos el lado en el jugador para que la animación lo lea sin retrasos
+		jugador.set_meta("ultimo_lado_muro", lado_muro)
 
 	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
+
 
 func finalizar() -> void:
 	if jugador:
 		jugador.en_pared = false
+
 
 func on_physics_process(delta: float) -> void:
 	var hacia_muro : Vector3 = Vector3.ZERO
@@ -31,9 +36,14 @@ func on_physics_process(delta: float) -> void:
 		hacia_muro = -(muro_actual.normal as Vector3)
 	var muro := jugador.caminar_paredes.buscar_muro(hacia_muro)
 
-	# Perdimos el muro o tocamos el piso
-	if muro.is_empty() or jugador.is_on_floor():
+	# 1. Se acabó la pared a mitad del aire (caída libre)
+	if muro.is_empty():
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
+		return
+
+	# 2. Llegamos al suelo deslizándonos (aterrizaje)
+	if jugador.is_on_floor():
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
 		return
 
 	# Para seguir pegado hay que girar hacia el muro
@@ -48,10 +58,12 @@ func on_physics_process(delta: float) -> void:
 	jugador.caminar_paredes.deslizar_en_muro(muro, delta)
 	jugador.caminar_paredes.alinear_frente(muro, delta)
 
+
 func on_unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Salto") and not muro_actual.is_empty():
 		jugador.caminar_paredes.saltar_de_muro(muro_actual)
-		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
+		# Cambiado a "Saltar" para que reproduzca la animación correcta
+		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
 		return
 
 	if event.is_action_pressed("Dash"):

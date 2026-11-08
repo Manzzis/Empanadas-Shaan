@@ -23,7 +23,7 @@ use_collision = true
 material = SubResource("StandardMaterial3D_qqolf")
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("1_qqolf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2904415, 6, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1933261131]
 transform = Transform3D(0.6696282, -0.6292841, 0.3944613, 0.05777034, 0.5736441, 0.8170648, -0.74044657, -0.5243416, 0.42048228, 0, 28.280502, 0)
