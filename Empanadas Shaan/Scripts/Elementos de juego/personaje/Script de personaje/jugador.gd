@@ -4,10 +4,7 @@ class_name Jugador extends CharacterBody3D
 #estados del jugador
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 @onready var camera_component := $CameraComponent
-@onready var particulas_salto: GPUParticles3D = $ParticulasSalto
-@onready var particulas_aterrizaje: GPUParticles3D = $ParticulasAterrizaje
-@onready var particulas_grind: GPUParticles3D = $ParticulasGrind
-var estaba_en_suelo : bool = false
+
 var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var ultimo_checkpoint: Vector3
 
@@ -41,9 +38,6 @@ var PDE : int = 0 #(Abreviación de Puntos de Estilo), empieza en 0 cada nivel
 @onready var texto_monedas = $CanvasLayer/MonedasLabel
 @onready var texto_velocidad = $CanvasLayer/VelocidadLable
 
-@export var caminar_paredes : CaminarParedesComponent
-var en_pared : bool = false
-
 func _ready() -> void:
 	ultimo_checkpoint = global_position
 	camera_component.set_target(self)
@@ -65,27 +59,11 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:	
 	handle_gravity(delta)
 	handle_deslizamiento(delta)
-
-	# Sistema de particulas
-
-	# El salto
-	if Input.is_action_just_pressed("Salto") and (is_on_floor() or puede_saltar_coyote()):
-		velocity.y = fuerza_salto
-		particulas_salto.restart()
-		particulas_salto.emitting = true
-
 	move_and_slide()
 	girar(delta)
 	actualizar_coyote_time(delta)
 
-	# El aterrizaje
-	if not estaba_en_suelo and is_on_floor():
-		emitir_particulas(particulas_aterrizaje)
 
-	# El grinding
-	grindeando = riel_actual != null
-	particulas_grind.emitting = grindeando
-	
 func actualizar_coyote_time(delta: float) -> void:
 	if is_on_floor():
 		coyote_timer = coyote_time
@@ -100,8 +78,6 @@ func puede_saltar_coyote() -> bool:
 func girar(delta: float) -> void:
 	var direccion_giro : float = Input.get_axis("Girar_der", "Girar_izq")
 	if direccion_giro == 0:
-		return
-	if en_pared:
 		return
 	
 	var vel_horizontal := Vector3(velocity.x, 0, velocity.z)
@@ -133,8 +109,6 @@ func girar(delta: float) -> void:
 
 
 func handle_gravity(delta):
-	if en_pared:
-		return
 	# Momento coyote: salimos del suelo pero aún estamos en la ventana de gracia.
 	# Sin gravedad, el jugador "flota" a la altura de la plataforma.
 	if not is_on_floor() and coyote_timer > 0.0:
@@ -167,7 +141,3 @@ func sumar_moneda():
 	GlobalVar.monedas += 1
 	if texto_monedas:
 		texto_monedas.text = "Monedas: " + str(GlobalVar.monedas)
-		
-func emitir_particulas(particulas: GPUParticles3D) -> void:
-	particulas.restart()
-	particulas.emitting = true
