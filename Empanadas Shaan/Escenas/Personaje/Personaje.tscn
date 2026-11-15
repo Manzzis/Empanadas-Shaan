@@ -166,6 +166,7 @@ align_position_with_view = Callable()
 align_rotation_with_view = Callable()
 
 [node name="Trail" type="Node3D" parent="." unique_id=112568443]
+visible = false
 script = ExtResource("20_720kk")
 
 [connection signal="area_entered" from="GrindArea" to="Componentes/maquina_de_estados/Saltar" method="_on_grind_area_area_entered"]
