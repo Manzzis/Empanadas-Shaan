@@ -1,0 +1,10 @@
+{"datos":{"buses":{"MUSIC":20.0,"Master":100.0,"SFX":75.0}},"nivel":"Node3D","t":0.0,"tipo":"volumen_inicial"}
+{"datos":{"pos":[-108.76,0.79,132.35]},"nivel":"Node3D","t":0.77,"tipo":"acomodo"}
+{"datos":{"pos":[-108.76,0.79,132.34],"segundos":0.62},"nivel":"Node3D","t":1.07,"tipo":"quieto"}
+{"datos":{"pos":[-103.72,0.79,117.34],"vel":[0.5,0.0,-4.37]},"nivel":"Node3D","t":3.02,"tipo":"muestra"}
+{"datos":{"pos":[-103.59,0.79,116.18],"vel":[0.0,0.0,0.0]},"nivel":"Node3D","t":6.03,"tipo":"muestra"}
+{"datos":{"id":1,"pos":[-103.59,0.92,116.18]},"nivel":"Node3D","t":7.47,"tipo":"salto"}
+{"datos":{"pos":[-103.59,0.92,116.18]},"nivel":"Node3D","t":7.47,"tipo":"duda"}
+{"datos":{"pos":[-103.59,0.92,116.18],"segundos":3.9},"nivel":"Node3D","t":7.47,"tipo":"quieto"}
+{"datos":{"pos":[-103.62,4.51,112.04],"vel":[-0.25,-5.23,-4.79]},"nivel":"Node3D","t":9.05,"tipo":"muestra"}
+{"datos":{"desde":[-103.59,0.92,116.18],"id":1,"pos":[-103.65,0.79,111.51]},"nivel":"Node3D","t":9.55,"tipo":"aterrizaje"}
