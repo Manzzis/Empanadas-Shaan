@@ -27,6 +27,7 @@ offset_left = 685.0
 offset_top = 97.0
 offset_right = 1128.0
 offset_bottom = 166.0
+theme_override_colors/font_color = Color(0.9254902, 1, 0.0627451, 1)
 theme_override_font_sizes/font_size = 50
 text = "Empanadas Shaan"
 
@@ -56,14 +57,30 @@ theme_override_constants/separation = 21
 
 [node name="Comenzar" type="Button" parent="VBoxContainer" unique_id=1856578995]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9616414, 0.36856955, 0.26561427, 1)
+theme_override_constants/outline_size = 25
 theme_override_font_sizes/font_size = 50
 text = "Comenzar"
+flat = true
+
+[node name="Tutorial" type="Button" parent="VBoxContainer" unique_id=1200803161]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9607843, 0.36862746, 0.26666668, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 50
+text = "Tutorial
+"
+flat = true
 
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=1091401215]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9607843, 0.36862746, 0.26666668, 1)
+theme_override_constants/outline_size = 25
 theme_override_font_sizes/font_size = 50
 text = "Salir
 "
+flat = true
 
 [connection signal="pressed" from="VBoxContainer/Comenzar" to="." method="_on_comenzar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
