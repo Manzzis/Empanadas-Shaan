@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dvywculvqoyh1"]
+
+[ext_resource type="Texture2D" uid="uid://dui6dcjcw0hd4" path="res://Escenas/Nivel layout/imagen_2026-11-16_160654668.png" id="1_kbcam"]
+[ext_resource type="Script" uid="uid://cfwewsh74djr3" path="res://Escenas/Tutorial/menu.gd" id="2_j4o6f"]
+
+[node name="Tutorial" type="Node2D" unique_id=2005173279]
+
+[node name="Imagen20261116160654668" type="Sprite2D" parent="." unique_id=954156605]
+position = Vector2(637, 316)
+scale = Vector2(3.430693, 2.6891026)
+texture = ExtResource("1_kbcam")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=595355537]
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 576.0
+offset_bottom = 429.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[color=green] Controles[/color]
+ Tecla A = girar izquierda
+ Tecla D = girar derecha
+ Tecla W = avanzar adelante
+ Tecla S = retroceder
+ Tecla Tab = Dash
+ Mouse = controlar camara"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1113965698]
+offset_left = 573.0
+offset_top = 10.0
+offset_right = 1148.0
+offset_bottom = 413.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[color=green] Dash[/color]
+ Al acumular 4 puntos de   estilo podemos utilizarlo.
+[color=green] Grindeo[/color]
+Podemos hacer un grindeo al saltar sobre ciertas plataformas. 
+[color=green] Grindeo de Pared[/color]
+tendremos un grindeo especial al saltar alas paredes y tocar la Tecla A si la pared esta ala izqueirda y la Tecla D si la pares se encuentra ala derecha."
+
+[node name="Menu" type="Button" parent="." unique_id=580883102]
+offset_left = 11.0
+offset_top = 581.0
+offset_right = 153.0
+offset_bottom = 637.0
+theme_override_colors/font_hover_color = Color(0.9365659, 0.45567143, 0.44555664, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+flat = true
+script = ExtResource("2_j4o6f")
+
+[connection signal="pressed" from="Menu" to="Menu" method="_on_pressed"]
