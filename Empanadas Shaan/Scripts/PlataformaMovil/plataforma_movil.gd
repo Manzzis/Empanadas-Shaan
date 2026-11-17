@@ -1,30 +1,55 @@
 extends AnimatableBody3D
 
+@export_category("Ruta de la Plataforma")
+## Lista de coordenadas globales. Agrega todos los puntos que necesites desde el Inspector.
+@export var puntos_ruta: Array[Vector3] = [Vector3.ZERO, Vector3(5, 0, 0), Vector3(5, 5, 0)]
+## Rapidez de movimiento en metros por segundo
 @export var velocidad: float = 2.0
-@export var distancia: float = 5.0
-# Usa (1,0,0) para X, (0,1,0) para Y, o (0,0,1) para Z
-@export var direccion: Vector3 = Vector3(1, 0, 0) 
-@export var tamano: Vector3 = Vector3(2, 0.5, 2)
+## Segundos que se detiene en cada punto antes de seguir al siguiente
+@export var tiempo_espera: float = 1.0
+## Si está activo: vuelve directo del último punto al primero (ciclo). Si está desactivado: regresa en reversa.
+@export var recorrido_cerrado: bool = false
 
-var posicion_inicial: Vector3
-var tiempo: float = 0.0
 
-func _ready():
-	posicion_inicial = global_position
+func _ready() -> void:
+	# Necesitamos al menos 2 puntos para armar un recorrido
+	if puntos_ruta.size() < 2 or velocidad <= 0.0:
+		return
 	
-	# Aseguramos que la dirección sea un vector de longitud 1
-	direccion = direccion.normalized()
+	# Posicionamos la plataforma en el primer punto de la lista
+	global_position = puntos_ruta[0]
 	
-	# Ajustamos el tamaño visual y de colisión al valor configurado
-	$Malla.scale = tamano
-	$Colision.scale = tamano
+	iniciar_ruta()
 
-func _physics_process(delta):
-	tiempo += delta * velocidad
+
+func iniciar_ruta() -> void:
+	var tween := create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	tween.set_loops()
 	
-	# Calculamos la posición entre punto A y B usando la función seno.
-	# (sin() va de -1 a 1. Al sumarle 1 y dividir por 2, va de 0 a 1)
-	var progreso = (sin(tiempo) + 1.0) / 2.0
+	# 1. Recorrido de ida: desde el punto 1 hasta el final del array
+	for i in range(1, puntos_ruta.size()):
+		_agregar_tramo(tween, puntos_ruta[i - 1], puntos_ruta[i])
 	
-	# Movemos la plataforma desde su origen hasta la distancia máxima
-	global_position = posicion_inicial + (direccion * (progreso * distancia))
+	# 2. Retorno al punto 0
+	if recorrido_cerrado:
+		# Cierra el circuito yendo directo desde el último punto al primero
+		_agregar_tramo(tween, puntos_ruta[-1], puntos_ruta[0])
+	else:
+		# Regresa en reversa pasando por los puntos intermedios hacia atrás
+		for i in range(puntos_ruta.size() - 2, -1, -1):
+			_agregar_tramo(tween, puntos_ruta[i + 1], puntos_ruta[i])
+
+
+func _agregar_tramo(tween: Tween, origen: Vector3, destino: Vector3) -> void:
+	var distancia := origen.distance_to(destino)
+	if distancia < 0.01:
+		return
+		
+	var duracion := distancia / velocidad
+	
+	tween.tween_property(self, "global_position", destino, duracion)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN_OUT)
+		
+	if tiempo_espera > 0.0:
+		tween.tween_interval(tiempo_espera)

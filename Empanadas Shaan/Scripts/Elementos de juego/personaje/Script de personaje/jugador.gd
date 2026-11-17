@@ -21,7 +21,7 @@ var velocidad : float # SIN @export para que lo controle la tienda
 @export var aceleracion_giro : float = 5.0
 @export var friccion_giro : float = 6.0
 
-var riel_actual : Riel3D = null
+var riel_actual : Path3D = null
 @export var fuerza_salto : float = 6.0
 @export var tiempo_max_salto : float 
 var direccion_delantera : bool = false
