@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dqxqkmniifd0b"]
+
+[ext_resource type="Texture2D" uid="uid://bvhxa17awid5g" path="res://UI Barra Progreso.png" id="1_eijjx"]
+[ext_resource type="Texture2D" uid="uid://ccbx7y7qpq3ir" path="res://BarraVacia.png" id="2_76hmp"]
+[ext_resource type="Texture2D" uid="uid://c148f7iumosa6" path="res://BarraLlena.png" id="3_dy4vy"]
+
+[node name="Control" type="Control" unique_id=817230392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 61664.0
+offset_bottom = 33515.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI Barra de Progreso" type="TextureRect" parent="." unique_id=2092841521]
+layout_mode = 0
+offset_left = 35.0
+offset_right = 14066.0
+offset_bottom = 9921.0
+texture = ExtResource("1_eijjx")
+
+[node name="Barra de Progreso" type="TextureProgressBar" parent="UI Barra de Progreso" unique_id=1106187666]
+layout_mode = 0
+offset_left = 1797.0
+offset_top = 1799.0
+offset_right = 12039.0
+offset_bottom = 4667.0
+texture_under = ExtResource("2_76hmp")
+texture_progress = ExtResource("3_dy4vy")
