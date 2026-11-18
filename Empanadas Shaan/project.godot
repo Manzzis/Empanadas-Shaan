@@ -47,6 +47,7 @@ Rampas=""
 Monedas=""
 Acelerador=""
 Checkpoint=""
+Jugador=""
 
 [input]
 

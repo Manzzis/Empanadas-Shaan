@@ -9,6 +9,10 @@ extends Node
 signal aumentar_pde_del_jugador
 signal reducir_pde_del_jugador
 signal pde_actualizado(valor_pde : int)
+signal aumentar_pde_del_jugador_grindeo
+signal terminar_grindeo
+signal disminuir_pde_del_jugador
+signal terminar_correr
 ################################################
 
 ################################################
