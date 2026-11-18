@@ -20,7 +20,6 @@ func activar_cooldown() -> void:
 
 func iniciar() -> void:
 	super.iniciar()
-	
 	# Apagamos el _physics_process del Jugador. 
 	# Esto desactiva su gravedad y move_and_slide temporalmente.
 	jugador.set_physics_process(false) 
@@ -61,8 +60,7 @@ func iniciar() -> void:
 	else:
 		direccion_grind = -1.0
 	jugador.velocity = Vector3.ZERO
-	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
-
+	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador_grindeo.emit()
 
 # Se ejecuta al salir del estado (ambas salidas: normal y con salto).
 # (Si en tu máquina de estados se llama de otra forma, como exit(), cámbiale el nombre).
@@ -106,10 +104,11 @@ func _salir_del_riel() -> void:
 	jugador.velocity = dir_salida * velocidad_grind
 	jugador.velocity.y = 2.0 
 	mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
-
+	EVENT_BUS_JUGADOR.terminar_grindeo.emit()
 func _salir_del_riel_con_salto() -> void:
 	activar_cooldown()
 	var dir_salida = _obtener_direccion_avance()
 	jugador.velocity = dir_salida * velocidad_grind
 	jugador.velocity.y = impulso_salto_salida
 	mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
+	EVENT_BUS_JUGADOR.terminar_grindeo.emit()

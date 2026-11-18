@@ -4,4 +4,12 @@
 
 [node name="Puntos_de_estilo" type="Node" unique_id=1226940698]
 script = ExtResource("1_pfu26")
+pde_acumulador = 2
 metadata/_custom_type_script = "uid://8lqwkyqhy1y6"
+
+[node name="TimerRegeneracion" type="Timer" parent="." unique_id=993066721]
+
+[node name="TimerConsumo" type="Timer" parent="." unique_id=2032157060]
+
+[connection signal="timeout" from="TimerRegeneracion" to="." method="_on_timer_regeneracion_timeout"]
+[connection signal="timeout" from="TimerConsumo" to="." method="_on_timer_consumo_timeout"]
