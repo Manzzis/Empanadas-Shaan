@@ -34,29 +34,10 @@ func on_physics_process(delta: float) -> void:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
 		return
 
-	moverse(delta)
 	if comprobar_pared():
 		return
 
-func moverse(delta: float) -> void:
-	var direccion := Input.get_axis("Atras", "Adelante")
 
-	if direccion != 0.0:
-		var adelante := jugador.get_adelante()
-		var direccion_objetivo := adelante.normalized() * direccion
-		var velocidad_objetivo := direccion_objetivo * jugador.velocidad
-
-		var velocidad_horizontal_actual := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
-		var velocidad_horizontal_objetivo := Vector3(velocidad_objetivo.x, 0, velocidad_objetivo.z)
-
-		var nueva_velocidad_horizontal := velocidad_horizontal_actual.move_toward(
-			velocidad_horizontal_objetivo,
-			jugador.aceleracion * control_aereo * delta
-		)
-
-		jugador.velocity.x = nueva_velocidad_horizontal.x
-		jugador.velocity.z = nueva_velocidad_horizontal.z
-	# Sin input: conservamos el impulso horizontal
 
 func on_unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("Salto"):
