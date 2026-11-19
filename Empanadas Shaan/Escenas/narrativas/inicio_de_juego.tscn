@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vh4ryp2vide0"]
 
-[ext_resource type="Script" uid="uid://bspshmlebbcaj" path="res://Escenas/narrativas/inicio_de_juego.gd" id="1_cfsxm"]
+[ext_resource type="Script" uid="uid://bspshmlebbcaj" path="res://narrativas/inicio_de_juego.gd" id="1_cfsxm"]
 [ext_resource type="Resource" uid="uid://b2njd6dw5cbb4" path="res://Escenas/narrativas/inicio_de_juego.dialogue" id="2_m7r3r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tiug6"]
