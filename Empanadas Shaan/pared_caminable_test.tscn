@@ -36,13 +36,61 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ungf0")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
+albedo_color = Color(0.8917868, 0.9043348, 0.9733649, 1)
+emission_enabled = true
+emission = Color(0, 0.5175123, 0.5176556, 1)
+emission_energy_multiplier = 0.3
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wbdp5"]
 points = PackedVector3Array(1.0913234, 1.1371611, 0.087409854, -1.1156298, 0.90449035, 0.08750081, 0.7041301, 1.0209395, -0.49317545, 1.0139333, -0.9539193, -0.53201455, -0.9795612, -1.0121225, 0.23569246, -1.0904909, 0.99808943, -0.44688794, 1.0821286, -0.98667145, 0.22697154, -0.7482835, -0.74671483, 0.3271681, -0.80582666, -0.21792448, -0.57067174, -0.96320456, -1.0712416, -0.40503964, 0.93654317, -1.1863626, -0.41577014, 1.2214289, -0.75920314, -0.39984137, 1.2027024, 0.87092966, -0.14330962, -1.1057072, -0.5444703, -0.29179528, 0.14844026, -0.36652514, 0.30457297, 1.1719903, -0.8503019, 0.23174092, 0.9622369, 0.92828596, -0.43590832, -1.150402, 0.9845578, -0.031329844, 0.82033664, 1.0593768, 0.12624896, -0.68962014, 0.09139349, -0.57067174, 0.82033664, 0.20738773, -0.53201455, 0.46374038, -0.58203655, 0.311978, 1.042621, -1.0214309, 0.22616816, -0.8832168, -0.5276973, -0.5319236, -0.80049586, 0.927651, 0.105484515, -0.13458925, -0.85497135, 0.3272195, 1.2438017, -0.7358106, -0.18079178, 1.0078698, -0.48774377, 0.25015548, -0.9733467, -0.6797652, 0.294318, -1.0194647, -0.7225706, -0.43663326, -1.1062818, -0.5447297, -0.14317155, -0.022805052, -0.36830896, 0.30671522)
+
+[sub_resource type="Animation" id="Animation_wbdp5"]
+resource_name = "Glow"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plane:surface_material_override/0:emission_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.3, 1.8, 0.3]
+}
+
+[sub_resource type="Animation" id="Animation_sg12b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plane:surface_material_override/0:emission_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_643bl"]
+_data = {
+&"Glow": SubResource("Animation_wbdp5"),
+&"RESET": SubResource("Animation_sg12b")
+}
 
 [node name="pared caminable test" type="StaticBody3D" unique_id=467062078]
 
 [node name="Plane" type="MeshInstance3D" parent="." unique_id=944195165]
 mesh = SubResource("ArrayMesh_py86d")
+surface_material_override/0 = SubResource("StandardMaterial3D_bhunq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1285958565]
 shape = SubResource("ConvexPolygonShape3D_wbdp5")
+
+[node name="Glow" type="AnimationPlayer" parent="." unique_id=1715483944]
+libraries/ = SubResource("AnimationLibrary_643bl")
