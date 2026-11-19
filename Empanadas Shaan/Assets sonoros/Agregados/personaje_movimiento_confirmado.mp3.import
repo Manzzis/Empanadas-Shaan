@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://by3jamsf13ln3"
+path="res://.godot/imported/personaje_movimiento_confirmado.mp3-a8627306b7e859928c59e3bcc7f49ff2.mp3str"
+
+[deps]
+
+source_file="res://Assets sonoros/Agregados/personaje_movimiento_confirmado.mp3"
+dest_files=["res://.godot/imported/personaje_movimiento_confirmado.mp3-a8627306b7e859928c59e3bcc7f49ff2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

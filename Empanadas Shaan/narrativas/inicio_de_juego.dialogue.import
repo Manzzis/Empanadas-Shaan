@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=18
 type="Resource"
 uid="uid://b2njd6dw5cbb4"
-path="res://.godot/imported/inicio_de_juego.dialogue-2abe119bdbe98d42d71e2ea0584e0c5d.tres"
+path="res://.godot/imported/inicio_de_juego.dialogue-27d06c9692f9a97b909b02d0a3d6e05f.tres"
 
 [deps]
 
-source_file="res://Escenas/narrativas/inicio_de_juego.dialogue"
-dest_files=["res://.godot/imported/inicio_de_juego.dialogue-2abe119bdbe98d42d71e2ea0584e0c5d.tres"]
+source_file="res://narrativas/inicio_de_juego.dialogue"
+dest_files=["res://.godot/imported/inicio_de_juego.dialogue-27d06c9692f9a97b909b02d0a3d6e05f.tres"]
 
 [params]
 

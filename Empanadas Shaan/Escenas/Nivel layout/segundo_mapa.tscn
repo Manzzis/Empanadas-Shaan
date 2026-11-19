@@ -21,7 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://b3t0et2bos2wj" path="res://Escenas/checkpoint/checkpoint.tscn" id="17_ue3ls"]
 [ext_resource type="Script" uid="uid://dii4a6yv7x7hj" path="res://Scripts/fallZone/fallzone.gd" id="19_yppci"]
 [ext_resource type="Material" uid="uid://dd3lho07ieuy3" path="res://Assets visuales/Assets 3D y 2D/materiales/Rojo_Liso.tres" id="20_yppci"]
-[ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="22_hctef"]
+[ext_resource type="PackedScene" uid="uid://vh4ryp2vide0" path="res://Escenas/narrativas/inicio_de_juego.tscn" id="22_38562"]
+[ext_resource type="PackedScene" uid="uid://cm2k5dr8s2hqb" path="res://narrativas/fin_de_juego.tscn" id="23_emgv0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6wskj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -820,7 +821,7 @@ data = PackedVector3Array(-0.00049999997, -45, -35, 27.3631, -45, -21.822199, -0
 [node name="segundo mapa" type="Node3D" unique_id=1815912140]
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("1_7q12v")]
-transform = Transform3D(0.05569134, 0, -0.998448, 0, 1, 0, 0.998448, 0, 0.05569134, 37.687794, 64.44209, -55.590313)
+transform = Transform3D(0.05569134, 0, -0.998448, 0, 1, 0, 0.998448, 0, 0.05569134, 37.687794, 50.711273, 19.572697)
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
@@ -1510,7 +1511,7 @@ curve = SubResource("Curve3D_om0u3")
 script = ExtResource("12_emgv0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1381532096]
-transform = Transform3D(-0.9995415, -7.819262e-05, 0.029797617, 7.2758535e-12, 0.9999756, 0.002624109, -0.029797632, 0.002622919, -0.999541, -0.27874756, -1.0733719, 0.365448)
+transform = Transform3D(-0.9995415, -7.819248e-05, 0.029797617, 7.2758535e-12, 0.99997383, 0.002624109, -0.029797632, 0.0026229143, -0.999541, -0.27874756, -1.0733719, 0.365448)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=332791163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
@@ -1658,7 +1659,7 @@ curve = SubResource("Curve3D_mt1xq")
 script = ExtResource("12_emgv0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=391646599]
-transform = Transform3D(-0.7397507, -0.0048268945, -0.67283773, -2.3282666e-10, 0.9999486, -0.0071736765, 0.6728557, -0.005306782, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+transform = Transform3D(-0.7397507, -0.004826886, -0.67283773, -2.3282666e-10, 0.99994683, -0.0071736765, 0.6728557, -0.005306773, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=709487367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
@@ -2723,7 +2724,11 @@ mesh = SubResource("ArrayMesh_ue3ls")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mountain1/StaticBody3D" unique_id=863974541]
 shape = SubResource("ConcavePolygonShape3D_ue3ls")
 
-[node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("22_hctef")]
+[node name="Inicio_de_juego" parent="." unique_id=57331650 instance=ExtResource("22_38562")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.924736, 43.888668, 22.355436)
+
+[node name="Fin_de_juego" parent="." unique_id=958965849 instance=ExtResource("23_emgv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.65142, 44.785744, 5.0624256)
 
 [connection signal="body_entered" from="Node3D/Z4/Fallzone" to="Node3D/Z4/Fallzone" method="_on_body_entered"]
 

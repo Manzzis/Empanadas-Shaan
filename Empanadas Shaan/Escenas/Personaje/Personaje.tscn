@@ -15,12 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://c204jd4l38kfp" path="res://Escenas/Componentes/puntos_de_estilo.tscn" id="12_p776b"]
 [ext_resource type="Script" uid="uid://cknacadl0bh8t" path="res://Scripts/Elementos de juego/personaje/sonidos/Sonidos_jugador.gd" id="14_cqkky"]
 [ext_resource type="PackedScene" uid="uid://bbslnn08p3eqt" path="res://Scripts/Componentes/camera_component.tscn" id="14_vivqc"]
-[ext_resource type="AudioStream" uid="uid://yrr3kpebw0kx" path="res://Assets sonoros/Elementos de juego/Personaje/Caminata.wav" id="15_fv4g0"]
-[ext_resource type="AudioStream" uid="uid://2d486tb1xss" path="res://Assets sonoros/Elementos de juego/Personaje/Salto.wav" id="16_68xog"]
-[ext_resource type="AudioStream" uid="uid://dxekh47vdhmvo" path="res://Assets sonoros/Elementos de juego/Personaje/ChoqueConBarra.wav" id="17_720kk"]
+[ext_resource type="AudioStream" uid="uid://bgpdbq6dvdocj" path="res://Assets sonoros/Agregados/movimiento.mp3" id="15_7w372"]
+[ext_resource type="AudioStream" uid="uid://bimoal6estk2i" path="res://Assets sonoros/Agregados/salto_personaje.mp3" id="16_7w372"]
 [ext_resource type="AudioStream" uid="uid://benrnqyfp21qt" path="res://Assets sonoros/Elementos de juego/Personaje/Frenada.wav" id="18_68xog"]
+[ext_resource type="AudioStream" uid="uid://d3ckkplclosi3" path="res://Assets sonoros/Agregados/wallwalk2 (online-audio-converter.com).mp3" id="19_14p4e"]
+[ext_resource type="AudioStream" uid="uid://btpds5ba1qwpr" path="res://Assets sonoros/Agregados/wallwalk3.mp3" id="19_a8sim"]
 [ext_resource type="Script" uid="uid://bc7fopmat3ncb" path="res://Scripts/Componentes/animacion_component.gd" id="19_tlnpb"]
 [ext_resource type="Script" uid="uid://yao1ls5trg78" path="res://Escenas/Personaje/trail.gd" id="20_720kk"]
+[ext_resource type="AudioStream" uid="uid://c2cfbrs7gqe55" path="res://Assets sonoros/Agregados/caida_personaje.mp3" id="20_a8sim"]
 [ext_resource type="Script" uid="uid://8x0wferljygp" path="res://Scripts/Elementos de juego/personaje/caminar_paredes.gd" id="20_xdn0p"]
 [ext_resource type="Texture2D" uid="uid://caw18hdyta2y0" path="res://Assets visuales/circle_01_a.png" id="23_7w372"]
 
@@ -1662,36 +1664,36 @@ bones/0/name = "Cadera"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2298, -0.03)
 bones/0/enabled = true
-bones/0/position = Vector3(0.00091940805, 1.1847168, -0.03)
-bones/0/rotation = Quaternion(0.08781988, -8.811729e-05, -0.0009962498, 0.9961359)
+bones/0/position = Vector3(-0.007428496, 1.182582, -0.03)
+bones/0/rotation = Quaternion(0.082847916, 0.0005368142, 0.006460293, 0.99654114)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "Columna"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20000005, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 0.2000001, -6.0535967e-09)
-bones/1/rotation = Quaternion(0.052502453, 0.00022707146, 0.0009740212, 0.99862033)
+bones/1/rotation = Quaternion(0.05125526, -0.0013972005, -0.0063343723, 0.9986646)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Pecho"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 0, 0, 0, 0.9993628, 0.035691537, 0, -0.035691537, 0.9993628, 0, 0.27999997, 0)
 bones/2/enabled = true
 bones/2/position = Vector3(0, 0.27999997, 0)
-bones/2/rotation = Quaternion(0.017552927, 0.0060044513, 0.00079020683, 0.9998276)
+bones/2/rotation = Quaternion(0.013809588, -0.0026645644, -0.0032002127, 0.999896)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/name = "Cuello"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 0, 0, 0, 0.99607265, 0.088539705, 0, -0.088539705, 0.99607265, 0, 0.28017855, 0)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.28017855, 0)
-bones/3/rotation = Quaternion(-0.12002212, -0.0058917403, -0.0014019375, 0.99275285)
+bones/3/rotation = Quaternion(-0.11940397, 0.002311264, 0.003464213, 0.992837)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Cabeza"
 bones/4/parent = 3
 bones/4/rest = Transform3D(1, 0, 0, 0, 0.9775357, -0.21076976, 0, 0.21076976, 0.9775357, 0, 0.1612452, -7.450581e-09)
 bones/4/enabled = true
 bones/4/position = Vector3(0, 0.1612452, -7.450581e-09)
-bones/4/rotation = Quaternion(0.030075207, -0.00065807335, -0.006197294, 0.9995283)
+bones/4/rotation = Quaternion(0.030809455, -0.00019874253, -0.002241675, 0.9995228)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "Hombro.Der"
 bones/5/parent = 2
@@ -1705,14 +1707,14 @@ bones/6/parent = 5
 bones/6/rest = Transform3D(0.81430835, 0.15593053, 0.55909514, -0.45786148, 0.7645842, 0.45362303, -0.35674167, -0.62537724, 0.69400185, -1.4901161e-08, 0.27820858, -1.0430813e-07)
 bones/6/enabled = true
 bones/6/position = Vector3(-1.4901161e-08, 0.27820858, -1.0430813e-07)
-bones/6/rotation = Quaternion(-0.5469803, 0.37567914, -0.11483031, 0.73925084)
+bones/6/rotation = Quaternion(-0.5549048, 0.37331435, -0.10797657, 0.73556656)
 bones/6/scale = Vector3(0.99999994, 1, 0.9999999)
 bones/7/name = "Antebrazo.Der"
 bones/7/parent = 6
 bones/7/rest = Transform3D(0.9780771, -0.1956671, -0.071271405, 0.20191598, 0.9748119, 0.0947192, 0.05094279, -0.10703352, 0.9929494, -2.9802322e-08, 0.32155892, -8.940697e-08)
 bones/7/enabled = true
 bones/7/position = Vector3(-2.9802322e-08, 0.32155892, -8.940697e-08)
-bones/7/rotation = Quaternion(-0.33846474, 0.10132683, 0.30677783, 0.8837771)
+bones/7/rotation = Quaternion(-0.32714698, 0.09517417, 0.29687434, 0.89206636)
 bones/7/scale = Vector3(1, 1, 0.99999994)
 bones/8/name = "Mano.Der"
 bones/8/parent = 7
@@ -1733,14 +1735,14 @@ bones/10/parent = 9
 bones/10/rest = Transform3D(0.81430835, -0.15593053, -0.55909514, 0.45786148, 0.7645842, 0.45362303, 0.35674167, -0.62537724, 0.69400185, 1.4901161e-08, 0.27820858, -1.0430813e-07)
 bones/10/enabled = true
 bones/10/position = Vector3(1.4901161e-08, 0.27820858, -1.0430813e-07)
-bones/10/rotation = Quaternion(-0.54984826, -0.36201054, 0.11219702, 0.7443299)
+bones/10/rotation = Quaternion(-0.5445737, -0.36986345, 0.11477681, 0.7439535)
 bones/10/scale = Vector3(0.99999994, 1, 0.9999999)
 bones/11/name = "Antebrazo.Izq"
 bones/11/parent = 10
 bones/11/rest = Transform3D(0.9780771, 0.1956671, 0.071271405, -0.20191598, 0.9748119, 0.0947192, -0.05094279, -0.10703352, 0.9929494, 2.9802322e-08, 0.32155892, -8.940697e-08)
 bones/11/enabled = true
 bones/11/position = Vector3(2.9802322e-08, 0.32155892, -8.940697e-08)
-bones/11/rotation = Quaternion(-0.3384633, -0.101326056, -0.30677652, 0.8837781)
+bones/11/rotation = Quaternion(-0.32714698, -0.09517417, -0.29687434, 0.8920664)
 bones/11/scale = Vector3(1, 1, 0.99999994)
 bones/12/name = "Mano.Izq"
 bones/12/parent = 11
@@ -1754,21 +1756,21 @@ bones/13/parent = 0
 bones/13/rest = Transform3D(0.98884577, -0.11330839, -0.09666457, -0.09666561, -0.98200643, 0.16223149, -0.113307476, -0.15107805, -0.9820054, -0.16, 0.01999998, 0.01)
 bones/13/enabled = true
 bones/13/position = Vector3(-0.16, 0.01999998, 0.01)
-bones/13/rotation = Quaternion(0.9638898, -0.08336681, 0.0047406172, 0.25287178)
+bones/13/rotation = Quaternion(0.9626083, -0.09073343, 0.0037497436, 0.2552232)
 bones/13/scale = Vector3(0.99999934, 1, 0.99999887)
 bones/14/name = "Pantorrilla.Der"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.99610704, 0.057639077, 0.06669885, -0.0647671, 0.9917998, 0.110174626, -0.059801552, -0.11406561, 0.9916717, -3.7252903e-09, 0.52952814, 9.313226e-09)
 bones/14/enabled = true
 bones/14/position = Vector3(-3.7252903e-09, 0.52952814, 9.313226e-09)
-bones/14/rotation = Quaternion(0.3047814, 0.0050832373, -0.023163216, 0.95212716)
+bones/14/rotation = Quaternion(0.3162994, 0.004169593, -0.022854663, 0.9483749)
 bones/14/scale = Vector3(1.0000001, 1, 0.99999994)
 bones/15/name = "Pie.Der"
 bones/15/parent = 14
 bones/15/rest = Transform3D(0.9301412, -0.1163663, -0.34827605, 0.3653012, 0.3896163, 0.8454314, 0.037314296, -0.9135962, 0.40490693, 1.9557774e-08, 0.450888, 8.381903e-09)
 bones/15/enabled = true
 bones/15/position = Vector3(1.9557774e-08, 0.450888, 8.381903e-09)
-bones/15/rotation = Quaternion(-0.62868744, -0.07886228, 0.12501742, 0.76348126)
+bones/15/rotation = Quaternion(-0.63254005, -0.077928685, 0.12537062, 0.7603305)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/name = "Punta_Pie.Der"
 bones/16/parent = 15
@@ -1810,21 +1812,21 @@ bones/21/parent = 0
 bones/21/rest = Transform3D(0.98884577, 0.11330839, 0.09666457, 0.09666561, -0.98200643, 0.16223149, 0.113307476, -0.15107805, -0.9820054, 0.16, 0.01999998, 0.01)
 bones/21/enabled = true
 bones/21/position = Vector3(0.16, 0.01999998, 0.01)
-bones/21/rotation = Quaternion(0.96372193, 0.08535356, -0.0045813667, 0.2528514)
+bones/21/rotation = Quaternion(0.96369547, 0.07787081, -0.004953422, 0.2553481)
 bones/21/scale = Vector3(0.99999934, 1, 0.99999887)
 bones/22/name = "Pantorrilla.Izq"
 bones/22/parent = 21
 bones/22/rest = Transform3D(0.99610704, -0.057639077, -0.06669885, 0.0647671, 0.9917998, 0.110174626, 0.059801552, -0.11406561, 0.9916717, 3.7252903e-09, 0.52952814, 9.313226e-09)
 bones/22/enabled = true
 bones/22/position = Vector3(3.7252903e-09, 0.52952814, 9.313226e-09)
-bones/22/rotation = Quaternion(0.30478135, -0.005083239, 0.023163212, 0.95212716)
+bones/22/rotation = Quaternion(0.3162213, -0.0041758, 0.02285677, 0.9484009)
 bones/22/scale = Vector3(1.0000001, 1, 0.99999994)
 bones/23/name = "Pie.Izq"
 bones/23/parent = 22
 bones/23/rest = Transform3D(0.9301412, 0.1163663, 0.34827605, -0.3653012, 0.3896163, 0.8454314, -0.037314296, -0.9135962, 0.40490693, -1.9557774e-08, 0.450888, 8.381903e-09)
 bones/23/enabled = true
 bones/23/position = Vector3(-1.9557774e-08, 0.450888, 8.381903e-09)
-bones/23/rotation = Quaternion(-0.62868744, 0.07886228, -0.12501742, 0.76348126)
+bones/23/rotation = Quaternion(-0.6325518, 0.077925876, -0.12537168, 0.76032096)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/name = "Punta_Pie.Izq"
 bones/24/parent = 23
@@ -1863,7 +1865,7 @@ bones/28/rotation = Quaternion(0.6727328, 0.6727338, -0.008873402, 0.3078655)
 bones/28/scale = Vector3(0.99999994, 0.9999998, 0.99999994)
 
 [node name="Cabeza" type="BoneAttachment3D" parent="ModeloPersonaje/Rig_Char/Skeleton3D" unique_id=681101347]
-transform = Transform3D(0.9999222, 0.0123491855, -0.0016876337, -0.012463966, 0.9907487, -0.13513452, 3.2202224e-06, 0.13514513, 0.9908258, 0.0009297268, 2.0777452, 0.18184537)
+transform = Transform3D(0.99998975, 0.0044764793, -0.00053638924, -0.004508503, 0.9929987, -0.11803796, 4.2393804e-06, 0.118039146, 0.9930089, -0.008207765, 2.0787592, 0.16817515)
 bone_name = "Cabeza"
 bone_idx = 4
 
@@ -1921,29 +1923,41 @@ script = ExtResource("12_hnnt1")
 jugador = NodePath("../..")
 maquina_de_estados_del_jugador = NodePath("../maquina_de_estados")
 
-[node name="Sonidos_jugador" type="Node" parent="Componentes" unique_id=320752970 node_paths=PackedStringArray("jugador", "s_caminar", "s_saltar", "s_grindear", "s_dashear")]
+[node name="Sonidos_jugador" type="Node" parent="Componentes" unique_id=320752970 node_paths=PackedStringArray("jugador", "s_caminar", "s_saltar", "s_grindear", "s_dashear", "s_pared", "s_caida")]
 script = ExtResource("14_cqkky")
 jugador = NodePath("../..")
 s_caminar = NodePath("s_caminar")
 s_saltar = NodePath("s_saltar")
 s_grindear = NodePath("s_grindear")
 s_dashear = NodePath("s_dashear")
+s_pared = NodePath("s_pared")
+s_caida = NodePath("s_caída")
 
 [node name="s_caminar" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1685255236]
-stream = ExtResource("15_fv4g0")
+stream = ExtResource("15_7w372")
 bus = &"SFX"
+parameters/looping = true
 
 [node name="s_saltar" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1388882285]
-stream = ExtResource("16_68xog")
+stream = ExtResource("16_7w372")
 bus = &"SFX"
 
 [node name="s_grindear" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=2030655605]
-stream = ExtResource("17_720kk")
+stream = ExtResource("19_14p4e")
 pitch_scale = 2.6
 bus = &"SFX"
 
 [node name="s_dashear" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=69817254]
 stream = ExtResource("18_68xog")
+bus = &"SFX"
+
+[node name="s_pared" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1113762658]
+stream = ExtResource("19_a8sim")
+bus = &"SFX"
+parameters/looping = true
+
+[node name="s_caída" type="AudioStreamPlayer" parent="Componentes/Sonidos_jugador" unique_id=1898169363]
+stream = ExtResource("20_a8sim")
 bus = &"SFX"
 
 [node name="Animacion_component" type="Node" parent="Componentes" unique_id=335243937 node_paths=PackedStringArray("animation_tree", "jugador")]
@@ -1992,9 +2006,6 @@ follow_offset = Vector3(0, 0.38, 0.31)
 follow_distance = 3.055
 vertical_rotation_offset = 0.16580627893946132
 spring_length = 3.055
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
 
 [node name="Trail" type="Node3D" parent="." unique_id=112568443]
 script = ExtResource("20_720kk")
