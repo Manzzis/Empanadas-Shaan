@@ -2,6 +2,10 @@ extends Node
 #Esta escena autoload crea la señal de los sonidos del entorno
 #Luego, al ser emitida esta señal, la escucha y ejecuta el sonido que debe reproducir
 #Además, reproduce la musiquita del juego
+@onready var voz_waliam: AudioStreamPlayer = $Voz_waliam
+@onready var voz_dios: AudioStreamPlayer = $Voz_dios
+
+
 
 @onready var musica: AudioStreamPlayer = $Musica
 
