@@ -2,6 +2,7 @@ class_name Jugador extends CharacterBody3D
 #script del personaje principal
 
 #estados del jugador
+@export var estados_maquina : Maquina_de_estados
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 @onready var camera_component := $CameraComponent
 @onready var particulas_salto: GPUParticles3D = $ParticulasSalto
@@ -20,6 +21,7 @@ var velocidad : float # SIN @export para que lo controle la tienda
 @export var velocidad_giro : float = 2.5
 @export var aceleracion_giro : float = 5.0
 @export var friccion_giro : float = 6.0
+@export var factor_giro_aereo : float = 0.45  # 75% menos de giro
 
 var riel_actual : Path3D = null
 @export var fuerza_salto : float = 6.0
@@ -104,18 +106,23 @@ func girar(delta: float) -> void:
 	if en_pared:
 		return
 	
+	# En el aire (saltar o caer) el giro se reduce un 75%
+	var factor_giro := 1.0
+	if esta_en_aire():
+		factor_giro = factor_giro_aereo
+	
 	var vel_horizontal := Vector3(velocity.x, 0, velocity.z)
 	var rapidez := vel_horizontal.length()
 	
 	# CASO A: Giro sobre su eje si está casi detenido
 	if rapidez < 0.2:
-		rotation.y += direccion_giro * velocidad_giro * delta
+		rotation.y += direccion_giro * velocidad_giro * factor_giro * delta
 		
 	# CASO B: Ajuste de trayectoria en movimiento
 	else:
 		var direccion_movimiento_anterior := vel_horizontal.normalized()
 		
-		rotation.y += direccion_giro * velocidad_giro * delta
+		rotation.y += direccion_giro * velocidad_giro * factor_giro * delta
 		
 		var frente := get_adelante()
 		var va_hacia_adelante := velocity.dot(frente) >= 0.0
@@ -123,13 +130,21 @@ func girar(delta: float) -> void:
 		
 		var nueva_direccion_movimiento = direccion_movimiento_anterior.move_toward(
 			frente * dir_factor, 
-			aceleracion_giro * delta
+			aceleracion_giro * factor_giro * delta
 		)
 		
 		var nueva_velocidad = nueva_direccion_movimiento.normalized() * rapidez
 		
 		velocity.x = nueva_velocidad.x
 		velocity.z = nueva_velocidad.z
+
+
+func esta_en_aire() -> bool:
+	var maquina = estados_maquina  # ver nota abajo
+	if maquina == null or maquina.estado_actual == null:
+		return false
+	var actual = maquina.estado_actual
+	return actual.name == estados.Saltar or actual.name == estados.Caer
 
 
 func handle_gravity(delta):
