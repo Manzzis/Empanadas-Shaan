@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://utlju0g3ipnb"
+path="res://.godot/imported/voz_waliam.mp3-3b41f1e9c6f813664d8e5519c211cdce.mp3str"
+
+[deps]
+
+source_file="res://Assets sonoros/Agregados/voz_waliam.mp3"
+dest_files=["res://.godot/imported/voz_waliam.mp3-3b41f1e9c6f813664d8e5519c211cdce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

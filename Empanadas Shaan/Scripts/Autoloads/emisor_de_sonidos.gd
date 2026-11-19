@@ -3,10 +3,18 @@ extends Node
 #Luego, al ser emitida esta señal, la escucha y ejecuta el sonido que debe reproducir
 #Además, reproduce la musiquita del juego
 
+@onready var musica: AudioStreamPlayer = $Musica
+
 @onready var moneda: AudioStreamPlayer = $Moneda
 @onready var acelerador: AudioStreamPlayer = $Acelerador
 @onready var checkpoint: AudioStreamPlayer = $Checkpoint
 @onready var rampa: AudioStreamPlayer = $Rampa
+
+@export_group("Tramo checkpoint")
+@export var checkpoint_inicio : float = 3.05
+@export var checkpoint_fin : float = 5.40
+
+var timer_checkpoint : SceneTreeTimer
 
 #Señal emitida para que los objetos del entorno emitan su sonido
 #Se usa por: Moneda, Acelerador, Checkpoint y Rampa
@@ -16,6 +24,7 @@ signal emitir_sonido(grupo : StringName)
 
 func _ready() -> void:
 	emitir_sonido.connect(reproducir_sonido)
+	musica.finished.connect(musica.play)
 
 func reproducir_sonido(grupo : StringName):
 	match grupo:
@@ -24,6 +33,16 @@ func reproducir_sonido(grupo : StringName):
 		"Acelerador":
 			acelerador.play()
 		"Checkpoint":
-			checkpoint.play()
+			reproducir_checkpoint()
 		"Rampa":
 			rampa.play()
+
+
+func reproducir_checkpoint() -> void:
+	checkpoint.play(checkpoint_inicio)
+	var timer := get_tree().create_timer(checkpoint_fin - checkpoint_inicio)
+	timer_checkpoint = timer
+	await timer.timeout
+	# Solo corta si no se reactivó el checkpoint mientras esperaba
+	if timer == timer_checkpoint:
+		checkpoint.stop()
