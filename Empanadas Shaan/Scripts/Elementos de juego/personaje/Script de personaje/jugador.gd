@@ -2,6 +2,7 @@ class_name Jugador extends CharacterBody3D
 #script del personaje principal
 
 #estados del jugador
+@export var estados_maquina : Maquina_de_estados
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 @onready var camera_component := $CameraComponent
 @onready var particulas_salto: GPUParticles3D = $ParticulasSalto
@@ -20,6 +21,7 @@ var velocidad : float # SIN @export para que lo controle la tienda
 @export var velocidad_giro : float = 2.5
 @export var aceleracion_giro : float = 5.0
 @export var friccion_giro : float = 6.0
+@export var factor_giro_aereo : float = 0.45  # 75% menos de giro
 
 var riel_actual : Path3D = null
 @export var fuerza_salto : float = 6.0
@@ -87,7 +89,8 @@ func _physics_process(delta: float) -> void:
 	particulas_grind.emitting = grindeando
 	
 func actualizar_coyote_time(delta: float) -> void:
-	if is_on_floor():
+	# No recargar el coyote si estamos subiendo (acabamos de saltar)
+	if is_on_floor() and velocity.y <= 0.1:
 		coyote_timer = coyote_time
 	else:
 		coyote_timer = max(coyote_timer - delta, 0.0)
@@ -104,18 +107,23 @@ func girar(delta: float) -> void:
 	if en_pared:
 		return
 	
+	# En el aire (saltar o caer) el giro se reduce un 75%
+	var factor_giro := 1.0
+	if esta_en_aire():
+		factor_giro = factor_giro_aereo
+	
 	var vel_horizontal := Vector3(velocity.x, 0, velocity.z)
 	var rapidez := vel_horizontal.length()
 	
 	# CASO A: Giro sobre su eje si está casi detenido
 	if rapidez < 0.2:
-		rotation.y += direccion_giro * velocidad_giro * delta
+		rotation.y += direccion_giro * velocidad_giro * factor_giro * delta
 		
 	# CASO B: Ajuste de trayectoria en movimiento
 	else:
 		var direccion_movimiento_anterior := vel_horizontal.normalized()
 		
-		rotation.y += direccion_giro * velocidad_giro * delta
+		rotation.y += direccion_giro * velocidad_giro * factor_giro * delta
 		
 		var frente := get_adelante()
 		var va_hacia_adelante := velocity.dot(frente) >= 0.0
@@ -123,7 +131,7 @@ func girar(delta: float) -> void:
 		
 		var nueva_direccion_movimiento = direccion_movimiento_anterior.move_toward(
 			frente * dir_factor, 
-			aceleracion_giro * delta
+			aceleracion_giro * factor_giro * delta
 		)
 		
 		var nueva_velocidad = nueva_direccion_movimiento.normalized() * rapidez
@@ -132,14 +140,20 @@ func girar(delta: float) -> void:
 		velocity.z = nueva_velocidad.z
 
 
+func esta_en_aire() -> bool:
+	var maquina = estados_maquina  # ver nota abajo
+	if maquina == null or maquina.estado_actual == null:
+		return false
+	var actual = maquina.estado_actual
+	return actual.name == estados.Saltar or actual.name == estados.Caer
+
+
 func handle_gravity(delta):
 	if en_pared:
 		return
-	# Momento coyote: salimos del suelo pero aún estamos en la ventana de gracia.
-	# Sin gravedad, el jugador "flota" a la altura de la plataforma.
-	if not is_on_floor() and coyote_timer > 0.0:
+	# Flotar en el coyote time solo si NO estamos subiendo
+	if not is_on_floor() and coyote_timer > 0.0 and velocity.y <= 0.0:
 		velocity.y = 0.0
-		#print("LLEGO EL COYOTEEEEEEEEEEEEE")
 		return
 	
 	velocity.y -= gravedad * delta

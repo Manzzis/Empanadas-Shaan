@@ -3,6 +3,18 @@ extends Estados_de_jugador
 
 var timer_salto: float = 0.0
 
+# Fuerza de salto de esta ejecución (se calcula al iniciar y se mantiene)
+var fuerza_actual: float = 0.0
+
+# True si este salto fue potenciado por una rampa
+var salto_de_rampa: bool = false
+
+# Multiplicador del salto cuando se salta desde una rampa
+@export var multiplicador_salto_rampa: float = 2.0
+
+# Velocidad hacia adelante mínima para activar el salto potenciado de rampa
+@export var velocidad_min_rampa: float = 5.0
+
 # Control en el aire (1.0 = igual que en el suelo, menos = menos control)
 @export var control_aereo: float = 0.6
 
@@ -10,14 +22,25 @@ func iniciar() -> void:
 	jugador = nodo_controlador
 	timer_salto = 0.0                 # reinicia el timer en cada salto
 	jugador.coyote_timer = 0.0        # consume el coyote time (evita doble salto)
-	jugador.velocity.y = jugador.fuerza_salto
+	fuerza_actual = jugador.fuerza_salto
+	salto_de_rampa = false
 
 	if jugador.rampa_actual != null:
-		var velocidad_horizontal = Vector3(jugador.velocity.x, 0, jugador.velocity.z).length()
-		if velocidad_horizontal > 5.0:
-			var normal = jugador.get_floor_normal()
-			var empuje_horizontal = Vector3(-normal.x, 0, -normal.z)
-			jugador.velocity += empuje_horizontal * jugador.fuerza_salto
+		# Velocidad a lo largo del eje frontal (negativa si va de reversa)
+		var velocidad_adelante: float = jugador.velocity.dot(jugador.get_adelante())
+
+		if abs(velocidad_adelante) > velocidad_min_rampa:
+			var vel_horizontal := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
+			var direccion_empuje := vel_horizontal.normalized()
+			jugador.velocity += direccion_empuje * jugador.fuerza_salto
+			fuerza_actual = jugador.fuerza_salto * multiplicador_salto_rampa
+			salto_de_rampa = true
+
+	jugador.velocity.y = fuerza_actual
+
+	# Partículas del salto (antes estaban en Jugador._physics_process)
+	jugador.particulas_salto.restart()
+	jugador.particulas_salto.emitting = true
 
 	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
 
@@ -29,39 +52,20 @@ func on_physics_process(delta: float) -> void:
 
 	# Mientras se mantenga el botón y quede tiempo, seguimos empujando hacia arriba
 	if Input.is_action_pressed("Salto") and timer_salto < jugador.tiempo_max_salto:
-		jugador.velocity.y = jugador.fuerza_salto
+		jugador.velocity.y = fuerza_actual
 	else:
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
 		return
 
-	moverse(delta)
 	if comprobar_pared():
 		return
 
-func moverse(delta: float) -> void:
-	var direccion := Input.get_axis("Atras", "Adelante")
-
-	if direccion != 0.0:
-		var adelante := jugador.get_adelante()
-		var direccion_objetivo := adelante.normalized() * direccion
-		var velocidad_objetivo := direccion_objetivo * jugador.velocidad
-
-		var velocidad_horizontal_actual := Vector3(jugador.velocity.x, 0, jugador.velocity.z)
-		var velocidad_horizontal_objetivo := Vector3(velocidad_objetivo.x, 0, velocidad_objetivo.z)
-
-		var nueva_velocidad_horizontal := velocidad_horizontal_actual.move_toward(
-			velocidad_horizontal_objetivo,
-			jugador.aceleracion * control_aereo * delta
-		)
-
-		jugador.velocity.x = nueva_velocidad_horizontal.x
-		jugador.velocity.z = nueva_velocidad_horizontal.z
-	# Sin input: conservamos el impulso horizontal
 
 func on_unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("Salto"):
-		# Cortamos el ascenso para que un toque corto dé un salto corto
-		if jugador.velocity.y > 0.0:
+		# Salto normal: cortamos el ascenso para que un toque corto dé un salto corto.
+		# Salto de rampa: no se corta, así el toque conserva el impulso extra.
+		if not salto_de_rampa and jugador.velocity.y > 0.0:
 			jugador.velocity.y *= 0.5
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
 	if event.is_action_pressed("Dash"):
