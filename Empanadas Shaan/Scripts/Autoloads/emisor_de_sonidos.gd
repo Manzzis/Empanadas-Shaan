@@ -20,8 +20,6 @@ extends Node
 
 var timer_checkpoint : SceneTreeTimer
 
-var voz_actual : AudioStreamPlayer = null
-
 #Señal emitida para que los objetos del entorno emitan su sonido
 #Se usa por: Moneda, Acelerador, Checkpoint y Rampa
 #########################################
@@ -52,19 +50,3 @@ func reproducir_checkpoint() -> void:
 	# Solo corta si no se reactivó el checkpoint mientras esperaba
 	if timer == timer_checkpoint:
 		checkpoint.stop()
-
-func iniciar_voz(personaje : String) -> void:
-	detener_voz()
-	match personaje:
-		"Waliam":
-			voz_actual = voz_waliam
-		"Dios", "???":
-			voz_actual = voz_dios
-		_:
-			voz_actual = null  # narración, sin voz
-	if voz_actual:
-		voz_actual.play()
-
-func detener_voz() -> void:
-	if voz_actual:
-		voz_actual.stop()

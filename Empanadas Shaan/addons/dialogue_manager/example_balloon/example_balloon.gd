@@ -45,7 +45,6 @@ var dialogue_line: DialogueLine:
 			apply_dialogue_line()
 		else:
 			# The dialogue has finished so close the balloon
-			EmisorDeSonidos.detener_voz()   # <--- AGREGADO: corta la voz al cerrar
 			if owner == null:
 				queue_free()
 			else:
@@ -96,11 +95,6 @@ func _ready() -> void:
 	balloon.add_child(warning)
 	balloon.move_child(warning, 0)
 	# /EXAMPLE MESSAGE
-
-	# --- VOZ (AGREGADO) ---
-	dialogue_label.started_typing.connect(_on_started_typing)
-	dialogue_label.finished_typing.connect(EmisorDeSonidos.detener_voz)
-	dialogue_label.skipped_typing.connect(EmisorDeSonidos.detener_voz)
 
 
 func _process(_delta: float) -> void:
@@ -229,9 +223,5 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
-
-# --- VOZ (AGREGADO) ---
-func _on_started_typing() -> void:
-	EmisorDeSonidos.iniciar_voz(dialogue_line.character)
 
 #endregion

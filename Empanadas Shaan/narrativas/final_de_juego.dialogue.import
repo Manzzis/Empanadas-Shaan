@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=18
 type="Resource"
 uid="uid://bbnwa04u0q51n"
-path="res://.godot/imported/final_de_juego.dialogue-bbc430c2375e632c2e1bf4789b40221a.tres"
+path="res://.godot/imported/final_de_juego.dialogue-dd8761bd48373af0206281c6a044bb63.tres"
 
 [deps]
 
-source_file="res://narrativas/final_de_juego.dialogue"
-dest_files=["res://.godot/imported/final_de_juego.dialogue-bbc430c2375e632c2e1bf4789b40221a.tres"]
+source_file="res://Escenas/narrativas/final_de_juego.dialogue"
+dest_files=["res://.godot/imported/final_de_juego.dialogue-dd8761bd48373af0206281c6a044bb63.tres"]
 
 [params]
 
