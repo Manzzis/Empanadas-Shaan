@@ -23,6 +23,7 @@
 [ext_resource type="Material" uid="uid://dd3lho07ieuy3" path="res://Assets visuales/Assets 3D y 2D/materiales/Rojo_Liso.tres" id="20_yppci"]
 [ext_resource type="PackedScene" uid="uid://vh4ryp2vide0" path="res://narrativas/inicio_de_juego.tscn" id="22_38562"]
 [ext_resource type="PackedScene" uid="uid://cm2k5dr8s2hqb" path="res://narrativas/fin_de_juego.tscn" id="23_emgv0"]
+[ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="24_emgv0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6wskj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -825,34 +826,31 @@ transform = Transform3D(0.05569134, 0, -0.998448, 0, 1, 0, 0.998448, 0, 0.055691
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
-bones/0/position = Vector3(0.00646504, 1.1888139, -0.03)
-bones/0/rotation = Quaternion(0.09090811, -0.0005140531, -0.005629728, 0.99584323)
-bones/1/rotation = Quaternion(0.05324486, 0.0012820613, 0.0053132833, 0.99856657)
-bones/2/rotation = Quaternion(0.019874332, 0.0015963913, 0.0027289465, 0.99979746)
-bones/3/rotation = Quaternion(-0.12666225, -0.0012706585, -0.0028343603, 0.99194103)
-bones/4/rotation = Quaternion(0.02337824, 0.00028273987, 0.0028864332, 0.99972254)
-bones/6/rotation = Quaternion(-0.55133283, 0.38151917, -0.10429817, 0.7345728)
-bones/7/rotation = Quaternion(-0.3459247, 0.105397455, 0.31330353, 0.87810504)
-bones/10/rotation = Quaternion(-0.5599662, -0.38655338, 0.09844754, 0.7261697)
-bones/11/rotation = Quaternion(-0.34592476, -0.105397515, -0.31330347, 0.8781051)
-bones/13/rotation = Quaternion(0.96464396, -0.0788494, 0.0052517806, 0.2514302)
-bones/14/rotation = Quaternion(0.29709572, 0.0056904876, -0.02336654, 0.95454484)
-bones/15/rotation = Quaternion(-0.62641436, -0.07941028, 0.124808215, 0.76532483)
-bones/21/rotation = Quaternion(0.96370846, 0.08998478, -0.004444823, 0.25129488)
-bones/22/rotation = Quaternion(0.29709572, -0.0056904866, 0.023366544, 0.95454484)
-bones/23/rotation = Quaternion(-0.62641436, 0.0794103, -0.124808215, 0.76532483)
+bones/0/position = Vector3(-0.00854647, 1.1823542, -0.03)
+bones/0/rotation = Quaternion(0.08219918, 0.0006128647, 0.0074329074, 0.9965881)
+bones/1/rotation = Quaternion(0.051092286, -0.0015970445, -0.0072907046, 0.99866605)
+bones/2/rotation = Quaternion(0.0132970335, -0.011050055, -0.004069704, 0.99984235)
+bones/3/rotation = Quaternion(-0.115791015, 0.010589126, 0.0051896996, 0.99320364)
+bones/4/rotation = Quaternion(0.0341253, 0.0006325764, 0.006584804, 0.99939567)
+bones/6/rotation = Quaternion(-0.5627327, 0.37624753, -0.09622744, 0.7297328)
+bones/7/rotation = Quaternion(-0.32562238, 0.09434746, 0.29554, 0.89315444)
+bones/10/rotation = Quaternion(-0.5487389, -0.39259565, 0.10586226, 0.7304433)
+bones/11/rotation = Quaternion(-0.3256224, -0.094347484, -0.29554006, 0.89315444)
+bones/13/rotation = Quaternion(0.9624358, -0.09169724, 0.0036063124, 0.25553098)
+bones/14/rotation = Quaternion(0.31783056, 0.0040478096, -0.022813294, 0.9478644)
+bones/15/rotation = Quaternion(-0.63304126, -0.0778068, 0.12541641, 0.7599183)
+bones/21/rotation = Quaternion(0.96368766, 0.07689027, -0.0050157313, 0.25567362)
+bones/22/rotation = Quaternion(0.3178306, -0.004047813, 0.022813296, 0.9478645)
+bones/23/rotation = Quaternion(-0.63304126, 0.077806816, -0.12541644, 0.7599183)
 
 [node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
-transform = Transform3D(0.99998486, -0.005487093, 0.0007116952, 0.005532884, 0.99265903, -0.12081887, -4.3526874e-05, 0.12082098, 0.9926743, 0.007423934, 2.079919, 0.18824303)
+transform = Transform3D(0.9999123, -0.01312491, 0.0017417344, 0.013239938, 0.99153143, -0.12919018, -3.137201e-05, 0.12920193, 0.9916183, -0.009286958, 2.0788524, 0.16752918)
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
 transform = Transform3D(0.055691123, 0.16479123, -0.984755, 1.4901161e-08, 0.9862856, 0.16504738, 0.9984481, -0.009191684, 0.05492735, 34.67937, 51.595493, 20.050499)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
 transform = Transform3D(1.0000001, 2.514571e-08, -2.1979213e-07, 1.4901161e-08, 0.9862856, 0.16504738, 2.1979213e-07, -0.16504739, 0.98628575, 0.3095169, 0.8842201, 3.0303612)
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=292197610]
 environment = SubResource("Environment_qf7v0")
@@ -1514,7 +1512,7 @@ curve = SubResource("Curve3D_om0u3")
 script = ExtResource("12_emgv0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1381532096]
-transform = Transform3D(-0.9995415, -7.819247e-05, 0.029797617, 7.2758535e-12, 0.99997365, 0.002624109, -0.029797632, 0.0026229138, -0.999541, -0.27874756, -1.0733719, 0.365448)
+transform = Transform3D(-0.9995415, -7.819246e-05, 0.029797617, 7.2758535e-12, 0.99997354, 0.002624109, -0.029797632, 0.0026229136, -0.999541, -0.27874756, -1.0733719, 0.365448)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=332791163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
@@ -1662,7 +1660,7 @@ curve = SubResource("Curve3D_mt1xq")
 script = ExtResource("12_emgv0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=391646599]
-transform = Transform3D(-0.7397507, -0.004826885, -0.67283773, -2.3282666e-10, 0.99994665, -0.0071736765, 0.6728557, -0.0053067715, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+transform = Transform3D(-0.7397507, -0.0048268847, -0.67283773, -2.3282666e-10, 0.99994653, -0.0071736765, 0.6728557, -0.005306771, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=709487367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
@@ -2735,6 +2733,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.924736, 43.888668, 22.3554
 
 [node name="Fin_de_juego" parent="." unique_id=958965849 instance=ExtResource("23_emgv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.65142, 44.785744, 5.0624256)
+
+[node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("24_emgv0")]
 
 [connection signal="body_entered" from="Node3D/Z4/Fallzone" to="Node3D/Z4/Fallzone" method="_on_body_entered"]
 
