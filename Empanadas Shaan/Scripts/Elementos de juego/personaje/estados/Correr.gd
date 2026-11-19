@@ -22,7 +22,7 @@ func iniciar() -> void:
 		# Guardamos el lado en el jugador para que la animación lo lea sin retrasos
 		jugador.set_meta("ultimo_lado_muro", lado_muro)
 
-	EVENT_BUS_JUGADOR.aumentar_pde_del_jugador.emit()
+	EVENT_BUS_JUGADOR.disminuir_pde_del_jugador.emit()
 
 
 func finalizar() -> void:
@@ -39,11 +39,13 @@ func on_physics_process(delta: float) -> void:
 	# 1. Se acabó la pared a mitad del aire (caída libre)
 	if muro.is_empty():
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
+		EVENT_BUS_JUGADOR.terminar_correr.emit()
 		return
 
 	# 2. Llegamos al suelo deslizándonos (aterrizaje)
 	if jugador.is_on_floor():
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Idle)
+		EVENT_BUS_JUGADOR.terminar_correr.emit()
 		return
 
 	# Para seguir pegado hay que girar hacia el muro
@@ -52,6 +54,7 @@ func on_physics_process(delta: float) -> void:
 			and not jugador.caminar_paredes.mantiene_agarre(lado_muro):
 		jugador.caminar_paredes.soltar_muro()
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Caer)
+		EVENT_BUS_JUGADOR.terminar_correr.emit()
 		return
 
 	muro_actual = muro
@@ -64,6 +67,7 @@ func on_unhandled_input(event: InputEvent) -> void:
 		jugador.caminar_paredes.saltar_de_muro(muro_actual)
 		# Cambiado a "Saltar" para que reproduzca la animación correcta
 		mi_maquina_de_estados.cambiar_a(jugador.estados.Saltar)
+		EVENT_BUS_JUGADOR.terminar_correr.emit()
 		return
 
 	if event.is_action_pressed("Dash"):

@@ -824,6 +824,33 @@ data = PackedVector3Array(-0.00049999997, -45, -35, 27.3631, -45, -21.822199, -0
 transform = Transform3D(0.05569134, 0, -0.998448, 0, 1, 0, 0.998448, 0, 0.05569134, 37.687794, 50.711273, 19.572697)
 fuerza_salto = 3.0
 
+[node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
+bones/0/position = Vector3(-0.01057401, 1.1819348, -0.03)
+bones/0/rotation = Quaternion(0.08122847, 0.00072427455, 0.008888271, 0.99665564)
+bones/1/rotation = Quaternion(0.050842524, -0.001897681, -0.00875685, 0.9986665)
+bones/2/rotation = Quaternion(0.012366377, -0.0072342656, -0.0047733495, 0.999886)
+bones/3/rotation = Quaternion(-0.11956408, 0.0067111976, 0.0055479193, 0.9927883)
+bones/4/rotation = Quaternion(0.030653719, 6.0058483e-05, 0.00076596526, 0.99952984)
+bones/6/rotation = Quaternion(-0.559089, 0.37302813, -0.10349105, 0.73318434)
+bones/7/rotation = Quaternion(-0.32267165, 0.092748806, 0.29295737, 0.89524114)
+bones/10/rotation = Quaternion(-0.54342824, -0.3767219, 0.11410559, 0.7414489)
+bones/11/rotation = Quaternion(-0.32267168, -0.092748806, -0.29295737, 0.89524114)
+bones/13/rotation = Quaternion(0.96212614, -0.09341283, 0.0033427984, 0.25607887)
+bones/14/rotation = Quaternion(0.32084116, 0.0038081391, -0.02273172, 0.94685256)
+bones/15/rotation = Quaternion(-0.6332214, -0.077762984, 0.12543291, 0.75977)
+bones/21/rotation = Quaternion(0.96367097, 0.07514394, -0.005134803, 0.25625262)
+bones/22/rotation = Quaternion(0.32084122, -0.0038081373, 0.02273172, 0.94685256)
+bones/23/rotation = Quaternion(-0.6332214, 0.077763, -0.12543292, 0.75977)
+
+[node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
+transform = Transform3D(0.9999988, -0.0014986563, 0.0002175966, 0.0015135208, 0.9938761, -0.11049, -5.067545e-05, 0.11049023, 0.99387705, -0.0114194965, 2.0791173, 0.16340679)
+
+[node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
+transform = Transform3D(0.05569029, 0.16479126, -0.98475504, 1.4901161e-08, 0.9862856, 0.1650474, 0.99844813, -0.009191565, 0.054926574, 34.67937, 65.32631, -55.11251)
+
+[node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
+transform = Transform3D(1.0000001, 1.4621764e-07, -9.983778e-07, 1.4901161e-08, 0.9862856, 0.1650474, 1.0542572e-06, -0.1650474, 0.98628575, 0.3095131, 0.8842163, 3.0303612)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=292197610]
 environment = SubResource("Environment_qf7v0")
 
@@ -2704,3 +2731,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.924736, 43.888668, 22.3554
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.65142, 44.785744, 5.0624256)
 
 [connection signal="body_entered" from="Node3D/Z4/Fallzone" to="Node3D/Z4/Fallzone" method="_on_body_entered"]
+
+[editable path="Personaje"]
+[editable path="Personaje/CameraComponent"]

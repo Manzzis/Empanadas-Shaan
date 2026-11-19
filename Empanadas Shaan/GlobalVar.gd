@@ -4,7 +4,7 @@ extends Node
 var monedas : int = 0
 
 # ### MEJORA: PUNTOS DE ESTILO ###
-var pde_max : int = 10
+var pde_max : int = 100
 var pde_mejorados : bool = false
 
 # ### MEJORA: VELOCIDAD ###
@@ -18,7 +18,7 @@ func comprar_mejora_pde(costo: int) -> bool:
 	if monedas >= costo and not pde_mejorados:
 		monedas -= costo
 		pde_mejorados = true
-		pde_max = 15
+		pde_max = 150
 		return true # Compra exitosa
 	return false # No hay dinero o ya se compró
 
