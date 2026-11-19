@@ -89,7 +89,8 @@ func _physics_process(delta: float) -> void:
 	particulas_grind.emitting = grindeando
 	
 func actualizar_coyote_time(delta: float) -> void:
-	if is_on_floor():
+	# No recargar el coyote si estamos subiendo (acabamos de saltar)
+	if is_on_floor() and velocity.y <= 0.1:
 		coyote_timer = coyote_time
 	else:
 		coyote_timer = max(coyote_timer - delta, 0.0)
@@ -150,11 +151,9 @@ func esta_en_aire() -> bool:
 func handle_gravity(delta):
 	if en_pared:
 		return
-	# Momento coyote: salimos del suelo pero aún estamos en la ventana de gracia.
-	# Sin gravedad, el jugador "flota" a la altura de la plataforma.
-	if not is_on_floor() and coyote_timer > 0.0:
+	# Flotar en el coyote time solo si NO estamos subiendo
+	if not is_on_floor() and coyote_timer > 0.0 and velocity.y <= 0.0:
 		velocity.y = 0.0
-		#print("LLEGO EL COYOTEEEEEEEEEEEEE")
 		return
 	
 	velocity.y -= gravedad * delta
