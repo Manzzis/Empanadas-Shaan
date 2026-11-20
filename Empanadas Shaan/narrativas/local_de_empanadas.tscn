@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dvr2rh5d1yciy"]
+
+[ext_resource type="PackedScene" uid="uid://7yg8qh4aa16c" path="res://Assets sonoros/Agregados/local_empanadas.glb" id="1_ptkj1"]
+[ext_resource type="PackedScene" uid="uid://vh4ryp2vide0" path="res://narrativas/inicio_de_juego.tscn" id="2_46cvk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tiug6"]
+size = Vector3(1, 6.463745, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_46cvk"]
+size = Vector3(0.56170654, 3.1661072, 1.7410889)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jst2l"]
+size = Vector3(0.6993103, 2.497116, 1.7410889)
+
+[node name="Local_de_empanadas" type="Node3D" unique_id=1274202300]
+
+[node name="local_empanadas" parent="." unique_id=693175253 instance=ExtResource("1_ptkj1")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="Paredes" type="StaticBody3D" parent="." unique_id=334457081]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes" unique_id=1718663825]
+transform = Transform3D(5.227853, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, 0, 1.3659363, 1.7936254)
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Paredes" unique_id=2134242457]
+transform = Transform3D(5.227853, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, 0, 1.3659363, -2.6444278)
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Paredes" unique_id=761913951]
+transform = Transform3D(-0.0309461, 0, -0.4999913, 0, 0.5421097, 0, 5.2277613, 0, -0.002959733, 2.5558805, 1.3659363, -0.38161755)
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Paredes" unique_id=1977585995]
+transform = Transform3D(2.6622686, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, -1.5518796, 0.47209558, -0.8759042)
+shape = SubResource("BoxShape3D_46cvk")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Paredes" unique_id=1551153802]
+transform = Transform3D(2.6622686, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, 0.18407054, 0.2907623, -0.8759042)
+shape = SubResource("BoxShape3D_jst2l")
+
+[node name="Inicio_de_juego" parent="." unique_id=57331650 instance=ExtResource("2_46cvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5320663, 0)
+
+[node name="CollisionShape3D" parent="Inicio_de_juego/Area3D" parent_id_path=PackedInt32Array(57331650, 1500602069) index="0" unique_id=126762773]
+transform = Transform3D(2.964666, 0, 0, 0, 3.8244178, 0, 0, 0, 1.9479066, 0.94249535, -1.4797707, -1.6397853)
+
+[editable path="Inicio_de_juego"]
