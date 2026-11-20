@@ -2,7 +2,7 @@
 extends Node3D
 ## Visor de métricas. Colocalo en el origen (0,0,0) de tu nivel.
 ## Pulsá "Cargar datos" en el Inspector: dibuja los puntos guardados por las
-## partidas (user://metricas/*.jsonl) directamente en el escenario del editor.
+## partidas (res://metricas/*.jsonl) directamente en el escenario del editor.
 ##
 ## Los nodos que crea no se guardan en la escena: son solo para mirar.
 
@@ -18,6 +18,10 @@ const COLORES := {
 }
 const COLOR_MUERTE_TRAS_SALTO := Color.BLUE
 const COLOR_MUERTE_SIN_SALTO := Color.YELLOW
+
+## Dejalo vacío para dibujar TODOS los archivos de res://metricas.
+## Si elegís un archivo .jsonl específico, solo dibujará esa partida.
+@export_file("*.jsonl") var archivo_especifico: String = ""
 
 ## Vacío = usa el nombre de la escena donde está este nodo.
 ## Si el nivel se llama distinto al ejecutar el juego, escribilo acá.
@@ -65,36 +69,50 @@ func cargar() -> void:
 
 	_dibujar_puntos(puntos)
 	_dibujar_lineas(lineas)
+	var origen_texto := archivo_especifico.get_file() if archivo_especifico != "" else "TODOS los archivos"
 	@warning_ignore("integer_division")
-	print("Visor: %d colores, %d líneas (nivel '%s')" % [puntos.size(), lineas.size() / 2, nivel_buscado])
+	print("Visor [%s]: %d colores, %d líneas (nivel '%s')" % [origen_texto, puntos.size(), lineas.size() / 2, nivel_buscado])
 
 
-## Lee todos los archivos .jsonl de la carpeta y devuelve la lista de eventos.
+## Lee el archivo seleccionado o todos los .jsonl de la carpeta.
 func _leer_eventos() -> Array[Dictionary]:
 	var eventos: Array[Dictionary] = []
-	var ruta := "res://metricas"
 	
+	# 1. Si hay un archivo seleccionado en el Inspector, leemos solo ese
+	if archivo_especifico != "":
+		if not FileAccess.file_exists(archivo_especifico):
+			print("Visor: El archivo seleccionado '%s' no existe." % archivo_especifico)
+			return eventos
+		_parsear_archivo(archivo_especifico, eventos)
+		return eventos
+
+	# 2. Si está vacío, leemos todos los .jsonl de la carpeta
+	var ruta := "res://metricas"
 	if not DirAccess.dir_exists_absolute(ruta):
 		print("Visor: La carpeta 'res://metricas' no existe.")
 		return eventos
 
 	for nombre in DirAccess.get_files_at(ruta):
-		if not nombre.ends_with(".jsonl"):
-			continue
-			
-		var archivo := FileAccess.open(ruta + "/" + nombre, FileAccess.READ)
-		if archivo:
-			while not archivo.eof_reached():
-				var linea = archivo.get_line().strip_edges()
-				if linea == "":
-					continue
-					
-				var evento = JSON.parse_string(linea)
-				if evento is Dictionary:
-					eventos.append(evento)
-			archivo.close()
+		if nombre.ends_with(".jsonl"):
+			_parsear_archivo(ruta + "/" + nombre, eventos)
 			
 	return eventos
+
+
+func _parsear_archivo(ruta_completa: String, eventos: Array[Dictionary]) -> void:
+	var archivo := FileAccess.open(ruta_completa, FileAccess.READ)
+	if not archivo:
+		return
+		
+	while not archivo.eof_reached():
+		var linea := archivo.get_line().strip_edges()
+		if linea == "":
+			continue
+			
+		var evento = JSON.parse_string(linea)
+		if evento is Dictionary:
+			eventos.append(evento)
+	archivo.close()
 
 
 func _color_de(tipo: String, datos: Dictionary) -> Color:
