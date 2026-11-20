@@ -28,7 +28,11 @@ func set_target(target: CharacterBody3D) -> void:
 func _on_estado_jugador_cambiado(nombre_estado: String) -> void:
 	estado_actual_nombre = nombre_estado
 
+var controles_activos: bool = true
+
 func _unhandled_input(event: InputEvent) -> void:
+	if controles_activos == false:
+		return
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		var rot: Vector3 = pcam.get_third_person_rotation()
 		
