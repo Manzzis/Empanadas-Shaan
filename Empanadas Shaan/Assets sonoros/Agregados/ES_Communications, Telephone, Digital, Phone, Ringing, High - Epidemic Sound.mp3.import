@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dad4m0wv8ggv8"
+path="res://.godot/imported/ES_Communications, Telephone, Digital, Phone, Ringing, High - Epidemic Sound.mp3-3555f8b4547e710d6a9a1d27c0fed393.mp3str"
+
+[deps]
+
+source_file="res://Assets sonoros/Agregados/ES_Communications, Telephone, Digital, Phone, Ringing, High - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Communications, Telephone, Digital, Phone, Ringing, High - Epidemic Sound.mp3-3555f8b4547e710d6a9a1d27c0fed393.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

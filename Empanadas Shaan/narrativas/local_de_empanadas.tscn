@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://7yg8qh4aa16c" path="res://Assets sonoros/Agregados/local_empanadas.glb" id="1_ptkj1"]
 [ext_resource type="PackedScene" uid="uid://vh4ryp2vide0" path="res://narrativas/inicio_de_juego.tscn" id="2_46cvk"]
 [ext_resource type="PackedScene" uid="uid://dbslv2fkdvqeq" path="res://narrativas/cinematica_empanadas.tscn" id="3_jst2l"]
+[ext_resource type="AudioStream" uid="uid://dad4m0wv8ggv8" path="res://Assets sonoros/Agregados/ES_Communications, Telephone, Digital, Phone, Ringing, High - Epidemic Sound.mp3" id="4_j824u"]
+[ext_resource type="PackedScene" uid="uid://clyasxdo0kfmg" path="res://Assets sonoros/Agregados/telefono.glb" id="5_5ljin"]
+[ext_resource type="Script" uid="uid://dnna7wxwksaxx" path="res://Escenas/narrativas/telefono.gd" id="6_mxomd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tiug6"]
 size = Vector3(1, 6.463745, 1)
@@ -88,6 +91,17 @@ transform = Transform3D(-0.71186644, -0.27612165, -0.64575803, -0.08111521, 0.94
 
 [node name="W_B" parent="Inicio_de_juego/CinematicaEmpanadas/PuntoWaliam" parent_id_path=PackedInt32Array(1354266239, 1867334068) index="1" unique_id=2057542141]
 transform = Transform3D(-0.98028433, 0.004311979, 0.19754611, -0.08602389, 0.89072937, -0.4463191, -0.17788438, -0.45451322, -0.8727968, 0.1703111, 0.65424776, -1.105445)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Inicio_de_juego" unique_id=1403116123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08834076, 0, -0.82084227)
+stream = ExtResource("4_j824u")
+autoplay = true
+max_distance = 224.0
+parameters/looping = true
+
+[node name="telefono" parent="Inicio_de_juego" unique_id=214426314 instance=ExtResource("5_5ljin")]
+transform = Transform3D(9.3, 0, 0, 0, -0.20791636, -9.297676, 0, 9.297676, -0.20791636, 0.5435535, 0.57360315, -1.2020478)
+script = ExtResource("6_mxomd")
 
 [connection signal="body_entered" from="Inicio_de_juego/Area3D" to="Inicio_de_juego" method="_on_area_3d_body_entered"]
 
