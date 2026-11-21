@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dbslv2fkdvqeq"]
+
+[ext_resource type="Script" uid="uid://clmxhx8txyjn6" path="res://narrativas/cinematica_empanadas.gd" id="1_0f80a"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_v1iv3"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_0f80a"]
+
+[sub_resource type="Resource" id="Resource_tvn1h"]
+script = ExtResource("2_0f80a")
+duration = 0.0
+
+[node name="CinematicaEmpanadas" type="Node3D" unique_id=1354266239 node_paths=PackedStringArray("rig", "overlay", "w_a", "w_b", "j1", "j2", "j3")]
+transform = Transform3D(-0.27732074, 0, -0.9607774, 0, 1, 0, 0.9607774, 0, -0.27732074, 0, -2.4856539, -1.9399046)
+script = ExtResource("1_0f80a")
+rig = NodePath("Rig")
+overlay = NodePath("CanvasLayer/Overlay")
+w_a = NodePath("PuntoWaliam/W_A")
+w_b = NodePath("PuntoWaliam/W_B")
+j1 = NodePath("Rig/J1")
+j2 = NodePath("Rig/J2")
+j3 = NodePath("Rig/J3")
+
+[node name="Rig" type="Node3D" parent="." unique_id=1367623273]
+
+[node name="J1" type="Node3D" parent="Rig" unique_id=2142009619]
+transform = Transform3D(0.9858828, 0.113394514, -0.12319654, -0.08141325, 0.96758026, 0.23908387, 0.14631316, -0.22567862, 0.9631524, -0.016398072, 1.3813502, 0.8006238)
+script = ExtResource("1_v1iv3")
+tween_resource = SubResource("Resource_tvn1h")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="J2" type="Node3D" parent="Rig" unique_id=753838059]
+transform = Transform3D(0.9281435, -0.27767766, 0.24788083, -0.02747034, 0.61303234, 0.7895801, -0.37120762, -0.739653, 0.56135416, 0.5579525, 2.1739228, 0.9028387)
+script = ExtResource("1_v1iv3")
+tween_resource = SubResource("Resource_tvn1h")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="J3" type="Node3D" parent="Rig" unique_id=2093473412]
+transform = Transform3D(0.9829467, 0.16336605, -0.08442281, -0.018306373, 0.5437441, 0.8390515, 0.18297726, -0.8231978, 0.5374621, -0.053708315, 1.9, 0.40892357)
+script = ExtResource("1_v1iv3")
+tween_resource = SubResource("Resource_tvn1h")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="PuntoWaliam" type="Marker3D" parent="." unique_id=1867334068]
+
+[node name="W_A" type="Node3D" parent="PuntoWaliam" unique_id=2006410726]
+transform = Transform3D(-0.71186644, -0.27612162, -0.64575803, -0.08111521, 0.9456422, -0.31493083, 0.6976152, -0.17180783, -0.69556785, -0.5550473, 0.78433335, -0.93143517)
+script = ExtResource("1_v1iv3")
+tween_resource = SubResource("Resource_tvn1h")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="W_B" type="Node3D" parent="PuntoWaliam" unique_id=2057542141]
+transform = Transform3D(-0.99518776, -0.055725582, 0.08060019, -0.08602389, 0.89072937, -0.4463191, -0.046921313, -0.45110476, -0.8912364, 0.007892013, 0.8341156, -1.0585638)
+script = ExtResource("1_v1iv3")
+tween_resource = SubResource("Resource_tvn1h")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1400706121]
+
+[node name="Overlay" type="ColorRect" parent="CanvasLayer" unique_id=1598249405]
+visible = false
+offset_right = 1168.0
+offset_bottom = 657.0
+color = Color(0, 0, 0, 1)

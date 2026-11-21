@@ -1,9 +1,17 @@
+~ start
+do plano("w_a")
 Waliam: Hola, Empanadas Shaan, ¿Qué desea?
+do plano("j1")
 ???: Hola, me gustaría ordenar una docena de empanadas, por favor.
+do plano("w_b")
 Waliam: Perfeeeecto, caballero, perfeecto. ¿Cuál es su dirección?
+do plano("j2")
 ???: La cima de la montaña Shaan.
+do plano("w_a")
 Waliam: Pero… Ningún humano logró alcanzar la cima jamás,
 Waliam: ¿Está seguro que es esa su dirección?
+do plano("j3")
 Dios: Yo no soy un humano, señor. Yo soy Dios.
-(Cuelga la llamada)
-
+Dios: (Cuelga la llamada)
+do terminar()
+=> END

@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://dvr2rh5d1yciy"]
+
+[ext_resource type="PackedScene" uid="uid://7yg8qh4aa16c" path="res://Assets sonoros/Agregados/local_empanadas.glb" id="1_ptkj1"]
+[ext_resource type="PackedScene" uid="uid://vh4ryp2vide0" path="res://narrativas/inicio_de_juego.tscn" id="2_46cvk"]
+[ext_resource type="PackedScene" uid="uid://dbslv2fkdvqeq" path="res://narrativas/cinematica_empanadas.tscn" id="3_jst2l"]
+[ext_resource type="AudioStream" uid="uid://dad4m0wv8ggv8" path="res://Assets sonoros/Agregados/ES_Communications, Telephone, Digital, Phone, Ringing, High - Epidemic Sound.mp3" id="4_j824u"]
+[ext_resource type="PackedScene" uid="uid://clyasxdo0kfmg" path="res://Assets sonoros/Agregados/telefono.glb" id="5_5ljin"]
+[ext_resource type="Script" uid="uid://dnna7wxwksaxx" path="res://Escenas/narrativas/telefono.gd" id="6_mxomd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tiug6"]
+size = Vector3(1, 6.463745, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxomd"]
+size = Vector3(1, 6.463745, 1.9365234)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_46cvk"]
+size = Vector3(0.56170654, 3.1661072, 1.7410889)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jst2l"]
+size = Vector3(0.6993103, 2.497116, 1.7410889)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j824u"]
+size = Vector3(1, 1.2785339, 2.2411194)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ljin"]
+size = Vector3(0.3779297, 3.5784607, 2.0664673)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bjv73"]
+size = Vector3(1, 6.463745, 2.1225586)
+
+[node name="Local_de_empanadas" type="Node3D" unique_id=1274202300]
+
+[node name="local_empanadas" parent="." unique_id=693175253 instance=ExtResource("1_ptkj1")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="Paredes" type="StaticBody3D" parent="." unique_id=334457081]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes" unique_id=1718663825]
+transform = Transform3D(5.227853, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, 0, 1.3659363, 1.7936254)
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Paredes" unique_id=2134242457]
+transform = Transform3D(5.227853, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, 0, 1.3659363, -2.6444278)
+shape = SubResource("BoxShape3D_tiug6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Paredes" unique_id=761913951]
+transform = Transform3D(-0.0309461, 0, -0.4999913, 0, 0.5421097, 0, 5.2277613, 0, -0.002959733, 2.7900074, 1.3659363, -0.38023162)
+shape = SubResource("BoxShape3D_mxomd")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Paredes" unique_id=1977585995]
+transform = Transform3D(2.6622686, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, -1.5518796, 0.47209558, -0.8759042)
+shape = SubResource("BoxShape3D_46cvk")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Paredes" unique_id=1551153802]
+transform = Transform3D(2.6622686, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, 0.18407054, 0.2907623, -0.8759042)
+shape = SubResource("BoxShape3D_jst2l")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Paredes" unique_id=185545719]
+transform = Transform3D(-0.0309461, 0, -0.4999913, 0, 0.5421097, 0, 5.2277613, 0, -0.002959733, 2.1932368, -0.039540444, -0.38080397)
+shape = SubResource("BoxShape3D_j824u")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Paredes" unique_id=919515718]
+transform = Transform3D(-0.0309461, 0, -0.4999913, 0, 0.5421097, 0, 5.2277613, 0, -0.002959733, 2.2329552, 0.5838659, 0.2856878)
+shape = SubResource("BoxShape3D_5ljin")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Paredes" unique_id=640751893]
+transform = Transform3D(5.227853, 0, 0, 0, 0.54210967, 0, 0, 0, 0.5, 0, 1.3659363, -0.8462043)
+shape = SubResource("BoxShape3D_bjv73")
+
+[node name="Inicio_de_juego" parent="." unique_id=57331650 node_paths=PackedStringArray("cinematica") instance=ExtResource("2_46cvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5320663, 0)
+cinematica = NodePath("CinematicaEmpanadas")
+
+[node name="CollisionShape3D" parent="Inicio_de_juego/Area3D" parent_id_path=PackedInt32Array(57331650, 1500602069) index="0" unique_id=126762773]
+transform = Transform3D(2.964666, 0, 0, 0, 3.8244178, 0, 0, 0, 1.9479066, 0.94249535, -1.4797707, -1.6397853)
+
+[node name="CinematicaEmpanadas" parent="Inicio_de_juego" unique_id=1354266239 instance=ExtResource("3_jst2l")]
+transform = Transform3D(-0.27732074, 0, -0.9607774, 0, 1, 0, 0.9607774, 0, -0.27732074, -1.1283449, -2.4856539, -1.9399046)
+
+[node name="J1" parent="Inicio_de_juego/CinematicaEmpanadas/Rig" parent_id_path=PackedInt32Array(1354266239, 1367623273) index="0" unique_id=2142009619]
+transform = Transform3D(0.9850314, 0.041543804, 0.16729592, -0.08141323, 0.96758026, 0.23908389, -0.15193984, -0.24912499, 0.9564792, 0.2001388, 0.5518091, 1.5508118)
+
+[node name="J2" parent="Inicio_de_juego/CinematicaEmpanadas/Rig" parent_id_path=PackedInt32Array(1354266239, 1367623273) index="1" unique_id=753838059]
+transform = Transform3D(0.93788713, -0.23275478, 0.25728002, -0.013379889, 0.7167505, 0.69720113, -0.3466824, -0.6573389, 0.66911715, 0.74404454, 1.6670835, 1.8057008)
+
+[node name="J3" parent="Inicio_de_juego/CinematicaEmpanadas/Rig" parent_id_path=PackedInt32Array(1354266239, 1367623273) index="2" unique_id=2093473412]
+transform = Transform3D(0.9839472, -0.12004611, 0.13205077, -0.024004778, 0.64418817, 0.7644905, -0.1768393, -0.7553881, 0.63096505, 0.27973557, 1.9, 1.5641341)
+
+[node name="W_A" parent="Inicio_de_juego/CinematicaEmpanadas/PuntoWaliam" parent_id_path=PackedInt32Array(1354266239, 1867334068) index="0" unique_id=2006410726]
+transform = Transform3D(-0.71186644, -0.27612165, -0.64575803, -0.08111521, 0.9456422, -0.31493083, 0.6976152, -0.17180781, -0.69556785, -0.5550475, 0.6477815, -0.9314353)
+
+[node name="W_B" parent="Inicio_de_juego/CinematicaEmpanadas/PuntoWaliam" parent_id_path=PackedInt32Array(1354266239, 1867334068) index="1" unique_id=2057542141]
+transform = Transform3D(-0.98028433, 0.004311979, 0.19754611, -0.08602389, 0.89072937, -0.4463191, -0.17788438, -0.45451322, -0.8727968, 0.1703111, 0.65424776, -1.105445)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Inicio_de_juego" unique_id=1403116123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08834076, 0, -0.82084227)
+stream = ExtResource("4_j824u")
+autoplay = true
+max_distance = 224.0
+parameters/looping = true
+
+[node name="telefono" parent="Inicio_de_juego" unique_id=214426314 instance=ExtResource("5_5ljin")]
+transform = Transform3D(9.3, 0, 0, 0, -0.20791636, -9.297676, 0, 9.297676, -0.20791636, 0.5435535, 0.57360315, -1.2020478)
+script = ExtResource("6_mxomd")
+
+[connection signal="body_entered" from="Inicio_de_juego/Area3D" to="Inicio_de_juego" method="_on_area_3d_body_entered"]
+
+[editable path="Inicio_de_juego"]
+[editable path="Inicio_de_juego/CinematicaEmpanadas"]
