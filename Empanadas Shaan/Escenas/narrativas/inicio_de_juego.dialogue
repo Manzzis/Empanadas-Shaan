@@ -12,5 +12,6 @@ Waliam: Pero… Ningún humano logró alcanzar la cima jamás,
 Waliam: ¿Está seguro que es esa su dirección?
 do plano("j3")
 Dios: Yo no soy un humano, señor. Yo soy Dios.
+Dios: (Cuelga la llamada)
 do terminar()
 => END
