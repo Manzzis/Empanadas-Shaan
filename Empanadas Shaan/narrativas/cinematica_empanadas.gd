@@ -4,6 +4,12 @@ class_name CinematicaEmpanadas
 signal linea_dialogo(hablante: String, texto: String)
 signal cinematica_terminada
 
+@export_category("Audio")
+@export var reduccion_musica_db: float = -60.0   # cuánto baja (más negativo = más bajo)
+@export var duracion_fade: float = 0.8
+
+var _volumen_musica_original: float = 0.0
+
 @export var rig: Node3D
 @export var overlay: ColorRect
 @export var camara_componente: CameraComponent
@@ -33,6 +39,19 @@ func _process(_delta: float) -> void:
 
 # ---------- utilidades ----------
 
+func _bajar_musica() -> void:
+	var bus := AudioServer.get_bus_index("MUSIC")
+	_volumen_musica_original = AudioServer.get_bus_volume_db(bus)
+	_fade_musica(bus, _volumen_musica_original, _volumen_musica_original + reduccion_musica_db)
+
+func _restaurar_musica() -> void:
+	var bus := AudioServer.get_bus_index("MUSIC")
+	_fade_musica(bus, AudioServer.get_bus_volume_db(bus), _volumen_musica_original)
+
+func _fade_musica(bus: int, desde: float, hasta: float) -> void:
+	var t := create_tween()
+	t.tween_method(func(v: float): AudioServer.set_bus_volume_db(bus, v), desde, hasta, duracion_fade)
+	
 func _anclar_rig() -> void:
 	# Usa la orientación de la cámara de juego: "de espaldas" será
 	# respecto a lo que el jugador veía justo antes
@@ -70,24 +89,25 @@ func _bloquear_jugador(bloqueado: bool) -> void:
 	if camara_componente:
 		camara_componente.controles_activos = not bloqueado
 
-func iniciar(p_jugador: CharacterBody3D) -> void:
-	if _en_curso: return
-	_en_curso = true
-	jugador = p_jugador
-	_bloquear_jugador(true)
-	_anclar_rig()
-	overlay.modulate.a = 1.0
-	await _parpadeo(func(): _cortar_a(w_a), false)
-
 # Se llama desde el archivo .dialogue
 func plano(nombre: String) -> void:
 	var mapa := {"w_a": w_a, "w_b": w_b, "j1": j1, "j2": j2, "j3": j3}
 	if mapa.has(nombre):
 		_cortar_a(mapa[nombre])
 
-# Se llama al final del archivo .dialogue
+func iniciar(p_jugador: CharacterBody3D) -> void:
+	if _en_curso: return
+	_en_curso = true
+	jugador = p_jugador
+	_bajar_musica()          # <-- nuevo
+	_bloquear_jugador(true)
+	_anclar_rig()
+	overlay.modulate.a = 1.0
+	await _parpadeo(func(): _cortar_a(w_a), false)
+
 func terminar() -> void:
 	await _parpadeo(_devolver_camara)
+	_restaurar_musica()      # <-- nuevo
 	_siguiendo = false
 	_bloquear_jugador(false)
 	_en_curso = false
