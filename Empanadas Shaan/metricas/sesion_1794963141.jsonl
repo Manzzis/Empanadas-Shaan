@@ -1,4 +1,0 @@
-{"datos":{"buses":{"MUSIC":20.0,"Master":100.0,"SFX":75.0}},"nivel":"Node3D","t":0.0,"tipo":"volumen_inicial"}
-{"datos":{"pos":[-108.76,0.79,132.35],"segundos":1.88},"nivel":"Node3D","t":2.33,"tipo":"quieto"}
-{"datos":{"pos":[-103.47,0.79,133.15],"vel":[9.44,0.0,3.29]},"nivel":"Node3D","t":3.02,"tipo":"muestra"}
-{"datos":{"id":1,"pos":[-98.43,0.92,134.9]},"nivel":"Node3D","t":3.55,"tipo":"salto"}

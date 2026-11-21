@@ -26,7 +26,7 @@
 [ext_resource type="Material" uid="uid://bpgjx3n5c7rkp" path="res://Assets visuales/Assets 3D y 2D/nuevo_camino_material_3d.tres" id="25_gyxrc"]
 [ext_resource type="PackedScene" uid="uid://bphunwswutu0h" path="res://Escenas/Acelerador/acelerador.tscn" id="26_ptdye"]
 [ext_resource type="Texture2D" uid="uid://c21alfys2mq8e" path="res://Assets visuales/Assets 3D y 2D/Modelos 2D/Acelerador.png" id="27_2xe0a"]
-[ext_resource type="PackedScene" uid="uid://cmt0d42gnhxtg" path="res://Assets visuales/Assets 3D y 2D/rampa_madera_enescena.tscn" id="27_edpib"]
+[ext_resource type="PackedScene" uid="uid://cmt0d42gnhxtg" path="res://Escenas/asset3D/rampa_madera_enescena.tscn" id="27_edpib"]
 [ext_resource type="PackedScene" uid="uid://bthvge2l6k4ew" path="res://Escenas/Rieles/Riel3D.tscn" id="29_2xe0a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ddtk2"]
@@ -695,7 +695,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.741182, 207.4455, 0.45556
 transform = Transform3D(1.9028529, 0, 1.3704659, 0, 2.345, 0, -1.3704659, 0, 1.9028529, -61.307816, 70.52508, -111.90152)
 
 [node name="PathFollow3D" parent="Mapa2/Path3D" parent_id_path=PackedInt32Array(1500117706, 2082786440) index="0" unique_id=1880022267]
-transform = Transform3D(-0.9997089, -0.0005720508, -0.021356614, 0, 0.99961394, -0.026774064, 0.021364016, -0.026768574, -0.99936247, 0.21134186, -0.290442, -3.304761)
+transform = Transform3D(-0.9997087, -0.0005720508, -0.021356614, 0, 0.99961394, -0.026774064, 0.021364013, -0.026768574, -0.99936247, 0.21134186, -0.290442, -3.304761)
 
 [node name="NivelLucas" parent="Mapa2" unique_id=1301037403 instance=ExtResource("6_2hlhe")]
 transform = Transform3D(0.34603453, 0, -0.24921975, 0, 0.42643923, 0, 0.24921975, 0, 0.34603453, -31.333391, 48.96058, 38.925964)
@@ -1577,7 +1577,7 @@ curve = SubResource("Curve3D_crut0")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1805338284]
-transform = Transform3D(-0.9995415, -7.819275e-05, 0.029797617, 7.2758535e-12, 0.9999773, 0.002624109, -0.029797632, 0.0026229233, -0.999541, -0.27874756, -1.0733719, 0.365448)
+transform = Transform3D(-0.9995415, -7.819274e-05, 0.029797617, 7.2758535e-12, 0.9999771, 0.002624109, -0.029797632, 0.0026229229, -0.999541, -0.27874756, -1.0733719, 0.365448)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=1530676560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
@@ -1725,7 +1725,7 @@ curve = SubResource("Curve3D_ptdye")
 script = ExtResource("11_xrh2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=924733764]
-transform = Transform3D(-0.7397507, -0.004826903, -0.67283773, -2.3282666e-10, 0.9999503, -0.0071736765, 0.6728557, -0.005306791, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+transform = Transform3D(-0.7397507, -0.004826902, -0.67283773, -2.3282666e-10, 0.9999501, -0.0071736765, 0.6728557, -0.00530679, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=1533875553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
@@ -2531,8 +2531,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.09889, 187.58539, 14.1323
 
 [node name="visor_metricas" type="Node3D" parent="." unique_id=2030827138]
 script = ExtResource("24_6j00u")
+archivo_especifico = "res://metricas/Metricas2/sesion_1793915471.jsonl"
 
 [node name="NuevoCamino" type="Node3D" parent="." unique_id=2010039928]
+visible = false
 
 [node name="StaticBody3D" parent="NuevoCamino" unique_id=135693417 instance=ExtResource("27_edpib")]
 transform = Transform3D(0.018572174, -0.009214187, -0.9997851, 0.09795343, 0.99516386, -0.007351998, 0.9950178, -0.09779585, 0.019384906, -165.6511, 109.42001, 130.88351)
