@@ -2009,25 +2009,25 @@ transform = Transform3D(0.13387406, 0, 0.99099845, 0, 1, 0, -0.99099845, 0, 0.13
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
-bones/0/position = Vector3(0.003956966, 1.186968, -0.03)
-bones/0/rotation = Quaternion(0.089451194, -0.00030962116, -0.0034436074, 0.99598527)
-bones/1/rotation = Quaternion(0.052893788, 0.0007768803, 0.0032620297, 0.9985945)
-bones/2/rotation = Quaternion(0.018772831, -0.0011619676, 0.0015456168, 0.99982196)
-bones/3/rotation = Quaternion(-0.12375888, 0.0013255529, -0.0014266582, 0.99231046)
-bones/4/rotation = Quaternion(0.026435548, 0.00043183586, 0.004262646, 0.99964136)
-bones/6/rotation = Quaternion(-0.5537873, 0.38103664, -0.10189295, 0.7333134)
-bones/7/rotation = Quaternion(-0.34255934, 0.1035596, 0.31035972, 0.8806846)
-bones/10/rotation = Quaternion(-0.55846137, -0.38940996, 0.09893875, 0.7257354)
-bones/11/rotation = Quaternion(-0.34254518, -0.103551894, -0.31034744, 0.88069534)
-bones/13/rotation = Quaternion(0.96429795, -0.080940016, 0.005025772, 0.2520972)
-bones/14/rotation = Quaternion(0.3006328, 0.005411256, -0.023273224, 0.9534407)
-bones/15/rotation = Quaternion(-0.62752956, -0.07914169, 0.12491096, 0.76442176)
-bones/21/rotation = Quaternion(0.96371764, 0.08781396, -0.004499676, 0.25202546)
-bones/22/rotation = Quaternion(0.3006328, -0.005411256, 0.023273224, 0.9534407)
-bones/23/rotation = Quaternion(-0.62752956, 0.0791417, -0.12491093, 0.76442176)
+bones/0/position = Vector3(0.010375625, 1.1916658, -0.03)
+bones/0/rotation = Quaternion(0.09316554, -0.0008439182, -0.009017718, 0.9956095)
+bones/1/rotation = Quaternion(0.053840067, 0.0021557305, 0.00879045, 0.9985086)
+bones/2/rotation = Quaternion(0.021503743, 0.01174034, 0.0048637153, 0.9996881)
+bones/3/rotation = Quaternion(-0.12834623, -0.01123701, -0.006137766, 0.99164677)
+bones/4/rotation = Quaternion(0.0217467, -0.0006286365, -0.0061539146, 0.9997445)
+bones/6/rotation = Quaternion(-0.54178923, 0.3799254, -0.116894566, 0.7405787)
+bones/7/rotation = Quaternion(-0.3511254, 0.10824262, 0.31785202, 0.8740507)
+bones/10/rotation = Quaternion(-0.55817014, -0.36430126, 0.10493538, 0.73805094)
+bones/11/rotation = Quaternion(-0.35112542, -0.108242646, -0.31785196, 0.8740507)
+bones/13/rotation = Quaternion(0.96519977, -0.07542681, 0.0055983705, 0.25033763)
+bones/14/rotation = Quaternion(0.2916949, 0.006116085, -0.023508204, 0.956203)
+bones/15/rotation = Quaternion(-0.62469995, -0.07982223, 0.12465003, 0.76670784)
+bones/21/rotation = Quaternion(0.9636839, 0.09339502, -0.004388547, 0.2501432)
+bones/22/rotation = Quaternion(0.2916949, -0.0061160834, 0.023508202, 0.956203)
+bones/23/rotation = Quaternion(-0.62469995, 0.07982222, -0.124650046, 0.76670784)
 
 [node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
-transform = Transform3D(0.99996525, -0.008268886, 0.001089939, 0.008340348, 0.9918799, -0.12690413, -3.1732314e-05, 0.12690882, 0.9919144, 0.0045900047, 2.0789998, 0.18514307)
+transform = Transform3D(0.99992156, 0.0123952245, -0.0016866502, -0.012508581, 0.99231404, -0.123111345, 0.00014769379, 0.123122856, 0.9923914, 0.01137907, 2.0812135, 0.1939765)
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
 transform = Transform3D(0.13387573, -0.16356203, 0.97740716, -1.4901161e-08, 0.98628557, 0.16504776, -0.9909981, -0.022095904, 0.13203967, -75.64208, 2.1974733, 130.92673)
@@ -3230,7 +3230,7 @@ shape = SubResource("BoxShape3D_83qvi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -243.73535, 44.22896, 229.41379)
 
 [node name="Mountain0_001" type="MeshInstance3D" parent="Node3D" unique_id=734766832]
-transform = Transform3D(0.66519976, 0.06852157, 0.075575955, 0.026367936, -1.8325223, -0.025582178, 0.051086802, 0.05362055, -0.97086835, 12.948242, -60.653862, -276.11224)
+transform = Transform3D(0.99633723, 0.069386095, 0.0775839, 0.039493937, -1.855643, -0.026261859, 0.076517895, 0.054297075, -0.9966629, 12.948242, -60.653862, -276.11224)
 mesh = SubResource("ArrayMesh_bigcq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Mountain0_001" unique_id=237666517]
