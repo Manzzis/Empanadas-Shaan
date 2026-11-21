@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cm2k5dr8s2hqb" path="res://narrativas/fin_de_juego.tscn" id="23_emgv0"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="24_emgv0"]
 [ext_resource type="Texture2D" uid="uid://dj56cm5je7vap" path="res://Assets visuales/Assets 3D y 2D/Modelo 3D personaje/istockphoto-1339312029-612x612.jpg" id="24_wf0iy"]
-[ext_resource type="Resource" uid="uid://bbnwa04u0q51n" path="res://narrativas/final_de_juego.dialogue" id="25_tui6x"]
 [ext_resource type="PackedScene" uid="uid://dvr2rh5d1yciy" path="res://narrativas/local_de_empanadas.tscn" id="25_wf0iy"]
 [ext_resource type="PackedScene" uid="uid://b68agkde88wln" path="res://Assets visuales/Assets 3D y 2D/Pack_free_jp_village/GLTF/Sprout.gltf" id="26_tui6x"]
 [ext_resource type="Texture2D" uid="uid://oh2eel6a4q44" path="res://Assets visuales/Assets 3D y 2D/Pack_free_jp_village/GLTF/textures/ColorAtlas.png" id="26_typkg"]
@@ -1816,25 +1815,25 @@ transform = Transform3D(-0.9275543, 0, -0.3736885, 0, 1, 0, 0.3736885, 0, -0.927
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
-bones/0/position = Vector3(-0.0078111887, 1.1825043, -0.03)
-bones/0/rotation = Quaternion(0.08262583, 0.00056300865, 0.006793212, 0.99655735)
-bones/1/rotation = Quaternion(0.051199988, -0.001465297, -0.0066587287, 0.99866515)
-bones/2/rotation = Quaternion(0.013615912, -0.010710404, -0.003756162, 0.99984294)
-bones/3/rotation = Quaternion(-0.11579187, 0.010235674, 0.00481567, 0.99320906)
-bones/4/rotation = Quaternion(0.034257896, 0.00066052657, 0.0067479475, 0.9993901)
-bones/6/rotation = Quaternion(-0.56241465, 0.37662107, -0.096227236, 0.7297854)
-bones/7/rotation = Quaternion(-0.3266274, 0.09489235, 0.29641968, 0.89243793)
-bones/10/rotation = Quaternion(-0.5494588, -0.39301917, 0.10517865, 0.7297729)
-bones/11/rotation = Quaternion(-0.32662743, -0.09489243, -0.29641965, 0.8924379)
-bones/13/rotation = Quaternion(0.9625494, -0.09106311, 0.003701164, 0.25532845)
-bones/14/rotation = Quaternion(0.3168194, 0.0041282475, -0.022840627, 0.9482019)
-bones/15/rotation = Quaternion(-0.6327256, -0.07788361, 0.12538758, 0.760178)
-bones/21/rotation = Quaternion(0.9636929, 0.077535465, -0.0049742647, 0.2554595)
-bones/22/rotation = Quaternion(0.31681937, -0.004128254, 0.022840627, 0.9482019)
-bones/23/rotation = Quaternion(-0.6327256, 0.077883616, -0.12538758, 0.760178)
+bones/0/position = Vector3(-0.0110023, 1.181845, -0.03)
+bones/0/rotation = Quaternion(0.08103704, 0.0007457908, 0.009175205, 0.9966686)
+bones/1/rotation = Quaternion(0.05078031, -0.0019712523, -0.009122372, 0.9986663)
+bones/2/rotation = Quaternion(0.011921177, -0.009188895, -0.0052788802, 0.9998728)
+bones/3/rotation = Quaternion(-0.11919712, 0.008569051, 0.0062348526, 0.99281406)
+bones/4/rotation = Quaternion(0.031010564, 0.00018319102, 0.0023343693, 0.99951637)
+bones/6/rotation = Quaternion(-0.56091034, 0.3731716, -0.10128305, 0.73202753)
+bones/7/rotation = Quaternion(-0.3217512, 0.09225051, 0.29215172, 0.895887)
+bones/10/rotation = Quaternion(-0.54350936, -0.38049257, 0.11312538, 0.73961186)
+bones/11/rotation = Quaternion(-0.32175124, -0.09225051, -0.29215175, 0.895887)
+bones/13/rotation = Quaternion(0.9620741, -0.093699075, 0.0032975194, 0.2561703)
+bones/14/rotation = Quaternion(0.32144186, 0.0037602768, -0.022715403, 0.94664943)
+bones/15/rotation = Quaternion(-0.6333602, -0.07772921, 0.12544556, 0.7596556)
+bones/21/rotation = Quaternion(0.96366787, 0.074852414, -0.005155966, 0.25634915)
+bones/22/rotation = Quaternion(0.32144192, -0.003760277, 0.022715403, 0.94664943)
+bones/23/rotation = Quaternion(-0.6333602, 0.077729225, -0.12544557, 0.7596556)
 
 [node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
-transform = Transform3D(0.9999087, -0.013403889, 0.0017152744, 0.0135130705, 0.991271, -0.13114613, 5.7567842e-05, 0.13115734, 0.9913615, -0.008469101, 2.078745, 0.16871785)
+transform = Transform3D(0.99999017, -0.0044012475, 0.00048691407, 0.004428096, 0.99386173, -0.11053975, 2.5959016e-06, 0.11054082, 0.9938714, -0.011560561, 2.0791862, 0.16271801)
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
 transform = Transform3D(-0.92755437, 0.061676413, -0.36856353, 1.8626451e-09, 0.98628557, 0.16504768, 0.37368846, 0.15309069, -0.9148334, -84.24491, 3.5235257, 105.105194)
@@ -3944,7 +3943,6 @@ transform = Transform3D(0.86303425, 0, -0.5051454, 0, 1, 0, 0.5051454, 0, 0.8630
 
 [node name="Fin_de_juego" parent="." unique_id=57331650 instance=ExtResource("23_emgv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.766739, 242.48438, 52.705936)
-mi_dialogo = ExtResource("25_tui6x")
 
 [node name="CollisionShape3D" parent="Fin_de_juego/Area3D" parent_id_path=PackedInt32Array(57331650, 1500602069) index="0" unique_id=126762773]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 6.243908)

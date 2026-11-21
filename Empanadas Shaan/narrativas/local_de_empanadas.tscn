@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://7yg8qh4aa16c" path="res://Assets sonoros/Agregados/local_empanadas.glb" id="1_ptkj1"]
 [ext_resource type="PackedScene" uid="uid://vh4ryp2vide0" path="res://narrativas/inicio_de_juego.tscn" id="2_46cvk"]
-[ext_resource type="PackedScene" uid="uid://dbslv2fkdvqeq" path="res://narrativas/cinematica_empanadas.tscn" id="3_jst2l"]
 [ext_resource type="AudioStream" uid="uid://dad4m0wv8ggv8" path="res://Assets sonoros/Agregados/ES_Communications, Telephone, Digital, Phone, Ringing, High - Epidemic Sound.mp3" id="4_j824u"]
 [ext_resource type="PackedScene" uid="uid://clyasxdo0kfmg" path="res://Assets sonoros/Agregados/telefono.glb" id="5_5ljin"]
 [ext_resource type="Script" uid="uid://dnna7wxwksaxx" path="res://Escenas/narrativas/telefono.gd" id="6_mxomd"]
@@ -69,28 +68,10 @@ shape = SubResource("BoxShape3D_bjv73")
 
 [node name="Inicio_de_juego" parent="." unique_id=57331650 node_paths=PackedStringArray("cinematica") instance=ExtResource("2_46cvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5320663, 0)
-cinematica = NodePath("CinematicaEmpanadas")
+cinematica = NodePath("")
 
 [node name="CollisionShape3D" parent="Inicio_de_juego/Area3D" parent_id_path=PackedInt32Array(57331650, 1500602069) index="0" unique_id=126762773]
 transform = Transform3D(2.964666, 0, 0, 0, 3.8244178, 0, 0, 0, 1.9479066, 0.94249535, -1.4797707, -1.6397853)
-
-[node name="CinematicaEmpanadas" parent="Inicio_de_juego" unique_id=1354266239 instance=ExtResource("3_jst2l")]
-transform = Transform3D(-0.27732074, 0, -0.9607774, 0, 1, 0, 0.9607774, 0, -0.27732074, -1.1283449, -2.4856539, -1.9399046)
-
-[node name="J1" parent="Inicio_de_juego/CinematicaEmpanadas/Rig" parent_id_path=PackedInt32Array(1354266239, 1367623273) index="0" unique_id=2142009619]
-transform = Transform3D(0.9850314, 0.041543804, 0.16729592, -0.08141323, 0.96758026, 0.23908389, -0.15193984, -0.24912499, 0.9564792, 0.2001388, 0.5518091, 1.5508118)
-
-[node name="J2" parent="Inicio_de_juego/CinematicaEmpanadas/Rig" parent_id_path=PackedInt32Array(1354266239, 1367623273) index="1" unique_id=753838059]
-transform = Transform3D(0.93788713, -0.23275478, 0.25728002, -0.013379889, 0.7167505, 0.69720113, -0.3466824, -0.6573389, 0.66911715, 0.74404454, 1.6670835, 1.8057008)
-
-[node name="J3" parent="Inicio_de_juego/CinematicaEmpanadas/Rig" parent_id_path=PackedInt32Array(1354266239, 1367623273) index="2" unique_id=2093473412]
-transform = Transform3D(0.9839472, -0.12004611, 0.13205077, -0.024004778, 0.64418817, 0.7644905, -0.1768393, -0.7553881, 0.63096505, 0.27973557, 1.9, 1.5641341)
-
-[node name="W_A" parent="Inicio_de_juego/CinematicaEmpanadas/PuntoWaliam" parent_id_path=PackedInt32Array(1354266239, 1867334068) index="0" unique_id=2006410726]
-transform = Transform3D(-0.71186644, -0.27612165, -0.64575803, -0.08111521, 0.9456422, -0.31493083, 0.6976152, -0.17180781, -0.69556785, -0.5550475, 0.6477815, -0.9314353)
-
-[node name="W_B" parent="Inicio_de_juego/CinematicaEmpanadas/PuntoWaliam" parent_id_path=PackedInt32Array(1354266239, 1867334068) index="1" unique_id=2057542141]
-transform = Transform3D(-0.98028433, 0.004311979, 0.19754611, -0.08602389, 0.89072937, -0.4463191, -0.17788438, -0.45451322, -0.8727968, 0.1703111, 0.65424776, -1.105445)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Inicio_de_juego" unique_id=1403116123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08834076, 0, -0.82084227)
@@ -106,4 +87,3 @@ script = ExtResource("6_mxomd")
 [connection signal="body_entered" from="Inicio_de_juego/Area3D" to="Inicio_de_juego" method="_on_area_3d_body_entered"]
 
 [editable path="Inicio_de_juego"]
-[editable path="Inicio_de_juego/CinematicaEmpanadas"]
