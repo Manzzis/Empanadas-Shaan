@@ -1816,26 +1816,25 @@ transform = Transform3D(-0.9275543, 0, -0.3736885, 0, 1, 0, 0.3736885, 0, -0.927
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
-
-bones/0/position = Vector3(-0.01067065, 1.1819146, -0.03)
-bones/0/rotation = Quaternion(0.081185274, 0.0007291295, 0.008953014, 0.99665856)
-bones/1/rotation = Quaternion(0.050828487, -0.0019142816, -0.008839326, 0.9986665)
-bones/2/rotation = Quaternion(0.012238673, -0.0077192374, -0.004915391, 0.99988323)
-bones/3/rotation = Quaternion(-0.119504586, 0.007154012, 0.005722461, 0.9927914)
-bones/4/rotation = Quaternion(0.030687444, 8.866275e-05, 0.001129159, 0.99952847)
-bones/6/rotation = Quaternion(-0.55952436, 0.37304625, -0.102979094, 0.73291504)
-bones/7/rotation = Quaternion(-0.32230806, 0.092551954, 0.29263908, 0.89549655)
-bones/10/rotation = Quaternion(-0.54340523, -0.37757605, 0.113919, 0.7410598)
-bones/11/rotation = Quaternion(-0.32230812, -0.09255197, -0.29263914, 0.89549655)
-bones/13/rotation = Quaternion(0.9621144, -0.09347742, 0.0033325758, 0.2560994)
-bones/14/rotation = Quaternion(0.32108825, 0.003788456, -0.022725007, 0.94676906)
-bones/15/rotation = Quaternion(-0.6332526, -0.07775538, 0.12543575, 0.7597442)
-bones/21/rotation = Quaternion(0.9636703, 0.07507815, -0.0051395767, 0.25627437)
-bones/22/rotation = Quaternion(0.32108834, -0.0037884535, 0.022725007, 0.94676906)
-bones/23/rotation = Quaternion(-0.6332526, 0.07775539, -0.12543575, 0.7597442)
+bones/0/position = Vector3(0.006477671, 1.1888233, -0.03)
+bones/0/rotation = Quaternion(0.09090879, -0.0005142599, -0.005630706, 0.9958432)
+bones/1/rotation = Quaternion(0.053275958, 0.001318761, 0.005496853, 0.9985639)
+bones/2/rotation = Quaternion(0.019856753, 0.010017815, 0.003202389, 0.9997475)
+bones/3/rotation = Quaternion(-0.12338205, -0.009631771, -0.0042237095, 0.9923036)
+bones/4/rotation = Quaternion(0.026765352, -0.0007471054, -0.0069100186, 0.9996177)
+bones/6/rotation = Quaternion(-0.5433674, 0.37781692, -0.117016025, 0.7404819)
+bones/7/rotation = Quaternion(-0.34593526, 0.105403244, 0.3133128, 0.8780969)
+bones/10/rotation = Quaternion(-0.55416614, -0.3613609, 0.10880706, 0.7419428)
+bones/11/rotation = Quaternion(-0.34592494, -0.105397604, -0.31330368, 0.8781048)
+bones/13/rotation = Quaternion(0.96465683, -0.07877206, 0.0052634827, 0.25140533)
+bones/14/rotation = Quaternion(0.29708496, 0.0056913453, -0.023366831, 0.9545482)
+bones/15/rotation = Quaternion(-0.62641644, -0.079409726, 0.12480841, 0.7653231)
+bones/21/rotation = Quaternion(0.9637083, 0.09001002, -0.0044435924, 0.2512865)
+bones/22/rotation = Quaternion(0.2970849, -0.0056913453, 0.023366833, 0.9545482)
+bones/23/rotation = Quaternion(-0.6264165, 0.07940976, -0.12480842, 0.7653231)
 
 [node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
-transform = Transform3D(0.9999976, -0.0021436021, 0.000248387, 0.002157918, 0.9938951, -0.110307455, -1.0413074e-05, 0.11030771, 0.9938974, -0.011431005, 2.079138, 0.1632205)
+transform = Transform3D(0.99990326, 0.01377768, -0.0018631155, -0.013903079, 0.99086934, -0.13410604, -1.5672995e-06, 0.13411906, 0.9909651, 0.0070212814, 2.0798316, 0.18934776)
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
 transform = Transform3D(-0.9275533, 0.061676733, -0.36856577, 0, 0.9862856, 0.16504754, 0.3736907, 0.1530904, -0.9148325, -84.24492, 1.402245, 105.32967)
@@ -3535,7 +3534,7 @@ mesh = SubResource("ArrayMesh_nssra")
 shape = SubResource("ConvexPolygonShape3D_b87vl")
 
 [node name="Tree_RedPlum_025" type="MeshInstance3D" parent="Decoraciones" unique_id=1682703858]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.641422, 42.02237, 46.37645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.641422, 42.02237, 46.79067)
 mesh = SubResource("ArrayMesh_nssra")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Decoraciones/Tree_RedPlum_025" unique_id=264771238]
