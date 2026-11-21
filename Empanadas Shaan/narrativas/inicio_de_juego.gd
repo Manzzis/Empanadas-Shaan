@@ -14,7 +14,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	body.velocity.y = 0.0
 	body.velocity.z = 0.0
 	ya_activado = true
-	await cinematica.iniciar(body)
 	sonido_llamada.queue_free()
 	telefono.queue_free()
 	DialogueManager.show_dialogue_balloon(mi_dialogo, "", [cinematica])
