@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://cm2k5dr8s2hqb" path="res://narrativas/fin_de_juego.tscn" id="23_emgv0"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="24_emgv0"]
 [ext_resource type="Texture2D" uid="uid://dj56cm5je7vap" path="res://Assets visuales/Assets 3D y 2D/Modelo 3D personaje/istockphoto-1339312029-612x612.jpg" id="24_wf0iy"]
-[ext_resource type="PackedScene" uid="uid://dvr2rh5d1yciy" path="res://narrativas/local_de_empanadas.tscn" id="25_wf0iy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hctef"]
 size = Vector3(497.98206, 0.44677734, 230.0639)
@@ -1689,25 +1688,25 @@ transform = Transform3D(0.6631245, 0, 0.7485093, 0, 1, 0, -0.7485093, 0, 0.66312
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
-bones/0/position = Vector3(0.01054389, 1.1917878, -0.03)
-bones/0/rotation = Quaternion(0.093066566, -0.0008291786, -0.0088691795, 0.99562013)
-bones/1/rotation = Quaternion(0.053822894, 0.002129898, 0.008690116, 0.9985105)
-bones/2/rotation = Quaternion(0.021689977, 0.0073635844, 0.004769523, 0.99972636)
-bones/3/rotation = Quaternion(-0.13170256, -0.00672629, -0.0054971697, 0.9912513)
-bones/4/rotation = Quaternion(0.01818445, -6.54907e-05, -0.00071325846, 0.9998344)
-bones/6/rotation = Quaternion(-0.54599375, 0.38221687, -0.10984538, 0.7373839)
-bones/7/rotation = Quaternion(-0.3515342, 0.1084666, 0.31820956, 0.87372845)
-bones/10/rotation = Quaternion(-0.56168866, -0.37835115, 0.099014044, 0.72907656)
-bones/11/rotation = Quaternion(-0.35153428, -0.108466536, -0.31820956, 0.8737285)
-bones/13/rotation = Quaternion(0.96522796, -0.07525092, 0.0056152623, 0.25028154)
-bones/14/rotation = Quaternion(0.29125857, 0.0061504333, -0.02351961, 0.9563354)
-bones/15/rotation = Quaternion(-0.62527645, -0.07968383, 0.124703296, 0.76624346)
-bones/21/rotation = Quaternion(0.96368223, 0.09357293, -0.004386375, 0.25008312)
-bones/22/rotation = Quaternion(0.29128724, -0.0061481697, 0.023518875, 0.95632684)
-bones/23/rotation = Quaternion(-0.6252765, 0.07968384, -0.12470327, 0.76624334)
+bones/0/position = Vector3(-0.0047889445, 1.1831092, -0.03)
+bones/0/rotation = Quaternion(0.08437469, 0.00035298336, 0.004170954, 0.9964254)
+bones/1/rotation = Quaternion(0.051646966, -0.0009010621, -0.00403774, 0.99865687)
+bones/2/rotation = Quaternion(0.014983813, 0.00032720141, -0.0019417417, 0.9998858)
+bones/3/rotation = Quaternion(-0.11918774, -0.00052895525, 0.0019160352, 0.99286973)
+bones/4/rotation = Quaternion(0.03102357, -0.0003646613, -0.0038401077, 0.9995113)
+bones/6/rotation = Quaternion(-0.55215585, 0.37388533, -0.11057413, 0.736958)
+bones/7/rotation = Quaternion(-0.3307463, 0.097127944, 0.30002424, 0.88947093)
+bones/10/rotation = Quaternion(-0.5459901, -0.36650145, 0.1143758, 0.7446406)
+bones/11/rotation = Quaternion(-0.33073586, -0.09712222, -0.30001518, 0.8894785)
+bones/13/rotation = Quaternion(0.9630079, -0.088475294, 0.0040737605, 0.25450236)
+bones/14/rotation = Quaternion(0.3126592, 0.0044588186, -0.022952681, 0.9495776)
+bones/15/rotation = Quaternion(-0.63139176, -0.07820758, 0.12526552, 0.7612731)
+bones/21/rotation = Quaternion(0.96371, 0.08016685, -0.0048193196, 0.25458446)
+bones/22/rotation = Quaternion(0.31264767, -0.004459725, 0.022952992, 0.9495813)
+bones/23/rotation = Quaternion(-0.6313944, 0.07820692, -0.12526573, 0.7612709)
 
 [node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
-transform = Transform3D(0.9999992, 0.0012240923, -2.3889792e-05, -0.0012193465, 0.9939897, -0.109465815, -0.00011025039, 0.10946574, 0.9939905, 0.011388008, 2.0814357, 0.19283576)
+transform = Transform3D(0.9999713, 0.007520195, -0.0009509457, -0.007580081, 0.9921222, -0.12504306, 3.1056406e-06, 0.12504667, 0.99215084, -0.005421536, 2.0783358, 0.17253838)
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
 transform = Transform3D(0.6631248, -0.12353964, 0.7382435, -3.7252903e-09, 0.98628557, 0.16504768, -0.7485089, -0.10944721, 0.65403044, -100.29866, 1.6396049, 106.114174)
@@ -2240,7 +2239,7 @@ curve = SubResource("Curve3D_om0u3")
 script = ExtResource("12_emgv0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1381532096]
-transform = Transform3D(-0.9995415, -7.819225e-05, 0.029797617, 7.2758535e-12, 0.99997085, 0.002624109, -0.029797632, 0.0026229066, -0.999541, -0.27874756, -1.0733719, 0.365448)
+transform = Transform3D(-0.9995415, -7.819224e-05, 0.029797617, 7.2758535e-12, 0.99997073, 0.002624109, -0.029797632, 0.0026229061, -0.999541, -0.27874756, -1.0733719, 0.365448)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=332791163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
@@ -2388,7 +2387,7 @@ curve = SubResource("Curve3D_mt1xq")
 script = ExtResource("12_emgv0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=391646599]
-transform = Transform3D(-0.7397507, -0.0048268717, -0.67283773, -2.3282666e-10, 0.99994385, -0.0071736765, 0.6728557, -0.005306757, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+transform = Transform3D(-0.7397507, -0.004826871, -0.67283773, -2.3282666e-10, 0.99994373, -0.0071736765, 0.6728557, -0.005306756, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=709487367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
@@ -3740,14 +3739,7 @@ mesh = SubResource("ArrayMesh_f1xyo")
 transform = Transform3D(236.07906, 0, 0, 0, 248.27525, 0, 0, 0, 248.27525, -28.821419, -3.07135, 58.89594)
 mesh = SubResource("ArrayMesh_bdy2w")
 
-[node name="Local_de_empanadas" parent="." unique_id=1274202300 instance=ExtResource("25_wf0iy")]
-transform = Transform3D(0.8464135, 0, -0.5325262, 0, 1, 0, 0.5325262, 0, 0.8464135, -71.48103, 0.030953646, 113.60645)
-
 [connection signal="body_entered" from="Fallzone" to="Fallzone" method="_on_body_entered"]
-[connection signal="body_entered" from="Local_de_empanadas/Inicio_de_juego/Area3D" to="Local_de_empanadas/Inicio_de_juego" method="_on_area_3d_body_entered"]
 
 [editable path="Personaje"]
 [editable path="Personaje/CameraComponent"]
-[editable path="Local_de_empanadas"]
-[editable path="Local_de_empanadas/Inicio_de_juego"]
-[editable path="Local_de_empanadas/Inicio_de_juego/CinematicaEmpanadas"]
