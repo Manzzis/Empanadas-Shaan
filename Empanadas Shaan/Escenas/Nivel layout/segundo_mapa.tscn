@@ -1994,7 +1994,6 @@ shape = SubResource("BoxShape3D_xg34l")
 debug_color = Color(0.9647059, 0, 0, 1)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=2131038652]
-visible = false
 occluder = ExtResource("13_7q12v")
 
 [node name="Inicio_de_juego" parent="." unique_id=57331650 instance=ExtResource("22_38562")]
@@ -2010,25 +2009,25 @@ transform = Transform3D(0.13387406, 0, 0.99099845, 0, 1, 0, -0.99099845, 0, 0.13
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
-bones/0/position = Vector3(-0.003981975, 1.1832657, -0.03)
-bones/0/rotation = Quaternion(0.084829934, 0.00029662953, 0.0034883115, 0.9963893)
-bones/1/rotation = Quaternion(0.05176282, -0.00075080205, -0.003359026, 0.99865353)
-bones/2/rotation = Quaternion(0.015315756, 0.0011450849, -0.001586644, 0.99988085)
-bones/3/rotation = Quaternion(-0.11917809, -0.0013043545, 0.001466693, 0.99287105)
-bones/4/rotation = Quaternion(0.031040832, -0.0004094526, -0.0042373645, 0.99950916)
-bones/6/rotation = Quaternion(-0.55140746, 0.37408927, -0.1112384, 0.73731476)
-bones/7/rotation = Quaternion(-0.33184007, 0.097722165, 0.30098137, 0.8886747)
-bones/10/rotation = Quaternion(-0.546434, -0.36567348, 0.11419633, 0.7447497)
-bones/11/rotation = Quaternion(-0.33179975, -0.097700246, -0.3009462, 0.8887042)
-bones/13/rotation = Quaternion(0.96312594, -0.08780124, 0.0041666017, 0.25428718)
-bones/14/rotation = Quaternion(0.3115473, 0.004547074, -0.022982527, 0.94994175)
-bones/15/rotation = Quaternion(-0.63105136, -0.078290164, 0.1252343, 0.7615519)
-bones/21/rotation = Quaternion(0.9637132, 0.08085177, -0.004783117, 0.2543561)
-bones/22/rotation = Quaternion(0.3115966, -0.004543158, 0.022981204, 0.9499257)
-bones/23/rotation = Quaternion(-0.63105565, 0.078289144, -0.12523472, 0.76154846)
+bones/0/position = Vector3(0.003956966, 1.186968, -0.03)
+bones/0/rotation = Quaternion(0.089451194, -0.00030962116, -0.0034436074, 0.99598527)
+bones/1/rotation = Quaternion(0.052893788, 0.0007768803, 0.0032620297, 0.9985945)
+bones/2/rotation = Quaternion(0.018772831, -0.0011619676, 0.0015456168, 0.99982196)
+bones/3/rotation = Quaternion(-0.12375888, 0.0013255529, -0.0014266582, 0.99231046)
+bones/4/rotation = Quaternion(0.026435548, 0.00043183586, 0.004262646, 0.99964136)
+bones/6/rotation = Quaternion(-0.5537873, 0.38103664, -0.10189295, 0.7333134)
+bones/7/rotation = Quaternion(-0.34255934, 0.1035596, 0.31035972, 0.8806846)
+bones/10/rotation = Quaternion(-0.55846137, -0.38940996, 0.09893875, 0.7257354)
+bones/11/rotation = Quaternion(-0.34254518, -0.103551894, -0.31034744, 0.88069534)
+bones/13/rotation = Quaternion(0.96429795, -0.080940016, 0.005025772, 0.2520972)
+bones/14/rotation = Quaternion(0.3006328, 0.005411256, -0.023273224, 0.9534407)
+bones/15/rotation = Quaternion(-0.62752956, -0.07914169, 0.12491096, 0.76442176)
+bones/21/rotation = Quaternion(0.96371764, 0.08781396, -0.004499676, 0.25202546)
+bones/22/rotation = Quaternion(0.3006328, -0.005411256, 0.023273224, 0.9534407)
+bones/23/rotation = Quaternion(-0.62752956, 0.0791417, -0.12491093, 0.76442176)
 
 [node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
-transform = Transform3D(0.9999649, 0.00831427, -0.0010573014, -0.008381222, 0.99188125, -0.12689051, -6.2850886e-06, 0.12689492, 0.9919161, -0.0045462386, 2.0782077, 0.17380469)
+transform = Transform3D(0.99996525, -0.008268886, 0.001089939, 0.008340348, 0.9918799, -0.12690413, -3.1732314e-05, 0.12690882, 0.9919144, 0.0045900047, 2.0789998, 0.18514307)
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
 transform = Transform3D(0.13387573, -0.16356203, 0.97740716, -1.4901161e-08, 0.98628557, 0.16504776, -0.9909981, -0.022095904, 0.13203967, -75.64208, 2.1974733, 130.92673)
@@ -2571,7 +2570,7 @@ curve = SubResource("Curve3D_om0u3")
 script = ExtResource("12_emgv0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1381532096]
-transform = Transform3D(-0.9995415, -7.819225e-05, 0.029797617, 7.2758535e-12, 0.99997085, 0.002624109, -0.029797632, 0.0026229066, -0.999541, -0.27874756, -1.0733719, 0.365448)
+transform = Transform3D(-0.9995415, -7.819224e-05, 0.029797617, 7.2758535e-12, 0.9999708, 0.002624109, -0.029797632, 0.0026229064, -0.999541, -0.27874756, -1.0733719, 0.365448)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=332791163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
@@ -2719,7 +2718,7 @@ curve = SubResource("Curve3D_mt1xq")
 script = ExtResource("12_emgv0")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=391646599]
-transform = Transform3D(-0.7397507, -0.0048268717, -0.67283773, -2.3282666e-10, 0.99994385, -0.0071736765, 0.6728557, -0.005306757, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
+transform = Transform3D(-0.7397507, -0.004826871, -0.67283773, -2.3282666e-10, 0.9999438, -0.0071736765, 0.6728557, -0.0053067566, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=709487367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
@@ -3231,7 +3230,7 @@ shape = SubResource("BoxShape3D_83qvi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -243.73535, 44.22896, 229.41379)
 
 [node name="Mountain0_001" type="MeshInstance3D" parent="Node3D" unique_id=734766832]
-transform = Transform3D(0.99633723, 0.069386095, 0.0775839, 0.039493937, -1.855643, -0.026261859, 0.076517895, 0.054297075, -0.9966629, 12.948242, -60.653862, -276.11224)
+transform = Transform3D(0.66519976, 0.06852157, 0.075575955, 0.026367936, -1.8325223, -0.025582178, 0.051086802, 0.05362055, -0.97086835, 12.948242, -60.653862, -276.11224)
 mesh = SubResource("ArrayMesh_bigcq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Mountain0_001" unique_id=237666517]
@@ -4279,6 +4278,33 @@ mesh = SubResource("ArrayMesh_nssra")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Decoraciones/Tree_RedPlum_027/StaticBody3D" unique_id=161961436]
 shape = SubResource("ConvexPolygonShape3D_b87vl")
 
+[node name="Tree_RedPlum_029" type="MeshInstance3D" parent="Decoraciones" unique_id=1688592159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.52567, 93.31421, -51.04955)
+mesh = SubResource("ArrayMesh_nssra")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoraciones/Tree_RedPlum_029" unique_id=961384460]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoraciones/Tree_RedPlum_029/StaticBody3D" unique_id=231962738]
+shape = SubResource("ConvexPolygonShape3D_b87vl")
+
+[node name="Tree_RedPlum_030" type="MeshInstance3D" parent="Decoraciones" unique_id=607587484]
+transform = Transform3D(0.93853503, 0, 0.345184, 0, 1, 0, -0.345184, 0, 0.93853503, -373.52567, 93.31421, -39.576904)
+mesh = SubResource("ArrayMesh_nssra")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoraciones/Tree_RedPlum_030" unique_id=400651590]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoraciones/Tree_RedPlum_030/StaticBody3D" unique_id=1392518041]
+shape = SubResource("ConvexPolygonShape3D_b87vl")
+
+[node name="Tree_RedPlum_031" type="MeshInstance3D" parent="Decoraciones" unique_id=2019188032]
+transform = Transform3D(0.93853503, 0, 0.345184, 0, 1, 0, -0.345184, 0, 0.93853503, -367.63098, 93.31421, -61.49457)
+mesh = SubResource("ArrayMesh_nssra")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoraciones/Tree_RedPlum_031" unique_id=1098569352]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoraciones/Tree_RedPlum_031/StaticBody3D" unique_id=1950525086]
+shape = SubResource("ConvexPolygonShape3D_b87vl")
+
 [node name="Tree_RedPlum_028" type="MeshInstance3D" parent="Decoraciones" unique_id=355054033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.332073, 42.022373, 15.087055)
 mesh = SubResource("ArrayMesh_nssra")
@@ -4409,6 +4435,198 @@ transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59
 transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
 
 [node name="Sprout4" parent="Sprout" unique_id=74356705 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
+
+[node name="Sprout10" parent="." unique_id=322422217 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.9799139, 0, -0.19942096, 0, 1, 0, 0.19942096, 0, 0.9799139, -373.35135, 93.43007, -35.203667)
+
+[node name="Sprout2" parent="Sprout10" unique_id=672641674 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.7780435, 0, -0.6282104, 0, 1, 0, 0.6282104, 0, 0.7780435, 0.24716187, 0, 0.57105255)
+
+[node name="Sprout3" parent="Sprout10" unique_id=1623281477 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.9704895, 0, 0.42385864)
+
+[node name="Sprout5" parent="Sprout10" unique_id=226910325 instance=ExtResource("26_tui6x")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.47097778, 0, 0.62994003)
+
+[node name="Sprout6" parent="Sprout10" unique_id=1573288802 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.49951172, 0, 1.0537987)
+
+[node name="Sprout7" parent="Sprout10" unique_id=1923124431 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59614253, -0.6201782, 0, 0.24505234)
+
+[node name="Sprout8" parent="Sprout10" unique_id=2108217459 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
+
+[node name="Sprout4" parent="Sprout10" unique_id=376367094 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
+
+[node name="Sprout11" parent="." unique_id=400607990 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.9799139, 0, -0.19942096, 0, 1, 0, 0.19942096, 0, 0.9799139, -370.7379, 93.43007, -35.700092)
+
+[node name="Sprout2" parent="Sprout11" unique_id=1044012912 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.7780435, 0, -0.6282104, 0, 1, 0, 0.6282104, 0, 0.7780435, 0.24716187, 0, 0.57105255)
+
+[node name="Sprout3" parent="Sprout11" unique_id=1933864136 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.9704895, 0, 0.42385864)
+
+[node name="Sprout5" parent="Sprout11" unique_id=771119125 instance=ExtResource("26_tui6x")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.47097778, 0, 0.62994003)
+
+[node name="Sprout6" parent="Sprout11" unique_id=1354963108 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.49951172, 0, 1.0537987)
+
+[node name="Sprout7" parent="Sprout11" unique_id=1652352451 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59614253, -0.6201782, 0, 0.24505234)
+
+[node name="Sprout8" parent="Sprout11" unique_id=1416869305 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
+
+[node name="Sprout4" parent="Sprout11" unique_id=1858897681 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
+
+[node name="Sprout12" parent="." unique_id=316143162 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.9799139, 0, -0.19942096, 0, 1, 0, 0.19942096, 0, 0.9799139, -371.71735, 93.43007, -48.304626)
+
+[node name="Sprout2" parent="Sprout12" unique_id=1193618043 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.7780435, 0, -0.6282104, 0, 1, 0, 0.6282104, 0, 0.7780435, 0.24716187, 0, 0.57105255)
+
+[node name="Sprout3" parent="Sprout12" unique_id=1926431159 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.9704895, 0, 0.42385864)
+
+[node name="Sprout5" parent="Sprout12" unique_id=1549161441 instance=ExtResource("26_tui6x")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.47097778, 0, 0.62994003)
+
+[node name="Sprout6" parent="Sprout12" unique_id=766535935 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.49951172, 0, 1.0537987)
+
+[node name="Sprout7" parent="Sprout12" unique_id=1708172397 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59614253, -0.6201782, 0, 0.24505234)
+
+[node name="Sprout8" parent="Sprout12" unique_id=1770264240 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
+
+[node name="Sprout4" parent="Sprout12" unique_id=1067118902 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
+
+[node name="Sprout13" parent="." unique_id=412982624 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.9799139, 0, -0.19942096, 0, 1, 0, 0.19942096, 0, 0.9799139, -364.46286, 93.43007, -62.003284)
+
+[node name="Sprout2" parent="Sprout13" unique_id=1280315444 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.7780435, 0, -0.6282104, 0, 1, 0, 0.6282104, 0, 0.7780435, 0.24716187, 0, 0.57105255)
+
+[node name="Sprout3" parent="Sprout13" unique_id=710598095 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.9704895, 0, 0.42385864)
+
+[node name="Sprout5" parent="Sprout13" unique_id=1137242603 instance=ExtResource("26_tui6x")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.47097778, 0, 0.62994003)
+
+[node name="Sprout6" parent="Sprout13" unique_id=712163312 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.49951172, 0, 1.0537987)
+
+[node name="Sprout7" parent="Sprout13" unique_id=1278909564 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59614253, -0.6201782, 0, 0.24505234)
+
+[node name="Sprout8" parent="Sprout13" unique_id=251310376 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
+
+[node name="Sprout4" parent="Sprout13" unique_id=523551769 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
+
+[node name="Sprout6" parent="." unique_id=1049776548 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.9799139, 0, -0.19942096, 0, 1, 0, 0.19942096, 0, 0.9799139, -377.24448, 93.43007, -44.050804)
+
+[node name="Sprout2" parent="Sprout6" unique_id=1222402851 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.7780435, 0, -0.6282104, 0, 1, 0, 0.6282104, 0, 0.7780435, 0.24716187, 0, 0.57105255)
+
+[node name="Sprout3" parent="Sprout6" unique_id=1628649469 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.9704895, 0, 0.42385864)
+
+[node name="Sprout5" parent="Sprout6" unique_id=1439331586 instance=ExtResource("26_tui6x")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.47097778, 0, 0.62994003)
+
+[node name="Sprout6" parent="Sprout6" unique_id=249064956 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.49951172, 0, 1.0537987)
+
+[node name="Sprout7" parent="Sprout6" unique_id=2127769714 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59614253, -0.6201782, 0, 0.24505234)
+
+[node name="Sprout8" parent="Sprout6" unique_id=2109561896 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
+
+[node name="Sprout4" parent="Sprout6" unique_id=1152290692 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
+
+[node name="Sprout7" parent="." unique_id=1006732526 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.9799139, 0, -0.19942096, 0, 1, 0, 0.19942096, 0, 0.9799139, -376.84076, 93.43007, -48.83827)
+
+[node name="Sprout2" parent="Sprout7" unique_id=971322917 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.7780435, 0, -0.6282104, 0, 1, 0, 0.6282104, 0, 0.7780435, 0.24716187, 0, 0.57105255)
+
+[node name="Sprout3" parent="Sprout7" unique_id=1037537014 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.9704895, 0, 0.42385864)
+
+[node name="Sprout5" parent="Sprout7" unique_id=1395007598 instance=ExtResource("26_tui6x")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.47097778, 0, 0.62994003)
+
+[node name="Sprout6" parent="Sprout7" unique_id=1047513988 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.49951172, 0, 1.0537987)
+
+[node name="Sprout7" parent="Sprout7" unique_id=976666465 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59614253, -0.6201782, 0, 0.24505234)
+
+[node name="Sprout8" parent="Sprout7" unique_id=422104134 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
+
+[node name="Sprout4" parent="Sprout7" unique_id=1778805816 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
+
+[node name="Sprout8" parent="." unique_id=719079702 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.9799139, 0, -0.19942096, 0, 1, 0, 0.19942096, 0, 0.9799139, -371.65952, 93.43007, -58.973072)
+
+[node name="Sprout2" parent="Sprout8" unique_id=1165389506 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.7780435, 0, -0.6282104, 0, 1, 0, 0.6282104, 0, 0.7780435, 0.24716187, 0, 0.57105255)
+
+[node name="Sprout3" parent="Sprout8" unique_id=1902184514 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.9704895, 0, 0.42385864)
+
+[node name="Sprout5" parent="Sprout8" unique_id=493661394 instance=ExtResource("26_tui6x")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.47097778, 0, 0.62994003)
+
+[node name="Sprout6" parent="Sprout8" unique_id=823028919 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.49951172, 0, 1.0537987)
+
+[node name="Sprout7" parent="Sprout8" unique_id=1023305903 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59614253, -0.6201782, 0, 0.24505234)
+
+[node name="Sprout8" parent="Sprout8" unique_id=2083049627 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
+
+[node name="Sprout4" parent="Sprout8" unique_id=96804777 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
+
+[node name="Sprout9" parent="." unique_id=152356980 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.9799139, 0, -0.19942096, 0, 1, 0, 0.19942096, 0, 0.9799139, -372.39444, 93.43007, -55.43251)
+
+[node name="Sprout2" parent="Sprout9" unique_id=282407137 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.7780435, 0, -0.6282104, 0, 1, 0, 0.6282104, 0, 0.7780435, 0.24716187, 0, 0.57105255)
+
+[node name="Sprout3" parent="Sprout9" unique_id=1423375306 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.9704895, 0, 0.42385864)
+
+[node name="Sprout5" parent="Sprout9" unique_id=889904470 instance=ExtResource("26_tui6x")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.47097778, 0, 0.62994003)
+
+[node name="Sprout6" parent="Sprout9" unique_id=803595343 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.979914, 0, 0.19942099, 0, 1, 0, -0.19942099, 0, 0.979914, 0.49951172, 0, 1.0537987)
+
+[node name="Sprout7" parent="Sprout9" unique_id=1141138755 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.59614253, 0, 0.80287886, 0, 1, 0, -0.80287886, 0, 0.59614253, -0.6201782, 0, 0.24505234)
+
+[node name="Sprout8" parent="Sprout9" unique_id=867461061 instance=ExtResource("26_tui6x")]
+transform = Transform3D(0.42405745, 0, 0.90563536, 0, 1, 0, -0.90563536, 0, 0.42405745, 0.29864502, 0, -0.28144073)
+
+[node name="Sprout4" parent="Sprout9" unique_id=302860969 instance=ExtResource("26_tui6x")]
 transform = Transform3D(0.5425432, 0, 0.84002805, 0, 1, 0, -0.84002805, 0, 0.5425432, 0.8340454, 0, -0.2465477)
 
 [node name="Sprout2" parent="." unique_id=1636557549 instance=ExtResource("26_tui6x")]
