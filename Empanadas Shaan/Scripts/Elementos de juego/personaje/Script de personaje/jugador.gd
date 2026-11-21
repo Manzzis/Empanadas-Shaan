@@ -5,9 +5,9 @@ class_name Jugador extends CharacterBody3D
 @export var estados_maquina : Maquina_de_estados
 var estados : Estados_jugador_resource = Estados_jugador_resource.new()
 @onready var camera_component := $CameraComponent
-@onready var particulas_salto: GPUParticles3D = $ParticulasSalto
-@onready var particulas_aterrizaje: GPUParticles3D = $ParticulasAterrizaje
-@onready var particulas_grind: GPUParticles3D = $ParticulasGrind
+@onready var particulas_salto: GPUParticles3D = $VFXSalto
+@onready var particulas_aterrizaje: GPUParticles3D = $VFXAterrizaje
+@onready var particulas_grind: GPUParticles3D = $VFXGrind
 var estaba_en_suelo : bool = false
 var gravedad : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var ultimo_checkpoint: Vector3
@@ -68,25 +68,20 @@ func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
 	handle_deslizamiento(delta)
 
-	# Sistema de particulas
-
-	# El salto
+	# El salto (la partícula la maneja AnimacionComponent al entrar al estado)
 	if Input.is_action_just_pressed("Salto") and (is_on_floor() or puede_saltar_coyote()):
 		velocity.y = fuerza_salto
-		particulas_salto.restart()
-		particulas_salto.emitting = true
 
 	move_and_slide()
 	girar(delta)
 	actualizar_coyote_time(delta)
 
-	# El aterrizaje
+	# El aterrizaje: solo dispara una vez al pasar de aire -> suelo
 	if not estaba_en_suelo and is_on_floor():
-		emitir_particulas(particulas_aterrizaje)
+		emitir_particula_aterrisaje()
 
-	# El grinding
-	grindeando = riel_actual != null
-	particulas_grind.emitting = grindeando
+	# IMPORTANTE: guardar el estado del suelo para comparar en el próximo frame
+	estaba_en_suelo = is_on_floor()
 	
 func actualizar_coyote_time(delta: float) -> void:
 	# No recargar el coyote si estamos subiendo (acabamos de saltar)
@@ -185,3 +180,25 @@ func sumar_moneda():
 func emitir_particulas(particulas: GPUParticles3D) -> void:
 	particulas.restart()
 	particulas.emitting = true
+
+
+func emitir_particula_salto() -> void:
+	if particulas_salto:
+		particulas_salto.restart()
+		particulas_salto.emitting = true
+
+
+func emitir_particula_aterrisaje() -> void:
+	if particulas_aterrizaje:
+		particulas_aterrizaje.restart()
+		particulas_aterrizaje.emitting = true
+
+
+func emitir_particula_grind() -> void:
+	if particulas_grind:
+		particulas_grind.emitting = true
+
+
+func detener_particula_grind() -> void:
+	if particulas_grind:
+		particulas_grind.emitting = false

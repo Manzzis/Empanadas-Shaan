@@ -27,16 +27,24 @@ func _on_estado_cambiado(nombre_estado: String) -> void:
 	if not playback:
 		return
 		
+	
+	# Si salimos de Grindear/Dashear hacia cualquier otro estado, apagamos las chispas
+	if nombre_estado != "Grindear" and nombre_estado != "Dashear":
+		jugador.detener_particula_grind()
+	
 	match nombre_estado:
 		"Idle", "Caminar":
 			playback.travel("Movimiento")
 			
-		"Saltar", "Caer":
+		"Saltar":
 			playback.travel("Saltar")
+			jugador.emitir_particula_salto()
 			
+		"Caer":
+			return
 		"Grindear", "Dashear":
 			playback.travel("Grindeo")
-			
+			jugador.emitir_particula_grind()
 		"Pared":
 			# Leemos el cálculo exacto de la pared (+1 izq, -1 der)
 			var lado = jugador.get_meta("ultimo_lado_muro", 1.0)
