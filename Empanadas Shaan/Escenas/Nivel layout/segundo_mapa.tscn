@@ -536,7 +536,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sfmhc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3dgca"]
-size = Vector3(1.3971851, 1.3013611, 0.20492554)
+size = Vector3(2.3898237, 1.3185272, 0.20492554)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_emgv0"]
 resource_name = "ParedCaminable-1_Plane"
@@ -624,7 +624,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sfmhc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywgos"]
-size = Vector3(1.7610395, 1.3728485, 0.20492554)
+size = Vector3(1.9200705, 1.671215, 0.20492554)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2ckq1"]
 _surfaces = [{
@@ -1806,43 +1806,42 @@ shape = SubResource("BoxShape3D_xg34l")
 debug_color = Color(0.9647059, 0, 0, 1)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=2131038652]
+visible = false
 occluder = ExtResource("13_7q12v")
 
 [node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("24_emgv0")]
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("1_7q12v")]
-transform = Transform3D(-0.9275543, 0, -0.3736885, 0, 1, 0, 0.3736885, 0, -0.9275543, -83.11895, 2.639305, 107.59001)
+transform = Transform3D(-0.9275543, 0, -0.3736885, 0, 1, 0, 0.3736885, 0, -0.9275543, -83.11895, 0.51802456, 107.81449)
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
-bones/0/position = Vector3(-0.0110023, 1.181845, -0.03)
-bones/0/rotation = Quaternion(0.08103704, 0.0007457908, 0.009175205, 0.9966686)
-bones/1/rotation = Quaternion(0.05078031, -0.0019712523, -0.009122372, 0.9986663)
-bones/2/rotation = Quaternion(0.011921177, -0.009188895, -0.0052788802, 0.9998728)
-bones/3/rotation = Quaternion(-0.11919712, 0.008569051, 0.0062348526, 0.99281406)
-bones/4/rotation = Quaternion(0.031010564, 0.00018319102, 0.0023343693, 0.99951637)
-bones/6/rotation = Quaternion(-0.56091034, 0.3731716, -0.10128305, 0.73202753)
-bones/7/rotation = Quaternion(-0.3217512, 0.09225051, 0.29215172, 0.895887)
-bones/10/rotation = Quaternion(-0.54350936, -0.38049257, 0.11312538, 0.73961186)
-bones/11/rotation = Quaternion(-0.32175124, -0.09225051, -0.29215175, 0.895887)
-bones/13/rotation = Quaternion(0.9620741, -0.093699075, 0.0032975194, 0.2561703)
-bones/14/rotation = Quaternion(0.32144186, 0.0037602768, -0.022715403, 0.94664943)
-bones/15/rotation = Quaternion(-0.6333602, -0.07772921, 0.12544556, 0.7596556)
-bones/21/rotation = Quaternion(0.96366787, 0.074852414, -0.005155966, 0.25634915)
-bones/22/rotation = Quaternion(0.32144192, -0.003760277, 0.022715403, 0.94664943)
-bones/23/rotation = Quaternion(-0.6333602, 0.077729225, -0.12544557, 0.7596556)
+
+bones/0/position = Vector3(-0.01067065, 1.1819146, -0.03)
+bones/0/rotation = Quaternion(0.081185274, 0.0007291295, 0.008953014, 0.99665856)
+bones/1/rotation = Quaternion(0.050828487, -0.0019142816, -0.008839326, 0.9986665)
+bones/2/rotation = Quaternion(0.012238673, -0.0077192374, -0.004915391, 0.99988323)
+bones/3/rotation = Quaternion(-0.119504586, 0.007154012, 0.005722461, 0.9927914)
+bones/4/rotation = Quaternion(0.030687444, 8.866275e-05, 0.001129159, 0.99952847)
+bones/6/rotation = Quaternion(-0.55952436, 0.37304625, -0.102979094, 0.73291504)
+bones/7/rotation = Quaternion(-0.32230806, 0.092551954, 0.29263908, 0.89549655)
+bones/10/rotation = Quaternion(-0.54340523, -0.37757605, 0.113919, 0.7410598)
+bones/11/rotation = Quaternion(-0.32230812, -0.09255197, -0.29263914, 0.89549655)
+bones/13/rotation = Quaternion(0.9621144, -0.09347742, 0.0033325758, 0.2560994)
+bones/14/rotation = Quaternion(0.32108825, 0.003788456, -0.022725007, 0.94676906)
+bones/15/rotation = Quaternion(-0.6332526, -0.07775538, 0.12543575, 0.7597442)
+bones/21/rotation = Quaternion(0.9636703, 0.07507815, -0.0051395767, 0.25627437)
+bones/22/rotation = Quaternion(0.32108834, -0.0037884535, 0.022725007, 0.94676906)
+bones/23/rotation = Quaternion(-0.6332526, 0.07775539, -0.12543575, 0.7597442)
 
 [node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
-transform = Transform3D(0.99999017, -0.0044012475, 0.00048691407, 0.004428096, 0.99386173, -0.11053975, 2.5959016e-06, 0.11054082, 0.9938714, -0.011560561, 2.0791862, 0.16271801)
+transform = Transform3D(0.9999976, -0.0021436021, 0.000248387, 0.002157918, 0.9938951, -0.110307455, -1.0413074e-05, 0.11030771, 0.9938974, -0.011431005, 2.079138, 0.1632205)
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
-transform = Transform3D(-0.92755437, 0.061676413, -0.36856353, 1.8626451e-09, 0.98628557, 0.16504768, 0.37368846, 0.15309069, -0.9148334, -84.24491, 3.5235257, 105.105194)
+transform = Transform3D(-0.9275533, 0.061676733, -0.36856577, 0, 0.9862856, 0.16504754, 0.3736907, 0.1530904, -0.9148325, -84.24492, 1.402245, 105.32967)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
-transform = Transform3D(1, 7.450581e-09, -5.9604645e-08, 1.8626451e-09, 0.98628557, 0.16504768, 5.9604645e-08, -0.16504766, 0.98628557, 0.11584473, 0.8842206, 2.725563)
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
+transform = Transform3D(0.9999999, -3.9488077e-07, 2.3841858e-06, 0, 0.9862856, 0.16504754, -2.413988e-06, -0.16504753, 0.98628545, 0.115852356, 0.8842205, 2.725563)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=292197610]
 environment = SubResource("Environment_qf7v0")
@@ -2848,7 +2847,7 @@ transform = Transform3D(0.7350607, 0.083215475, -0.36328077, -0.003090077, 0.581
 mesh = SubResource("ArrayMesh_5gedq")
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=17679754]
-transform = Transform3D(-1.2444932, 0.18015224, 1.0047861, -0.14116116, 1.0770046, -0.4731463, -1.1642034, -0.3231646, -1.0167129, 18.263721, 7.3401012, -10.946208)
+transform = Transform3D(-0.7282829, 0.16681008, 0.6646642, -0.029028578, 0.96154094, -0.273124, -0.6846616, -0.2182063, -0.69543153, 18.198566, 7.3406763, -11.010868)
 shape = SubResource("BoxShape3D_3dgca")
 
 [node name="Plane14" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=574919386]
@@ -2880,7 +2879,7 @@ transform = Transform3D(0.4372893, -0.35804075, 0.29815018, 0.015262884, 0.76601
 mesh = SubResource("ArrayMesh_3dgca")
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=2098188171]
-transform = Transform3D(-0.47248572, -0.8184009, -0.5531761, -0.05703141, 1.0819205, -0.55201036, 0.8115196, -0.40045786, -0.3608658, 9.773779, 8.351476, -14.027937)
+transform = Transform3D(-0.50222987, -0.578596, -0.6426445, -0.060621668, 0.7648997, -0.6412906, 0.86260664, -0.28311712, -0.41923094, 9.730647, 8.350887, -13.960914)
 shape = SubResource("BoxShape3D_ywgos")
 
 [node name="PlataformaMovil" parent="Node3D/Z4" unique_id=1247498830 instance=ExtResource("17_tgtnd")]
@@ -2900,7 +2899,7 @@ velocidad = 10.0
 
 [node name="PlataformaMovil4" parent="Node3D/Z4" unique_id=24610808 instance=ExtResource("17_tgtnd")]
 transform = Transform3D(-0.30987635, 0, 0.26077074, 0, 0.405, 0, -0.26077074, 0, -0.30987635, -15.470253, 56.290565, -223.67921)
-puntos_ruta = Array[Vector3]([Vector3(4.397793, 35.23037, -223.6793), Vector3(64.21187, 29.891365, -308.5233)])
+puntos_ruta = Array[Vector3]([Vector3(4.397793, 35.23037, -223.6793), Vector3(-15.470253, 56.290565, -223.67921)])
 velocidad = 10.0
 
 [node name="Kicker3" type="MeshInstance3D" parent="Node3D/Z4" unique_id=52309983]
