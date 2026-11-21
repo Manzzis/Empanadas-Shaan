@@ -6,7 +6,8 @@ extends Node3D
 var ya_activado := false
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	if ya_activado:
-		return
-	ya_activado = true
-	DialogueManager.show_dialogue_balloon(mi_dialogo)
+	if area.is_in_group("Player"):
+		if ya_activado:
+			return
+		ya_activado = true
+		DialogueManager.show_dialogue_balloon(mi_dialogo)
