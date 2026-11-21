@@ -16,12 +16,12 @@
 [ext_resource type="ArrayMesh" uid="uid://ck470jhbflgt8" path="res://Assets visuales/mesh_paltaforma.mesh" id="16_tgtnd"]
 [ext_resource type="PackedScene" uid="uid://dlsrcsgsdjqht" path="res://Escenas/PlataformaMovil/plataforma_movil.tscn" id="17_tgtnd"]
 [ext_resource type="PackedScene" uid="uid://b3t0et2bos2wj" path="res://Escenas/checkpoint/checkpoint.tscn" id="17_ue3ls"]
-[ext_resource type="ArrayMesh" uid="uid://dtnf41ng6bqro" path="res://Escenas/asset3D/ParedCaminable.tres" id="18_emgv0"]
 [ext_resource type="Script" uid="uid://dii4a6yv7x7hj" path="res://Scripts/fallZone/fallzone.gd" id="19_yppci"]
 [ext_resource type="Material" uid="uid://dd3lho07ieuy3" path="res://Assets visuales/Assets 3D y 2D/materiales/Rojo_Liso.tres" id="20_yppci"]
 [ext_resource type="PackedScene" uid="uid://cm2k5dr8s2hqb" path="res://narrativas/fin_de_juego.tscn" id="23_emgv0"]
 [ext_resource type="PackedScene" uid="uid://bivugwdeo8gv0" path="res://Escenas/UI/hud.tscn" id="24_emgv0"]
 [ext_resource type="Texture2D" uid="uid://dj56cm5je7vap" path="res://Assets visuales/Assets 3D y 2D/Modelo 3D personaje/istockphoto-1339312029-612x612.jpg" id="24_wf0iy"]
+[ext_resource type="Resource" uid="uid://bbnwa04u0q51n" path="res://narrativas/final_de_juego.dialogue" id="25_tui6x"]
 [ext_resource type="PackedScene" uid="uid://dvr2rh5d1yciy" path="res://narrativas/local_de_empanadas.tscn" id="25_wf0iy"]
 [ext_resource type="PackedScene" uid="uid://b68agkde88wln" path="res://Assets visuales/Assets 3D y 2D/Pack_free_jp_village/GLTF/Sprout.gltf" id="26_tui6x"]
 [ext_resource type="Texture2D" uid="uid://oh2eel6a4q44" path="res://Assets visuales/Assets 3D y 2D/Pack_free_jp_village/GLTF/textures/ColorAtlas.png" id="26_typkg"]
@@ -109,9 +109,6 @@ albedo_texture = ExtResource("7_bigcq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dgca"]
 albedo_texture = ExtResource("7_bigcq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywgos"]
-albedo_texture = ExtResource("7_bigcq")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv35a"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -196,87 +193,6 @@ point_count = 4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83qvi"]
 size = Vector3(0.96147156, 0.1463623, 10.297012)
-
-[sub_resource type="Curve3D" id="Curve3D_om0u3"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.27874756, -1.0733719, 0.365448, 0, 0, 0, 0, 0, 0, -0.73028564, -1.1131363, 15.511982),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_iqd1q"]
-size = Vector3(0.94742215, 0.1463623, 0.9100995)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kig62"]
-size = Vector3(0.94742215, 0.1463623, 14.859648)
-
-[sub_resource type="Curve3D" id="Curve3D_0kgoo"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.27874756, -1.0733719, 0.365448, 0, 0, 0, 0, 0, 0, -6.0113525, 6.8743362, 29.80851, 0, 0, 0, 0, 0, 0, -11.2487335, 20.277687, 53.704994),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yge8l"]
-size = Vector3(0.94742215, 0.1463623, 0.9100995)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fnol2"]
-size = Vector3(0.94742215, 0.1463623, 31.020908)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yvxky"]
-size = Vector3(0.94742215, 0.1463623, 27.8344)
-
-[sub_resource type="Curve3D" id="Curve3D_mt1xq"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.20549011, -0.15530396, 0.24208069, 0, 0, 0, 0, 0, 0, 7.8061523, -0.069885254, 9.050236),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vpimv"]
-size = Vector3(0.94742215, 0.1463623, 0.9100995)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_k34e1"]
-size = Vector3(0.94742215, 0.1463623, 11.579948)
-
-[sub_resource type="Curve3D" id="Curve3D_m7axp"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.43467712, 0.113082886, 0.23261642, 0, 0, 0, 0, 0, 0, 19.509521, 5.082901, 20.8125, 0, 0, 0, 0, 0, 0, 39.56659, 10.289749, 41.50882),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xjvlr"]
-size = Vector3(0.94742215, 0.1463623, 0.9100995)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lbrwh"]
-size = Vector3(0.94742215, 0.1463623, 59.421623)
-
-[sub_resource type="Curve3D" id="Curve3D_vjfdx"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.43467712, 0.113082886, 0.23261642, 0, 0, 0, 0, 0, 0, 15.273453, -0.002243042, 0.51737213, 0, 0, 0, 0, 0, 0, 30.170822, 0.12080383, 0.7874222),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_p6gpa"]
-size = Vector3(0.94742215, 0.1463623, 0.9100995)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0c0o2"]
-size = Vector3(30.354725, 0.1463623, 0.9100995)
-
-[sub_resource type="Curve3D" id="Curve3D_oad60"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.43467712, 0.113082886, 0.23261642, 0, 0, 0, 0, 0, 0, 10.0596695, 8.050415, -14.755814, 0, 0, 0, 0, 0, 0, 19.15786, 15.199844, -27.750214),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_v7tsu"]
-size = Vector3(0.94742215, 0.1463623, 0.9100995)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6weqg"]
-size = Vector3(36.198982, 0.1463623, 0.9100995)
 
 [sub_resource type="Curve3D" id="Curve3D_jyr2s"]
 _data = {
@@ -534,12 +450,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ulpx7")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xg34l"]
-data = PackedVector3Array(0, -12.1655, -0.12, 0.0849, 12.1655, -0.0849, 0, 12.1655, -0.12, 0, -12.1655, -0.12, 0.0849, -12.1655, -0.0849, 0.0849, 12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.12, 12.1655, 0, 0.0849, 12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.12, -12.1655, 0, 0.12, 12.1655, 0, 0.12, -12.1655, 0, 0.0849, 12.1655, 0.0849, 0.12, 12.1655, 0, 0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, 0.0849, 12.1655, 0.0849, 0.0849, -12.1655, 0.0849, 0, 12.1655, 0.12, 0.0849, 12.1655, 0.0849, 0.0849, -12.1655, 0.0849, 0, -12.1655, 0.12, 0, 12.1655, 0.12, 0, -12.1655, 0.12, -0.0849, 12.1655, 0.0849, 0, 12.1655, 0.12, 0, -12.1655, 0.12, -0.0849, -12.1655, 0.0849, -0.0849, 12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.12, 12.1655, 0, -0.0849, 12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.12, -12.1655, 0, -0.12, 12.1655, 0, 0.12, 12.1655, 0, 0, 12.1655, -0.12, 0.0849, 12.1655, -0.0849, 0.12, 12.1655, 0, -0.12, 12.1655, 0, 0, 12.1655, -0.12, 0, 12.1655, -0.12, -0.12, 12.1655, 0, -0.0849, 12.1655, -0.0849, -0.12, 12.1655, 0, 0.12, 12.1655, 0, 0, 12.1655, 0.12, 0, 12.1655, 0.12, 0.12, 12.1655, 0, 0.0849, 12.1655, 0.0849, -0.12, 12.1655, 0, 0, 12.1655, 0.12, -0.0849, 12.1655, 0.0849, -0.12, -12.1655, 0, -0.0849, 12.1655, -0.0849, -0.12, 12.1655, 0, -0.12, -12.1655, 0, -0.0849, -12.1655, -0.0849, -0.0849, 12.1655, -0.0849, -0.0849, -12.1655, -0.0849, 0, 12.1655, -0.12, -0.0849, 12.1655, -0.0849, -0.0849, -12.1655, -0.0849, 0, -12.1655, -0.12, 0, 12.1655, -0.12, -0.0849, -12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0, -12.1655, -0.12, -0.0849, -12.1655, -0.0849, 0.0849, -12.1655, 0.0849, 0.0849, -12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.0849, -12.1655, 0.0849, 0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, -0.0849, -12.1655, -0.0849, -0.0849, -12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.0849, -12.1655, -0.0849, -0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, -0.0849, -12.1655, 0.0849, 0, -12.1655, 0.12)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2ckq1"]
-data = PackedVector3Array(0, -12.1655, -0.12, 0.0849, 12.1655, -0.0849, 0, 12.1655, -0.12, 0, -12.1655, -0.12, 0.0849, -12.1655, -0.0849, 0.0849, 12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.12, 12.1655, 0, 0.0849, 12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.12, -12.1655, 0, 0.12, 12.1655, 0, 0.12, -12.1655, 0, 0.0849, 12.1655, 0.0849, 0.12, 12.1655, 0, 0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, 0.0849, 12.1655, 0.0849, 0.0849, -12.1655, 0.0849, 0, 12.1655, 0.12, 0.0849, 12.1655, 0.0849, 0.0849, -12.1655, 0.0849, 0, -12.1655, 0.12, 0, 12.1655, 0.12, 0, -12.1655, 0.12, -0.0849, 12.1655, 0.0849, 0, 12.1655, 0.12, 0, -12.1655, 0.12, -0.0849, -12.1655, 0.0849, -0.0849, 12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.12, 12.1655, 0, -0.0849, 12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.12, -12.1655, 0, -0.12, 12.1655, 0, 0.12, 12.1655, 0, 0, 12.1655, -0.12, 0.0849, 12.1655, -0.0849, 0.12, 12.1655, 0, -0.12, 12.1655, 0, 0, 12.1655, -0.12, 0, 12.1655, -0.12, -0.12, 12.1655, 0, -0.0849, 12.1655, -0.0849, -0.12, 12.1655, 0, 0.12, 12.1655, 0, 0, 12.1655, 0.12, 0, 12.1655, 0.12, 0.12, 12.1655, 0, 0.0849, 12.1655, 0.0849, -0.12, 12.1655, 0, 0, 12.1655, 0.12, -0.0849, 12.1655, 0.0849, -0.12, -12.1655, 0, -0.0849, 12.1655, -0.0849, -0.12, 12.1655, 0, -0.12, -12.1655, 0, -0.0849, -12.1655, -0.0849, -0.0849, 12.1655, -0.0849, -0.0849, -12.1655, -0.0849, 0, 12.1655, -0.12, -0.0849, 12.1655, -0.0849, -0.0849, -12.1655, -0.0849, 0, -12.1655, -0.12, 0, 12.1655, -0.12, -0.0849, -12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0, -12.1655, -0.12, -0.0849, -12.1655, -0.0849, 0.0849, -12.1655, 0.0849, 0.0849, -12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.0849, -12.1655, 0.0849, 0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, -0.0849, -12.1655, -0.0849, -0.0849, -12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.0849, -12.1655, -0.0849, -0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, -0.0849, -12.1655, 0.0849, 0, -12.1655, 0.12)
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ulpx7"]
 data = PackedVector3Array(0, -12.1655, -0.12, 0.0849, 12.1655, -0.0849, 0, 12.1655, -0.12, 0, -12.1655, -0.12, 0.0849, -12.1655, -0.0849, 0.0849, 12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.12, 12.1655, 0, 0.0849, 12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.12, -12.1655, 0, 0.12, 12.1655, 0, 0.12, -12.1655, 0, 0.0849, 12.1655, 0.0849, 0.12, 12.1655, 0, 0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, 0.0849, 12.1655, 0.0849, 0.0849, -12.1655, 0.0849, 0, 12.1655, 0.12, 0.0849, 12.1655, 0.0849, 0.0849, -12.1655, 0.0849, 0, -12.1655, 0.12, 0, 12.1655, 0.12, 0, -12.1655, 0.12, -0.0849, 12.1655, 0.0849, 0, 12.1655, 0.12, 0, -12.1655, 0.12, -0.0849, -12.1655, 0.0849, -0.0849, 12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.12, 12.1655, 0, -0.0849, 12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.12, -12.1655, 0, -0.12, 12.1655, 0, 0.12, 12.1655, 0, 0, 12.1655, -0.12, 0.0849, 12.1655, -0.0849, 0.12, 12.1655, 0, -0.12, 12.1655, 0, 0, 12.1655, -0.12, 0, 12.1655, -0.12, -0.12, 12.1655, 0, -0.0849, 12.1655, -0.0849, -0.12, 12.1655, 0, 0.12, 12.1655, 0, 0, 12.1655, 0.12, 0, 12.1655, 0.12, 0.12, 12.1655, 0, 0.0849, 12.1655, 0.0849, -0.12, 12.1655, 0, 0, 12.1655, 0.12, -0.0849, 12.1655, 0.0849, -0.12, -12.1655, 0, -0.0849, 12.1655, -0.0849, -0.12, 12.1655, 0, -0.12, -12.1655, 0, -0.0849, -12.1655, -0.0849, -0.0849, 12.1655, -0.0849, -0.0849, -12.1655, -0.0849, 0, 12.1655, -0.12, -0.0849, 12.1655, -0.0849, -0.0849, -12.1655, -0.0849, 0, -12.1655, -0.12, 0, 12.1655, -0.12, -0.0849, -12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0, -12.1655, -0.12, -0.0849, -12.1655, -0.0849, 0.0849, -12.1655, 0.0849, 0.0849, -12.1655, -0.0849, 0.0849, -12.1655, -0.0849, 0.0849, -12.1655, 0.0849, 0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, -0.0849, -12.1655, -0.0849, -0.0849, -12.1655, 0.0849, -0.0849, -12.1655, 0.0849, -0.0849, -12.1655, -0.0849, -0.12, -12.1655, 0, 0.0849, -12.1655, 0.0849, -0.0849, -12.1655, 0.0849, 0, -12.1655, 0.12)
 
@@ -590,13 +500,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sfmhc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pk0j2"]
-size = Vector3(2.4724426, 2.3364258, 0.36232758)
+size = Vector3(4.234932, 2.3364258, 0.36232758)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_emgv0"]
 size = Vector3(5.8953476, 2.1120605, 0.20492554)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wf0iy"]
-size = Vector3(2.2460136, 2.1120605, 0.20492554)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tui6x"]
 size = Vector3(2.107504, 2.1120605, 0.20492554)
@@ -1763,10 +1670,38 @@ albedo_color = Color(1, 0, 0.20784314, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_tui6x"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.3121643, 1.1904068, 0.9734955, 0, 0, 0, 0, 0, 0, 6.2227173, 3.1330185, -11.397614, 0, 0, 0, 0, 0, 0, 8.231857, 3.1330185, -20.347313, 0, 0, 0, 0, 0, 0, 7.542343, 5.3318176, -25.022808, 0, 0, 0, 0, 0, 0, 6.9737015, 6.5321655, -28.223007, 0, 0, 0, 0, 0, 0, 4.114502, 7.332405, -29.585411, 0, 0, 0, 0, 0, 0, -0.028045654, 5.402954, -30.071743, 0, 0, 0, 0, 0, 0, -6.981186, 3.7992706, -27.3154, 0, 0, 0, 0, 0, 0, -30.308289, 1.9998817, -15.742243),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.2227173, 0.23771667, -11.397614, 0, 0, 0, 0, 0, 0, 9.013054, 8.962311, -21.323502, 0, 0, 0, 0, 0, 0, 8.793655, 11.16111, -26.339928, 0, 0, 0, 0, 0, 0, 5.2772827, 15.987434, -29.580582, 0, 0, 0, 0, 0, 0, 1.6632233, 16.040695, -31.547066, 0, 0, 0, 0, 0, 0, -2.479309, 13.090744, -32.033386, 0, 0, 0, 0, 0, 0, -9.432457, 9.628563, -29.277039, 0, 0, 0, 0, 0, 0, -30.308289, 1.9998817, -15.742243),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 9
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_lpgwy"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.3121643, 1.1904068, 0.9734955, 0, 0, 0, 0, 0, 0, 1.8587532, 2.2526398, -4.522314, 0, 0, 0, 0, 0, 0, 0.16614151, 4.9907303, -9.3201685, 0, 0, 0, 0, 0, 0, -4.500458, 9.202087, -24.608932),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_o8ecs"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 16.34989, 5.80159, -7.328186, 0, 0, 0, 0, 0, 0, -36.805656, 27.215874, -18.096603),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_u0hqu"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.0369186, 9.317368, -39.047363, 0, 0, 0, 0, 0, 0, -43.412346, 19.712814, 1.0727997),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_2w4rn"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8.388908, 6.969345, -37.40576, 0, 0, 0, 0, 0, 0, 19.500366, 22.171844, -8.228928),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [node name="segundo mapa" type="Node3D" unique_id=1815912140]
 
@@ -1795,7 +1730,7 @@ transform = Transform3D(0.9999999, 0, 5.684342e-14, 0, 1, 0, -5.684342e-14, 0, 0
 transform = Transform3D(0.9999999, 0, 5.684342e-14, 0, 1, 0, -5.684342e-14, 0, 0.9999999, -186.14658, 64.90979, -56.672607)
 
 [node name="Checkpoint5" parent="CheckPoints" unique_id=1546902724 instance=ExtResource("17_ue3ls")]
-transform = Transform3D(0.9999998, 0, 8.526513e-14, 0, 1, 0, -8.526513e-14, 0, 0.9999998, -206.46393, 118.40356, -31.006495)
+transform = Transform3D(0.9999998, 0, 8.526513e-14, 0, 1, 0, -8.526513e-14, 0, 0.9999998, -195.12123, 118.40356, -33.260834)
 
 [node name="Fallzone" type="Area3D" parent="." unique_id=491432035]
 transform = Transform3D(0.9999995, 0, 1.9895197e-13, 0, 1, 0, -1.9895197e-13, 0, 0.9999995, -81.097855, 42.411697, -95.11711)
@@ -1872,40 +1807,41 @@ shape = SubResource("BoxShape3D_xg34l")
 debug_color = Color(0.9647059, 0, 0, 1)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=2131038652]
+visible = false
 occluder = ExtResource("13_7q12v")
 
 [node name="HUD" parent="." unique_id=1796567116 instance=ExtResource("24_emgv0")]
 
 [node name="Personaje" parent="." unique_id=1912633892 instance=ExtResource("1_7q12v")]
-transform = Transform3D(-0.9275543, 0, -0.3736885, 0, 1, 0, 0.3736885, 0, -0.9275543, 91.02701, 44.75235, 1.1559601)
+transform = Transform3D(-0.9275543, 0, -0.3736885, 0, 1, 0, 0.3736885, 0, -0.9275543, -83.11895, 2.639305, 107.59001)
 fuerza_salto = 3.0
 
 [node name="Skeleton3D" parent="Personaje/ModeloPersonaje/Rig_Char" parent_id_path=PackedInt32Array(1912633892, 1634013403) index="0" unique_id=538441452]
-bones/0/position = Vector3(-0.0045594964, 1.1831542, -0.03)
-bones/0/rotation = Quaternion(0.08450576, 0.00033668344, 0.0039744372, 0.996415)
-bones/1/rotation = Quaternion(0.05167052, -0.00087509234, -0.0038987603, 0.9986563)
-bones/2/rotation = Quaternion(0.0150461085, -0.008680114, -0.0023245662, 0.9998465)
-bones/3/rotation = Quaternion(-0.116553895, 0.008399014, 0.0031944453, 0.9931438)
-bones/4/rotation = Quaternion(0.033598796, 0.0006983405, 0.0067852926, 0.9994121)
-bones/6/rotation = Quaternion(-0.56061405, 0.3780805, -0.09686949, 0.730331)
-bones/7/rotation = Quaternion(-0.33102953, 0.097281784, 0.30027217, 0.8892651)
-bones/10/rotation = Quaternion(-0.55228573, -0.39382827, 0.10271812, 0.7275499)
-bones/11/rotation = Quaternion(-0.3310295, -0.09728175, -0.30027208, 0.8892651)
-bones/13/rotation = Quaternion(0.96304196, -0.08828122, 0.0041003143, 0.25444034)
-bones/14/rotation = Quaternion(0.31237137, 0.0044816644, -0.022960415, 0.94967204)
-bones/15/rotation = Quaternion(-0.6312704, -0.07823703, 0.1252544, 0.7613725)
-bones/21/rotation = Quaternion(0.9637109, 0.08035692, -0.0048089623, 0.254521)
-bones/22/rotation = Quaternion(0.3123714, -0.0044816607, 0.022960411, 0.94967204)
-bones/23/rotation = Quaternion(-0.6312704, 0.07823703, -0.1252544, 0.7613725)
+bones/0/position = Vector3(0.0018916478, 1.1854388, -0.03)
+bones/0/rotation = Quaternion(0.08825262, -0.00014634214, -0.0016453615, 0.99609685)
+bones/1/rotation = Quaternion(0.05261147, 0.00037720986, 0.001611958, 0.9986137)
+bones/2/rotation = Quaternion(0.017878253, 0.006633046, 0.0011334515, 0.99981755)
+bones/3/rotation = Quaternion(-0.12032607, -0.0064818165, -0.0018077713, 0.9927117)
+bones/4/rotation = Quaternion(0.029826086, -0.0006819392, -0.0063745724, 0.9995346)
+bones/6/rotation = Quaternion(-0.5464112, 0.375949, -0.11523454, 0.7394716)
+bones/7/rotation = Quaternion(-0.33977738, 0.10204221, 0.30792612, 0.88279116)
+bones/10/rotation = Quaternion(-0.5504076, -0.3617241, 0.11180041, 0.74411553)
+bones/11/rotation = Quaternion(-0.33977887, -0.10204302, -0.30792737, 0.88279015)
+bones/13/rotation = Quaternion(0.9639986, -0.082723886, 0.004817467, 0.25266665)
+bones/14/rotation = Quaternion(0.3034342, 0.005189815, -0.023198998, 0.9525559)
+bones/15/rotation = Quaternion(-0.62838936, -0.07893419, 0.12499001, 0.7637236)
+bones/21/rotation = Quaternion(0.96372145, 0.086009204, -0.0045578247, 0.25263152)
+bones/22/rotation = Quaternion(0.3034342, -0.005189815, 0.023198998, 0.9525559)
+bones/23/rotation = Quaternion(-0.62838936, 0.07893421, -0.12499001, 0.7637236)
 
 [node name="Cabeza" parent="Personaje/ModeloPersonaje/Rig_Char/Skeleton3D" index="0" unique_id=681101347]
-transform = Transform3D(0.99990714, -0.013501611, 0.0018500206, 0.013627765, 0.9906388, -0.13582683, 1.1830707e-06, 0.1358394, 0.9907309, -0.0048930678, 2.0782475, 0.17372295)
+transform = Transform3D(0.9999179, 0.012695386, -0.0017419795, -0.012814337, 0.99065953, -0.13575467, 2.2498425e-06, 0.13576582, 0.9907409, 0.001968506, 2.078185, 0.1829539)
 
 [node name="Camera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="0" unique_id=1786293904]
-transform = Transform3D(-0.92755544, 0.061675735, -0.3685608, 3.7252903e-09, 0.9862857, 0.1650471, 0.37368566, 0.15309031, -0.9148346, 89.901054, 45.63657, -1.3288605)
+transform = Transform3D(-0.92755437, 0.061676413, -0.36856353, 1.8626451e-09, 0.98628557, 0.16504768, 0.37368846, 0.15309069, -0.9148334, -84.24491, 3.5235257, 105.105194)
 
 [node name="PhantomCamera3D" parent="Personaje/CameraComponent" parent_id_path=PackedInt32Array(1912633892, 217961962) index="1" unique_id=895822900]
-transform = Transform3D(0.99999994, 4.954636e-07, -3.0100346e-06, 3.7252903e-09, 0.9862857, 0.1650471, 3.0696392e-06, -0.16504706, 0.98628557, 0.11582947, 0.8842201, 2.725563)
+transform = Transform3D(1, 7.450581e-09, -5.9604645e-08, 1.8626451e-09, 0.98628557, 0.16504768, 5.9604645e-08, -0.16504766, 0.98628557, 0.11584473, 0.8842206, 2.725563)
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 align_rotation_with_view = Callable()
@@ -2161,11 +2097,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999743, -299.08, 120.20981, -
 size = Vector3(0.5, 6.478239, 0.5)
 material = SubResource("StandardMaterial3D_3dgca")
 
-[node name="Poste_d_Luz9" type="CSGBox3D" parent="csg_decoracion" unique_id=1871003140]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999742, -298.32645, 120.20981, -130.79489)
-size = Vector3(0.5, 6.478239, 0.5)
-material = SubResource("StandardMaterial3D_ywgos")
-
 [node name="Poste_d_Luz10" type="CSGBox3D" parent="csg_decoracion" unique_id=1711542905]
 transform = Transform3D(0.7756218, 0, 0.6311816, 0, 1, 0, -0.6311977, 0, 0.77560127, -303.73523, 141.62402, 24.21016)
 size = Vector3(0.5, 6.478239, 0.5)
@@ -2182,7 +2113,7 @@ size = Vector3(0.5, 6.478239, 0.66882324)
 material = SubResource("StandardMaterial3D_3dgca")
 
 [node name="Poste_d_Luz14" type="CSGBox3D" parent="csg_decoracion" unique_id=1069863669]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999707, -187.68465, 152.13385, 108.266106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99997056, -203.05905, 152.13385, 108.266106)
 size = Vector3(0.5, 6.289901, 0.819458)
 material = SubResource("StandardMaterial3D_3dgca")
 
@@ -2429,451 +2360,6 @@ material = SubResource("StandardMaterial3D_f1xyo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cables/Path3D4/Area3D" unique_id=749248328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025024414, 0.008850098, -4.9741364)
 shape = SubResource("BoxShape3D_83qvi")
-
-[node name="Cables3" type="Path3D" parent="Cables" unique_id=500383771]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -194.14215, 124.30283, -32.01008)
-curve = SubResource("Curve3D_om0u3")
-script = ExtResource("12_emgv0")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables3" unique_id=1381532096]
-transform = Transform3D(-0.9995415, -7.819219e-05, 0.029797617, 7.2758535e-12, 0.9999701, 0.002624109, -0.029797632, 0.0026229045, -0.999541, -0.27874756, -1.0733719, 0.365448)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=332791163]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.0032615662)
-use_collision = true
-polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=957439922]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18299866, -0.99567413, 0.0832634)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables/Cables3" unique_id=42265245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08734131, -0.9966736, -0.059741974)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="Area3D" type="Area3D" parent="Cables/Cables3" unique_id=1824378750]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables/Cables3/Area3D" unique_id=185152975]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17269897, -0.85272217, 0.31621552)
-shape = SubResource("BoxShape3D_iqd1q")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables/Cables3/Area3D" unique_id=724434653]
-transform = Transform3D(0.99912906, 0, -0.041726574, 0, 1, 0, 0.041726574, 0, 0.99912906, -0.4635315, -0.94480133, 8.183414)
-shape = SubResource("BoxShape3D_kig62")
-
-[node name="Cables4" type="Path3D" parent="Cables" unique_id=1569789517]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -194.55049, 124.30283, -16.772701)
-curve = SubResource("Curve3D_0kgoo")
-script = ExtResource("12_emgv0")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables4" unique_id=1704637450]
-transform = Transform3D(-0.98155147, 0.048947636, 0.18473509, 0, 0.9666351, -0.25611737, -0.19110955, -0.25139835, -0.94881177, -0.27874756, -1.0733719, 0.365448)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables4" unique_id=1061592071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13648987, -0.99567413, 0.437294)
-use_collision = true
-polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables/Cables4" unique_id=1030864719]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18299866, -0.99567413, 0.437294)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables/Cables4" unique_id=1875505769]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08734131, -0.9966736, 0.437294)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="Area3D" type="Area3D" parent="Cables/Cables4" unique_id=2121948948]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables/Cables4/Area3D" unique_id=1638249136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17269897, -0.85272217, 0.31621552)
-shape = SubResource("BoxShape3D_yge8l")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables/Cables4/Area3D" unique_id=1496334516]
-transform = Transform3D(0.9822154, -0.0049443897, -0.18769236, 0.054033644, 0.9648068, 0.25734827, 0.1798144, -0.26291314, 0.9479153, -3.04068, 2.9071808, 15.2089405)
-shape = SubResource("BoxShape3D_fnol2")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Cables/Cables4/Area3D" unique_id=2103479467]
-transform = Transform3D(0.9822154, -0.0049443934, -0.18769234, 0.09593384, 0.8725307, 0.47904772, 0.16139871, -0.48853406, 0.8574875, -8.669937, 13.528587, 41.669823)
-shape = SubResource("BoxShape3D_yvxky")
-
-[node name="Cables5" type="Path3D" parent="Cables" unique_id=1773300430]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205.42775, 144.76822, 36.688114)
-curve = SubResource("Curve3D_mt1xq")
-script = ExtResource("12_emgv0")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables5" unique_id=391646599]
-transform = Transform3D(-0.7397507, -0.004826868, -0.67283773, -2.3282666e-10, 0.9999431, -0.0071736765, 0.6728557, -0.005306753, -0.73973095, -0.20549011, -0.15530396, 0.24208069)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=709487367]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.175)
-use_collision = true
-polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=74425933]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996, -0.268)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables/Cables5" unique_id=331833537]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.997, -0.008)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="Area3D" type="Area3D" parent="Cables/Cables5" unique_id=1316419247]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables/Cables5/Area3D" unique_id=1139221150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173, 0, 0.316)
-shape = SubResource("BoxShape3D_vpimv")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables/Cables5/Area3D" unique_id=463654266]
-transform = Transform3D(0.7494159, 0, 0.66209954, 0, 1, 0, -0.66209954, 0, 0.7494159, 3.6417847, 0, 4.5116463)
-shape = SubResource("BoxShape3D_k34e1")
-
-[node name="Checkpoint" parent="Cables/Cables5/Area3D" unique_id=496104885 instance=ExtResource("17_ue3ls")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7219391, 0.7060547, 0.5401535)
-
-[node name="Checkpoint2" parent="Cables/Cables5/Area3D" unique_id=1237126241 instance=ExtResource("17_ue3ls")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.064423, 10.695374, 50.434086)
-
-[node name="Checkpoint3" parent="Cables/Cables5/Area3D" unique_id=285110961 instance=ExtResource("17_ue3ls")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.34754, 26.09607, 22.939327)
-
-[node name="Cables6" type="Path3D" parent="Cables" unique_id=770945112]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -197.42755, 144.72418, 45.276962)
-curve = SubResource("Curve3D_m7axp")
-script = ExtResource("12_emgv0")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables6" unique_id=1351380113]
-transform = Transform3D(-0.7180976, -0.11890876, -0.685682, -3.7252241e-09, 0.9852805, -0.17086244, 0.6959169, -0.12269871, -0.7075366, -0.43467712, 0.113082886, 0.23261642)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables6" unique_id=939227200]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9960022, 0.11354828)
-use_collision = true
-polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables/Cables6" unique_id=362560012]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9960022, 0.23703003)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables/Cables6" unique_id=1050728616]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996994, 0.009098053)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="Area3D" type="Area3D" parent="Cables/Cables6" unique_id=1414670953]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables/Cables6/Area3D" unique_id=1870266173]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173, 0, 0.316)
-shape = SubResource("BoxShape3D_xjvlr")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables/Cables6/Area3D" unique_id=648810664]
-transform = Transform3D(0.6810685, -0.2590088, 0.6848797, 0.19413407, 0.9657471, 0.17217404, -0.70601547, 0.015696198, 0.7080226, 19.31784, 4.960266, 20.592545)
-shape = SubResource("BoxShape3D_lbrwh")
-
-[node name="Cables7" type="Path3D" parent="Cables" unique_id=499003882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.2252, 155.08186, 86.94566)
-curve = SubResource("Curve3D_vjfdx")
-script = ExtResource("12_emgv0")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables7" unique_id=1856001617]
-transform = Transform3D(-0.018124502, 0.0073390864, -0.99978924, 0, 0.9999591, 0.007340251, 0.99981797, 0.0001330415, -0.018123982, -0.43467712, 0.113082886, 0.23261642)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables7" unique_id=319836757]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9960022, -0.052742004)
-use_collision = true
-polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables/Cables7" unique_id=184429331]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9960022, 0.070739746)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables/Cables7" unique_id=1200038440]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.996994, -0.15719604)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="Area3D" type="Area3D" parent="Cables/Cables7" unique_id=1161835909]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables/Cables7/Area3D" unique_id=497910742]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173, 0, 0.316)
-shape = SubResource("BoxShape3D_p6gpa")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables/Cables7/Area3D" unique_id=316486852]
-transform = Transform3D(0.99971586, 0, -0.023837626, 0, 1, 0, 0.023837626, 0, 0.99971586, 15.4561615, 0, 0.47188568)
-shape = SubResource("BoxShape3D_0c0o2")
-
-[node name="Cables8" type="Path3D" parent="Cables" unique_id=1628374002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.32696, 155.1021, 87.458275)
-curve = SubResource("Curve3D_oad60")
-script = ExtResource("12_emgv0")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Cables/Cables8" unique_id=623448174]
-transform = Transform3D(0.8191543, -0.22825295, -0.5261653, 0, 0.917385, -0.39796168, 0.5735417, 0.32599962, 0.75148946, -0.43467712, 0.113082886, 0.23261642)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Cables/Cables8" unique_id=1993671170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1055603, -0.9960022, -0.052742004)
-use_collision = true
-polygon = PackedVector2Array(0.12664795, 0.9283066, 0.122241974, 0.965044, 0.16834259, 0.97387695, 0.16370392, 0.93084526)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Cables/Cables8" unique_id=175906673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1055603, -0.9960022, 0.070739746)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Cables/Cables8" unique_id=2057835287]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1055603, -0.996994, -0.15719604)
-use_collision = true
-polygon = PackedVector2Array(0.13747406, 0.94125557, 0.13852692, 0.9590473, 0.1516037, 0.9603424, 0.15328217, 0.9449253)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 0
-path_rotation_accurate = true
-path_local = true
-path_continuous_u = true
-path_u_distance = 0.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_f1xyo")
-
-[node name="Area3D" type="Area3D" parent="Cables/Cables8" unique_id=848038448]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cables/Cables8/Area3D" unique_id=860533114]
-transform = Transform3D(0.5286243, -0.2190723, 0.8200998, 0.38284594, 0.9238122, 0, -0.7576182, 0.31397188, 0.5722205, -0.1627121, 0.3802948, -0.11306763)
-shape = SubResource("BoxShape3D_v7tsu")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cables/Cables8/Area3D" unique_id=2135904650]
-transform = Transform3D(0.5286244, -0.21907234, 0.8201, 0.40794048, 0.9128086, -0.019114938, -0.74440664, 0.34465647, 0.57190126, 9.5696335, 7.93927, -14.056168)
-shape = SubResource("BoxShape3D_6weqg")
 
 [node name="Path3D9" type="Path3D" parent="Cables" unique_id=1953542606]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -47.512768, 0.80945015, 128.22607)
@@ -3142,36 +2628,6 @@ transform = Transform3D(0.99999505, -0.00032075305, -0.001543668, -5.8207446e-11
 transform = Transform3D(0.9999918, 7.5039885e-08, -7.957311e-09, -7.5038564e-08, 0.9777386, -0.20982501, -7.96507e-09, 0.20982613, 0.9777306, 0, -2.2475853, 0.11224365)
 shape = SubResource("BoxShape3D_2bok1")
 
-[node name="Path3D3" type="Path3D" parent="Node3D/Z1" unique_id=1136555219]
-transform = Transform3D(0.9999989, -1.2372578e-08, -2.135323e-10, 1.23725625e-08, 0.9994013, 0.034596216, -2.1461233e-10, -0.034596205, 0.9994003, 52.076664, 19.865189, -89.43306)
-curve = SubResource("Curve3D_7f4xd")
-script = ExtResource("16_qf7v0")
-desplazamiento_y = -0.1
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Z1/Path3D3" unique_id=1271388202]
-transform = Transform3D(0.99999505, -0.00032075305, -0.001543668, -5.8207446e-11, 0.979083, -0.20344001, 0.0015766411, 0.20343979, 0.97908163, 0, -5.023781, 12.791)
-
-[node name="Area3D" type="Area3D" parent="Node3D/Z1/Path3D3" unique_id=1122159773]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Z1/Path3D3/Area3D" unique_id=6115294]
-transform = Transform3D(0.99999183, 7.503991e-08, -7.95734e-09, -7.503857e-08, 0.9777388, -0.20982504, -7.96507e-09, 0.20982619, 0.97773063, 0, -2.2475815, 0.11224365)
-shape = SubResource("BoxShape3D_2bok1")
-
-[node name="Path3D4" type="Path3D" parent="Node3D/Z1" unique_id=1732831493]
-transform = Transform3D(0.9999985, -1.2372577e-08, -2.1330493e-10, 1.23725625e-08, 0.9994013, 0.034596216, -2.148397e-10, -0.03459618, 0.9993999, 61.26354, 19.865189, -116.50562)
-curve = SubResource("Curve3D_7f4xd")
-script = ExtResource("16_qf7v0")
-desplazamiento_y = -0.1
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Z1/Path3D4" unique_id=1767205557]
-transform = Transform3D(0.99999505, -0.00032075305, -0.001543668, -5.8207446e-11, 0.979083, -0.20344001, 0.0015766411, 0.20343979, 0.97908163, 0, -5.023781, 12.791)
-
-[node name="Area3D" type="Area3D" parent="Node3D/Z1/Path3D4" unique_id=1300827281]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Z1/Path3D4/Area3D" unique_id=633614886]
-transform = Transform3D(0.9999918, 7.5039885e-08, -7.957311e-09, -7.503857e-08, 0.97773886, -0.20982502, -7.9650135e-09, 0.20982611, 0.9777306, 0.023075104, -2.2475815, 0.1122427)
-shape = SubResource("BoxShape3D_2bok1")
-
 [node name="Path3D6" type="Path3D" parent="Node3D/Z1" unique_id=1262373174]
 transform = Transform3D(0.9999986, -1.2372577e-08, -2.133902e-10, 1.23725625e-08, 0.9994013, 0.034596216, -2.1478286e-10, -0.034596186, 0.9994, 50.46669, 19.865189, -179.06291)
 curve = SubResource("Curve3D_7f4xd")
@@ -3252,12 +2708,6 @@ mesh = ExtResource("16_tgtnd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Z3/Plat_D/StaticBody3D" unique_id=1749723952]
 shape = SubResource("ConvexPolygonShape3D_ue3ls")
 
-[node name="Checkpoint" parent="Node3D/Z3/Plat_D/StaticBody3D" unique_id=4430401 instance=ExtResource("17_ue3ls")]
-transform = Transform3D(0.36712292, 0, -0.93017244, 0, 1, 0, 0.93017244, 0, 0.36712292, -0.12048149, 0.06270981, -0.3262291)
-
-[node name="CollisionShape3D" parent="Node3D/Z3/Plat_D/StaticBody3D/Checkpoint" index="0" unique_id=1734687957]
-transform = Transform3D(1, 0, -7.450581e-09, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
-
 [node name="Plat_D2" type="MeshInstance3D" parent="Node3D/Z3" unique_id=968648191]
 transform = Transform3D(-7.308552, 0, -11.409942, 0, 14.465, 0, 15.498164, 0, -5.3806467, 3.8146973e-06, 15.871429, -137.90126)
 mesh = ExtResource("16_tgtnd")
@@ -3266,25 +2716,6 @@ mesh = ExtResource("16_tgtnd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Z3/Plat_D2/StaticBody3D" unique_id=1015932766]
 shape = SubResource("ConvexPolygonShape3D_yppci")
-
-[node name="RailC_L2" type="MeshInstance3D" parent="Node3D/Z3" unique_id=1228387423]
-transform = Transform3D(0.99999946, -2.842171e-13, 3.907985e-14, 0, 0.16439903, 0.98639387, -2.842171e-13, -0.98639333, 0.1643989, -3.8165283, 17.5, -77.363464)
-mesh = SubResource("ArrayMesh_obuvc")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Z3/RailC_L2" unique_id=854763760]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Z3/RailC_L2/StaticBody3D" unique_id=17023286]
-transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, -1.4901183e-08, -7.1054274e-15, 1.4901141e-08, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_xg34l")
-
-[node name="RailC_L3" type="MeshInstance3D" parent="Node3D/Z3" unique_id=1424183851]
-transform = Transform3D(0.9999992, -4.2632564e-13, 5.684342e-14, 0, 0.16439903, 0.98639387, -4.2632564e-13, -0.9863931, 0.16439883, 5.291931, 17.5, -105.36662)
-mesh = SubResource("ArrayMesh_obuvc")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Z3/RailC_L3" unique_id=2138118449]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Z3/RailC_L3/StaticBody3D" unique_id=537582955]
-shape = SubResource("ConcavePolygonShape3D_2ckq1")
 
 [node name="RailC_L4" type="MeshInstance3D" parent="Node3D/Z3" unique_id=816662600]
 transform = Transform3D(0.9999991, -4.8316906e-13, 6.750156e-14, 0, 0.16439903, 0.98639387, -4.8316906e-13, -0.986393, 0.1643988, -5.522, 17.413, -167.508)
@@ -3347,11 +2778,11 @@ shape = SubResource("ConvexPolygonShape3D_bigcq")
 transform = Transform3D(1.3911914, 0, 10.591613, 0, 10.682592, 0, -10.591613, 0, 1.3911914, -9.677166, 4.719208, -23.490574)
 
 [node name="Plane" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=944195165]
-transform = Transform3D(0.98821366, 0, 0.15308087, 0, 1, 0, -0.15308087, 0, 0.98821366, 1.428383, -0.40380192, -0.17392349)
+transform = Transform3D(0.9883246, -0.03507921, 0.14826863, -0.0062174336, 0.96303886, 0.2692916, -0.15223497, -0.26706928, 0.9515768, 1.3921896, -0.41050482, -0.44947386)
 mesh = SubResource("ArrayMesh_py86d")
 
 [node name="Plane10" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=1585843319]
-transform = Transform3D(0.9831587, 0.005746529, 0.18266226, 0.0022303758, 0.99905396, -0.043434825, -0.18273902, 0.04311074, 0.9822158, -0.5335804, -0.40380192, 0.09183788)
+transform = Transform3D(0.9833363, -0.02950886, 0.17938381, -0.012167612, 0.97384286, 0.22689804, -0.18138713, -0.22529973, 0.95725614, -0.5698123, -0.40835238, -0.18400574)
 mesh = SubResource("ArrayMesh_py86d")
 
 [node name="Plane2" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=680514897]
@@ -3378,10 +2809,6 @@ mesh = SubResource("ArrayMesh_py86d")
 transform = Transform3D(0.9967087, 0, 0.08106656, 0, 1, 0, -0.08106656, 0, 0.9967087, 12.536105, 0.38586092, -1.6998665)
 mesh = SubResource("ArrayMesh_py86d")
 
-[node name="Plane6" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=573466636]
-transform = Transform3D(0.99639094, 0, -0.08488369, 0, 1, 0, 0.08488369, 0, 0.99639094, 14.540362, 0.9208946, -1.8764894)
-mesh = ExtResource("18_emgv0")
-
 [node name="Plane8" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=1135090086]
 transform = Transform3D(0.9967087, 0, 0.08106656, 0, 1, 0, -0.08106656, 0, 0.9967087, 22.52742, 1.1033106, -12.431143)
 mesh = SubResource("ArrayMesh_py86d")
@@ -3391,16 +2818,12 @@ transform = Transform3D(0.9416092, 0, -0.33670774, 0, 1, 0, 0.33670774, 0, 0.941
 mesh = SubResource("ArrayMesh_py86d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=752711325]
-transform = Transform3D(0.9933581, -0.018279647, 0.1136106, 0.0021681453, 0.9901, 0.14034751, -0.11505133, -0.13916875, 0.98356336, 0.58817756, -0.295043, 0.018723488)
+transform = Transform3D(0.99320835, -0.052335985, 0.10392205, 0.0062075597, 0.91570145, 0.40182513, -0.116190866, -0.3984505, 0.9098013, 0.5218649, -0.28395176, -0.28583097)
 shape = SubResource("BoxShape3D_pk0j2")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=1195967689]
 transform = Transform3D(0.9785168, -0.18542501, 0.090141445, 0.17238298, 0.9756447, 0.13566817, -0.11310173, -0.11721442, 0.9866472, 10.71733, 0.115737915, -1.3290586)
 shape = SubResource("BoxShape3D_emgv0")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=1710038736]
-transform = Transform3D(0.9903447, 0.017328477, -0.13754538, 0.002168145, 0.9901, 0.14034751, 0.13861586, -0.1392904, 0.9805028, 14.840508, 1.0299993, -1.6975536)
-shape = SubResource("BoxShape3D_wf0iy")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=1544823529]
 transform = Transform3D(0.99928224, -0.007462141, 0.03720565, 0.0021681495, 0.9901, 0.14034756, -0.03788449, -0.14016569, 0.98940516, 22.549425, 1.029849, -12.34406)
@@ -3423,35 +2846,19 @@ transform = Transform3D(-0.8056449, -0.3046863, -0.5080413, -0.0021534355, 0.859
 shape = SubResource("BoxShape3D_typkg")
 
 [node name="Plane12" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=1030094981]
-transform = Transform3D(0.31536442, 0.05676121, -0.29723847, -0.023553003, 0.60106546, 0.030402806, 0.50212073, -0.007455515, 0.18811119, 18.508184, 7.177869, -10.951082)
+transform = Transform3D(0.7350607, 0.083215475, -0.36328077, -0.003090077, 0.5813938, 0.10789998, 0.6988613, -0.08495517, 0.38257515, 18.2444, 7.280857, -11.022743)
 mesh = SubResource("ArrayMesh_5gedq")
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=17679754]
-transform = Transform3D(-0.529718, 0.14853325, 0.83506846, -0.046332914, 0.9780097, -0.20334953, -0.84690887, -0.14640851, -0.5111875, 18.506426, 7.2293873, -10.906378)
-shape = SubResource("BoxShape3D_3dgca")
-
-[node name="Plane16" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=1058358145]
-transform = Transform3D(0.46230385, 0.051197045, -0.21932366, -0.023553003, 0.60106564, 0.030402817, 0.37128866, -0.025618032, 0.2750158, 17.841791, 7.177869, -11.5310135)
-mesh = SubResource("ArrayMesh_5gedq")
-
-[node name="CollisionShape3D13" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=1060858015]
-transform = Transform3D(-0.77767617, 0.09245009, 0.62183255, -0.046332903, 0.9780097, -0.20334958, -0.6269576, -0.18695071, -0.75629133, 17.854755, 7.2293873, -11.4881935)
-shape = SubResource("BoxShape3D_3dgca")
-
-[node name="Plane17" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=853487989]
-transform = Transform3D(-0.034162715, 0.050570354, -0.35124522, -0.023552997, 0.60106575, 0.03040284, 0.591957, 0.026833914, -0.019061208, 18.658485, 7.177869, -10.0471325)
-mesh = SubResource("ArrayMesh_5gedq")
-
-[node name="CollisionShape3D14" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=565777371]
-transform = Transform3D(0.05941008, 0.20590524, 0.9767687, -0.046332903, 0.9780097, -0.20334958, -0.99715924, -0.033175327, 0.067643836, 18.631132, 7.2293873, -10.011727)
+transform = Transform3D(-1.2444932, 0.18015224, 1.0047861, -0.14116116, 1.0770046, -0.4731463, -1.1642034, -0.3231646, -1.0167129, 18.263721, 7.3401012, -10.946208)
 shape = SubResource("BoxShape3D_3dgca")
 
 [node name="Plane14" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=574919386]
-transform = Transform3D(0.001886636, 0, 0.99999833, 0, 0.6037856, 0, -0.99999833, 0, 0.001886636, 17.580477, 5.109707, -4.59234)
+transform = Transform3D(0.2073074, -0.09577058, 0.9653315, 0.021017365, 0.59609497, 0.15770699, -0.97805053, -0.007490011, 0.20800051, 17.178143, 5.351866, -5.1716404)
 mesh = SubResource("ArrayMesh_emgv0")
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=1028160481]
-transform = Transform3D(-0.005456239, -0.20381257, -0.97899634, -0.046332903, 0.9780097, -0.20334958, 0.9989125, 0.04424996, -0.014779389, 17.748137, 5.1634817, -4.655224)
+transform = Transform3D(-0.2031823, -0.36104766, -0.9101456, -0.0673007, 0.93248516, -0.3548862, 0.97682655, -0.010853272, -0.21376306, 17.344444, 5.432705, -5.1992702)
 shape = SubResource("BoxShape3D_u0hqu")
 
 [node name="Plane15" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=367127501]
@@ -3463,19 +2870,19 @@ transform = Transform3D(-0.05689712, 0.19839716, 0.9784711, 0.2279693, 0.9567474
 shape = SubResource("BoxShape3D_5gedq")
 
 [node name="Plane13" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=15816942]
-transform = Transform3D(1.6497763, 0, 0.12278532, 0, 0.6037856, 0, -0.20506923, 0, 0.9878045, 11.682869, 8.173213, -14.837352)
+transform = Transform3D(1.6569157, -0.011190036, 0.07920374, 0.0024156768, 0.5903803, 0.20858392, -0.135801, -0.12602839, 0.9700794, 11.692305, 8.155537, -14.791776)
 mesh = SubResource("ArrayMesh_7hx04")
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=315221984]
-transform = Transform3D(-0.99173313, -0.06942402, -0.10793091, -0.046332926, 0.9780099, -0.20334958, 0.119674556, -0.19666727, -0.973141, 11.843349, 8.222188, -14.683013)
+transform = Transform3D(-0.9950075, -0.078821465, -0.061242405, -0.04750414, 0.91354054, -0.40396667, 0.08778839, -0.39903954, -0.9127235, 11.844906, 8.239868, -14.6448965)
 shape = SubResource("BoxShape3D_fcbut")
 
 [node name="Plane18" type="MeshInstance3D" parent="Node3D/Z4/pared caminable test" unique_id=2010042885]
-transform = Transform3D(0.43339026, 0, 0.3184037, 0, 0.6037856, 0, -0.6833674, 0, 0.20193085, 9.873474, 8.173223, -13.820976)
+transform = Transform3D(0.4372893, -0.35804075, 0.29815018, 0.015262884, 0.76601845, 0.18801636, -0.719654, -0.20131297, 0.18515484, 9.657615, 8.234961, -13.88382)
 mesh = SubResource("ArrayMesh_3dgca")
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="Node3D/Z4/pared caminable test" unique_id=2098188171]
-transform = Transform3D(-0.53801155, -0.1959519, -0.81984824, -0.046332937, 0.9780099, -0.20334962, 0.84166527, -0.07141834, -0.53525937, 10.030792, 8.230281, -13.936658)
+transform = Transform3D(-0.47248572, -0.8184009, -0.5531761, -0.05703141, 1.0819205, -0.55201036, 0.8115196, -0.40045786, -0.3608658, 9.773779, 8.351476, -14.027937)
 shape = SubResource("BoxShape3D_ywgos")
 
 [node name="PlataformaMovil" parent="Node3D/Z4" unique_id=1247498830 instance=ExtResource("17_tgtnd")]
@@ -3865,6 +3272,7 @@ mesh = SubResource("ArrayMesh_ao8n3")
 [node name="StaticBody3D" type="StaticBody3D" parent="Cubo_016" unique_id=1260525223]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cubo_016/StaticBody3D" unique_id=472841196]
+transform = Transform3D(1, 0, 7.450581e-09, 0, 1, 0, -7.450581e-09, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_o8ecs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1482064327]
@@ -4211,7 +3619,7 @@ mesh = SubResource("ArrayMesh_iqd1q")
 shape = SubResource("ConcavePolygonShape3D_kig62")
 
 [node name="Checkpoint" parent="." unique_id=1784784625 instance=ExtResource("17_ue3ls")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.952805, 228.55147, 33.85818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.952805, 228.391, 33.85818)
 
 [node name="Checkpoint2" parent="." unique_id=166985918 instance=ExtResource("17_ue3ls")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.61448, 239.55023, 21.741589)
@@ -4537,9 +3945,10 @@ transform = Transform3D(0.86303425, 0, -0.5051454, 0, 1, 0, 0.5051454, 0, 0.8630
 
 [node name="Fin_de_juego" parent="." unique_id=57331650 instance=ExtResource("23_emgv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.766739, 242.48438, 52.705936)
+mi_dialogo = ExtResource("25_tui6x")
 
 [node name="CollisionShape3D" parent="Fin_de_juego/Area3D" parent_id_path=PackedInt32Array(57331650, 1500602069) index="0" unique_id=126762773]
-transform = Transform3D(8.317202, 0, 0, 0, 5, 0, 0, 0, 12.347267, 0, 0, 6.243908)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 6.243908)
 
 [node name="Rampa" parent="." unique_id=353421338 instance=ExtResource("27_tui6x")]
 transform = Transform3D(0.98878664, 0, -0.291911, 0, 1, 0, 0.14933513, 0, 1.9328185, 40.757404, 16.390312, 140.43892)
@@ -4566,11 +3975,63 @@ transform = Transform3D(-0.65726054, -0.112358436, 1.7256514, 0.07592117, 0.9868
 transform = Transform3D(0.7807718, 0, 0.6248164, 0, 1, 0, -0.6248164, 0, 0.7807718, 75.00752, 59.492157, -77.74198)
 curve = SubResource("Curve3D_tui6x")
 
+[node name="Checkpoint4" parent="." unique_id=1237583284 instance=ExtResource("17_ue3ls")]
+transform = Transform3D(0.8753382, 0, -0.48351127, 0, 1, 0, 0.48351127, 0, 0.8753382, 34.482277, 61.677624, -58.8768)
+
+[node name="CollisionShape3D" parent="Checkpoint4" index="0" unique_id=1734687957]
+transform = Transform3D(1, 0, -7.450581e-09, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Path3D14" parent="." unique_id=338292635 instance=ExtResource("27_lpgwy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23.12235, 60.7582, -52.84684)
+curve = SubResource("Curve3D_lpgwy")
+
+[node name="Rampa5" parent="." unique_id=2058599203 instance=ExtResource("27_tui6x")]
+transform = Transform3D(1.0784112, -0.45693928, -1.4243183, 0.3708546, 2.5444388, -0.13165087, 1.504062, -0.29975408, 1.0536965, -192.2734, 118.643265, -29.86589)
+
+[node name="Path3D15" parent="." unique_id=1183573868 instance=ExtResource("27_lpgwy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -187.56143, 117.6473, 0)
+curve = SubResource("Curve3D_o8ecs")
+
+[node name="Path3D16" parent="." unique_id=1458516986 instance=ExtResource("27_lpgwy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -158.74222, 135.5458, 43.655983)
+curve = SubResource("Curve3D_u0hqu")
+
+[node name="Path3D17" parent="." unique_id=1451066490 instance=ExtResource("27_lpgwy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -98.87875, 148.30948, 79.169525)
+curve = SubResource("Curve3D_2w4rn")
+
+[node name="Rampa6" parent="." unique_id=238771609 instance=ExtResource("27_tui6x")]
+transform = Transform3D(-1.4304918, -0.039560307, 0.22293584, -0.05663501, 0.99921733, 0.008826318, -0.16447674, 0, -1.941963, 45.88549, 228.06761, 32.633442)
+
+[node name="Rampa7" parent="." unique_id=659403928 instance=ExtResource("27_tui6x")]
+transform = Transform3D(0.18804234, 0.00090127223, 1.2961956, 0.41511476, 0.9521224, -0.05564896, -1.2975708, 0.30473062, 0.17004001, -10.268094, 226.64731, 27.087076)
+
+[node name="Rampa8" parent="." unique_id=1985505095 instance=ExtResource("27_tui6x")]
+transform = Transform3D(-0.40480375, 0.07666517, 0.83039343, 0.14029388, 0.4617509, 0.03465967, -0.37460777, 0.09008482, -0.8843485, -7.946796, 226.14738, 36.288177)
+
+[node name="Rampa10" parent="." unique_id=944612456 instance=ExtResource("27_tui6x")]
+transform = Transform3D(-0.95319444, -0.07588388, 0.6233376, -0.23463711, 0.7015821, -0.056326494, -0.7858254, -0.11743707, -0.7392806, 19.221212, 227.11906, 43.457157)
+
+[node name="Rampa11" parent="." unique_id=1926369627 instance=ExtResource("27_tui6x")]
+transform = Transform3D(-1.4250653, -0.018720344, -0.4683175, -0.057737656, 0.5046191, 0.008806578, 0.3522316, 0.0069778375, -1.8932843, 26.92816, 229.21272, 31.445808)
+
+[node name="Rampa9" parent="." unique_id=110415825 instance=ExtResource("27_tui6x")]
+transform = Transform3D(-0.060241204, -0.6649462, 0.213254, -0.06735717, 0.6139402, 0.042745102, -0.013280901, -0.097593, -1.184096, -10.578422, 227.75125, 5.3431206)
+
+[node name="Rampa12" parent="." unique_id=1488110555 instance=ExtResource("27_tui6x")]
+transform = Transform3D(-0.09070608, 0.07236821, -1.283911, 0.0058430866, 0.79769623, 0.116636425, 1.329811, 0.00143126, -0.088087685, -31.676838, 234.7801, 27.087076)
+
+[node name="Rampa13" parent="." unique_id=1372075945 instance=ExtResource("27_tui6x")]
+transform = Transform3D(1.2635852, -0.6512834, -0.08683818, 0.544402, 1.5121845, -0.0317038, 0.06470922, -0.004389605, 1.9624254, -37.65374, 234.68797, -5.488105)
+
+[node name="Rampa14" parent="." unique_id=1607554627 instance=ExtResource("27_tui6x")]
+transform = Transform3D(-0.14813751, 0.028843889, -1.1036056, 0.39925942, 1.4470111, -0.00382171, 1.576659, -0.36371818, -0.1027233, 17.659925, 240.21172, 12.129888)
+
 [connection signal="body_entered" from="Fallzone" to="Fallzone" method="_on_body_entered"]
 
 [editable path="CheckPoints/Checkpoint"]
 [editable path="CheckPoints/Checkpoint2"]
 [editable path="Personaje"]
 [editable path="Personaje/CameraComponent"]
-[editable path="Node3D/Z3/Plat_D/StaticBody3D/Checkpoint"]
 [editable path="Fin_de_juego"]
+[editable path="Checkpoint4"]
